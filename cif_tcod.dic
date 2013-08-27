@@ -1,0 +1,21 @@
+#------------------------------------------------------------------------------
+#$Date$
+#$Revision$
+#$URL$
+#------------------------------------------------------------------------------
+#
+# This file is available in the Crystallography Open Database (COD),
+# http://www.crystallography.net/.
+#
+# This file is designated by the authors and the contributors board
+# into Public Domain.
+#------------------------------------------------------------------------------
+
+data_on_this_dictionary
+    _dictionary_name            cif_dft.dic
+    _dictionary_version         0.000
+    _dictionary_update          2013-08-17
+    _dictionary_history
+;
+2013-08-17 Adding an empty CIF scaffold for the DFT dictionary. S.G.
+;
