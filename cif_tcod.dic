@@ -13,9 +13,449 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.000
+    _dictionary_version         0.001
     _dictionary_update          2013-08-17
     _dictionary_history
 ;
+
+2013-08-17 Adding all datanames from Bj\"orkman Torbj\"orn's 2013-05-09
+           11:23 e-mail. S.G.
+
 2013-08-17 Adding an empty CIF scaffold for the DFT dictionary. S.G.
+;
+
+data_dft_software_package
+    _name '_dft_software_package'
+    _type char
+    _definition
+; Software package used to compute and produce the DFT-computed structure file.
+  Only package or program name should be used, e.g. 'WASP', 'psi3', etc.
+;
+
+data_dft_software_package_version
+    _name '_dft_software_package_version'
+    _type char
+_definition
+; Software package version used to compute and produce the DFT-computed 
+  structure file. Only version designator should be used, e.g. '3.4.0',
+  '2.1rc3'. It is desireable that the combination of the _dft_software_package
+  and _dft_software_package_version values would uniquely identify the code
+  that was used for computations.
+;
+
+data_dft_software_operating_system
+    _name '_dft_software_operating_system'
+    _type char
+    _definition
+; Operating system used to compute and produce the DFT-computed structure file.
+  Only OS name should be used, e.g. 'Irix', 'Windows XP', 'Ubuntu GNU/Linux',
+  etc.
+;
+
+data_dft_software_operating_system_version
+    _name '_dft_software_operating_system_version'
+    _type char
+    _definition
+; Operating system version used to compute and produce the
+  DFT-computed structure file.  Only version designator should be
+  used, e.g. '3.4.0', '2.1rc3'. It is desireable that the combination
+  of the _dft_software_operating_system and
+  _dft_software_package_operating_system_version values would uniquely
+  identify the OS that was used for computations.
+;
+
+data_dft_software_runtime_CPU
+    _name '_dft_software_runtime_CPU'
+    _type char
+    _definition
+; Name (type) of the central processing unit (CPU), together with the 
+  floating-point processing unit, that was used to compute the results.
+;
+
+data_dft_software_runtime_CPU_version
+    _name '_dft_software_runtime_CPU_version'
+    _type char
+    _definition
+; Version or release number of the central processing unit (CPU),
+  together with the floating-point processing unit, that was used to 
+  compute the results.
+;
+
+data_dft_XC_functional_[]
+    # Should this be a category overview? S.G.
+    _name '_dft_XC_functional'
+    _type char
+    _description
+;. . .
+;
+
+data_dft_XC_exchange_functional
+    _name '_dft_XC_exchange_functional'
+    _type char
+    _description
+;. . .
+;
+
+data_dft_XC_correlation_functional
+    _name '_dft_XC_correlation_functional'
+    _type char
+    _description
+;. . .
+;
+
+data_dft_XC_functional_type
+    _name '_dft_XC_functional_type'
+    _type char
+    loop_ _enumeration
+          _enumeration_detail
+          LDA                    'describe the corresponding functional here'
+          GGA                    'describe the corresponding functional here'
+          meta-GGA               'describe the corresponding functional here'
+          Hybrid                 'describe the corresponding functional here'
+          ACFD-RPA               'describe the corresponding functional here'
+          'orbital functionals'  'describe the corresponding functional here'
+          'exact exchange'       'describe the corresponding functional here'
+          vdW-DF                 'describe the corresponding functional here'
+          LDA/GGA+U/DMFT         'describe the corresponding functional here'
+          'orbital polarization' 'describe the corresponding functional here'
+    _description
+; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_basisset
+    _name '_dft_basisset'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_basisset_type
+    _name '_dft_basisset_type'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_basisset_energy_conv 
+    _name '_dft_basisset_energy_conv '
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Energy measured in eV (electron-volts).
+;
+
+data_dft_BZ_integration_method
+    _name '_dft_BZ_integration_method'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_grid_type
+    _name '_dft_BZ_integration_grid_type'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_grid_[]
+    loop_ _name '_dft_BZ_integration_grid_X'
+                '_dft_BZ_integration_grid_Y'
+                '_dft_BZ_integration_grid_Z'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_grid_IBZ_points
+    _name '_dft_BZ_integration_grid_IBZ_points'
+    _type char
+    _description
+; Number of points in irreducible BZ.
+  (Please expand the explanation, especially for non-specialists).
+;
+
+data_dft_BZ_integration_grid_dens_[]
+    loop_ _name
+        '_dft_BZ_integration_grid_dens_X'
+        '_dft_BZ_integration_grid_dens_Y'
+        '_dft_BZ_integration_grid_dens_Z'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_grid_shift_[]
+    loop_ _name
+        '_dft_BZ_integration_grid_shift_X'
+        '_dft_BZ_integration_grid_shift_Y'
+        '_dft_BZ_integration_grid_shift_Z'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_Froyen_map
+    _name '_dft_BZ_integration_Froyen_map'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_smearing_width
+    _name '_dft_BZ_integration_smearing_width'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_MP_order
+    _name '_dft_BZ_integration_MP_order'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_energy_conv
+    _name '_dft_BZ_integration_energy_conv'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_pressure
+    _name '_dft_cell_pressure'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_periodic_BC_[]
+    loop_ _name
+        '_dft_cell_periodic_BC_X'
+        '_dft_cell_periodic_BC Y'
+        '_dft_cell_periodic_BC Z'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_valence_electrons
+    _name '_dft_cell_valence_electrons'
+    _type numb
+    _description
+; Total number of electrons in calculation.
+;
+
+data_dft_cell_energy
+    _name '_dft_cell_energy'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
+  Energy given in eV.
+;
+
+data_dft_cell_magn_moment
+    _name '_dft_cell_magn_moment'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_magn_spin_moment
+    _name '_dft_cell_magn_spin_moment'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_magn_orbital_moment
+    _name '_dft_cell_magn_orbital_moment'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_energy_conv
+    _name '_dft_cell_energy_conv'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
+  Energy given in eV.
+;
+
+data_dft_cell_density_conv
+    _name '_dft_cell_density_conv'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_potential_conv
+    _name '_dft_cell_potential_conv'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_type_valence_electrons
+    _name '_dft_atom_type_valence_electrons'
+    _type char
+    _description
+; Number of electrons contributed from an atomic type.
+  (Should this be in the _atom_site_... linked loop? S.G.)
+;
+
+data_dft_atom_type_valence_configuration
+    _name '_dft_atom_type_valence_configuration'
+    _type char
+    _description
+; PLEASE GIVE A SEMI-FORMAL HUMAN-READABLE DESCRIPTION HERE.
+
+  For example, '2s2p' for B-F or '6s6p7s5f' for actinides.
+;
+
+data_dft_atom_type_nuclear_charge
+    _name '_dft_atom_type_nuclear_charge'
+    _type numb
+    _description
+; PLEASE ADD A HUMAN-READABLE SEMI-FORMAL DESCRIPTION HERE.
+
+  This would be 76 for Os but 26.3 for a VCA calculation for the
+  Slater-Pauling-curve maximum (70/30 Fe/Co).
+;
+
+data_dft_atom_type_magn_moment
+    _name '_dft_atom_type_magn_moment'
+    _type numb
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Magnetic moment given in \m_B.
+;
+
+data_dft_atom_type_magn_spin_moment
+    _name '_dft_atom_type_magn_spin_moment'
+    _type numb
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Magnetic moment given in \m_B.
+;
+
+data_dft_atom_type_magn_orbital_moment
+    _name '_dft_atom_type_magn_orbital_moment'
+    _type numb
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Magnetic moment given in \m_B.
+;
+
+data_dft_atom_type_occupation
+    # Maybe 'occupancy'? S.G.
+    _name '_dft_atom_type_occupation'
+    _type numb
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_type_radius
+    _name '_dft_atom_type_radius'
+    _type numb
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  Radius given in \%Angstr\/oms (\%A).
+;
+
+data_dft_atom_type_coulomb_U
+    _name '_dft_atom_type_coulomb_U'
+    _type numb
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Energy given in eV.
+;
+
+data_dft_atom_type_coulomb_J
+    _name '_dft_atom_type_coulomb_J'
+    _type numb
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Energy given in eV.
+;
+
+data_dft_atom_type_double_count
+    # Qu'est-ce que c'est? Why 'double count'?
+    _name '_dft_atom_type_double_count'
+    _type numb
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_type_DMFT_solver
+    _name '_dft_atom_type_DMFT_solver'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_relax_force_conv
+    _name '_dft_atom_relax_force_conv'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  In eV/\%A.
+;
+
+data_dft_atom_relax_energy_conv
+    _name '_dft_atom_relax_energy_conv'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  In eV.
+;
+
+data_dft_atom_basisset
+    _name '_dft_atom_basisset'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_basisset_type
+    _name '_dft_atom_basisset_type'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_basisset_energy_conv
+    _name '_dft_atom_basisset_energy_conv'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  In eV.
+;
+
+data_dft_alloy_method
+    _name '_dft_alloy_method'
+    _type char
+    loop_ _enumeration
+        VCA                    'describe the corresponding method here'
+        CPA                    'describe the corresponding method here'
+        SQS                    'describe the corresponding method here'
+        'real space recursion' 'describe the corresponding method here'
+        other                  'describe the corresponding method here'
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_alloy_supercell
+    _name '_dft_alloy_supercell'
+    _type char
+    _description
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  For such alloy methods that require supercells.
 ;
