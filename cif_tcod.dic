@@ -1,0 +1,180 @@
+#------------------------------------------------------------------------------
+#$Date$
+#$Revision$
+#$URL$
+#------------------------------------------------------------------------------
+# This file is available in the Theoretical Crystallography Open
+# Database (TCOD), http://www.crystallography.net/tcod/cif/dictionaries/.
+#
+# This file is designated by the authors and the contributors
+# into Public Domain.
+#------------------------------------------------------------------------------
+
+data_on_this_dictionary
+    _dictionary_name            cif_tcod.dic
+    _dictionary_version         0.001
+    _dictionary_update          2013-08-17
+    _dictionary_history        
+;
+2013-08-17 First version by Linas Vilciauskas (NYU) and Saulius Grazulis 
+
+2013-07-22 TCOD dictionary initiated by Saulius Grazulis 
+;
+
+#------------------------------------------------------------------------------
+;
+;     Computational evaluation of an existing crystal structure
+;
+#------------------------------------------------------------------------------
+
+data_tcod_model
+    _name
+    _type char
+    loop_ _enumeration
+          _enumeration_detail
+          DFT                  'describe the corresponding functional here' 
+          HF                   'describe the corresponding functional here'
+          MP2                  'describe the corresponding functional here'
+          MI                   'describe the corresponding functional here'
+          CC                   'describe the corresponding functional here'
+          QMC                  'describe the corresponding functional here'
+          DFTB                 'describe the corresponding functional here'
+          Semi-empirical       'describe the corresponding functional here'
+          FF                   'describe the corresponding functional here'
+          CG                   'describe the corresponding functional here'
+          other
+    _definition
+; This should define the theoretical model used to calculate the structure.
+
+  L.V. The list is by no means exhaustive and should be constantly updated. 
+
+  Main classes of models: DFT, ab initio (post-Hartree-Fock,CC,QMC), 
+  semi-empirical (DFTB, NDDO, MINDO etc.), force field (empirical),
+  coarse-grained (non-atomistic).
+  
+  Keywords: DFT (Density functional theory), HF (Hartree-Fock), MPn (Moller-
+  Plesset) perturbation theory, e.g. local MP2 by Kresse, Schutz, Scuseria etc.), 
+  MI (Method of increments by H. Stoll et al.), CC (Periodic coupled cluster 
+  e.g. by Grüneis et al.), QMC (Quantum Monte Carlo by Ceperley, Mitas, 
+  Recently FCI-QMC by Alavi et al.), DFTB (Density functional tight binding by
+  Seifert, Frauenheim etc.), Semi-empirical methods, Force field models (fixed
+  charged, polarizable, distributed multipoles etc.), Coarse-grained models
+  (e.g. Martini)   
+
+  L.V. Tried to compile a short list of methods used for periodic calculations 
+  L.V. in principal one should also define a class for hybrid models (QM/MM) 
+;
+
+data_tcod_model_software_package
+    _name '_tcod_model_software_package'
+    _type char
+    _definition
+; Software package used to compute and produce the DFT-computed structure file.
+  Only package or program name should be used, e.g. 'VASP', 'psi3', etc.
+;
+
+data_tcod_model_software_package_version
+    _name '_tcod_model_software_package_version'
+    _type char
+_definition
+; Software package version used to compute and produce the DFT-computed
+  structure file. Only version designator should be used, e.g. '3.4.0',
+  '2.1rc3'. It is desireable that the combination of the _dft_software_package
+  and _dft_software_package_version values would uniquely identify the code
+  that was used for computations.
+;
+
+#------------------------------------------------------------------------------
+; L.V. I don't thin that things like operating system, cpu type, runtime are 
+  relavant for TCOD, as discussed, in that case one should also report: compiler
+  version, algebra libraries etc.. 
+  
+  L.V. All the relevant DFT dictionary should follow from hereon
+;
+#------------------------------------------------------------------------------
+
+data_tcod_model_dft_XC_functional_type
+    _name '_dft_XC_functional_type'
+    _type char
+    loop_ _enumeration
+          _enumeration_detail
+          LDA                    'describe the corresponding functional here'
+          GGA                    'describe the corresponding functional here'
+          meta-GGA               'describe the corresponding functional here'
+          Hybrid                 'describe the corresponding functional here'
+          ACFD-RPA               'describe the corresponding functional here'
+          'orbital functionals'  'describe the corresponding functional here'
+          'exact exchange'       'describe the corresponding functional here'
+          vdW-DF                 'describe the corresponding functional here'
+          LDA/GGA+U/DMFT         'describe the corresponding functional here'
+          'orbital polarization' 'describe the corresponding functional here'
+          other                  'functional not one of the mentioned above'
+    _definition
+; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
+;
+
+; L.V. Should be merged with the entire DFT dictionary.... 
+  .
+  .
+  .
+  .
+  .
+;
+
+data_tcod_model_ff_type
+    _name '_model_ff_type'
+    _type char
+    loop_ _enumeration
+          _enumeration_detail
+          Fixed-charge           'describe the corresponding functional here'
+          Polarizable            'describe the corresponding functional here'
+          Distributed-multipole  'describe the corresponding functional here'
+          Hybrid                 'describe the corresponding functional here'
+          Reactive               'describe the corresponding functional here'
+          other                  'functional not one of the mentioned above'
+    _definition
+; Fixed charge (standard biomolecular and materials: amber, opls, gromos etc.)
+  Polarizable (AMOEBA, iAMOEBA etc.)
+  Distributed multipole based FFs (multipoles instead of fixed point charges
+  S. Price et al.)
+  Hybrid (Different types for interatomic and intraatomic interactions)  
+  Reactive (ReaxFF etc.)
+  L.V. The list is non-exhaustive
+;
+
+data_tcod_model_ff_name
+    _name '_model_ff_name'
+    _type char
+    _definition
+; Standard name for the FF used. If there is no standard name use 'custom'
+  Examples: charmm, opls, amber, gromos etc.
+;
+
+data_tcod_model_ff_version
+    _name '_model_ff_version'
+    _type char
+    _definition
+; Version of a force field. Usually year of the publication.  
+;     
+
+data_tcod_model_ff_citation_[]
+    loop_
+    _citation_id
+    _citation_coordinate_linkage
+    _citation_title
+    _citation_country
+    _citation_page_first
+    _citation_page_last
+    _citation_year
+    _citation_journal_abbrev
+    _citation_journal_volume
+    _citation_journal_issue
+    _citation_journal_id_ASTM
+    _citation_journal_id_ISSN
+    _citation_book_title
+    _citation_book_publisher
+    _citation_book_id_ISBN
+    _citation_special_details
+; L.V. Correct citation to the publication of the original FF is of extreme
+  importance. Don't know how to handle this correctly S.G.?
+;
