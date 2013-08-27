@@ -18,8 +18,8 @@ data_on_this_dictionary
     _dictionary_history
 ;
 2013-08-17 Adding two additional data names to describe custom names of
-           alloy methods and XC functional types of their enumerator values
-           are givem as 'other'. S.G.
+           alloy methods and XC functional types if their enumerator 
+           values are givem as 'other'. S.G.
 
 2013-08-17 Adding all datanames from Bj\"orkman Torbj\"orn's 2013-05-09
            11:23 e-mail. S.G.
