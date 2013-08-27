@@ -13,10 +13,13 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.001
+    _dictionary_version         0.002
     _dictionary_update          2013-08-17
     _dictionary_history
 ;
+2013-08-17 Adding two additional data names to describe custom names of
+           alloy methods and XC functional types of their enumerator values
+           are givem as 'other'. S.G.
 
 2013-08-17 Adding all datanames from Bj\"orkman Torbj\"orn's 2013-05-09
            11:23 e-mail. S.G.
@@ -118,8 +121,17 @@ data_dft_XC_functional_type
           vdW-DF                 'describe the corresponding functional here'
           LDA/GGA+U/DMFT         'describe the corresponding functional here'
           'orbital polarization' 'describe the corresponding functional here'
+          other                  'functional not one of the mentioned above'
     _description
 ; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_XC_functional_type_other_name
+    _name '_dft_XC_functional_type_other_name'
+    _type char
+    _description
+; Custom name of the functional if _dft_XC_functional_type data item value
+  is given as 'other'.
 ;
 
 data_dft_basisset
@@ -446,9 +458,17 @@ data_dft_alloy_method
         CPA                    'describe the corresponding method here'
         SQS                    'describe the corresponding method here'
         'real space recursion' 'describe the corresponding method here'
-        other                  'describe the corresponding method here'
+        other                  'alloy method not one of the mentioned above'
     _description
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_alloy_method_other_name
+    _name '_dft_alloy_method_other_name'
+    _type char
+    _description
+; Custom name of the alloy method if _dft_alloy_method data item value
+  is given as 'other'.
 ;
 
 data_dft_alloy_supercell
