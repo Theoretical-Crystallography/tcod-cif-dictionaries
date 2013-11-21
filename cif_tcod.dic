@@ -22,13 +22,13 @@ data_on_this_dictionary
 ;
 
 #------------------------------------------------------------------------------
-;
-;     Computational evaluation of an existing crystal structure
-;
+#
+#     Computational evaluation of an existing crystal structure
+#
 #------------------------------------------------------------------------------
 
 data_tcod_model
-    _name
+    _name '_tcod_model'
     _type char
     loop_ _enumeration
           _enumeration_detail
@@ -42,27 +42,29 @@ data_tcod_model
           Semi-empirical       'describe the corresponding functional here'
           FF                   'describe the corresponding functional here'
           CG                   'describe the corresponding functional here'
-          other
+          other                .
     _definition
 ; This should define the theoretical model used to calculate the structure.
 
-  L.V. The list is by no means exhaustive and should be constantly updated. 
+  L.V. The list is by no means exhaustive and should be constantly
+  updated.
 
   Main classes of models: DFT, ab initio (post-Hartree-Fock,CC,QMC), 
   semi-empirical (DFTB, NDDO, MINDO etc.), force field (empirical),
   coarse-grained (non-atomistic).
   
-  Keywords: DFT (Density functional theory), HF (Hartree-Fock), MPn (Moller-
-  Plesset) perturbation theory, e.g. local MP2 by Kresse, Schutz, Scuseria etc.), 
-  MI (Method of increments by H. Stoll et al.), CC (Periodic coupled cluster 
-  e.g. by Grüneis et al.), QMC (Quantum Monte Carlo by Ceperley, Mitas, 
-  Recently FCI-QMC by Alavi et al.), DFTB (Density functional tight binding by
-  Seifert, Frauenheim etc.), Semi-empirical methods, Force field models (fixed
-  charged, polarizable, distributed multipoles etc.), Coarse-grained models
-  (e.g. Martini)   
+  Keywords: DFT (Density functional theory), HF (Hartree-Fock), MPn
+  (Moller- Plesset) perturbation theory, e.g. local MP2 by Kresse,
+  Schutz, Scuseria etc.), MI (Method of increments by H. Stoll et
+  al.), CC (Periodic coupled cluster e.g. by Gr\"uneis et al.), QMC
+  (Quantum Monte Carlo by Ceperley, Mitas, Recently FCI-QMC by Alavi
+  et al.), DFTB (Density functional tight binding by Seifert,
+  Frauenheim etc.), Semi-empirical methods, Force field models (fixed
+  charged, polarizable, distributed multipoles etc.), Coarse-grained
+  models (e.g. Martini)
 
-  L.V. Tried to compile a short list of methods used for periodic calculations 
-  L.V. in principal one should also define a class for hybrid models (QM/MM) 
+  L.V. Tried to compile a short list of methods used for periodic calculations
+  L.V. in principal one should also define a class for hybrid models (QM/MM)
 ;
 
 data_tcod_model_software_package
@@ -85,12 +87,12 @@ _definition
 ;
 
 #------------------------------------------------------------------------------
-; L.V. I don't thin that things like operating system, cpu type, runtime are 
-  relavant for TCOD, as discussed, in that case one should also report: compiler
-  version, algebra libraries etc.. 
-  
-  L.V. All the relevant DFT dictionary should follow from hereon
-;
+# L.V. I don't thin that things like operating system, cpu type, runtime are 
+# relavant for TCOD, as discussed, in that case one should also report: compiler
+# version, algebra libraries etc.. 
+# 
+# L.V. All the relevant DFT dictionary should follow from hereon
+#
 #------------------------------------------------------------------------------
 
 data_tcod_model_dft_XC_functional_type
@@ -113,13 +115,13 @@ data_tcod_model_dft_XC_functional_type
 ; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
 ;
 
-; L.V. Should be merged with the entire DFT dictionary.... 
-  .
-  .
-  .
-  .
-  .
-;
+# L.V. Should be merged with the entire DFT dictionary.... 
+# .
+# .
+# .
+# .
+# .
+#
 
 data_tcod_model_ff_type
     _name '_model_ff_type'
@@ -157,24 +159,33 @@ data_tcod_model_ff_version
 ; Version of a force field. Usually year of the publication.  
 ;     
 
-data_tcod_model_ff_citation_[]
-    loop_
-    _citation_id
-    _citation_coordinate_linkage
-    _citation_title
-    _citation_country
-    _citation_page_first
-    _citation_page_last
-    _citation_year
-    _citation_journal_abbrev
-    _citation_journal_volume
-    _citation_journal_issue
-    _citation_journal_id_ASTM
-    _citation_journal_id_ISSN
-    _citation_book_title
-    _citation_book_publisher
-    _citation_book_id_ISBN
-    _citation_special_details
-; L.V. Correct citation to the publication of the original FF is of extreme
-  importance. Don't know how to handle this correctly S.G.?
-;
+## data_tcod_model_ff_citation_[]
+##     loop_
+##     _citation_id
+##     _citation_coordinate_linkage
+##     _citation_title
+##     _citation_country
+##     _citation_page_first
+##     _citation_page_last
+##     _citation_year
+##     _citation_journal_abbrev
+##     _citation_journal_volume
+##     _citation_journal_issue
+##     _citation_journal_id_ASTM
+##     _citation_journal_id_ISSN
+##     _citation_book_title
+##     _citation_book_publisher
+##     _citation_book_id_ISBN
+##     _citation_special_details
+## ; L.V. Correct citation to the publication of the original FF is of extreme
+##   importance. Don't know how to handle this correctly S.G.?
+## ;
+##
+
+## S.G.: The force-field citation can be handled in two ways: either
+## by creating tags specific for the FF citation, or by using generic
+## _citation_... tags and adding one more tag, _tcod_citation_subject,
+## that will specifiy an enumerated value showing what information is
+## available in this citation; value 'FF' would indicate that the
+## citated ource describes the force-field; other values might be
+## 'CODE', 'SOFTWARE', etc.
