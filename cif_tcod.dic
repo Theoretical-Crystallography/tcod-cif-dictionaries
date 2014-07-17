@@ -44,13 +44,13 @@ data_on_this_dictionary
 ;
 
 #------------------------------------------------------------------------------
-;
-;     Computational evaluation of an existing crystal structure
-;
+#
+#     Computational evaluation of an existing crystal structure
+#
 #------------------------------------------------------------------------------
 
 data_tcod_model
-    _name
+    _name '_tcod_model'
     _type char
     loop_ _enumeration
           _enumeration_detail
@@ -66,34 +66,43 @@ data_tcod_model
           Semi-empirical       'describe the corresponding model here'
           FF                   'describe the corresponding model here'
           CG                   'describe the corresponding model here'
-          other
+          other                'description should be provided in the data CIF'
     _definition
-; This should define the theoretical model used to calculate the structure.
+;
 
-  L.V. The list is by no means exhaustive and should be constantly updated. 
+  This should define the theoretical model used to calculate the
+  structure.
 
-  Main classes of models: DFT, ab initio (post-Hartree-Fock: Moeller-Plesset (MPx), 
-  Configuration Interaction (CI), coupled cluster (CC), Quantum Monte Carlo (QMC), 
-  Symmetry-adapted perturbation theory (SAPT), 
-  semi-empirical (OF-DFT, DFTB, NDDO, MINDO etc.), force field (empirical),
-  coarse-grained (non-atomistic).
+  L.V. The list is by no means exhaustive and should be constantly
+  updated.
+
+  Main classes of models: DFT, ab initio (post-Hartree-Fock:
+  Moeller-Plesset (MPx), Configuration Interaction (CI), coupled
+  cluster (CC), Quantum Monte Carlo (QMC), Symmetry-adapted
+  perturbation theory (SAPT), semi-empirical (OF-DFT, DFTB, NDDO,
+  MINDO etc.), force field (empirical), coarse-grained
+  (non-atomistic).
   
-  Keywords: DFT (Density model theory), HF (Hartree-Fock), MPn (Moller-
-  Plesset) perturbation theory, e.g. local MP2 by Kresse, Schutz, Scuseria etc.), 
-  MI (Method of increments by H. Stoll et al.), CC (Periodic coupled cluster 
-  e.g. by Grüneis et al.), QMC (Quantum Monte Carlo by Ceperley, Mitas, 
-  Recently FCI-QMC by Alavi et al.), Orbital-free DFT (E. Carter et al.), DFTB (Density 
-  model tight binding by Seifert, Frauenheim etc.), Semi-empirical methods, 
-  Force field models (fixed charged, polarizable, distributed multipoles etc.), 
-  Coarse-grained models (e.g. Martini)   
+  Keywords: DFT (Density model theory), HF (Hartree-Fock), MPn
+  (Moller-Plesset) perturbation theory, e.g. local MP2 by Kresse,
+  Schutz, Scuseria etc.), MI (Method of increments by H. Stoll et
+  al.), CC (Periodic coupled cluster e.g. by Gr\"uneis et al.), QMC
+  (Quantum Monte Carlo by Ceperley, Mitas, Recently FCI-QMC by Alavi
+  et al.), Orbital-free DFT (E. Carter et al.), DFTB (Density model
+  tight binding by Seifert, Frauenheim etc.), Semi-empirical methods,
+  Force field models (fixed charged, polarizable, distributed
+  multipoles etc.), Coarse-grained models (e.g. Martini)
 
-  L.V. Tried to compile a short list of methods used for periodic calculations 
-  L.V. in principal one should also define a class for hybrid models (QM/MM) 
+  L.V. Tried to compile a short list of methods used for periodic
+  calculations
+
+  L.V. in principal one should also define a class for hybrid models
+  (QM/MM)
  
-  One can add a human-readable description of the mehtod here as well as the reference
+  One can add a human-readable description of the mehtod here as well
+  as the reference.
 
   L.V. Is it possible to add full cif synthax to define the reference?
-
 ;
 
 data_tcod_software_package
@@ -116,12 +125,12 @@ data_tcod_software_package_version
 ;
 
 #------------------------------------------------------------------------------
-; L.V. I don't thin that things like operating system, cpu type, runtime are 
-  relavant for TCOD, as discussed, in that case one should also report: compiler
-  version, algebra libraries etc.. 
-  
-  L.V. All the relevant DFT dictionary should follow from hereon
-;
+# L.V. I don't think that things like operating system, cpu type, runtime are 
+# relavant for TCOD, as discussed, in that case one should also report: compiler
+# version, algebra libraries etc.
+# 
+# L.V. All the relevant DFT dictionary should follow from hereon
+#
 #------------------------------------------------------------------------------
 
 data_tcod_dft_XC_functional_type
@@ -295,7 +304,7 @@ data_tcod_dft_pseudopotential_type
           NCPP      'describe the corresponding pseudopotential here'
           USPP      'describe the corresponding pseudopotential here'
           PAW       'describe the corresponding pseudopotential here'
-          other
+          other     'description should be given in the data CIF'
     _definition
 ; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
   L.V. Added by L.V.
@@ -629,24 +638,42 @@ data_tcod_ff_version
 ; Version of a force field. Usually year of the publication.  
 ;     
 
-data_tcod_ff_citation_[]
+data_tcod_citation_linkage
+    _name      '_tcod_citation_linkage'
+    _category  citation
+    loop_ _enumeration
+          _enumeration_detail
+    force-field      'citation of the paper describing the force field'
+    software-code    'citation of the paper describing the program code'
+
+_definition
+;
     loop_
     _citation_id
+    _tcod_citation_linkage
     _citation_coordinate_linkage
-    _citation_title
-    _citation_country
-    _citation_page_first
-    _citation_page_last
-    _citation_year
     _citation_journal_abbrev
     _citation_journal_volume
     _citation_journal_issue
-    _citation_journal_id_ASTM
-    _citation_journal_id_ISSN
-    _citation_book_title
-    _citation_book_publisher
-    _citation_book_id_ISBN
-    _citation_special_details
-; L.V. Correct citation to the publication of the original FF is of extreme
-  importance. Don't know how to handle this correctly S.G.?
+    _citation_year
+    _citation_page_first
+    _citation_page_last
+    1 force-field    'J. Some Name'    10 12 2014 1 12
+    1 software-code  'J. Another Name' 10 12 2014 1 12
+
+  L.V. Correct citation to the publication of the original FF is of extreme
+  importance. 
+
+  S.G. I suggest using 'citation' category data items from the core
+  CIF dictionary, and adding just a few TCOD relevant data items such
+  as _tcod_citation_linkage that would show which part of the
+  cmputation (force field, software code, etc.) does the paper
+  describe. Other items should point, whenever possible, to
+  machine-readable URLs with the force field or program code
+  definitions (for software, this might be liks to a source code for
+  open source packages, liks to a compiled binary packages for
+  specific platform, the ones used in the computations, and yet
+  another link would point to a web site describing the software (this
+  is relevan for both open-source and proprietary programs).
+
 ;
