@@ -10,6 +10,26 @@
 # into Public Domain.
 #------------------------------------------------------------------------------
 
+# From: Wakelin et al. Molecular Simulation, 2005, 31, 315-322,
+# http://dx.doi.org/10.1080/08927020500065850:
+#
+# For molecular or condensed matter simulations this would need to cover
+# at least the following information
+# 
+#   - Atomic coordinates;
+# 
+#   - Lattice vectors;
+# 
+#   - Forcefields, interatomic potentials;
+# 
+#   - Basis sets;
+# 
+#   - Methodology (type of calculation, algorithms, etc.);
+# 
+#   - Control parameters (precision, number of iterations, etc.);
+# 
+#   - Job parameters (time, memory, number of processors, etc.)
+
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
     _dictionary_version         0.002
