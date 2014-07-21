@@ -106,7 +106,7 @@ data_tcod_model
 ;
 
 data_tcod_software_package
-    _name '_tcod_model_software_package'
+    _name '_tcod_software_package'
     _type char
     _definition
 ; Software package used to compute and produce the DFT-computed structure file.
@@ -114,7 +114,7 @@ data_tcod_software_package
 ;
 
 data_tcod_software_package_version
-    _name '_tcod_model_software_package_version'
+    _name '_tcod_software_package_version'
     _type char
     _definition
 ; Software package version used to compute and produce the computed
