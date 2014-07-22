@@ -32,15 +32,52 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.002
+    _dictionary_version         0.003
     _dictionary_update          2014-03-07
     _dictionary_history        
 ;
-2013-08-17 First version by Linas Vilciauskas (NYU) and Saulius Grazulis 
-
 2013-07-22 TCOD dictionary initiated by Saulius Grazulis 
 
+2013-08-17 First version by Linas Vilciauskas (NYU) and Saulius Grazulis 
+
 2014-03-07 Updated version 
+
+2014-07-22 Adding a description of the '_tcode_structure_type' data item. S.G.
+;
+
+data_tcode_structure_type
+    _name '_tcode_structure_type'
+    _type char
+    loop_ _enumeration
+          _enumeration_detail
+
+          ground-state
+              'refined crystal structure at ground state'
+
+          excited-state 
+              'refined crystal structure at some excited state, e.g. LUMO'
+
+          metastable
+              'metastable structure that is short lived'
+
+          soft-phonon
+              'dynamically disorderd, unstable structures'
+
+          transition-state
+              'molecular structure in a sort-lived reaction transition-state'
+
+    _definition
+;
+    This data item specifies what kind of computationally optimised
+    structure does the file record. Structures that record stable
+    crystal polymorphs with long time-lifes (i.e. time lifes much
+    longer than duration of a typical diffraction experiment) are
+    'ground-state'; however, short-lived structures that can be
+    refined with the help of DFT or other methods can be included into
+    TCOD, but must be tagged accordingly.
+
+    Possibly, we can classify structures by their half-lifes at
+    certain temperatures.
 ;
 
 #------------------------------------------------------------------------------
