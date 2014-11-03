@@ -17,18 +17,25 @@
 # at least the following information
 # 
 #   - Atomic coordinates;
-# 
+#     _atom_site_fract_[xyz], _atom_site_Cartn_[xyz] (core dic) 
+#
 #   - Lattice vectors;
+#     _cell_length_[abc], _cell_angle_[alpha,beta,gamma] (core dic)
 # 
 #   - Forcefields, interatomic potentials;
+#     This dictionary
 # 
 #   - Basis sets;
+#     DFT dictionary
 # 
 #   - Methodology (type of calculation, algorithms, etc.);
+#     This dictionary
 # 
 #   - Control parameters (precision, number of iterations, etc.);
+#     This dictionary
 # 
 #   - Job parameters (time, memory, number of processors, etc.)
+#     This dictionary
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
@@ -249,4 +256,121 @@ _definition
   another link would point to a web site describing the software (this
   is relevan for both open-source and proprietary programs).
 
+;
+
+# Optimisation input and output files:
+
+data_tcod_computation_input_file
+_name '_tcod_computation_input_file'
+_type char
+_definition
+;
+;
+
+data_tcod_computation_log_file
+_name '_tcod_computation_log_file'
+_type char
+_definition
+;
+;
+
+data_tcod_computation_stdout
+_name '_tcod_computation_stdout'
+_type char
+_definition
+;
+;
+
+data_tcod_computation_stderr
+_name '_tcod_computation_stderr'
+_type char
+_definition
+;
+;
+
+# Alternative input and output file definitions:
+
+data_tcod_file_name
+_name '_tcod_file_name'
+_type char
+_definition
+;
+;
+
+data_tcod_file_url
+_name '_tcod_file_url'
+_type char
+_definition
+;
+;
+
+data_tcod_file_format
+_name '_tcod_file_format'
+_type char
+_definition
+;
+;
+
+data_tcod_file_interpreter
+_name '_tcod_file_interpreter'
+_type char
+_definition
+;
+;
+
+data_tcod_file_role
+_name '_tcod_file_role'
+_type char
+loop_
+_enumeration
+_enumeration_detail
+    input     'input file'
+    output    ''
+    log       ''
+    stdin     ''
+    stdout    ''
+    stderr    ''
+_definition
+;
+;
+
+data_tcod_file_contents_type
+_name '_tcod_file_contents_type'
+_type char
+loop_
+_enumeration
+_enumeration_detail
+    script          'executable input script'
+    control         'computation control file'
+    parameters      'computation parameter file'
+    coordinates     ''
+    structure       ''
+    edensity        ''
+    wavefunction    ''
+    pseudopotential ''
+    basissset       ''
+    forcefield      ''
+_definition
+;
+;
+
+data_tcod_file_contents
+_name '_tcod_file_contents'
+_type char
+_definition
+;
+;
+
+data_tcod_computation_command
+_name '_tcod_computation_command'
+_type char
+_definition
+;
+;
+
+data_tcod_computation_step
+_name '_tcod_computation_step'
+_type numb
+_definition
+;
 ;
