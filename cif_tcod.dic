@@ -228,7 +228,7 @@ _definition
     _citation_page_first
     _citation_page_last
     1 force-field    'J. Some Name'    10 12 2014 1 12
-    1 software-code  'J. Another Name' 10 12 2014 1 12
+    2 software-code  'J. Another Name' 10 12 2014 1 12
 
   L.V. Correct citation to the publication of the original FF is of extreme
   importance. 
