@@ -139,7 +139,7 @@ data_tcod_model
   One can add a human-readable description of the mehtod here as well
   as the reference.
 
-  L.V. Is it possible to add full cif synthax to define the reference?
+  L.V. Is it possible to add full cif syntax to define the reference?
 ;
 
 data_tcod_software_package
@@ -214,6 +214,10 @@ data_tcod_citation_linkage
           _enumeration_detail
     force-field      'citation of the paper describing the force field'
     software-code    'citation of the paper describing the program code'
+    model            'citation describing the overal method used'
+    pseudopotential  'citation describing pseudopotential'
+    XC-functional    'citation describing exchange correlation f-nal'
+    basis-set        'citation describing the basis set'
 
 _definition
 ;
@@ -236,7 +240,7 @@ _definition
   S.G. I suggest using 'citation' category data items from the core
   CIF dictionary, and adding just a few TCOD relevant data items such
   as _tcod_citation_linkage that would show which part of the
-  cmputation (force field, software code, etc.) does the paper
+  computation (force field, software code, etc.) does the paper
   describe. Other items should point, whenever possible, to
   machine-readable URLs with the force field or program code
   definitions (for software, this might be liks to a source code for
