@@ -217,6 +217,23 @@ data_tcod_software_runtime_OS_version
   identify the OS that was used for computations.
 ;
 
+data_tcod_software_runtime_OS_binary_uri
+    _name '_tcod_software_runtime_OS_binary_uri'
+    _type char
+    _definition
+; An URI (Web reference) where the binary image (e.g. an ISO file, or
+a virtual machine image) of the operating system on which computations
+were peformed can be fetched.
+;
+
+data_tcod_software_runtime_OS_source_uri
+    _name '_tcod_software_runtime_OS_source_uri'
+    _type char
+    _definition
+; An URI (Web reference) where the source code of the operating system
+on which computations were peformed can be fetched.
+;
+
 data_tcod_software_runtime_CPU
     _name '_tcod_software_runtime_CPU'
     _type char
