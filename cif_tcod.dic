@@ -214,7 +214,7 @@ data_tcod_software_compiler
     _name '_tcod_software_compiler'
     _type char
     _definition
-; The compiler which compiled the code use for the described
+; The compiler which compiled the code used for the described
 calcualtion. Only the compiler name should be given, e.g. 'gcc',
 'icc', 'gfortran'.
 
@@ -226,6 +226,25 @@ data_tcod_software_compiler_version
     _type char
     _definition
 ; A version string (number) of the compiler used to compile the code for this
+computation.
+;
+
+data_tcod_software_library
+    _name '_tcod_software_library'
+    _type char
+    _definition
+; The subroutine library (e.g. linear algebra) that was linked with
+the code used for the described calculation. Only the compiler name
+should be given, e.g. 'gcc', 'icc', 'gfortran'.
+
+If more than one library was used, these items must be looped.
+;
+
+data_tcod_software_library_version
+    _name '_tcod_software_library_version'
+    _type char
+    _definition
+; A version string (number) of the library linked with the code for this
 computation.
 ;
 
