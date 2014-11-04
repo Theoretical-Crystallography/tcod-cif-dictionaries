@@ -149,6 +149,10 @@ data_tcod_model
   L.V. Is it possible to add full cif syntax to define the reference?
 ;
 
+###############################################################################
+# Software and computational facility description
+###############################################################################
+
 data_tcod_software_package
     _name '_tcod_software_package'
     _type char
@@ -166,6 +170,44 @@ data_tcod_software_package_version
   '2.1rc3'. It is desireable that the combination of the _tcod_software_package
   and _tcod_software_package_version values would uniquely identify the code
   that was used for computations.
+;
+
+data_tcod_software_runtime_OS
+    _name '_tcod_software_runtime_OS'
+    _type char
+    _definition
+; Operating system used to compute and produce the DFT-computed structure file.
+  Only OS name should be used, e.g. 'Irix', 'Windows XP', 'Ubuntu GNU/Linux',
+  etc.
+;
+
+data_tcod_software_runtime_OS_version
+    _name '_tcod_software_OS_version'
+    _type char
+    _definition
+; Operating system version used to compute and produce the
+  DFT-computed structure file.  Only version designator should be
+  used, e.g. '3.4.0', '2.1rc3'. It is desireable that the combination
+  of the _dft_software_operating_system and
+  _dft_software_package_operating_system_version values would uniquely
+  identify the OS that was used for computations.
+;
+
+data_tcod_software_runtime_CPU
+    _name '_tcod_software_runtime_CPU'
+    _type char
+    _definition
+; Name (type) of the central processing unit (CPU), together with the 
+  floating-point processing unit, that was used to compute the results.
+;
+
+data_tcod_software_runtime_CPU_version
+    _name '_tcod_software_runtime_CPU_version'
+    _type char
+    _definition
+; Version or release number of the central processing unit (CPU),
+  together with the floating-point processing unit, that was used to 
+  compute the results.
 ;
 
 data_tcod_software_compiler
