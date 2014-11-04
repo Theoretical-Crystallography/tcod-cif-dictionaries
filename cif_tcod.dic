@@ -14,7 +14,7 @@
 # http://dx.doi.org/10.1080/08927020500065850:
 #
 # For molecular or condensed matter simulations this would need to cover
-# at least the following information
+# at least the following information:
 # 
 #   - Atomic coordinates;
 #     _atom_site_fract_[xyz], _atom_site_Cartn_[xyz] (core dic) 
@@ -35,7 +35,7 @@
 #     This dictionary
 # 
 #   - Job parameters (time, memory, number of processors, etc.)
-#     This dictionary
+#     This dictionary, still incomplete.
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
