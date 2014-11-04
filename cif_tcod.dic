@@ -181,6 +181,17 @@ data_tcod_software_package_version
 # Force field descriptions:
 ###############################################################################
 
+data_tcod_ff_id
+    _name '_tcod_ff_id'
+    _type char
+    _list                        yes
+    _list_mandatory              yes
+    _definition
+; A unique identifier (primary key) of a force field in a loop, in
+case the COD datablock containing ir refers to more than one force
+field.
+;     
+
 data_tcod_ff_type
     _name '_tcod_ff_type'
     _type char
