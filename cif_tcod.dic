@@ -457,7 +457,9 @@ _definition
 
 ;
 
+###############################################################################
 # Optimisation input and output files:
+###############################################################################
 
 data_tcod_computation_input_file
 _name '_tcod_computation_input_file'
@@ -487,7 +489,9 @@ _definition
 ;
 ;
 
+###############################################################################
 # Computation metadata -- run times:
+###############################################################################
 
 data_tcod_computation_CPU_time
 _name '_tcod_computation_CPU_time'
@@ -508,7 +512,9 @@ _definition
 of this computation.
 ;
 
+###############################################################################
 # Alternative input and output file definitions:
+###############################################################################
 
 data_tcod_file_name
 _name '_tcod_file_name'
@@ -588,6 +594,10 @@ _definition
 ; A stable URI (Web reference) where the file can be fetched.
 ;
 
+###############################################################################
+# Commands for reproducing the computation:
+###############################################################################
+
 data_tcod_computation_command
 _name '_tcod_computation_command'
 _type char
@@ -600,4 +610,115 @@ _name '_tcod_computation_step'
 _type numb
 _definition
 ;
+;
+
+###############################################################################
+# Convergence parameters:
+###############################################################################
+
+data_tcod_total_energy
+_name '_tcod_total_energy'
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+; Ideally, should correspond to
+http://www.xml-cml.org/dictionary/compchem/ "total energy" (ID:
+totalEnergy) whenever applicable.
+
+The total energy for a system of electrons and nuclei. The exact
+method of computing this parameter depends on the method. The formula
+used to compute it should be given in the _tcod_total_energy_fomula
+data item; in CIF2 this will be a DRel method (i.e. a formal
+computable expression in a strictly specified computer language).
+
+CAUTION: total energies are comparable only between computations made
+by the same method, under the same approximations and with the same or
+similar input parameters. Therefore, the value of this data item
+*SHOULD NOT* be used to rank different TCOD entries without proper
+scaling, analysis and justification.
+;
+
+data_tcod_total_energy_formula
+_name '_tcod_total_energy_formula'
+_type char
+_definition
+; Formula use to compute the _tcod_total_energy value; the exact
+syntax details are still to be specified.
+;
+
+data_tcod_total_energy_details
+_name '_tcod_total_energy_details'
+_type char
+_definition
+; A human-readable description of the _tcod_total_energy computation
+-- its physical meaning and usability.
+;
+
+###############################################################################
+# Energy vs. computation cycle table
+###############################################################################
+
+data_tcod_computation_cycle_micro_id
+_name '_tcod_computation_cycle_micro_id'
+_type char
+_category 'computation_cycle'
+_definition
+; An identifier (number) of a micro-cicle of optimisation. Several
+micro-cycles may belong to a macro-cycle. Operating under
+Born-Oppenheimer approximation, only electron wave function
+(coefficients, electron density) are changed in one macro-cycle, and
+all other parameters (nuclei positions, unit cell parameters) are
+assumed constant.
+;
+
+data_tcod_computation_cycle_macro_id
+_name '_tcod_computation_cycle_macro_id'
+_type char
+_category 'computation_cycle'
+_definition
+; An identifier (number) of a macro-cicle of optimisation. A
+macro-cycle may contain one or several micro-cycles. Operating under
+Born-Oppenheimer approximation, only electron wave function
+(coefficients, electron density) are changed in one macro-cycle, and
+all other parameters (nuclei positions, unit cell parameters) are
+assumed constant. The nuclei positions or cell parameters, if
+optimised, are changed between subsequent macro-cycles.
+
+A computation that only optimises wave-function at a given nuclei
+positions MAY report only micro-cycles (assyming one implicit
+macro-cycle); likewise, a molecular mechanics simulation that changes
+nuclei positions at each step will report only macro-cycles, each
+consisting of one (implicit) micro-cycle.
+;
+
+data_tcod_computation_cycle_total_energy
+_name '_tcod_computation_cycle_total_energy'
+_type numb
+_units eV
+_category 'computation_cycle'
+_definition
+; Total energy of nuclei and electrons in the given refinement
+micro-cycle.
+;
+
+data_tcod_computation_cycle_total_energy_change
+_name '_tcod_computation_cycle_total_energy_change'
+_type numb
+_units eV
+_category 'computation_cycle'
+_definition
+; A change in total energy of nuclei and electrons in the given
+refinement micro-cycle.
+;
+
+data_tcod_computation_cycle_total_energy_gradient
+_name '_tcod_computation_cycle_total_energy_gradient'
+_type numb
+_units eV/A
+_units_detail 'electron-Volts per Angstroem'
+_category 'computation_cycle'
+_definition
+; A total energy gradient magnitude (a total energy derivated by
+nucley positions).
 ;
