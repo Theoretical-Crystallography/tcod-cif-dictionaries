@@ -188,6 +188,20 @@ data_tcod_software_package_version
   that was used for computations.
 ;
 
+data_tcod_software_package_compilation_timestamp
+    _name '_tcod_software_package_compilation_date'
+    _type char
+    _example     2014-11-04T13:49:49.290475Z
+    _definition
+
+; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
+  the time when the executable was compiled.
+
+  Should correspond to the
+  http://www.xml-cml.org/dictionary/compchem/#compileDate data
+  element, but MUST be expressed in the ISO standard format.
+;
+
 data_tcod_software_package_binary_uri
     _name '_tcod_software_package_binary_uri'
     _type char
@@ -231,6 +245,16 @@ data_tcod_software_runtime_OS_version
   of the _dft_software_operating_system and
   _dft_software_package_operating_system_version values would uniquely
   identify the OS that was used for computations.
+;
+
+data_tcod_software_OS_compilation_timestamp
+    _name '_tcod_software_OS_compilation_date'
+    _type char
+    _example     2014-11-04T13:49:49.290475Z
+    _definition
+
+; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
+  the time when the operating system image was compiled.
 ;
 
 data_tcod_software_runtime_OS_binary_uri
@@ -306,6 +330,16 @@ data_tcod_software_library_version
     _definition
 ; A version string (number) of the library linked with the code for this
 computation.
+;
+
+data_tcod_software_library_compilation_timestamp
+    _name '_tcod_software_library_compilation_date'
+    _type char
+    _example     2014-11-04T13:49:49.290475Z
+    _definition
+
+; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
+  the time when the subroutine library file was compiled.
 ;
 
 data_tcod_software_library_path
