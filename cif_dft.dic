@@ -98,7 +98,7 @@ data_dft_basisset_[]
     _type char
     _category category_overview
     _definition
-; Data items to describe the basis set used in the described computation.
+; Data items to describe the basis set used in the computation.
 ;
 
 data_dft_basisset_type
