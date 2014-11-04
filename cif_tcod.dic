@@ -52,25 +52,41 @@ data_on_this_dictionary
 2014-07-22 Adding a description of the '_tcode_structure_type' data item. S.G.
 ;
 
+###############################################################################
+# Overal method description:
+###############################################################################
+
 data_tcode_structure_type
     _name '_tcode_structure_type'
     _type char
     loop_ _enumeration
           _enumeration_detail
 
-          ground-state
+          crystal-ground-state
               'refined crystal structure at ground state'
 
-          excited-state 
+          crystal-excited-state 
               'refined crystal structure at some excited state, e.g. LUMO'
 
-          metastable
+          crystal-metastable
               'metastable structure that is short lived'
 
-          soft-phonon
+          crystal-soft-phonon
               'dynamically disorderd, unstable structures'
 
-          transition-state
+          crystal-transition-state
+              'molecular structure in a sort-lived reaction transition-state'
+
+          vacuum-ground-state
+              'refined crystal structure at ground state'
+
+          vacuum-excited-state 
+              'refined crystal structure at some excited state, e.g. LUMO'
+
+          vacuum-metastable
+              'metastable structure that is short lived'
+
+          vacuum-transition-state
               'molecular structure in a sort-lived reaction transition-state'
 
     _definition
