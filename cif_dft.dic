@@ -124,6 +124,52 @@ data_dft_basisset_citation_id
 _citation_... category loop
 ;     
 
+data_dft_basisset_database_name
+    _name '_dft_basisset_database_name'
+    _type char
+    _definition
+; A name of a database where the basis set comes from, e.g. "EMSL
+  Basis Set Exchange"
+;
+
+data_dft_basisset_database_abbrev
+    _name '_dft_basisset_database_abbrev'
+    _type char
+    _definition
+; A name of a database where the basis set comes from, e.g. "BSE"
+;
+
+data_dft_basisset_database_code
+    _name '_dft_basisset_database_code'
+    _type char
+    _definition
+; A unique stable code (identifier, key) assigned to the basis set by
+a database.
+;
+
+data_dft_basisset_database_URI
+    _name '_dft_basisset_database_URI'
+    _type char
+    _definition
+; An stable URI of the Basis set database landing page.
+;
+
+data_dft_basisset_URI
+    _name '_dft_basisset_URI'
+    _type char
+    _definition
+; An stable URI at which specific basis set can be retrieved.
+;
+
+data_dft_basisset_database_citation_id
+    _name '_dft_basisset_database_citation_id'
+    _type char
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the basis set database in the
+_citation_... category loop.
+;     
+
 ###############################################################################
 # Atom Basis set.
 ###############################################################################
