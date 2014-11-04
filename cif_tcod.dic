@@ -851,6 +851,71 @@ computation -- its physical meaning and usability.
 ;
 
 ###############################################################################
+# Residual forces
+###############################################################################
+
+data_tcod_atom_site_residual_force
+loop_ _name
+'_tcod_atom_site_resid_force_Cartn_x'
+'_tcod_atom_site_resid_force_Cartn_y'
+'_tcod_atom_site_resid_force_Cartn_z'
+'_tcod_atom_site_resid_force_fract_x'
+'_tcod_atom_site_resid_force_fract_y'
+'_tcod_atom_site_resid_force_fract_z'
+'_tcod_atom_site_resid_force_dir_cos_x'
+'_tcod_atom_site_resid_force_dir_cos_y'
+'_tcod_atom_site_resid_force_dir_cos_z'
+_type numb
+_units eV/A
+_units_detail 'electronvolts per Angstroem'
+_list                      yes
+_list_reference            '_atom_site_label'
+_definition
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure thse
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items -- ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives \d E/\d x,
+\d E/\d y and \d E/\d z, where E is the total energy of the system and
+x, y, and z are coodinates of the atom for which resudual force is
+computed (the \d is teh partial derivative sign).
+
+!!! Q: Is this a correct definition of the resudual forces? S.G.
+
+;
+
+data_tcod_atom_site_residual_force_magnitude
+_name '_tcod_atom_site_resid_force_magnitude'
+_type numb
+_units eV/A
+_units_detail 'electronvolts per Angstroem'
+_enumeration_range 1:
+_list                      yes
+_list_reference            '_atom_site_label'
+_definition
+; The magnitute of the residual force (see
+  data_tcod_atom_site_residual_force description for details).
+;
+
+###############################################################################
 # Energy vs. computation cycle table
 ###############################################################################
 
