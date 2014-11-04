@@ -544,6 +544,13 @@ _definition
 ;
 ;
 
+data_tcod_file_URI
+_name '_tcod_file_URI'
+_type char
+_definition
+; A stable URI (Web reference) where the file can be fetched.
+;
+
 data_tcod_computation_command
 _name '_tcod_computation_command'
 _type char
