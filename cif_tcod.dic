@@ -369,10 +369,10 @@ this computation can be fetched.
 # version, algebra libraries etc.
 # 
 # S.G. I think it would be good to have data items to describe such
-# metadata; on one hand, a user might be interested in teh computation
+# metadata; on one hand, a user might be interested in the computation
 # facilities used for the calculations, if only to plan his/her own
 # setup; on the other hand, one might need such information to hunt
-# down CPU or compuler bugs (recall the infamous Pentium FDIV
+# down CPU or computer bugs (recall the infamous Pentium FDIV
 # bug...). The bugs might, in theory, influence computation results
 # and conclusions. The information is easy to gather at the point of
 # computation, so we need to provide means to record it. The relevan
