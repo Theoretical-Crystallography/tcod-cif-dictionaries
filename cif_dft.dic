@@ -93,18 +93,55 @@ _citation_... category loop
 # Basis set.
 ###############################################################################
 
-data_dft_basisset
-    _name '_dft_basisset'
+data_dft_basisset_[]
+    _name '_dft_basisset_[]'
     _type char
+    _category category_overview
     _definition
-; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+; Data items to describe the basis set used in the described computation.
 ;
 
 data_dft_basisset_type
     _name '_dft_basisset_type'
     _type char
+    _category basisset
+    loop_
+    _enumeration
+    _enumeration_detail
+            plane-wave 'DFT; covered by the items below? S.G.'
+
+            orbital        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            dftorb         'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            dftxfit        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            dftcfit        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            periodic       'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            ecporb         'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            spinorb        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            polarization   'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            diffuse        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            tight          'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            rydberg        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
     _definition
-; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+; Type of the basis set used in the computation.
+
+  Should be the same data item as in
+  http://www.xml-cml.org/dictionary/compchem/#basisSet. This
+  corresponds to the "basisSetType" in the EMSL schema. Valid values
+  are from the http://www.xml-cml.org/dictionary/compchem/ are:
+        
+            orbital
+            dftorb
+            dftxfit
+            dftcfit
+            periodic
+            ecporb
+            spinorb
+            polarization
+            diffuse
+            tight
+            rydberg
+
+   S.G.: Q: how plane wave basis set is encoded?
 ;
 
 data_dft_basisset_energy_conv 
