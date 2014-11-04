@@ -98,6 +98,10 @@ data_dft_basisset_energy_conv
   Energy measured in eV (electron-volts).
 ;
 
+###############################################################################
+# Brillouin zone description
+###############################################################################
+
 data_dft_BZ_integration_method
     _name '_dft_BZ_integration_method'
     _type char
@@ -197,9 +201,14 @@ data_dft_cell_periodic_BC_[]
   L.V. of the crystallographic information 
 ;
 
+###############################################################################
+# Electron counts
+###############################################################################
+
 data_dft_cell_valence_electrons
     _name '_dft_cell_valence_electrons'
     _type numb
+    _enumeration_range 1:
     _definition
 ; Total number of electrons in calculation.
 ;
@@ -207,9 +216,14 @@ data_dft_cell_valence_electrons
 data_dft_core_electrons
     _name '_dft_core_electrons'
     _type numb
+    _enumeration_range 1:
     _definition
 ; Total number of core electrons in calculation
 ;
+
+###############################################################################
+# Pseudopotentials
+###############################################################################
 
 data_dft_pseudopotential_type
     _name '_dft_pseudopotential_type'
@@ -233,13 +247,26 @@ data_dft_pseudopotential_type_other_name
   is given as 'other'.
 ;
 
+###############################################################################
+# Energy
+###############################################################################
+
 data_dft_cell_energy
     _name '_dft_cell_energy'
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
   Energy given in eV.
+
+  S.G.: Is this supposed to be the same as 'total energy'? Will it be
+  compatible with the http://www.xml-cml.org/dictionary/compchem/
+  "total energy" (ID: totalEnergy) term? If so, maybe we rename this
+  data item to _dft_total_energy?
 ;
+
+###############################################################################
+# Magnetic moment
+###############################################################################
 
 data_dft_cell_magn_moment
     _name '_dft_cell_magn_moment'
@@ -261,6 +288,10 @@ data_dft_cell_magn_orbital_moment
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
+
+###############################################################################
+# Convergence parameters?
+###############################################################################
 
 data_dft_cell_energy_conv
     _name '_dft_cell_energy_conv'
@@ -284,12 +315,16 @@ data_dft_cell_potential_conv
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
 
+###############################################################################
+# Atom parameters: electron configurations, nuclear charges, etc.
+###############################################################################
+
 data_dft_atom_type_valence_electrons
     _name '_dft_atom_type_valence_electrons'
     _type char
     _definition
 ; Number of electrons contributed from an atomic type.
-  (Should this be in the _atom_site_... linked loop? S.G.)
+  (Should this be in the _atom_site_... or _atom_type_ linked loop? S.G.)
 ;
 
 data_dft_atom_type_valence_configuration
@@ -419,6 +454,10 @@ data_dft_atom_relax_energy_conv
   In eV.
 ;
 
+###############################################################################
+# Atom Basis set.
+###############################################################################
+
 data_dft_atom_basisset
     _name '_dft_atom_basisset'
     _type char
@@ -441,6 +480,10 @@ data_dft_atom_basisset_energy_conv
 
   In eV.
 ;
+
+###############################################################################
+# Data items required to model metal alloys:
+###############################################################################
 
 data_dft_alloy_method
     _name '_dft_alloy_method'
