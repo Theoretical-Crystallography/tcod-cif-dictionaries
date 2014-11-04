@@ -12,10 +12,15 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.002
-    _dictionary_update          2013-08-17
+    _dictionary_version         0.003
+    _dictionary_update          2014-11-04
     _dictionary_history
 ;
+
+2014-11-04 Consolidating all DFT related data names into this
+           dictionary, elaborating basis set definition, adding
+           citation ling data items. S.G.
+
 2013-08-17 Adding two additional data names to describe custom names of
            alloy methods and XC functional types if their enumerator 
            values are givem as 'other'. S.G.
