@@ -218,6 +218,15 @@ data_tcod_ff_version
 ; Version of a force field. Usually year of the publication.  
 ;     
 
+data_tcod_ff_citation_id
+    _name '_tcod_ff_citation_id'
+    _type char
+    _list_link_parent _citation_id
+    _definition
+; A reference to the citation describing the force field in the
+_citation_... category loop
+;     
+
 ###############################################################################
 # Citation management:
 ###############################################################################
