@@ -118,12 +118,12 @@ data_tcod_model
     _type char
     loop_ _enumeration
           _enumeration_detail
-          DFT                  'describe the corresponding model here' 
+          DFT                  'describe the corresponding model here'
           HF                   'describe the corresponding model here'
           MP2                  'describe the corresponding model here'
           CI                   'describe the corresponding model here'
           CC                   'describe the corresponding model here'
-          MI                   'describe the corresponding model here'          
+          MI                   'describe the corresponding model here'
           SAPT                 'describe the corresponding model here'
  	  QMC                  'describe the corresponding model here'
           DFTB                 'describe the corresponding model here'
