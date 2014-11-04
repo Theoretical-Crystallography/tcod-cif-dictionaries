@@ -428,6 +428,84 @@ data_dft_cell_energy
 ;
 
 ###############################################################################
+# Separate energy terms
+###############################################################################
+
+# S.G.: Q: is it true that the total energy will be the sum of all
+# "Separate energy terms"?
+
+data_dft_kinetic_energy
+_name '_dft_kinetic_energy'
+_type numb
+_units eV
+_definition
+
+; The kinetic energy part of the Hamiltonian; if periodic boundary
+conditions are used, should be given for one unit cell as specified by
+_cell_length_* and _cell_angle_* parameters.
+
+Q: should the nuclei kin. energy be included? Is it ever appreciable?
+What about vibrational lattice modes (phonons)? (S.G.)
+;
+
+# Q: how should the following Abinit energies be represented? Vis.:
+#
+#     Hartree energy  =  2.27637094216573E+01
+#     XC energy       = -1.81223641765291E+01 << is this the same as "correlation energy" in NWChem? S.G.
+#     Ewald energy    = -3.71921214233243E+01
+#     PspCore energy  =  3.22969039024445E-01
+#     Loc. psp. energy= -8.28746948571284E+01
+#     NL   psp  energy=  1.01185403081610E+01
+# (S.G.)
+
+data_dft_Coulomb_energy
+_name '_dft_Coulomb_energy'
+_type numb
+_units eV
+_definition
+; Should be the same as the CML (ID: coulombEnergy) term,
+http://www.xml-cml.org/dictionary/compchem/#coulombEnergy.
+;
+
+data_dft_correlation_energy
+_name '_dft_correlation_energy'
+_type numb
+_units eV
+_definition
+; http://www.xml-cml.org/dictionary/compchem/#correlationEnergy (ID:
+  correlationEnergy)
+;
+
+data_dft_1e_energy
+_name '_dft_1e_energy'
+_type numb
+_units eV
+_definition
+; http://www.xml-cml.org/dictionary/compchem/#e1Energy
+  (ID: e1Energy)
+;
+
+data_dft_2e_energy
+_name '_dft_2e_energy'
+_type numb
+_units eV
+_definition
+; http://www.xml-cml.org/dictionary/compchem/#e2Energy
+  (ID: e2Energy)
+;
+
+data_dft_nuclear_repulsion_energy
+_name '_dft_nuclear_repulsion_energy'
+_type numb
+_units eV
+_definition
+; http://www.xml-cml.org/dictionary/compchem/#nuclearRepulsionEnergy
+  (ID: nuclearRepulsionEnergy)
+
+  Q: is it not included into Coulomb energy? S.G.
+;
+
+###############################################################################
 # Magnetic moment
 ###############################################################################
 
