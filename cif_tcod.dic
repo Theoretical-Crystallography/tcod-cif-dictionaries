@@ -471,6 +471,27 @@ _definition
 ;
 ;
 
+# Computation metadata -- run times:
+
+data_tcod_computation_CPU_time
+_name '_tcod_computation_CPU_time'
+_type numb
+_units s
+_units_detail 'seconds'
+_definition
+; CPU time in seconds (excluding I/O).
+;
+
+data_tcod_computation_wallclock_time
+_name '_tcod_computation_wallclock_time'
+_type numb
+_units s
+_units_detail 'seconds'
+_definition
+; The elapsed wall-clock time in seconds, from the start to the finish
+of this computation.
+;
+
 # Alternative input and output file definitions:
 
 data_tcod_file_name
