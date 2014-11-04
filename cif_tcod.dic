@@ -178,7 +178,7 @@ data_tcod_software_package_version
 #------------------------------------------------------------------------------
 
 data_tcod_ff_type
-    _name '_model_ff_type'
+    _name '_tcod_ff_type'
     _type char
     loop_ _enumeration
           _enumeration_detail
@@ -199,7 +199,7 @@ data_tcod_ff_type
 ;
 
 data_tcod_ff_name
-    _name '_model_ff_name'
+    _name '_tcod_ff_name'
     _type char
     _definition
 ; Standard name for the FF used. If there is no standard name use 'custom'
@@ -208,7 +208,7 @@ data_tcod_ff_name
 ;
 
 data_tcod_ff_version
-    _name '_model_ff_version'
+    _name '_tcod_ff_version'
     _type char
     _definition
 ; Version of a force field. Usually year of the publication.  
