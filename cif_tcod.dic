@@ -380,6 +380,65 @@ this computation can be fetched.
 #------------------------------------------------------------------------------
 
 ###############################################################################
+# Initial atomic coordinates
+###############################################################################
+
+data_tcod_initial_coordinate_db_name
+data_tcod_initial_coordinate_db_abbrev
+data_tcod_initial_coordinate_db_URI
+data_tcod_initial_coordinate_db_code
+data_tcod_initial_coordinate_URI
+
+data_tcod_initial_cell_param_db_name
+data_tcod_initial_cell_param_db_abbrev
+data_tcod_initial_cell_param_db_URI
+data_tcod_initial_cell_param_db_code
+data_tcod_initial_cell_param_URI
+
+data_tcod_atom_site_initial_fract_
+loop_ _name
+'_tcod_atom_site_initial_fract_x' 
+'_tcod_atom_site_initial_fract_y' 
+'_tcod_atom_site_initial_fract_z'
+_type numb
+_type_conditions           esd
+loop_
+_related_item
+_related_function
+          '_tcod_atom_site_initial_Cartn_'
+          alternate
+_list                      yes
+_list_reference            '_atom_site_label'
+_definition
+; Initial atom-site coordinates use to set up teh computaion as
+  fractions of the _cell_length_* values.
+;
+
+data_tcod_atom_site_initial_fract_
+loop_ _name
+'_tcod_atom_site_initial_Cartn_x'
+'_tcod_atom_site_initial_Cartn_y'
+'_tcod_atom_site_initial_Cartn_z'
+_type numb
+_units                     A
+_units_detail              'Angstroems'
+_type_conditions           esd
+loop_
+_related_item
+_related_function
+          '_tcod_atom_site_initial_fract_'
+          alternate
+_list                      yes
+_list_reference            '_atom_site_label'
+_definition
+; Initial Cartesian atom-site coordinates use to set up the computaion.
+
+A set of orthogonal Cartesian axes related to the cell axes is
+specified by the _atom_sites_Cartn_transform_axes and
+_atom_sites_Cartn_tran_matrix_ descriptions.
+;
+
+###############################################################################
 # Force field descriptions:
 ###############################################################################
 
