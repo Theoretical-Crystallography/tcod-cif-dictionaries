@@ -643,7 +643,7 @@ data_tcod_total_energy_formula
 _name '_tcod_total_energy_formula'
 _type char
 _definition
-; Formula use to compute the _tcod_total_energy value; the exact
+; Formula used to compute the _tcod_total_energy value; the exact
 syntax details are still to be specified.
 ;
 
@@ -653,6 +653,34 @@ _type char
 _definition
 ; A human-readable description of the _tcod_total_energy computation
 -- its physical meaning and usability.
+;
+
+data_tcod_total_energy_gradient
+_name '_tcod_total_energy_gradient'
+_type numb
+_units eV/A
+_units_detail 'electron-Volts per Angstroem'
+_definition
+; Gives an total energy gradient at the end of the computation
+(e.g. at the last optimisation cycle). Derivatives to be taken by
+nuclei positions and cell parameters.
+;
+
+data_tcod_total_energy_gradient_formula
+_name '_tcod_total_energy_gradient_formula'
+_type char
+_definition
+; Formula or computer code used to compute the
+_tcod_total_energy_gradient value; the exact syntax details are still
+to be specified.
+;
+
+data_tcod_total_energy_gradient_details
+_name '_tcod_total_energy_gradient_details'
+_type char
+_definition
+; A human-readable description of the _tcod_total_energy_gradient
+computation -- its physical meaning and usability.
 ;
 
 ###############################################################################
@@ -720,5 +748,5 @@ _units_detail 'electron-Volts per Angstroem'
 _category 'computation_cycle'
 _definition
 ; A total energy gradient magnitude (a total energy derivated by
-nucley positions).
+nucley positions and cell parameters).
 ;
