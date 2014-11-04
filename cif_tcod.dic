@@ -172,6 +172,30 @@ data_tcod_software_package_version
   that was used for computations.
 ;
 
+data_tcod_software_package_binary_uri
+    _name '_tcod_software_package_binary_uri'
+    _type char
+    _definition
+; An URI (Web reference) where the binary package of the software used
+for this computation can be fetched.
+;
+
+data_tcod_software_package_source_uri
+    _name '_tcod_software_package_source_uri'
+    _type char
+    _definition
+; An URI (Web reference) where the source code package of the software
+used for this computation can be fetched.
+;
+
+data_tcod_software_executable_path
+    _name '_tcod_software_executable_path'
+    _type char
+    _definition
+; The file-system path to the executable that was run for this
+computation.
+;
+
 data_tcod_software_runtime_OS
     _name '_tcod_software_runtime_OS'
     _type char
@@ -210,6 +234,9 @@ data_tcod_software_runtime_CPU_version
   compute the results.
 ;
 
+# S.G. If needed, a compile time, CPU, CPU version and OS data items
+# will be defined -- in case we will have cross-compiled packages.
+
 data_tcod_software_compiler
     _name '_tcod_software_compiler'
     _type char
@@ -246,6 +273,30 @@ data_tcod_software_library_version
     _definition
 ; A version string (number) of the library linked with the code for this
 computation.
+;
+
+data_tcod_software_library_path
+    _name '_tcod_software_library_path'
+    _type char
+    _definition
+; A file sytem path of the library file (especially the shared
+library, *.so or *.dll) linked with the code for this computation.
+;
+
+data_tcod_software_library_binary_uri
+    _name '_tcod_software_library_uri'
+    _type char
+    _definition
+; An URI (Web reference) where the binary software library used for
+this computation can be fetched.
+;
+
+data_tcod_software_library_source_uri
+    _name '_tcod_software_source_uri'
+    _type char
+    _definition
+; An URI (Web reference) where the source code software library used for
+this computation can be fetched.
 ;
 
 #------------------------------------------------------------------------------
