@@ -80,6 +80,15 @@ data_dft_XC_functional_type_other_name
   is given as 'other'.
 ;
 
+data_dft_XC_functional_citation_id
+    _name '_dft_XC_functional_citation_id'
+    _type char
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the XC functional in the
+_citation_... category loop
+;     
+
 ###############################################################################
 # Basis set.
 ###############################################################################
@@ -105,6 +114,15 @@ data_dft_basisset_energy_conv
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy measured in eV (electron-volts).
 ;
+
+data_dft_basisset_citation_id
+    _name '_dft_basisset_citation_id'
+    _type char
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the basis set in the
+_citation_... category loop
+;     
 
 ###############################################################################
 # Atom Basis set.
@@ -133,6 +151,15 @@ data_dft_atom_basisset_energy_conv
   In eV.
 ;
 
+data_dft_atom_basisset_citation_id
+    _name '_dft_basisset_citation_id'
+    _type char
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the atom basis set in the
+_citation_... category loop
+;     
+
 ###############################################################################
 # Brillouin zone description
 ###############################################################################
@@ -143,6 +170,15 @@ data_dft_BZ_integration_method
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
+
+data_dft_BZ_integration_citation_id
+    _name '_dft_BZ_integration_citation_id'
+    _type char
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the BZ integration method in the
+_citation_... category loop
+;     
 
 data_dft_BZ_integration_grid_type
     _name '_dft_BZ_integration_grid_type'
@@ -281,6 +317,15 @@ data_dft_pseudopotential_type_other_name
 ; Custom name of the pseudopotential if _dft_pseudopotential_type data item value
   is given as 'other'.
 ;
+
+data_dft_pseudopotential_citation_id
+    _name '_dft_pseudopotential_citation_id'
+    _type char
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the pseudopotential in the
+_citation_... category loop
+;     
 
 ###############################################################################
 # Energy
