@@ -491,7 +491,7 @@ _definition
   fractions of the _cell_length_* values.
 ;
 
-data_tcod_atom_site_initial_fract_
+data_tcod_atom_site_initial_Cartn_
 loop_ _name
 '_tcod_atom_site_initial_Cartn_x'
 '_tcod_atom_site_initial_Cartn_y'
