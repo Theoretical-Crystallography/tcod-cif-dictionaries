@@ -193,7 +193,6 @@ data_tcod_software_package_compilation_timestamp
     _type char
     _example     2014-11-04T13:49:49.290475Z
     _definition
-
 ; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
   the time when the executable was compiled.
 
@@ -252,7 +251,6 @@ data_tcod_software_OS_compilation_timestamp
     _type char
     _example     2014-11-04T13:49:49.290475Z
     _definition
-
 ; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
   the time when the operating system image was compiled.
 ;
@@ -337,7 +335,6 @@ data_tcod_software_library_compilation_timestamp
     _type char
     _example     2014-11-04T13:49:49.290475Z
     _definition
-
 ; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
   the time when the subroutine library file was compiled.
 ;
