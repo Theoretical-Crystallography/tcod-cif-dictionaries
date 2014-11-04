@@ -91,7 +91,7 @@ data_dft_basisset_type
 ;
 
 data_dft_basisset_energy_conv 
-    _name '_dft_basisset_energy_conv '
+    _name '_dft_basisset_energy_conv'
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
