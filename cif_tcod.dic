@@ -168,13 +168,39 @@ data_tcod_software_package_version
   that was used for computations.
 ;
 
+data_tcod_software_compiler
+    _name '_tcod_software_compiler'
+    _type char
+    _definition
+; The compiler which compiled the code use for the described
+calcualtion. Only the compiler name should be given, e.g. 'gcc',
+'icc', 'gfortran'.
+
+If more than one compiler was used, these items must be looped.
+;
+
+data_tcod_software_compiler_version
+    _name '_tcod_software_compiler_version'
+    _type char
+    _definition
+; A version string (number) of the compiler used to compile the code for this
+computation.
+;
+
 #------------------------------------------------------------------------------
 # L.V. I don't think that things like operating system, cpu type, runtime are 
 # relavant for TCOD, as discussed, in that case one should also report: compiler
 # version, algebra libraries etc.
 # 
-# L.V. All the relevant DFT dictionary should follow from hereon
-#
+# S.G. I think it would be good to have data items to describe such
+# metadata; on one hand, a user might be interested in teh computation
+# facilities used for the calculations, if only to plan his/her own
+# setup; on the other hand, one might need such information to hunt
+# down CPU or compuler bugs (recall the infamous Pentium FDIV
+# bug...). The bugs might, in theory, influence computation results
+# and conclusions. The information is easy to gather at the point of
+# computation, so we need to provide means to record it. The relevan
+# data items will be inserter.
 #------------------------------------------------------------------------------
 
 ###############################################################################
