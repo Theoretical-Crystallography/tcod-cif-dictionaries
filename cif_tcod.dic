@@ -177,6 +177,10 @@ data_tcod_software_package_version
 #
 #------------------------------------------------------------------------------
 
+###############################################################################
+# Force field descriptions:
+###############################################################################
+
 data_tcod_ff_type
     _name '_tcod_ff_type'
     _type char
@@ -213,6 +217,10 @@ data_tcod_ff_version
     _definition
 ; Version of a force field. Usually year of the publication.  
 ;     
+
+###############################################################################
+# Citation management:
+###############################################################################
 
 data_tcod_citation_linkage
     _name      '_tcod_citation_linkage'
