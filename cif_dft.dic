@@ -26,6 +26,10 @@ data_on_this_dictionary
 2013-08-17 Adding an empty CIF scaffold for the DFT dictionary. S.G.
 ;
 
+###############################################################################
+# XC (exchange-correlation) functional
+###############################################################################
+
 data_dft_XC_functional_[]
     # Should this be a category overview? S.G.
     _name '_dft_XC_functional'
@@ -76,6 +80,10 @@ data_dft_XC_functional_type_other_name
   is given as 'other'.
 ;
 
+###############################################################################
+# Basis set.
+###############################################################################
+
 data_dft_basisset
     _name '_dft_basisset'
     _type char
@@ -96,6 +104,33 @@ data_dft_basisset_energy_conv
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy measured in eV (electron-volts).
+;
+
+###############################################################################
+# Atom Basis set.
+###############################################################################
+
+data_dft_atom_basisset
+    _name '_dft_atom_basisset'
+    _type char
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_basisset_type
+    _name '_dft_atom_basisset_type'
+    _type char
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_basisset_energy_conv
+    _name '_dft_atom_basisset_energy_conv'
+    _type char
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  In eV.
 ;
 
 ###############################################################################
@@ -447,33 +482,6 @@ data_dft_atom_relax_force_conv
 
 data_dft_atom_relax_energy_conv
     _name '_dft_atom_relax_energy_conv'
-    _type char
-    _definition
-; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
-
-  In eV.
-;
-
-###############################################################################
-# Atom Basis set.
-###############################################################################
-
-data_dft_atom_basisset
-    _name '_dft_atom_basisset'
-    _type char
-    _definition
-; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
-;
-
-data_dft_atom_basisset_type
-    _name '_dft_atom_basisset_type'
-    _type char
-    _definition
-; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
-;
-
-data_dft_atom_basisset_energy_conv
-    _name '_dft_atom_basisset_energy_conv'
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
