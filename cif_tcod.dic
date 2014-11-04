@@ -380,20 +380,97 @@ this computation can be fetched.
 #------------------------------------------------------------------------------
 
 ###############################################################################
-# Initial atomic coordinates
+# Initial data
+###############################################################################
+
+###############################################################################
+# Initial atomic coordinate source
 ###############################################################################
 
 data_tcod_initial_coordinate_db_name
+_name '_tcod_initial_coordinate_db_name'
+_type char
+_definition
+; Coordinate source database name (e.g. "Crystallography Open Database")
+;
+
 data_tcod_initial_coordinate_db_abbrev
+_name '_tcod_initial_coordinate_db_abbrev'
+_type char
+_definition
+; Coordinate source database abbreviated name (e.g. "COD")
+;
+
 data_tcod_initial_coordinate_db_URI
+_name '_tcod_initial_coordinate_db_URI'
+_type char
+_definition
+; Coordinate source database stable URI, e.g.
+  http://www.crystallography.net/
+;
+
 data_tcod_initial_coordinate_db_code
+_name '_tcod_initial_coordinate_db_code'
+_type char
+_definition
+; Coordinate source database stable stable identifier, e.g.
+  1518187 (for COD entry 1518187).
+;
+
 data_tcod_initial_coordinate_URI
+_name '_tcod_initial_coordinate_URI'
+_type char
+_definition
+; A stable URI of coordinate file, e.g.
+  http://www.crystallography.net/cod/1518187.cif
+;
+
+###############################################################################
+# Initial crystallographic unit cell parameter source:
+###############################################################################
 
 data_tcod_initial_cell_param_db_name
+_name '_tcod_initial_cell_param_db_name'
+_type char
+_definition
+; Unit cell parameter source database name (e.g. "Crystallography Open
+  Database")
+;
+
 data_tcod_initial_cell_param_db_abbrev
+_name '_tcod_initial_cell_param_db_abbrev'
+_type char
+_definition
+; Unit cell parameter source database abbreviated name (e.g. "COD")
+;
+
 data_tcod_initial_cell_param_db_URI
+_name '_tcod_initial_cell_param_db_URI'
+_type char
+_definition
+; Unit cell parameter source database stable URI, e.g.
+  http://www.crystallography.net/
+;
+
 data_tcod_initial_cell_param_db_code
+_name '_tcod_initial_cell_param_db_code'
+_type char
+_definition
+; Unit cell parameter source database stable identifier, e.g.
+  1518187 (for COD entry 1518187).
+;
+
 data_tcod_initial_cell_param_URI
+_name '_tcod_initial_cell_param_URI'
+_type char
+_definition
+; A stable URI of a file with the initial unit cell parameters, e.g.
+  http://www.crystallography.net/cod/1518187.cif
+;
+
+###############################################################################
+# Initial atomic coordinates
+###############################################################################
 
 data_tcod_atom_site_initial_fract_
 loop_ _name
