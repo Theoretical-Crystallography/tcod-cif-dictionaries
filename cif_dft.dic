@@ -141,7 +141,7 @@ data_dft_basisset_type
             tight
             rydberg
 
-   S.G.: Q: how plane wave basis set is encoded?
+   Q: how plane wave basis set is encoded? (S.G.)
 ;
 
 data_dft_basisset_energy_conv 
@@ -431,8 +431,8 @@ data_dft_cell_energy
 # Separate energy terms
 ###############################################################################
 
-# S.G.: Q: is it true that the total energy will be the sum of all
-# "Separate energy terms"?
+# Q: is it true that the total energy will be the sum of all
+# "Separate energy terms"? (S.G.)
 
 data_dft_kinetic_energy
 _name '_dft_kinetic_energy'
