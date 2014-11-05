@@ -592,20 +592,6 @@ data_dft_atom_type_nuclear_charge
   Slater-Pauling-curve maximum (70/30 Fe/Co).
 ;
 
-data_dft_atom_type_nuclear_dipole
-    _name '_dft_atom_type_nuclear_dipole'
-    _type numb
-    _units e*A
-    _units_detail 'elementary charges times Angstroem'
-    _definition
-; http://www.xml-cml.org/dictionary/compchem/#nuclearDipoleMoment
-  (ID: nuclearDipoleMoment)
-
-  Q: What are the most appropriate units? Debye? e*A? atomic unit of
-     electric dipole moment $ea_0$
-     (http://physics.nist.gov/cgi-bin/cuu/Value?auedm)? (S.G.)
-;
-
 data_dft_atom_type_magn_moment
     _name '_dft_atom_type_magn_moment'
     _type numb
