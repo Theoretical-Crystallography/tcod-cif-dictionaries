@@ -901,8 +901,8 @@ A residual force on a given atom should be computed with all other
 parameters, including all other atom positions, fixed. The force
 components for each atom are given as partial derivatives \d E/\d x,
 \d E/\d y and \d E/\d z, where E is the total energy of the system and
-x, y, and z are coodinates of the atom for which resudual force is
-computed (the \d is teh partial derivative sign).
+x, y, and z are coordinates of the atom for which residual force is
+computed (the \d is the partial derivative sign).
 
 !!! Q: Is this a correct definition of the resudual forces? S.G.
 
