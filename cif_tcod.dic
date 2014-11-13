@@ -172,6 +172,51 @@ data_tcod_model
 ;
 
 ###############################################################################
+# Definition of the simulation cell:
+###############################################################################
+
+data_tcod_atom_sites_sim_cell_tran_matrix_
+    loop_ _name                '_tcod_atom_sites_sim_cell_tran_matrix_11'
+                               '_tcod_atom_sites_sim_cell_tran_matrix_12'
+                               '_tcod_atom_sites_sim_cell_tran_matrix_13'
+                               '_tcod_atom_sites_sim_cell_tran_matrix_21'
+                               '_tcod_atom_sites_sim_cell_tran_matrix_22'
+                               '_tcod_atom_sites_sim_cell_tran_matrix_23'
+                               '_tcod_atom_sites_sim_cell_tran_matrix_31'
+                               '_tcod_atom_sites_sim_cell_tran_matrix_32'
+                               '_tcod_atom_sites_sim_cell_tran_matrix_33'
+    _category                    atom_sites
+    _type                        numb
+    _definition
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+
+data_tcod_atom_sites_sim_cell_tran_vector_
+    loop_ _name                '_tcod_atom_sites_sim_cell_tran_vector_1'
+                               '_tcod_atom_sites_sim_cell_tran_vector_2'
+                               '_tcod_atom_sites_sim_cell_tran_vector_3'
+    _category                    atom_sites
+    _type                        numb
+    _definition
+;              Elements of a 3 x 1 translation vector used in the
+               transformation of fractional coordinates in the
+               ATOM_SITE category to simulation cell coordinates.
+
+                 x'                   |11 12 13|      x                  | 1 |
+               ( y' ) simulation  =   |21 22 23|    ( y ) fractional  +  | 2 |
+                 z'                   |31 32 33|      z                  | 3 |
+;
+
+###############################################################################
 # Software and computational facility description
 ###############################################################################
 
