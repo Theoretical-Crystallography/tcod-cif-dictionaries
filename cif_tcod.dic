@@ -734,11 +734,32 @@ of this computation.
 # Alternative input and output file definitions:
 ###############################################################################
 
+data_tcod_file_id
+_name '_tcod_file_id'
+_type char
+_definition
+; Primary key for the _tcod_file_... table.
+;
+
 data_tcod_file_name
 _name '_tcod_file_name'
 _type char
 _definition
 ;
+;
+
+data_tcod_file_md5sum
+_name '_tcod_file_md5sum'
+_type char
+_definition
+; MD5 checksum of the file.
+;
+
+data_tcod_file_sha1sum
+_name '_tcod_file_sha1sum'
+_type char
+_definition
+; SHA1 checksum of the file.
 ;
 
 data_tcod_file_url
