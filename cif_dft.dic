@@ -353,6 +353,16 @@ data_dft_cell_periodic_BC_[]
         '_dft_cell_periodic_BC_Y'
         '_dft_cell_periodic_BC_Z'
     _type char
+    loop_
+    _enumeration
+    _enumeration_detail
+    true  'Boundary condition is periodic in the given direction.'
+    t     'Same as "true"'
+    false
+; Boundary condition is NOT periodic in the given direction (i.e. the
+structure is finite in this direction).
+;
+    f     'Same as "false"'
     _definition
 ; Specifies whether periodic boundary conditions were used along each of
 the unit cell axes.
