@@ -350,14 +350,12 @@ data_dft_cell_pressure
 data_dft_cell_periodic_BC_[]
     loop_ _name
         '_dft_cell_periodic_BC_X'
-        '_dft_cell_periodic_BC Y'
-        '_dft_cell_periodic_BC Z'
+        '_dft_cell_periodic_BC_Y'
+        '_dft_cell_periodic_BC_Z'
     _type char
     _definition
-; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
- 
-  L.V. This part could removed since this will be part 
-  L.V. of the crystallographic information 
+; Specifies whether periodic boundary conditions were used along each of
+the unit cell axes.
 ;
 
 ###############################################################################
