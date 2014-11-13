@@ -949,8 +949,6 @@ components for each atom are given as partial derivatives \d E/\d x,
 x, y, and z are coordinates of the atom for which residual force is
 computed (the \d is the partial derivative sign).
 
-!!! Q: Is this a correct definition of the resudual forces? S.G.
-
 ;
 
 data_tcod_atom_site_residual_force_magnitude
