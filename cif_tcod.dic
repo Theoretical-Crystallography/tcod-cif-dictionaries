@@ -950,6 +950,16 @@ _definition
 ;
 ;
 
+data_tcod_computation_environment
+_name '_tcod_computation_environment'
+_type char
+_definition
+; A set of environment variable definitions, in /bin/sh syntax
+(i.e. using the "NAME=VALUE" syntax) for all relevant environment
+variables that are needed to reproduce this computation. You can get
+the list in this syntax from the Unix/Linux 'printenv' command.
+;
+
 data_tcod_computation_reference_uuid
 _name '_tcod_computation_reference_uuid'
 _type char
