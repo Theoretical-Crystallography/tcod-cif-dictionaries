@@ -833,22 +833,22 @@ _definition
 ;
 ;
 
-data_tcod_file_source_database_record_id
-_name '_tcod_file_source_database_record_id'
+data_tcod_file_source_reference_id
+_name '_tcod_file_source_reference_id'
 _type char
 _definition
 ;
 ;
 
-data_tcod_file_source_database_record_version
-_name '_tcod_file_source_database_record_version'
+data_tcod_file_source_reference_version
+_name '_tcod_file_source_reference_version'
 _type char
 _definition
 ;
 ;
 
-data_tcod_file_source_database_record_uuid
-_name '_tcod_file_source_database_record_uuid'
+data_tcod_file_source_reference_uuid
+_name '_tcod_file_source_reference_uuid'
 _type char
 _definition
 ;
