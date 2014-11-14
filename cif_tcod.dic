@@ -316,6 +316,16 @@ data_tcod_software_package_compilation_timestamp
   element, but MUST be expressed in the ISO standard format.
 ;
 
+data_tcod_software_package_compilation_environment
+    _name '_tcod_software_package_compilation_environment'
+    _type char
+    _definition
+; A set of environment variable definitions, in /bin/sh syntax
+(i.e. using the "NAME=VALUE" syntax) for all relevant environment
+variables that were active when compiling this package. You can get the
+list in this syntax from the Unix/Linux 'printenv' command.
+;
+
 data_tcod_software_package_binary_uri
     _name '_tcod_software_package_binary_uri'
     _type char
@@ -426,13 +436,27 @@ data_tcod_software_compiler_version
 computation.
 ;
 
+data_tcod_software_compiler_options
+    _name '_tcod_software_compiler_options'
+    _type char
+    _definition
+; A string with all options that were used to compile the given package.
+;
+
+data_tcod_software_library_id
+    _name '_tcod_software_library_id'
+    _type char
+    _definition
+; Identifies a software library in a loop
+;
+
 data_tcod_software_library
     _name '_tcod_software_library'
     _type char
     _definition
 ; The subroutine library (e.g. linear algebra) that was linked with
-the code used for the described calculation. Only the compiler name
-should be given, e.g. 'gcc', 'icc', 'gfortran'.
+the code used for the described calculation. Only the library name
+should be given, e.g. 'pthreads', 'libc', 'lapack'.
 
 If more than one library was used, these items must be looped.
 ;
@@ -452,6 +476,38 @@ data_tcod_software_library_compilation_timestamp
     _definition
 ; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
   the time when the subroutine library file was compiled.
+;
+
+data_tcod_software_library_compilation_environment
+    _name '_tcod_software_library_compilation_environment'
+    _type char
+    _definition
+; A set of environment variable definitions, in /bin/sh syntax
+(i.e. using the "NAME=VALUE" syntax) for all relevant environment
+variables that were active when compiling this library. You can get the
+list in this syntax from the Unix/Linux 'printenv' command.
+;
+
+data_tcod_software_library_compiler_name
+    _name '_tcod_software_library_compiler_name'
+    _type char
+    _definition
+; Library compiler name (same syntax as for a package compiler).
+;
+
+data_tcod_software_library_compiler_version
+    _name '_tcod_software_library_compiler_version'
+    _type char
+    _definition
+; Library compiler version (same syntax as for a package compiler).
+;
+
+data_tcod_software_library_compiler_options
+    _name '_tcod_software_library_compiler_options'
+    _type char
+    _definition
+; Library compiler options that were used (same syntax as for a
+package compiler).
 ;
 
 data_tcod_software_library_path
