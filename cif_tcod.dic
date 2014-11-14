@@ -172,6 +172,70 @@ data_tcod_model
 ;
 
 ###############################################################################
+# Identification of the source database record for the structure
+###############################################################################
+
+data_tcod_source_structure_database_uuid
+_name '_tcod_source_structure_uuid'
+_type char
+_definition
+; UUID (Universally Unique Identifier,
+http://en.wikipedia.org/wiki/Universally_unique_identifier) of the
+database output structure (node, record) that was exported to this entry.
+;
+
+data_tcod_source_structure_database_id
+_name '_tcod_source_structure_database_id'
+_type char
+
+data_tcod_source_structure_database_URI
+_name '_tcod_source_structure_database_URI'
+_type char
+
+data_tcod_source_structure_database_version
+_name '_tcod_source_structure_database_version'
+_type char
+
+###############################################################################
+# Identification of the source database
+###############################################################################
+
+data_tcod_source_database_name
+_name '_tcod_source_database_name'
+_type char
+_definition
+; A name of a database that was used to produce (to compute) this
+structure.
+
+Example:
+
+_tcod_source_database_name AiiDA
+;
+
+data_tcod_source_database_URI
+_name '_tcod_source_database_URI'
+_type char
+_definition
+; A (stable) URI (or URL) of the database Web site describing the
+database that produced the structure.
+
+Example:
+
+_tcod_source_database_URI http://www.aiida.net/
+;
+
+data_tcod_source_database_version
+_name '_tcod_source_database_version'
+_type char
+_definition
+; A version of the database that produced a structure under consideration.
+
+Example:
+
+_tcod_source_database_version 1.0
+;
+
+###############################################################################
 # Definition of the simulation cell:
 ###############################################################################
 
