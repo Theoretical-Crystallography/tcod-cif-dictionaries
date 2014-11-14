@@ -868,13 +868,6 @@ _definition
 ; SHA1 checksum of the file.
 ;
 
-data_tcod_file_url
-_name '_tcod_file_url'
-_type char
-_definition
-;
-;
-
 data_tcod_file_format
 _name '_tcod_file_format'
 _type char
