@@ -950,6 +950,53 @@ _definition
 ;
 ;
 
+data_tcod_computation_reference_uuid
+_name '_tcod_computation_reference_uuid'
+_type char
+_definition
+;
+;
+
+data_tcod_computation_reference_id
+_name '_tcod_computation_reference_id'
+_type char
+_definition
+; Reference to a computation description (its primary key) in the remote
+database that published and stored this computation.
+;
+
+data_tcod_computation_reference_URI
+_name '_tcod_computation_reference_URI'
+_type char
+_definition
+; Reference to a computation description (its stable REST URI) in the remote
+database that published and stored this computation.
+;
+
+data_tcod_computation_database_name
+_name '_tcod_computation_database_name'
+_type char
+_definition
+; A name of the database that was used to publish and document this
+computation.
+;
+
+data_tcod_computation_database_version
+_name '_tcod_computation_database_version'
+_type char
+_definition
+; A version of the database that was used to publish and document this
+computation.
+;
+
+data_tcod_computation_database_URI
+_name '_tcod_computation_database_URI'
+_type char
+_definition
+; A stable URI (of a human-readable description) of the database that
+was used to publish and document this computation.
+;
+
 ###############################################################################
 # Convergence parameters:
 ###############################################################################
