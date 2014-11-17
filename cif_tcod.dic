@@ -125,7 +125,7 @@ data_tcod_model
           CC                   'describe the corresponding model here'
           MI                   'describe the corresponding model here'
           SAPT                 'describe the corresponding model here'
- 	  QMC                  'describe the corresponding model here'
+          QMC                  'describe the corresponding model here'
           DFTB                 'describe the corresponding model here'
           Semi-empirical       'describe the corresponding model here'
           FF                   'describe the corresponding model here'
@@ -658,7 +658,7 @@ _related_function
 _list                      yes
 _list_reference            '_atom_site_label'
 _definition
-; Initial atom-site coordinates use to set up teh computaion as
+; Initial atom-site coordinates use to set up the computation as
   fractions of the _cell_length_* values.
 ;
 
@@ -679,7 +679,7 @@ _related_function
 _list                      yes
 _list_reference            '_atom_site_label'
 _definition
-; Initial Cartesian atom-site coordinates use to set up the computaion.
+; Initial Cartesian atom-site coordinates use to set up the computation.
 
 A set of orthogonal Cartesian axes related to the cell axes is
 specified by the _atom_sites_Cartn_transform_axes and
@@ -697,7 +697,7 @@ data_tcod_ff_id
     _list_mandatory              yes
     _definition
 ; A unique identifier (primary key) of a force field in a loop, in
-case the COD datablock containing ir refers to more than one force
+case the COD datablock containing it refers to more than one force
 field.
 ;     
 
@@ -758,7 +758,7 @@ data_tcod_citation_linkage
           _enumeration_detail
     force-field      'citation of the paper describing the force field'
     software-code    'citation of the paper describing the program code'
-    model            'citation describing the overal method used'
+    model            'citation describing the overall method used'
     pseudopotential  'citation describing pseudopotential'
     XC-functional    'citation describing exchange correlation f-nal'
     basis-set        'citation describing the basis set'
@@ -787,8 +787,8 @@ _definition
   computation (force field, software code, etc.) does the paper
   describe. Other items should point, whenever possible, to
   machine-readable URLs with the force field or program code
-  definitions (for software, this might be liks to a source code for
-  open source packages, liks to a compiled binary packages for
+  definitions (for software, this might be links to a source code for
+  open source packages, links to a compiled binary packages for
   specific platform, the ones used in the computations, and yet
   another link would point to a web site describing the software (this
   is relevant for both open-source and proprietary programs).
@@ -1079,7 +1079,7 @@ totalEnergy) whenever applicable.
 
 The total energy for a system of electrons and nuclei. The exact
 method of computing this parameter depends on the method. The formula
-used to compute it should be given in the _tcod_total_energy_fomula
+used to compute it should be given in the _tcod_total_energy_formula
 data item; in CIF2 this will be a DRel method (i.e. a formal
 computable expression in a strictly specified computer language).
 
@@ -1158,7 +1158,7 @@ _definition
 ;
 
 These data items describe residual forces on atoms in the final
-structure. For a converged computation of a stable structure thse
+structure. For a converged computation of a stable structure these
 should be close to 0.
 
 The ..._Cartn_[xyz] referes to the same frame as
@@ -1193,6 +1193,6 @@ _enumeration_range 1:
 _list                      yes
 _list_reference            '_atom_site_label'
 _definition
-; The magnitute of the residual force (see
+; The magnitude of the residual force (see
   data_tcod_atom_site_residual_force description for details).
 ;
