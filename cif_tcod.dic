@@ -44,7 +44,9 @@ data_on_this_dictionary
     _dictionary_history        
 ;
 
-2015-01-05 Fixing typo in tag name:
+2015-01-05 Adding _tcod_content_encoding_* tags, describing the content
+           encoding stack in a more formal way.
+           Fixing typo in tag name:
            _tcode_structure_type -> _tcod_structure_type. A.M.
 
 2014-11-04 Moving all software related data items to this dictionary,
@@ -984,12 +986,49 @@ _definition
 ;
 ;
 
+data_tcod_file_content_encoding
+_name '_tcod_file_content_encoding'
+_type char
+_definition
+; Must match a single _tcod_content_encoding_id from the same datablock.
+;
+
 data_tcod_file_URI
 _name '_tcod_file_URI'
 _type char
 _definition
 ; A stable URI (Web reference) where the file can be fetched.
 ;
+
+###############################################################################
+# Content encodings used for the files:
+###############################################################################
+
+data_tcod_content_encoding_id
+_name '_tcod_content_encoding_id'
+_type char
+_definition
+; Primary key for the _tcod_content_encoding_... table.
+;
+
+data_tcod_content_encoding_layer_id
+_name '_tcod_content_encoding_layer_id'
+_type numb
+_definition
+; One-based number of an encoding layer in the encoding stack,
+starting from the innermost layer.
+;
+
+data_tcod_content_encoding_layer_type
+_name '_tcod_content_encoding_layer_type'
+_type char
+loop_
+_enumeration
+_enumeration_detail
+    ncr                 'Numeric Character Reference'
+    base64              'Base64 as described in RFC2045'
+    quoted-printable    'Quoted-printable as described in RFC2045'
+    gzip                'Gzip as described in RFC1952'
 
 ###############################################################################
 # Commands for reproducing the computation:
