@@ -1014,6 +1014,7 @@ _definition
 data_tcod_content_encoding_layer_id
 _name '_tcod_content_encoding_layer_id'
 _type numb
+_enumeration_range 1:
 _definition
 ; One-based number of an encoding layer in the encoding stack,
 starting from the innermost layer.
@@ -1151,7 +1152,7 @@ _definition
 data_tcod_total_energy_gradient
 _name '_tcod_total_energy_gradient'
 _type numb
-_units eV/A
+_units eV/\%A
 _units_detail 'electron-Volts per Angstroem'
 _definition
 ; Gives an total energy gradient at the end of the computation
@@ -1192,7 +1193,7 @@ loop_ _name
 '_tcod_atom_site_resid_force_dir_cos_y'
 '_tcod_atom_site_resid_force_dir_cos_z'
 _type numb
-_units eV/A
+_units eV/\%A
 _units_detail 'electronvolts per Angstroem'
 _list                      yes
 _list_reference            '_atom_site_label'
@@ -1229,7 +1230,7 @@ computed (the \d is the partial derivative sign).
 data_tcod_atom_site_residual_force_magnitude
 _name '_tcod_atom_site_resid_force_magnitude'
 _type numb
-_units eV/A
+_units eV/\%A
 _units_detail 'electronvolts per Angstroem'
 _enumeration_range 1:
 _list                      yes

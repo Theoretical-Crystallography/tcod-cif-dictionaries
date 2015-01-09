@@ -152,6 +152,7 @@ data_dft_basisset_type
 data_dft_basisset_energy_conv 
     _name '_dft_basisset_energy_conv'
     _type char
+    _units eV
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy measured in eV (electron-volts).
@@ -233,6 +234,7 @@ data_dft_atom_basisset_type
 data_dft_atom_basisset_energy_conv
     _name '_dft_atom_basisset_energy_conv'
     _type char
+    _units eV
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
@@ -430,6 +432,7 @@ _citation_... category loop
 data_dft_cell_energy
     _name '_dft_cell_energy'
     _type char
+    _units eV
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
   Energy given in eV.
@@ -550,6 +553,7 @@ data_dft_cell_magn_orbital_moment
 data_dft_cell_energy_conv
     _name '_dft_cell_energy_conv'
     _type char
+    _units eV
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
   Energy given in eV.
@@ -589,6 +593,10 @@ data_dft_atom_type_valence_configuration
 
   For example, '2s2p' for B-F or '6s6p7s5f' for actinides.
 ;
+    loop_ _example
+          _example_detail
+          2s2p      'for B-F'
+          6s6p7s5f  'for actinides'
 
 data_dft_atom_type_nuclear_charge
     _name '_dft_atom_type_nuclear_charge'
@@ -603,6 +611,7 @@ data_dft_atom_type_nuclear_charge
 data_dft_atom_type_magn_moment
     _name '_dft_atom_type_magn_moment'
     _type numb
+    _units \m_B
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Magnetic moment given in \m_B.
@@ -611,6 +620,7 @@ data_dft_atom_type_magn_moment
 data_dft_atom_type_magn_spin_moment
     _name '_dft_atom_type_magn_spin_moment'
     _type numb
+    _units \m_B
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Magnetic moment given in \m_B.
@@ -619,6 +629,7 @@ data_dft_atom_type_magn_spin_moment
 data_dft_atom_type_magn_orbital_moment
     _name '_dft_atom_type_magn_orbital_moment'
     _type numb
+    _units \m_B
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Magnetic moment given in \m_B.
@@ -635,6 +646,7 @@ data_dft_atom_type_occupation
 data_dft_atom_type_radius
     _name '_dft_atom_type_radius'
     _type numb
+    _units \%A
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
@@ -644,6 +656,7 @@ data_dft_atom_type_radius
 data_dft_atom_type_coulomb_U
     _name '_dft_atom_type_coulomb_U'
     _type numb
+    _units eV
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy given in eV.
@@ -652,6 +665,7 @@ data_dft_atom_type_coulomb_U
 data_dft_atom_type_coulomb_J
     _name '_dft_atom_type_coulomb_J'
     _type numb
+    _units eV
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy given in eV.
@@ -660,6 +674,7 @@ data_dft_atom_type_coulomb_J
 data_dft_atom_relax_force_conv
     _name '_dft_atom_relax_force_conv'
     _type char
+    _units ev/\%A
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
@@ -669,6 +684,7 @@ data_dft_atom_relax_force_conv
 data_dft_atom_relax_energy_conv
     _name '_dft_atom_relax_energy_conv'
     _type char
+    _units eV
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
