@@ -698,6 +698,7 @@ data_dft_alloy_method
     _name '_dft_alloy_method'
     _type char
     loop_ _enumeration
+          _enumeration_detail
         VCA                    'describe the corresponding method here'
         CPA                    'describe the corresponding method here'
         SQS                    'describe the corresponding method here'
