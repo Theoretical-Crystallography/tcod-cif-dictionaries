@@ -12,10 +12,13 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.004
-    _dictionary_update          2015-01-09
+    _dictionary_version         0.005
+    _dictionary_update          2015-05-07
     _dictionary_history
 ;
+2015-05-07 Redefining values _dft_BZ_integration_grid_type as numeric
+           with a range [0,+Inf). Adding a description. A.M.
+
 2015-01-09 Adding data names for Ewald, Fermi and Hartree energy terms.
            A.M.
 
@@ -270,7 +273,7 @@ data_dft_BZ_integration_citation_id
     _definition
 ; A reference to the citation describing the BZ integration method in the
 _citation_... category loop
-;     
+;
 
 data_dft_BZ_integration_grid_type
     _name '_dft_BZ_integration_grid_type'
@@ -332,9 +335,12 @@ data_dft_BZ_integration_smearing_width
 
 data_dft_BZ_integration_MP_order
     _name '_dft_BZ_integration_MP_order'
-    _type char
+    _type numb
+    _enumeration_range 0:
     _definition
-; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+; Order of Methfessel-Paxton approximation, see PRB 40, 3616 (1989) and
+http://www.hector.ac.uk/cse/distributedcse/reports/conquest/conquest/node6.html
+for reference.
 ;
 
 data_dft_BZ_integration_energy_conv
