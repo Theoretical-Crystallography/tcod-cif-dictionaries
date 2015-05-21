@@ -44,6 +44,11 @@ data_on_this_dictionary
     _dictionary_history        
 ;
 
+2015-05-21 Creating categories '_tcod_file_[]' and '_tcod_content_encoding_[]',
+           adding links (parent, child) between '_tcod_file_content_encoding'
+           and '_tcod_content_encoding_id'. Marking list tags. Updating version
+           number to 0.005.
+
 2015-01-05 Adding _tcod_content_encoding_* tags, describing the content
            encoding stack in a more formal way.
            Fixing typo in tag name:
