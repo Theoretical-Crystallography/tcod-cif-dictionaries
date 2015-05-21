@@ -39,8 +39,8 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.004
-    _dictionary_update          2014-11-04
+    _dictionary_version         0.005
+    _dictionary_update          2015-05-21
     _dictionary_history        
 ;
 
@@ -709,6 +709,8 @@ field.
 data_tcod_ff_type
     _name '_tcod_ff_type'
     _type char
+    _list                        yes
+    _list_reference              '_tcod_ff_id'
     loop_ _enumeration
           _enumeration_detail
           Fixed-charge           'describe the corresponding model here'
@@ -730,6 +732,8 @@ data_tcod_ff_type
 data_tcod_ff_name
     _name '_tcod_ff_name'
     _type char
+    _list yes
+    _list_reference '_tcod_ff_id'
     _definition
 ; Standard name for the FF used. If there is no standard name use 'custom'
   Examples: charmm, opls, amber, gromos etc.
@@ -739,6 +743,8 @@ data_tcod_ff_name
 data_tcod_ff_version
     _name '_tcod_ff_version'
     _type char
+    _list yes
+    _list_reference '_tcod_ff_id'
     _definition
 ; Version of a force field. Usually year of the publication.  
 ;     
@@ -746,6 +752,8 @@ data_tcod_ff_version
 data_tcod_ff_citation_id
     _name '_tcod_ff_citation_id'
     _type char
+    _list yes
+    _list_reference '_tcod_ff_id'
     _list_link_parent '_citation_id'
     _definition
 ; A reference to the citation describing the force field in the
@@ -859,93 +867,138 @@ of this computation.
 # Alternative input and output file definitions:
 ###############################################################################
 
+data_tcod_file_[]
+_name '_tcod_file_[]'
+_category category_overview
+_type null
+
 data_tcod_file_id
 _name '_tcod_file_id'
+_category tcod_file
 _type char
+_list yes
+_list_mandatory yes
 _definition
 ; Primary key for the _tcod_file_... table.
 ;
 
 data_tcod_file_name
 _name '_tcod_file_name'
+_category tcod_file
 _type char
+_list yes
+_list_mandatory yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_source_database_name
 _name '_tcod_file_source_database_name'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_source_database_URI
 _name '_tcod_file_source_database_URI'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_source_database_version
 _name '_tcod_file_source_database_version'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_source_reference_id
 _name '_tcod_file_source_reference_id'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_source_reference_version
 _name '_tcod_file_source_reference_version'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_source_reference_uuid
 _name '_tcod_file_source_reference_uuid'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_md5sum
 _name '_tcod_file_md5sum'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ; MD5 checksum of the file.
 ;
 
 data_tcod_file_sha1sum
 _name '_tcod_file_sha1sum'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ; SHA1 checksum of the file.
 ;
 
 data_tcod_file_format
 _name '_tcod_file_format'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_interpreter
 _name '_tcod_file_interpreter'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_role
 _name '_tcod_file_role'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 loop_
 _enumeration
 _enumeration_detail
@@ -961,7 +1014,10 @@ _definition
 
 data_tcod_file_contents_type
 _name '_tcod_file_contents_type'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 loop_
 _enumeration
 _enumeration_detail
@@ -981,21 +1037,31 @@ _definition
 
 data_tcod_file_contents
 _name '_tcod_file_contents'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ;
 ;
 
 data_tcod_file_content_encoding
 _name '_tcod_file_content_encoding'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
+_list_link_child '_tcod_content_encoding_id'
 _definition
 ; Must match a single _tcod_content_encoding_id from the same datablock.
 ;
 
 data_tcod_file_URI
 _name '_tcod_file_URI'
+_category tcod_file
 _type char
+_list yes
+_list_reference '_tcod_file_id'
 _definition
 ; A stable URI (Web reference) where the file can be fetched.
 ;
@@ -1004,16 +1070,42 @@ _definition
 # Content encodings used for the files:
 ###############################################################################
 
+data_tcod_content_encoding_[]
+_name '_tcod_content_encoding_[]'
+_category category_overview
+_type null
+loop_ _example
+      _example_detail
+;
+    loop_
+    _tcod_content_encoding_id
+    _tcod_content_encoding_layer_id
+    _tcod_content_encoding_layer_type
+    gzip+base64 1 gzip
+    gzip+base64 2 base64
+;
+;
+    Example 1 - based on TCOD entry 10000001
+                (http://www.crystallography.net/tcod/10000001.cif@267).
+                Presents an encoding stack for gzip+base64, where data is
+                gzipped first and base64-encoded second.
+;
+
 data_tcod_content_encoding_id
 _name '_tcod_content_encoding_id'
+_category tcod_content_encoding
 _type char
-_definition
-; Primary key for the _tcod_content_encoding_... table.
-;
+_list yes
+_list_link_parent '_tcod_file_content_encoding'
+_list_mandatory yes
 
 data_tcod_content_encoding_layer_id
 _name '_tcod_content_encoding_layer_id'
+_category tcod_content_encoding
 _type numb
+_list yes
+_list_mandatory yes
+_list_uniqueness '_tcod_content_encoding_id'
 _enumeration_range 1:
 _definition
 ; One-based number of an encoding layer in the encoding stack,
@@ -1022,7 +1114,11 @@ starting from the innermost layer.
 
 data_tcod_content_encoding_layer_type
 _name '_tcod_content_encoding_layer_type'
+_category tcod_content_encoding
 _type char
+_list yes
+_list_mandatory yes
+_list_reference '_tcod_content_encoding_id'
 loop_
 _enumeration
 _enumeration_detail
