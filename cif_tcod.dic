@@ -39,15 +39,17 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.005
-    _dictionary_update          2015-05-21
+    _dictionary_version         0.006
+    _dictionary_update          2015-06-16
     _dictionary_history        
 ;
+
+2015-06-16 Adding '_tcod_database_code'. A.M.
 
 2015-05-21 Creating categories '_tcod_file_[]' and '_tcod_content_encoding_[]',
            adding links (parent, child) between '_tcod_file_content_encoding'
            and '_tcod_content_encoding_id'. Marking list tags. Updating version
-           number to 0.005.
+           number to 0.005. A.M.
 
 2015-01-05 Adding _tcod_content_encoding_* tags, describing the content
            encoding stack in a more formal way.
@@ -179,6 +181,42 @@ data_tcod_model
   L.V. Is it possible to add full cif syntax to define the reference?
   S.G. Yes, done in the ..._citation_id and _tcod_citation_linkage
   data items.
+;
+
+###############################################################################
+# TCOD bookkeeping tags
+###############################################################################
+
+data_tcod_database_[]
+    _name                      '_tcod_database_[]'
+    _category                    category_overview
+    _type                        null
+    loop_ _example
+          _example_detail
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+;   _tcod_database_code 10000001
+;
+;
+    Example 1 - based on TCOD entry 10000001.cif, revision 267
+                svn://www.crystallography.net/tcod/cif/10/00/00/10000001.cif
+                http://www.crystallography.net/tcod/10000001.cif
+;
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+    _definition
+;              Data items from this category are used for TCOD bookkeeping
+               records, such as assigned TCOD number (aka TCOD database code).
+;
+
+#------------------------------------------------------------------------------
+
+data_tcod_database_code
+    _name                      '_tcod_database_code'
+    _category                    tcod_database
+    _type                        numb
+    _list                        no
+    _definition
+;              Specifies TCOD number assigned upon deposition into TCOD to the
+               crystal structure described in the CIF.
 ;
 
 ###############################################################################
