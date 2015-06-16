@@ -39,12 +39,17 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.006
+    _dictionary_version         0.008
     _dictionary_update          2015-06-16
     _dictionary_history        
 ;
 
-2015-06-16 Adding '_tcod_database_code'. A.M.
+2015-06-16 Adding '_tcod_database_code'. Fixing typo in enumeration value
+           for tag '_tcod_file_contents_type': 'basissset' -> 'basisset'.
+           Fixing typo in tag name:
+           _tcod_source_structure_uuid -> _tcod_source_structure_database_uuid.
+           Creating categories '_tcod_source_structure_database_[]' and
+           '_tcod_ff_[]'. A.M.
 
 2015-05-21 Creating categories '_tcod_file_[]' and '_tcod_content_encoding_[]',
            adding links (parent, child) between '_tcod_file_content_encoding'
@@ -223,8 +228,14 @@ data_tcod_database_code
 # Identification of the source database record for the structure
 ###############################################################################
 
+data_tcod_source_structure_database_[]
+_name '_tcod_source_structure_database_[]'
+_category category_overview
+_type null
+
 data_tcod_source_structure_database_uuid
-_name '_tcod_source_structure_uuid'
+_name '_tcod_source_structure_database_uuid'
+_category tcod_source_structure_database
 _type char
 _definition
 ; UUID (Universally Unique Identifier,
@@ -234,14 +245,17 @@ database output structure (node, record) that was exported to this entry.
 
 data_tcod_source_structure_database_id
 _name '_tcod_source_structure_database_id'
+_category tcod_source_structure_database
 _type char
 
 data_tcod_source_structure_database_URI
 _name '_tcod_source_structure_database_URI'
+_category tcod_source_structure_database
 _type char
 
 data_tcod_source_structure_database_version
 _name '_tcod_source_structure_database_version'
+_category tcod_source_structure_database
 _type char
 
 ###############################################################################
@@ -738,9 +752,15 @@ _atom_sites_Cartn_tran_matrix_ descriptions.
 # Force field descriptions:
 ###############################################################################
 
+data_tcod_ff_[]
+    _name                        '_tcod_ff_[]'
+    _category                    category_overview
+    _type                        null
+
 data_tcod_ff_id
-    _name '_tcod_ff_id'
-    _type char
+    _name                        '_tcod_ff_id'
+    _category                    tcod_ff
+    _type                        char
     _list                        yes
     _list_mandatory              yes
     _definition
@@ -750,8 +770,9 @@ field.
 ;     
 
 data_tcod_ff_type
-    _name '_tcod_ff_type'
-    _type char
+    _name                        '_tcod_ff_type'
+    _category                    tcod_ff
+    _type                        char
     _list                        yes
     _list_reference              '_tcod_ff_id'
     loop_ _enumeration
@@ -774,6 +795,7 @@ data_tcod_ff_type
 
 data_tcod_ff_name
     _name '_tcod_ff_name'
+    _category tcod_ff
     _type char
     _list yes
     _list_reference '_tcod_ff_id'
@@ -785,6 +807,7 @@ data_tcod_ff_name
 
 data_tcod_ff_version
     _name '_tcod_ff_version'
+    _category tcod_ff
     _type char
     _list yes
     _list_reference '_tcod_ff_id'
@@ -794,6 +817,7 @@ data_tcod_ff_version
 
 data_tcod_ff_citation_id
     _name '_tcod_ff_citation_id'
+    _category tcod_ff
     _type char
     _list yes
     _list_reference '_tcod_ff_id'
@@ -1072,7 +1096,7 @@ _enumeration_detail
     edensity        ''
     wavefunction    ''
     pseudopotential ''
-    basissset       ''
+    basisset        ''
     forcefield      ''
 _definition
 ;
