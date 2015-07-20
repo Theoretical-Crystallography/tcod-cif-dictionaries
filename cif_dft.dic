@@ -12,10 +12,14 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.005
-    _dictionary_update          2015-05-07
+    _dictionary_version         0.006
+    _dictionary_update          2015-07-20
     _dictionary_history
 ;
+2015-07-20 Adding data names for listing points in irreducible Brillouin
+           zone as well as data names to define smearing method for
+           Brillouin zone integration. A.M.
+
 2015-05-07 Redefining values _dft_BZ_integration_grid_type as numeric
            with a range [0,+Inf). Adding a description. A.M.
 
@@ -326,6 +330,39 @@ data_dft_BZ_integration_Froyen_map
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
 
+data_dft_BZ_integration_smearing_method
+    _name '_dft_BZ_integration_smearing_method'
+    _type char
+    loop_
+    _enumeration
+    _enumeration_detail
+    Fermi-Dirac
+; Approximation with Fermi-Dirac function.
+;
+    Methfessel-Paxton
+; As described in:
+Methfessel, M. & Paxton, A. T.
+High-precision sampling for Brillouin-zone integration in metals
+Phys. Rev. B, American Physical Society, 1989, 40, 3616-3621
+;
+    Marzari-Vanderbilt
+; As described in:
+Marzari, N.; Vanderbilt, D.; De Vita, A. & Payne, M. C.
+Thermal Contraction and Disordering of the Al(110)
+Surface Phys. Rev. Lett., American Physical Society, 1999, 82, 3296-3299
+;
+    other
+; Description is provided in _dft_BZ_integration_smearing_method_other.
+;
+
+data_dft_BZ_integration_smearing_method_other
+    _name '_dft_BZ_integration_smearing_method_other'
+    _type char
+    _definition
+; Description of used BZ integration smearing method if different from
+enumeration values of _dft_BZ_integration_smearing_method.
+;
+
 data_dft_BZ_integration_smearing_width
     _name '_dft_BZ_integration_smearing_width'
     _type char
@@ -376,6 +413,51 @@ structure is finite in this direction).
     _definition
 ; Specifies whether periodic boundary conditions were used along each of
 the unit cell axes.
+;
+
+###############################################################################
+# Points in irreducible BZ
+###############################################################################
+
+data_dft_BZ_integration_grid_IBZ_point_[]
+    _name '_dft_BZ_integration_grid_IBZ_point_[]'
+    _category category_overview
+    _type null
+
+data_dft_BZ_integration_grid_IBZ_point_id
+    _name '_dft_BZ_integration_grid_IBZ_point_id'
+    _category dft_BZ_integration_grid_IBZ_point
+    _type char
+    _list yes
+    _list_mandatory yes
+    _definition
+; A unique identifier (primary key) of an irreducible BZ point in a loop.
+;
+
+data_dft_BZ_integration_grid_IBZ_point_
+    loop_ _name
+        '_dft_BZ_integration_grid_IBZ_point_X'
+        '_dft_BZ_integration_grid_IBZ_point_Y'
+        '_dft_BZ_integration_grid_IBZ_point_Z'
+    _category dft_BZ_integration_grid_IBZ_point
+    _type numb
+    _type_conditions esd
+    _list yes
+    _list_reference '_dft_BZ_integration_grid_IBZ_point_id'
+    _definition
+; Coordinates of irreducible BZ points in relative coordinates of the
+reciprocal lattice vectors.
+;
+
+data_dft_BZ_integration_grid_IBZ_point_weight
+    _name '_dft_BZ_integration_grid_IBZ_point_weight'
+    _category dft_BZ_integration_grid_IBZ_point
+    _type numb
+    _list yes
+    _list_reference '_dft_BZ_integration_grid_IBZ_point_weight'
+    _enumeration_range 0:1
+    _definition
+; Normalized weights of irreducible BZ points.
 ;
 
 ###############################################################################
