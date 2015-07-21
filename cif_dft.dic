@@ -12,10 +12,16 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.006
-    _dictionary_update          2015-07-20
+    _dictionary_version         0.007
+    _dictionary_update          2015-07-21
     _dictionary_history
 ;
+2015-07-21 Redefining values of _dft_BZ_integration_method as
+           enumeration values. Adding tag
+           _dft_BZ_integration_method_other_name. Redefining tags
+           _dft_BZ_integration_grid_shift_[XYZ] as numbers with values
+           from a range [0:1]. A.M.
+
 2015-07-20 Adding data names for listing points in irreducible Brillouin
            zone as well as data names to define smearing method for
            Brillouin zone integration. A.M.
@@ -269,6 +275,29 @@ data_dft_BZ_integration_method
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
+    loop_
+    _enumeration
+    _enumeration_detail
+    'simple sampling'      'describe the corresponding method here'
+    'linear tetrahedron'   'describe the corresponding method here'
+    'weighted tetrahedron' 'describe the corresponding method here'
+    'Monkhorst-Pack'
+; As described in:
+Monkhorst, H. J. & Pack, J. D.
+Special points for Brillouin-zone integrations
+Phys. Rev. B, American Physical Society, 1976, 13, 5188-5192
+;
+    'other'
+; Description is provided in _dft_BZ_integration_method_other
+;
+
+data_dft_BZ_integration_method_other
+    _name '_dft_BZ_integration_method_other'
+    _type char
+    _definition
+; Description of used BZ integration method if different from enumeration
+values of _dft_BZ_integration_method.
+;
 
 data_dft_BZ_integration_citation_id
     _name '_dft_BZ_integration_citation_id'
@@ -318,9 +347,22 @@ data_dft_BZ_integration_grid_shift_[]
         '_dft_BZ_integration_grid_shift_X'
         '_dft_BZ_integration_grid_shift_Y'
         '_dft_BZ_integration_grid_shift_Z'
-    _type char
+    _type numb
+    _enumeration_range 0:1
     _definition
-; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+; Shift of the integration grid to the given direction. Value is
+given as a fraction of reciprocal lattice vector.
+;
+    _example
+;
+    loop_
+    _dft_BZ_integration_grid_shift_X
+    _dft_BZ_integration_grid_shift_Y
+    _dft_BZ_integration_grid_shift_Z
+    0.5 0.5 0
+;
+    _example_detail
+; Integration grid is shifted by half of reciprocal cell vectors X and Y.
 ;
 
 data_dft_BZ_integration_Froyen_map
@@ -336,6 +378,9 @@ data_dft_BZ_integration_smearing_method
     loop_
     _enumeration
     _enumeration_detail
+    Gaussian
+; Approximation with Gaussian distribution.
+;
     Fermi-Dirac
 ; Approximation with Fermi-Dirac function.
 ;
