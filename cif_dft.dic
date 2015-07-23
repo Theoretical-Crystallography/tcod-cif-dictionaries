@@ -26,7 +26,7 @@ data_on_this_dictionary
            zone as well as data names to define smearing method for
            Brillouin zone integration. A.M.
 
-2015-05-07 Redefining values _dft_BZ_integration_grid_type as numeric
+2015-05-07 Redefining values of _dft_BZ_integration_MP_order as numeric
            with a range [0,+Inf). Adding a description. A.M.
 
 2015-01-09 Adding data names for Ewald, Fermi and Hartree energy terms.
