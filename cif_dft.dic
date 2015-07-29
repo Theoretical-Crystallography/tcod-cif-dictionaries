@@ -16,6 +16,10 @@ data_on_this_dictionary
     _dictionary_update          2015-07-21
     _dictionary_history
 ;
+2015-07-29 Adding descriptions for abbreviated enumeration values for
+           _dft_XC_functional_type, _dft_pseudopotential_type and
+           _dft_alloy_method. A.M.
+
 2015-07-21 Redefining values of _dft_BZ_integration_method as
            enumeration values. Adding tag
            _dft_BZ_integration_method_other_name. Redefining tags
@@ -77,19 +81,19 @@ data_dft_XC_functional_type
     _type char
     loop_ _enumeration
           _enumeration_detail
-          LDA                    'describe the corresponding functional here'
-          GGA                    'describe the corresponding functional here'
-          meta-GGA               'describe the corresponding functional here'
+          LDA                    'local-density approximation'
+          GGA                    'generalized gradient approximation'
+          meta-GGA               'GGA with the second derivative of electron density'
           Hybrid                 'describe the corresponding functional here'
           ACFD-RPA               'describe the corresponding functional here'
           'orbital functionals'  'describe the corresponding functional here'
           'exact exchange'       'describe the corresponding functional here'
-          vdW-DF                 'describe the corresponding functional here'
+          vdW-DF                 'as proposed by Dion et al. (2004)'
           LDA/GGA+U/DMFT         'describe the corresponding functional here'
           'orbital polarization' 'describe the corresponding functional here'
           other                  'functional not one of the mentioned above'
     _definition
-; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
+; Approximation for exchange-correlation functionals.
 ;
 
 data_dft_XC_functional_type_other_name
@@ -534,9 +538,9 @@ data_dft_pseudopotential_type
     _type char
     loop_ _enumeration
           _enumeration_detail
-          NCPP      'describe the corresponding pseudopotential here'
-          USPP      'describe the corresponding pseudopotential here'
-          PAW       'describe the corresponding pseudopotential here'
+          NCPP      'norm-conserving pseudopotential'
+          USPP      'ultrasoft pseudopotential'
+          PAW       'projector augmented waves pseudopotential'
           other     'description should be given in the data CIF'
     _definition
 ; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
@@ -874,9 +878,9 @@ data_dft_alloy_method
     _type char
     loop_ _enumeration
           _enumeration_detail
-        VCA                    'describe the corresponding method here'
-        CPA                    'describe the corresponding method here'
-        SQS                    'describe the corresponding method here'
+        VCA                    'virtual crystal approximation'
+        CPA                    'coherent potential approximation'
+        SQS                    'special quasirandom structures'
         'real space recursion' 'describe the corresponding method here'
         other                  'alloy method not one of the mentioned above'
     _definition
