@@ -592,8 +592,8 @@ data_dft_kinetic_energy_cutoff_EEX
     _type numb
     _units eV
     _definition
-; Limit of the exact exchange (EEX) operator, used in EEX-type
-calculations.
+; Limit of the maximum kinetic energy for exact exchange (EEX) operator,
+used in EEX-type calculations.
 ;
 
 ###############################################################################
