@@ -12,10 +12,12 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.007
-    _dictionary_update          2015-07-21
+    _dictionary_version         0.008
+    _dictionary_update          2015-08-03
     _dictionary_history
 ;
+2015-08-03 Adding data names _dft_kinetic_energy_cutoff_*. A.M.
+
 2015-07-29 Adding descriptions for abbreviated enumeration values for
            _dft_XC_functional_type, _dft_pseudopotential_type and
            _dft_alloy_method. A.M.
@@ -562,7 +564,37 @@ data_dft_pseudopotential_citation_id
     _definition
 ; A reference to the citation describing the pseudopotential in the
 _citation_... category loop
-;     
+;
+
+###############################################################################
+# Kinetic energy cut-offs
+###############################################################################
+
+data_dft_kinetic_energy_cutoff_wavefunctions
+    _name '_dft_kinetic_energy_cutoff_wavefunctions'
+    _type numb
+    _units eV
+    _definition
+; Limit of the maximum kinetic energy for wavefunctions, used to reduce
+the basis set to a finite size.
+;
+
+data_dft_kinetic_energy_cutoff_charge_density
+    _name '_dft_kinetic_energy_cutoff_charge_density'
+    _type numb
+    _units eV
+    _definition
+; Limit of the maximum kinetic energy for charge density.
+;
+
+data_dft_kinetic_energy_cutoff_EEX
+    _name '_dft_kinetic_energy_cutoff_EEX'
+    _type numb
+    _units eV
+    _definition
+; Limit of the exact exchange (EEX) operator, used in EEX-type
+calculations.
+;
 
 ###############################################################################
 # Energy
