@@ -12,10 +12,15 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.008
-    _dictionary_update          2015-08-03
+    _dictionary_version         0.009
+    _dictionary_update          2015-09-14
     _dictionary_history
 ;
+2015-09-14 Fixing data name in data_dft_atom_basisset_citation_id: was
+           _dft_basisset_citation_id (duplicate of one defined in
+           data_dft_basisset_citation_id), should be
+           _dft_atom_basisset_citation_id. A.M.
+
 2015-08-03 Adding data names _dft_kinetic_energy_cutoff_*. A.M.
 
 2015-07-29 Adding descriptions for abbreviated enumeration values for
@@ -263,7 +268,7 @@ data_dft_atom_basisset_energy_conv
 ;
 
 data_dft_atom_basisset_citation_id
-    _name '_dft_basisset_citation_id'
+    _name '_dft_atom_basisset_citation_id'
     _type char
     _list_link_parent '_citation_id'
     _definition
