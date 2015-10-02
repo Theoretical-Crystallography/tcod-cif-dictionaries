@@ -12,11 +12,12 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.010
+    _dictionary_version         0.011
     _dictionary_update          2015-10-02
     _dictionary_history
 ;
 2015-10-02 Adding data names _dft_lattice_energy and _dft_bulk_modulus.
+           Redefining units of _dft_bulk_modulus to kilopascals.
            A.M.
 
 2015-09-14 Fixing data name in data_dft_atom_basisset_citation_id: was
@@ -961,8 +962,8 @@ data_dft_lattice_energy
 data_dft_bulk_modulus
     _name '_dft_bulk_modulus'
     _type numb
-    _units Pa
-    _units_detail 'pascal'
+    _units kPa
+    _units_detail 'kilopascals'
     _definition
 ; Ratio of the infinitesimal pressure increase to the resulting relative
   decrease of the volume.
