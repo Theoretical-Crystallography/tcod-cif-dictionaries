@@ -12,13 +12,13 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.011
+    _dictionary_version         0.012
     _dictionary_update          2015-10-02
     _dictionary_history
 ;
 2015-10-02 Adding data names _dft_lattice_energy and _dft_bulk_modulus.
-           Redefining units of _dft_bulk_modulus to kilopascals.
-           A.M.
+           Redefining units of _dft_bulk_modulus to kilopascals,
+           _dft_lattice_energy to kilojoules per mole. A.M.
 
 2015-09-14 Fixing data name in data_dft_atom_basisset_citation_id: was
            _dft_basisset_citation_id (duplicate of one defined in
@@ -952,8 +952,8 @@ data_dft_alloy_supercell
 data_dft_lattice_energy
     _name '_dft_lattice_energy'
     _type numb
-    _units J/mol
-    _units_detail 'joules per mole'
+    _units kJ/mol
+    _units_detail 'kilojoules per mole'
     _definition
 ; Energy of formation of the crystal from infinitely-separated ions,
   molecules, or atoms.
