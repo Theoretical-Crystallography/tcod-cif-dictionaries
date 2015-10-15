@@ -12,10 +12,14 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.012
-    _dictionary_update          2015-10-02
+    _dictionary_version         0.013
+    _dictionary_update          2015-10-15
     _dictionary_history
 ;
+2015-10-15 Adding data names _dft_stiffness_tensor_* for stiffness tensor
+           matrix representation. Marking _dft_basisset_[] as category.
+           A.M.
+
 2015-10-02 Adding data names _dft_lattice_energy and _dft_bulk_modulus.
            Redefining units of _dft_bulk_modulus to kilopascals,
            _dft_lattice_energy to kilojoules per mole. A.M.
@@ -130,7 +134,7 @@ _citation_... category loop
 
 data_dft_basisset_[]
     _name '_dft_basisset_[]'
-    _type char
+    _type null
     _category category_overview
     _definition
 ; Data items to describe the basis set used in the computation.
@@ -967,4 +971,35 @@ data_dft_bulk_modulus
     _definition
 ; Ratio of the infinitesimal pressure increase to the resulting relative
   decrease of the volume.
+;
+
+data_dft_stiffness_tensor_
+    loop_ _name
+        '_dft_stiffness_tensor_11'
+        '_dft_stiffness_tensor_12'
+        '_dft_stiffness_tensor_13'
+        '_dft_stiffness_tensor_14'
+        '_dft_stiffness_tensor_15'
+        '_dft_stiffness_tensor_16'
+        '_dft_stiffness_tensor_22'
+        '_dft_stiffness_tensor_23'
+        '_dft_stiffness_tensor_24'
+        '_dft_stiffness_tensor_25'
+        '_dft_stiffness_tensor_26'
+        '_dft_stiffness_tensor_33'
+        '_dft_stiffness_tensor_34'
+        '_dft_stiffness_tensor_35'
+        '_dft_stiffness_tensor_36'
+        '_dft_stiffness_tensor_44'
+        '_dft_stiffness_tensor_45'
+        '_dft_stiffness_tensor_46'
+        '_dft_stiffness_tensor_55'
+        '_dft_stiffness_tensor_56'
+        '_dft_stiffness_tensor_66'
+    _type numb
+    _units GPa
+    _units_detail gigapascals
+    _enumeration_default 0
+    _definition
+; Stiffness tensor matrix.
 ;
