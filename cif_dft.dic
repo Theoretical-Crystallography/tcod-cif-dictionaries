@@ -968,7 +968,7 @@ data_dft_lattice_energy
 data_dft_bulk_modulus
     _name '_dft_bulk_modulus'
     _type numb
-    _units kPa
+    _units GPa
     _units_detail gigapascals
     _definition
 ; Ratio of the infinitesimal pressure increase to the resulting relative
