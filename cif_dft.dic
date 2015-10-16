@@ -12,10 +12,12 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.013
-    _dictionary_update          2015-10-15
+    _dictionary_version         0.014
+    _dictionary_update          2015-10-16
     _dictionary_history
 ;
+2015-10-16 Redefining units of _dft_bulk_modulus as gigapascals. A.M.
+
 2015-10-15 Adding data names _dft_stiffness_tensor_* for stiffness tensor
            matrix representation. Marking _dft_basisset_[] as category.
            A.M.
@@ -967,7 +969,7 @@ data_dft_bulk_modulus
     _name '_dft_bulk_modulus'
     _type numb
     _units kPa
-    _units_detail 'kilopascals'
+    _units_detail gigapascals
     _definition
 ; Ratio of the infinitesimal pressure increase to the resulting relative
   decrease of the volume.
