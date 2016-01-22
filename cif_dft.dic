@@ -12,10 +12,13 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.014
+    _dictionary_version         0.015
     _dictionary_update          2015-10-16
     _dictionary_history
 ;
+2016-01-22 Redefining tag _dft_cell_magn_moment as numeric with units of
+           \m_B. A.M.
+
 2015-10-16 Redefining units of _dft_bulk_modulus as gigapascals. A.M.
 
 2015-10-15 Adding data names _dft_stiffness_tensor_* for stiffness tensor
@@ -737,7 +740,8 @@ _definition
 
 data_dft_cell_magn_moment
     _name '_dft_cell_magn_moment'
-    _type char
+    _type numb
+    _units \m_B
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
