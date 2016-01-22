@@ -13,7 +13,7 @@
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
     _dictionary_version         0.015
-    _dictionary_update          2015-10-16
+    _dictionary_update          2016-01-22
     _dictionary_history
 ;
 2016-01-22 Redefining tag _dft_cell_magn_moment as numeric with units of
