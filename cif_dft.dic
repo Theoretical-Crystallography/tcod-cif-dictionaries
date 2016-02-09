@@ -12,10 +12,13 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.015
-    _dictionary_update          2016-01-22
+    _dictionary_version         0.016
+    _dictionary_update          2016-02-09
     _dictionary_history
 ;
+2016-02-09 Adding _dft_band_gap. Fixing 'ev' -> 'eV' as units of
+           _dft_atom_relax_force_conv (typo). A.M.
+
 2016-01-22 Redefining tag _dft_cell_magn_moment as numeric with units of
            \m_B. A.M.
 
@@ -888,7 +891,7 @@ data_dft_atom_type_coulomb_J
 data_dft_atom_relax_force_conv
     _name '_dft_atom_relax_force_conv'
     _type char
-    _units ev/\%A
+    _units eV/\%A
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
@@ -1008,4 +1011,13 @@ data_dft_stiffness_tensor_
     _enumeration_default 0
     _definition
 ; Stiffness tensor matrix.
+;
+
+data_dft_band_gap
+    _name '_dft_band_gap'
+    _type numb
+    _units eV
+    _units_detail electronvolts
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
