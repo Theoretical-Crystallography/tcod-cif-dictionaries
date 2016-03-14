@@ -12,10 +12,12 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.017
-    _dictionary_update          2016-02-19
+    _dictionary_version         0.018
+    _dictionary_update          2016-03-14
     _dictionary_history
 ;
+2016-03-14 Adding _dft_dielectric_constant. A.M.
+
 2016-02-19 Redefining tags _dft_BZ_integration_smearing_width and
            _dft_atom_type_valence_electrons as numeric. A.M.
 
@@ -1021,6 +1023,13 @@ data_dft_band_gap
     _type numb
     _units eV
     _units_detail electronvolts
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_dielectric_constant
+    _name '_dft_dielectric_constant'
+    _type numb
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
