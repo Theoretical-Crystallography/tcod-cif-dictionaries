@@ -151,6 +151,15 @@ data_tcod_model
     _definition
 ;
 
+  S.G. 2016-10-28: FIXME:
+
+  -- merge with the NOMAD 'Electronic structure method';
+
+  -- add indication that this data item is related to the NOMAD
+     'Electronic structure method';
+
+  -- see also: NOMAD 'calcuation_method'
+
   This should define the theoretical model used to calculate the
   structure.
 
