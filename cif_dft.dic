@@ -94,6 +94,12 @@ data_dft_XC_functional_[]
 ;
 
 data_dft_XC_functional_id
+    _name '_dft_XC_functional_id'
+    _type char
+    _definition
+;
+  XC functional ID in the XC functional loop (for mixed functionals). S.G.
+;
 
 data_dft_XC_exchange_functional_name
     _name '_dft_XC_exchange_functional_name'
