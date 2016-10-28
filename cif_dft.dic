@@ -97,7 +97,16 @@ data_dft_XC_exchange_functional
     _name '_dft_XC_exchange_functional'
     _type char
     _definition
-;. . .
+;
+  A very comprehensive XC functional list can be found at the NOMAD site:
+
+  https://gitlab.rzg.mpg.de/nomad-lab/nomad-meta-info/wikis/metainfo/XC-functional
+
+  Our dictionary should be harmonised with this list.
+
+  The corresponding NOMAD metadata entry is 'XC_functional' and 'XC_functional_name'.
+
+  S.G. 2016-10-28
 ;
 
 data_dft_XC_correlation_functional
