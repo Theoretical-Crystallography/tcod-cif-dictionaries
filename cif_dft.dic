@@ -93,8 +93,10 @@ data_dft_XC_functional_[]
 ;. . .
 ;
 
-data_dft_XC_exchange_functional
-    _name '_dft_XC_exchange_functional'
+data_dft_XC_functional_id
+
+data_dft_XC_exchange_functional_name
+    _name '_dft_XC_exchange_functional_name'
     _type char
     _definition
 ;
@@ -109,11 +111,29 @@ data_dft_XC_exchange_functional
   S.G. 2016-10-28
 ;
 
-data_dft_XC_correlation_functional
-    _name '_dft_XC_correlation_functional'
+data_dft_XC_exchange_functional_weight
+    _name '_dft_XC_exchange_functional_weight'
+    _type numb
+    _definition
+;
+ A proportion (weight) of the particular XC exchange functional for
+ mixed functionals. S.G.
+;
+
+data_dft_XC_correlation_functional_name
+    _name '_dft_XC_correlation_functional_name'
     _type char
     _definition
 ;. . .
+;
+
+data_dft_XC_correlation_functional_weight
+    _name '_dft_XC_correlation_functional_weight'
+    _type numb
+    _definition
+;
+ A proportion (weight) of the particular XC correlation functional for
+ mixed functionals. S.G.
 ;
 
 data_dft_XC_functional_type
@@ -143,6 +163,7 @@ data_dft_XC_functional_type_other_name
 ; Custom name of the functional if _dft_XC_functional_type data item value
   is given as 'other'.
 ;
+
 
 data_dft_XC_functional_citation_id
     _name '_dft_XC_functional_citation_id'
