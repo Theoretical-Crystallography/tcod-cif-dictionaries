@@ -39,10 +39,15 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.009
-    _dictionary_update          2016-11-02
+    _dictionary_version         0.010
+    _dictionary_update          2017-04-25
     _dictionary_history        
 ;
+2017-04-25 Specifying links (parent, child) between
+           '_tcod_computation_input_file',
+           '_tcod_computation_log_file', '_tcod_computation_stdout',
+           '_tcod_computation_stderr' and '_tcod_file_id'. Adding
+           descriptions for aforementioned tags. A.M.
 
 2016-11-02 Adding category '_tcod_computation_[]', with all it's tags
            defining a loop. Making '_tcod_computation_step' mandatory,
@@ -895,29 +900,37 @@ _definition
 data_tcod_computation_input_file
 _name '_tcod_computation_input_file'
 _type char
+_list_link_child '_tcod_file_id'
 _definition
-;
+; Link to '_tcod_file_id' of a file with STDIN contents for a
+  computation.
 ;
 
 data_tcod_computation_log_file
 _name '_tcod_computation_log_file'
 _type char
+_list_link_child '_tcod_file_id'
 _definition
-;
+; Link to '_tcod_file_id' of a file with a log file for a
+  computation.
 ;
 
 data_tcod_computation_stdout
 _name '_tcod_computation_stdout'
 _type char
+_list_link_child '_tcod_file_id'
 _definition
-;
+; Link to '_tcod_file_id' of a file with STDOUT contents for a
+  computation.
 ;
 
 data_tcod_computation_stderr
 _name '_tcod_computation_stderr'
 _type char
+_list_link_child '_tcod_file_id'
 _definition
-;
+; Link to '_tcod_file_id' of a file with STDERR contents for a
+  computation.
 ;
 
 ###############################################################################
@@ -958,6 +971,12 @@ _category tcod_file
 _type char
 _list yes
 _list_mandatory yes
+loop_
+_list_link_parent
+    '_tcod_computation_input_file'
+    '_tcod_computation_log_file'
+    '_tcod_computation_stdout'
+    '_tcod_computation_stderr'
 _definition
 ; Primary key for the _tcod_file_... table.
 ;
