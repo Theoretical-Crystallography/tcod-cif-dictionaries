@@ -12,14 +12,14 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.024
+    _dictionary_version         0.025
     _dictionary_update          2018-02-05
     _dictionary_history
 ;
 2018-02-05 Putting '_dft_kinetic_energy_cutoff_*' data items into a
            separate category. Improving descriptions for the values of
-           '_dft_pseudopotential_type'. Fixing links to category
-           'dft_BZ_integration'. A.M.
+           '_dft_pseudopotential_type'. Fixing links to categories
+           'dft_basisset' and 'dft_BZ_integration'. A.M.
 
 2018-02-01 Putting Brillouin zone integration-related data items into a
            separate category. A.M.
@@ -211,7 +211,7 @@ data_dft_basisset_[]
 data_dft_basisset_type
     _name '_dft_basisset_type'
     _type char
-    _category basisset
+    _category dft_basisset
     loop_
     _enumeration
     _enumeration_detail
@@ -256,6 +256,7 @@ data_dft_basisset_energy_conv
     _name '_dft_basisset_energy_conv'
     _type char
     _units eV
+    _category dft_basisset
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy measured in eV (electron-volts).
@@ -264,6 +265,7 @@ data_dft_basisset_energy_conv
 data_dft_basisset_citation_id
     _name '_dft_basisset_citation_id'
     _type char
+    _category dft_basisset
     _list_link_parent '_citation_id'
     _definition
 ; A reference to the citation describing the basis set in the
@@ -273,6 +275,7 @@ _citation_... category loop
 data_dft_basisset_database_name
     _name '_dft_basisset_database_name'
     _type char
+    _category dft_basisset
     _definition
 ; A name of a database where the basis set comes from, e.g. "EMSL
   Basis Set Exchange"
@@ -281,6 +284,7 @@ data_dft_basisset_database_name
 data_dft_basisset_database_abbrev
     _name '_dft_basisset_database_abbrev'
     _type char
+    _category dft_basisset
     _definition
 ; A name of a database where the basis set comes from, e.g. "BSE"
 ;
@@ -288,6 +292,7 @@ data_dft_basisset_database_abbrev
 data_dft_basisset_database_code
     _name '_dft_basisset_database_code'
     _type char
+    _category dft_basisset
     _definition
 ; A unique stable code (identifier, key) assigned to the basis set by
 a database.
@@ -296,20 +301,23 @@ a database.
 data_dft_basisset_database_URI
     _name '_dft_basisset_database_URI'
     _type char
+    _category dft_basisset
     _definition
-; An stable URI of the Basis set database landing page.
+; A stable URI of the Basis set database landing page.
 ;
 
 data_dft_basisset_URI
     _name '_dft_basisset_URI'
     _type char
+    _category dft_basisset
     _definition
-; An stable URI at which specific basis set can be retrieved.
+; A stable URI at which specific basis set can be retrieved.
 ;
 
 data_dft_basisset_database_citation_id
     _name '_dft_basisset_database_citation_id'
     _type char
+    _category dft_basisset
     _list_link_parent '_citation_id'
     _definition
 ; A reference to the citation describing the basis set database in the
