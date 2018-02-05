@@ -12,10 +12,14 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.022
-    _dictionary_update          2018-02-01
+    _dictionary_version         0.023
+    _dictionary_update          2018-02-05
     _dictionary_history
 ;
+2018-02-05 Putting '_dft_kinetic_energy_cutoff_*' data items into a
+           separate category. Improving descriptions for the values of
+           '_dft_pseudopotential_type'. A.M.
+
 2018-02-01 Putting Brillouin zone integration-related data items into a
            separate category. A.M.
 
@@ -671,7 +675,10 @@ data_dft_pseudopotential_type
           NCPP      'norm-conserving pseudopotential'
           USPP      'ultrasoft pseudopotential'
           PAW       'projector augmented waves pseudopotential'
-          other     'description should be given in the data CIF'
+          other
+; description should be given in the CIF data item
+  _dft_pseudopotential_type_other_name
+;
     _definition
 ; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
   L.V. Added by L.V.
@@ -702,10 +709,20 @@ data_dft_pseudopotential_citation_id
 # Kinetic energy cut-offs
 ###############################################################################
 
+data_dft_kinetic_energy_cutoff_[]
+    _name '_dft_kinetic_energy_cutoff_[]'
+    _type null
+    _category category_overview
+    _definition
+; Data items to describe limits (cutoffs) for kinetic energy that were
+used in the calculations.
+;
+
 data_dft_kinetic_energy_cutoff_wavefunctions
     _name '_dft_kinetic_energy_cutoff_wavefunctions'
     _type numb
     _units eV
+    _category dft_kinetic_energy_cutoff
     _definition
 ; Limit of the maximum kinetic energy for wavefunctions, used to reduce
 the basis set to a finite size.
@@ -715,6 +732,7 @@ data_dft_kinetic_energy_cutoff_charge_density
     _name '_dft_kinetic_energy_cutoff_charge_density'
     _type numb
     _units eV
+    _category dft_kinetic_energy_cutoff
     _definition
 ; Limit of the maximum kinetic energy for charge density.
 ;
@@ -723,6 +741,7 @@ data_dft_kinetic_energy_cutoff_EEX
     _name '_dft_kinetic_energy_cutoff_EEX'
     _type numb
     _units eV
+    _category dft_kinetic_energy_cutoff
     _definition
 ; Limit of the maximum kinetic energy for exact exchange (EEX) operator,
 used in EEX-type calculations.
