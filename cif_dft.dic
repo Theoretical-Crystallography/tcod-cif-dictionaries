@@ -12,14 +12,14 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.025
+    _dictionary_version         0.026
     _dictionary_update          2018-02-05
     _dictionary_history
 ;
-2018-02-05 Putting '_dft_kinetic_energy_cutoff_*' data items into a
-           separate category. Improving descriptions for the values of
-           '_dft_pseudopotential_type'. Fixing links to categories
-           'dft_basisset' and 'dft_BZ_integration'. A.M.
+2018-02-05 Putting '_dft_kinetic_energy_cutoff_*' and '_dft_alloy_*'
+           data items into separate categories. Improving descriptions
+           for the values of '_dft_pseudopotential_type'. Fixing links to
+           categories 'dft_basisset' and 'dft_BZ_integration'. A.M.
 
 2018-02-01 Putting Brillouin zone integration-related data items into a
            separate category. A.M.
@@ -1066,9 +1066,18 @@ data_dft_atom_type_DMFT_solver
 # Data items required to model metal alloys:
 ###############################################################################
 
+data_dft_alloy_[]
+    _name '_dft_alloy_[]'
+    _type null
+    _category category_overview
+    _definition
+; Data items to describe modelling of metal alloys.
+;
+
 data_dft_alloy_method
     _name '_dft_alloy_method'
     _type char
+    _category dft_alloy
     loop_ _enumeration
           _enumeration_detail
         VCA                    'virtual crystal approximation'
@@ -1083,6 +1092,7 @@ data_dft_alloy_method
 data_dft_alloy_method_other_name
     _name '_dft_alloy_method_other_name'
     _type char
+    _category dft_alloy
     _definition
 ; Custom name of the alloy method if _dft_alloy_method data item value
   is given as 'other'.
@@ -1091,6 +1101,7 @@ data_dft_alloy_method_other_name
 data_dft_alloy_supercell
     _name '_dft_alloy_supercell'
     _type char
+    _category dft_alloy
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
