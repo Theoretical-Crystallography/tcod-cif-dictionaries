@@ -12,14 +12,15 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.026
+    _dictionary_version         0.027
     _dictionary_update          2018-02-05
     _dictionary_history
 ;
-2018-02-05 Putting '_dft_kinetic_energy_cutoff_*' and '_dft_alloy_*'
-           data items into separate categories. Improving descriptions
-           for the values of '_dft_pseudopotential_type'. Fixing links to
-           categories 'dft_basisset' and 'dft_BZ_integration'. A.M.
+2018-02-05 Putting '_dft_kinetic_energy_cutoff_*', '_dft_alloy_*' and
+           '_dft_atom_type_*' data items into separate categories.
+           Improving descriptions for the values of
+           '_dft_pseudopotential_type'. Fixing links to categories
+           'dft_basisset' and 'dft_BZ_integration'. A.M.
 
 2018-02-01 Putting Brillouin zone integration-related data items into a
            separate category. A.M.
@@ -933,9 +934,18 @@ data_dft_cell_potential_conv
 # Atom parameters: electron configurations, nuclear charges, etc.
 ###############################################################################
 
+data_dft_atom_type_[]
+    _name '_dft_atom_type_[]'
+    _type null
+    _category category_overview
+    _definition
+; Data items to describe per-atom-type properties of DFT calculations.
+;
+
 data_dft_atom_type_valence_electrons
     _name '_dft_atom_type_valence_electrons'
     _type numb
+    _category dft_atom_type
     _definition
 ; Number of electrons contributed from an atomic type.
   (Should this be in the _atom_site_... or _atom_type_ linked loop? S.G.)
@@ -944,6 +954,7 @@ data_dft_atom_type_valence_electrons
 data_dft_atom_type_valence_configuration
     _name '_dft_atom_type_valence_configuration'
     _type char
+    _category dft_atom_type
     _definition
 ; PLEASE GIVE A SEMI-FORMAL HUMAN-READABLE DESCRIPTION HERE.
 
@@ -957,6 +968,7 @@ data_dft_atom_type_valence_configuration
 data_dft_atom_type_nuclear_charge
     _name '_dft_atom_type_nuclear_charge'
     _type numb
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE SEMI-FORMAL DESCRIPTION HERE.
 
@@ -968,6 +980,7 @@ data_dft_atom_type_magn_moment
     _name '_dft_atom_type_magn_moment'
     _type numb
     _units \m_B
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Magnetic moment given in \m_B.
@@ -977,6 +990,7 @@ data_dft_atom_type_magn_spin_moment
     _name '_dft_atom_type_magn_spin_moment'
     _type numb
     _units \m_B
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Magnetic moment given in \m_B.
@@ -986,6 +1000,7 @@ data_dft_atom_type_magn_orbital_moment
     _name '_dft_atom_type_magn_orbital_moment'
     _type numb
     _units \m_B
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Magnetic moment given in \m_B.
@@ -995,6 +1010,7 @@ data_dft_atom_type_occupation
     # Maybe 'occupancy'? S.G.
     _name '_dft_atom_type_occupation'
     _type numb
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
@@ -1003,6 +1019,7 @@ data_dft_atom_type_radius
     _name '_dft_atom_type_radius'
     _type numb
     _units \%A
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
@@ -1013,6 +1030,7 @@ data_dft_atom_type_coulomb_U
     _name '_dft_atom_type_coulomb_U'
     _type numb
     _units eV
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy given in eV.
@@ -1022,6 +1040,7 @@ data_dft_atom_type_coulomb_J
     _name '_dft_atom_type_coulomb_J'
     _type numb
     _units eV
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy given in eV.
@@ -1031,6 +1050,7 @@ data_dft_atom_relax_force_conv
     _name '_dft_atom_relax_force_conv'
     _type char
     _units eV/\%A
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
@@ -1041,6 +1061,7 @@ data_dft_atom_relax_energy_conv
     _name '_dft_atom_relax_energy_conv'
     _type char
     _units eV
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
@@ -1051,6 +1072,7 @@ data_dft_atom_type_double_count
     # Qu'est-ce que c'est? Why 'double count'?
     _name '_dft_atom_type_double_count'
     _type numb
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
@@ -1058,6 +1080,7 @@ data_dft_atom_type_double_count
 data_dft_atom_type_DMFT_solver
     _name '_dft_atom_type_DMFT_solver'
     _type char
+    _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
