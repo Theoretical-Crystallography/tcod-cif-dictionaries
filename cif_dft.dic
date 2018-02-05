@@ -12,13 +12,14 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.023
+    _dictionary_version         0.024
     _dictionary_update          2018-02-05
     _dictionary_history
 ;
 2018-02-05 Putting '_dft_kinetic_energy_cutoff_*' data items into a
            separate category. Improving descriptions for the values of
-           '_dft_pseudopotential_type'. A.M.
+           '_dft_pseudopotential_type'. Fixing links to category
+           'dft_BZ_integration'. A.M.
 
 2018-02-01 Putting Brillouin zone integration-related data items into a
            separate category. A.M.
@@ -367,7 +368,7 @@ data_dft_BZ_integration_[]
 data_dft_BZ_integration_method
     _name '_dft_BZ_integration_method'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
@@ -390,7 +391,7 @@ Phys. Rev. B, American Physical Society, 1976, 13, 5188-5192
 data_dft_BZ_integration_method_other
     _name '_dft_BZ_integration_method_other'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     _definition
 ; Description of used BZ integration method if different from enumeration
 values of _dft_BZ_integration_method.
@@ -399,7 +400,7 @@ values of _dft_BZ_integration_method.
 data_dft_BZ_integration_citation_id
     _name '_dft_BZ_integration_citation_id'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     _list_link_parent '_citation_id'
     _definition
 ; A reference to the citation describing the BZ integration method in the
@@ -409,7 +410,7 @@ _citation_... category loop
 data_dft_BZ_integration_grid_type
     _name '_dft_BZ_integration_grid_type'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
@@ -426,7 +427,7 @@ data_dft_BZ_integration_grid_[]
 data_dft_BZ_integration_grid_IBZ_points
     _name '_dft_BZ_integration_grid_IBZ_points'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     _definition
 ; Number of points in irreducible BZ.
   (Please expand the explanation, especially for non-specialists).
@@ -438,7 +439,7 @@ data_dft_BZ_integration_grid_dens_[]
         '_dft_BZ_integration_grid_dens_Y'
         '_dft_BZ_integration_grid_dens_Z'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
@@ -449,7 +450,7 @@ data_dft_BZ_integration_grid_shift_[]
         '_dft_BZ_integration_grid_shift_Y'
         '_dft_BZ_integration_grid_shift_Z'
     _type numb
-    _category BZ_integration
+    _category dft_BZ_integration
     _enumeration_range 0:1
     _definition
 ; Shift of the integration grid to the given direction. Value is
@@ -470,7 +471,7 @@ given as a fraction of reciprocal lattice vector.
 data_dft_BZ_integration_Froyen_map
     _name '_dft_BZ_integration_Froyen_map'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
@@ -478,7 +479,7 @@ data_dft_BZ_integration_Froyen_map
 data_dft_BZ_integration_smearing_method
     _name '_dft_BZ_integration_smearing_method'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     loop_
     _enumeration
     _enumeration_detail
@@ -507,7 +508,7 @@ Surface Phys. Rev. Lett., American Physical Society, 1999, 82, 3296-3299
 data_dft_BZ_integration_smearing_method_other
     _name '_dft_BZ_integration_smearing_method_other'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     _definition
 ; Description of used BZ integration smearing method if different from
 enumeration values of _dft_BZ_integration_smearing_method.
@@ -516,7 +517,7 @@ enumeration values of _dft_BZ_integration_smearing_method.
 data_dft_BZ_integration_smearing_width
     _name '_dft_BZ_integration_smearing_width'
     _type numb
-    _category BZ_integration
+    _category dft_BZ_integration
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
@@ -524,7 +525,7 @@ data_dft_BZ_integration_smearing_width
 data_dft_BZ_integration_MP_order
     _name '_dft_BZ_integration_MP_order'
     _type numb
-    _category BZ_integration
+    _category dft_BZ_integration
     _enumeration_range 0:
     _definition
 ; Order of Methfessel-Paxton approximation, see PRB 40, 3616 (1989) and
@@ -535,7 +536,7 @@ for reference.
 data_dft_BZ_integration_energy_conv
     _name '_dft_BZ_integration_energy_conv'
     _type char
-    _category BZ_integration
+    _category dft_BZ_integration
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
