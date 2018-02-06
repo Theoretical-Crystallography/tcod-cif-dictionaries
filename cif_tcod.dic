@@ -39,10 +39,13 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.010
-    _dictionary_update          2017-04-25
+    _dictionary_version         0.011
+    _dictionary_update          2018-02-06
     _dictionary_history        
 ;
+2018-02-06 Putting '_tcod_software_library_*' into a separate category.
+           A.M.
+
 2017-04-25 Specifying links (parent, child) between
            '_tcod_computation_input_file',
            '_tcod_computation_log_file', '_tcod_computation_stdout',
@@ -523,9 +526,22 @@ data_tcod_software_compiler_options
 ; A string with all options that were used to compile the given package.
 ;
 
+###############################################################################
+# Description of software libraries
+###############################################################################
+
+data_tcod_software_library_[]
+    _name '_tcod_software_library_[]'
+    _type null
+    _category category_overview
+    _definition
+; Describes computational libraries.
+;
+
 data_tcod_software_library_id
     _name '_tcod_software_library_id'
     _type char
+    _category tcod_software_library
     _definition
 ; Identifies a software library in a loop
 ;
@@ -533,6 +549,7 @@ data_tcod_software_library_id
 data_tcod_software_library
     _name '_tcod_software_library'
     _type char
+    _category tcod_software_library
     _definition
 ; The subroutine library (e.g. linear algebra) that was linked with
 the code used for the described calculation. Only the library name
@@ -544,6 +561,7 @@ If more than one library was used, these items must be looped.
 data_tcod_software_library_version
     _name '_tcod_software_library_version'
     _type char
+    _category tcod_software_library
     _definition
 ; A version string (number) of the library linked with the code for this
 computation.
@@ -552,6 +570,7 @@ computation.
 data_tcod_software_library_compilation_timestamp
     _name '_tcod_software_library_compilation_date'
     _type char
+    _category tcod_software_library
     _example     2014-11-04T13:49:49.290475Z
     _definition
 ; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
@@ -561,6 +580,7 @@ data_tcod_software_library_compilation_timestamp
 data_tcod_software_library_compilation_environment
     _name '_tcod_software_library_compilation_environment'
     _type char
+    _category tcod_software_library
     _definition
 ; A set of environment variable definitions, in /bin/sh syntax
 (i.e. using the "NAME=VALUE" syntax) for all relevant environment
@@ -571,6 +591,7 @@ list in this syntax from the Unix/Linux 'printenv' command.
 data_tcod_software_library_compiler_name
     _name '_tcod_software_library_compiler_name'
     _type char
+    _category tcod_software_library
     _definition
 ; Library compiler name (same syntax as for a package compiler).
 ;
@@ -578,6 +599,7 @@ data_tcod_software_library_compiler_name
 data_tcod_software_library_compiler_version
     _name '_tcod_software_library_compiler_version'
     _type char
+    _category tcod_software_library
     _definition
 ; Library compiler version (same syntax as for a package compiler).
 ;
@@ -585,6 +607,7 @@ data_tcod_software_library_compiler_version
 data_tcod_software_library_compiler_options
     _name '_tcod_software_library_compiler_options'
     _type char
+    _category tcod_software_library
     _definition
 ; Library compiler options that were used (same syntax as for a
 package compiler).
@@ -593,6 +616,7 @@ package compiler).
 data_tcod_software_library_path
     _name '_tcod_software_library_path'
     _type char
+    _category tcod_software_library
     _definition
 ; A file sytem path of the library file (especially the shared
 library, *.so or *.dll) linked with the code for this computation.
@@ -601,6 +625,7 @@ library, *.so or *.dll) linked with the code for this computation.
 data_tcod_software_library_binary_uri
     _name '_tcod_software_library_uri'
     _type char
+    _category tcod_software_library
     _definition
 ; An URI (Web reference) where the binary software library used for
 this computation can be fetched.
@@ -609,6 +634,7 @@ this computation can be fetched.
 data_tcod_software_library_source_uri
     _name '_tcod_software_source_uri'
     _type char
+    _category tcod_software_library
     _definition
 ; An URI (Web reference) where the source code software library used for
 this computation can be fetched.
