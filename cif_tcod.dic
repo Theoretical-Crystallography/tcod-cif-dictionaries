@@ -39,10 +39,13 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.014
-    _dictionary_update          2018-02-06
+    _dictionary_version         0.015
+    _dictionary_update          2018-02-27
     _dictionary_history        
 ;
+2018-02-27 Defining '_tcod_data_source_file' and '_tcod_data_source_block'
+           data items. A.M.
+
 2018-02-06 Putting '_tcod_software_library_*', 
            '_tcod_initial_coordinate_*', '_tcod_total_energy_*',
            '_tcod_atom_site_residual_force*' and
@@ -248,6 +251,55 @@ data_tcod_database_code
     _definition
 ;              Specifies TCOD number assigned upon deposition into TCOD to the
                crystal structure described in the CIF.
+;
+
+#-------------------------------------------------------------------------------
+
+data_tcod_data_source_[]
+    _name                      '_tcod_data_source_[]'
+    _category                    category_overview
+    _type                        null
+    _definition
+;               Data items from this category are used to
+                record and trace sources of information deposited into TCOD.
+;
+
+#-------------------------------------------------------------------------------
+
+data_tcod_data_source_file
+    _name                      '_tcod_data_source_file'
+    _category                    tcod_data_source
+    _type                        char
+    _list                        no
+    _definition
+;         Specifies file name of the file that served as a source of data in
+          this TCOD entry. The file should be recoded without the path or
+          other URL components, since these components usually have no sense
+          on the recipient's system. In Unix parlance, the value recorded
+          should be the basename of the original file. For many data
+          sources, however, the basename contains enough information to
+          locate the original source. For instance, CIFs published in IUCr
+          journals have Coeditor Code as a CIF file name, permitting to
+          identify the original paper where the structure is
+          discussed. Other journals may used original article's DOI as a part
+          of the filename for the supplementary CIF file, which also permits
+          one to trace back the original paper.
+;
+
+#------------------------------------------------------------------------------
+
+data_tcod_data_source_block
+    _name                      '_tcod_data_source_block'
+    _category                    tcod_data_source
+    _type                        char
+    _list                        no
+    _definition
+;         Specifies the name of the data block within the file specified in
+          the _tcod_data_source_file tag that served as a source of data in
+          this TCOD entry. Only the data block name following the 'data_'
+          header keyword should be recorded, not the whole data block
+          header; i.e. the value specified here should be 'I', *not*
+          'data_I', for a data block with the header 'data_I'.
 ;
 
 ###############################################################################
