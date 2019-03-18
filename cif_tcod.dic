@@ -39,10 +39,12 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.015
-    _dictionary_update          2018-02-27
+    _dictionary_version         0.016
+    _dictionary_update          2019-03-18
     _dictionary_history        
 ;
+2019-03-18 Adding missing type for '_tcod_citation_linkage'. A.M.
+
 2018-02-27 Defining '_tcod_data_source_file' and '_tcod_data_source_block'
            data items. A.M.
 
@@ -961,6 +963,7 @@ _citation_... category loop
 data_tcod_citation_linkage
     _name      '_tcod_citation_linkage'
     _category  citation
+    _type      char
     loop_ _enumeration
           _enumeration_detail
     force-field      'citation of the paper describing the force field'
