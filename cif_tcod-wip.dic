@@ -69,6 +69,7 @@ save_category_overview
 _definition.id                   CATEGORY_OVERVIEW
 _definition.class                Head
 _definition.scope                Category
+_name.object_id                  CATEGORY_OVERVIEW
 save_
 save_tcod_structure_type
 _description.text
@@ -2089,7 +2090,7 @@ _name.object_id                  TCOD_ATOM_SITE_RESIDUAL_FORCE
 save_
 save_tcod_atom_site_resid_force_Cartn_x
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _list_reference                  '_atom_site_label'
 _description.text
 ;
@@ -2129,7 +2130,7 @@ _name.object_id                  '_tcod_atom_site_resid_force_Cartn_x'
 save_
 save_tcod_atom_site_resid_force_Cartn_y
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _list_reference                  '_atom_site_label'
 _description.text
 ;
@@ -2169,7 +2170,7 @@ _name.object_id                  '_tcod_atom_site_resid_force_Cartn_y'
 save_
 save_tcod_atom_site_resid_force_Cartn_z
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _list_reference                  '_atom_site_label'
 _description.text
 ;
@@ -2209,7 +2210,7 @@ _name.object_id                  '_tcod_atom_site_resid_force_Cartn_z'
 save_
 save_tcod_atom_site_resid_force_fract_x
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _list_reference                  '_atom_site_label'
 _description.text
 ;
@@ -2249,7 +2250,7 @@ _name.object_id                  '_tcod_atom_site_resid_force_fract_x'
 save_
 save_tcod_atom_site_resid_force_fract_y
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _list_reference                  '_atom_site_label'
 _description.text
 ;
@@ -2289,7 +2290,7 @@ _name.object_id                  '_tcod_atom_site_resid_force_fract_y'
 save_
 save_tcod_atom_site_resid_force_fract_z
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _list_reference                  '_atom_site_label'
 _description.text
 ;
@@ -2329,7 +2330,7 @@ _name.object_id                  '_tcod_atom_site_resid_force_fract_z'
 save_
 save_tcod_atom_site_resid_force_dir_cos_x
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _list_reference                  '_atom_site_label'
 _description.text
 ;
@@ -2369,7 +2370,7 @@ _name.object_id                  '_tcod_atom_site_resid_force_dir_cos_x'
 save_
 save_tcod_atom_site_resid_force_dir_cos_y
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _list_reference                  '_atom_site_label'
 _description.text
 ;
@@ -2409,7 +2410,7 @@ _name.object_id                  '_tcod_atom_site_resid_force_dir_cos_y'
 save_
 save_tcod_atom_site_resid_force_dir_cos_z
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _list_reference                  '_atom_site_label'
 _description.text
 ;
@@ -2449,7 +2450,7 @@ _name.object_id                  '_tcod_atom_site_resid_force_dir_cos_z'
 save_
 save_tcod_atom_site_resid_force_magnitude
 _name.category_id                tcod_atom_site_residual_force
-_units.code                      electronvolts_per_angstrom
+_units.code                      electron_volts_per_angstrom
 _enumeration.range               1:
 _list_reference                  '_atom_site_label'
 _description.text

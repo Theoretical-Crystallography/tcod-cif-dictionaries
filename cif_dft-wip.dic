@@ -101,6 +101,7 @@ save_category_overview
 _definition.id                   CATEGORY_OVERVIEW
 _definition.class                Head
 _definition.scope                Category
+_name.object_id                  CATEGORY_OVERVIEW
 save_
 save_dft_XC_functional
 _description.text                '. . .'
@@ -1833,7 +1834,7 @@ _definition.id                   '_dft_stiffness_tensor_66'
 _name.object_id                  '_dft_stiffness_tensor_66'
 save_
 save_dft_band_gap
-_units.code                      electronvolts
+_units.code                      electron_volts
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2019-03-18
