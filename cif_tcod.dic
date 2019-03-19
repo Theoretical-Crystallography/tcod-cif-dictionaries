@@ -39,10 +39,12 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.016
-    _dictionary_update          2019-03-18
+    _dictionary_version         0.017
+    _dictionary_update          2019-03-19
     _dictionary_history        
 ;
+2019-03-19 Defining items '_tcod_software_library_*' as looped. A.M.
+
 2019-03-18 Adding missing type for '_tcod_citation_linkage'. A.M.
 
 2018-02-27 Defining '_tcod_data_source_file' and '_tcod_data_source_block'
@@ -309,43 +311,43 @@ data_tcod_data_source_block
 ###############################################################################
 
 data_tcod_source_structure_database_[]
-_name '_tcod_source_structure_database_[]'
-_category category_overview
-_type null
+    _name                      '_tcod_source_structure_database_[]'
+    _category                    category_overview
+    _type                        null
 
 data_tcod_source_structure_database_uuid
-_name '_tcod_source_structure_database_uuid'
-_category tcod_source_structure_database
-_type char
-_definition
+    _name                      '_tcod_source_structure_database_uuid'
+    _category                    tcod_source_structure_database
+    _type char
+    _definition
 ; UUID (Universally Unique Identifier,
 http://en.wikipedia.org/wiki/Universally_unique_identifier) of the
 database output structure (node, record) that was exported to this entry.
 ;
 
 data_tcod_source_structure_database_id
-_name '_tcod_source_structure_database_id'
-_category tcod_source_structure_database
-_type char
+    _name                      '_tcod_source_structure_database_id'
+    _category                    tcod_source_structure_database
+    _type                        char
 
 data_tcod_source_structure_database_URI
-_name '_tcod_source_structure_database_URI'
-_category tcod_source_structure_database
-_type char
+    _name                      '_tcod_source_structure_database_URI'
+    _category                    tcod_source_structure_database
+    _type                        char
 
 data_tcod_source_structure_database_version
-_name '_tcod_source_structure_database_version'
-_category tcod_source_structure_database
-_type char
+    _name                      '_tcod_source_structure_database_version'
+    _category                    tcod_source_structure_database
+    _type                        char
 
 ###############################################################################
 # Identification of the source database
 ###############################################################################
 
 data_tcod_source_database_name
-_name '_tcod_source_database_name'
-_type char
-_definition
+    _name                      '_tcod_source_database_name'
+    _type                        char
+    _definition
 ; A name of a database that was used to produce (to compute) this
 structure.
 
@@ -355,9 +357,9 @@ _tcod_source_database_name AiiDA
 ;
 
 data_tcod_source_database_URI
-_name '_tcod_source_database_URI'
-_type char
-_definition
+    _name                      '_tcod_source_database_URI'
+    _type                        char
+    _definition
 ; A (stable) URI (or URL) of the database Web site describing the
 database that produced the structure.
 
@@ -367,9 +369,9 @@ _tcod_source_database_URI http://www.aiida.net/
 ;
 
 data_tcod_source_database_version
-_name '_tcod_source_database_version'
-_type char
-_definition
+    _name                      '_tcod_source_database_version'
+    _type                        char
+    _definition
 ; A version of the database that produced a structure under consideration.
 
 Example:
@@ -601,6 +603,7 @@ data_tcod_software_library_id
     _name '_tcod_software_library_id'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; Identifies a software library in a loop
 ;
@@ -609,6 +612,7 @@ data_tcod_software_library
     _name '_tcod_software_library'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; The subroutine library (e.g. linear algebra) that was linked with
 the code used for the described calculation. Only the library name
@@ -621,6 +625,7 @@ data_tcod_software_library_version
     _name '_tcod_software_library_version'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; A version string (number) of the library linked with the code for this
 computation.
@@ -630,6 +635,7 @@ data_tcod_software_library_compilation_timestamp
     _name '_tcod_software_library_compilation_date'
     _type char
     _category tcod_software_library
+    _list yes
     _example     2014-11-04T13:49:49.290475Z
     _definition
 ; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
@@ -640,6 +646,7 @@ data_tcod_software_library_compilation_environment
     _name '_tcod_software_library_compilation_environment'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; A set of environment variable definitions, in /bin/sh syntax
 (i.e. using the "NAME=VALUE" syntax) for all relevant environment
@@ -651,6 +658,7 @@ data_tcod_software_library_compiler_name
     _name '_tcod_software_library_compiler_name'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; Library compiler name (same syntax as for a package compiler).
 ;
@@ -659,6 +667,7 @@ data_tcod_software_library_compiler_version
     _name '_tcod_software_library_compiler_version'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; Library compiler version (same syntax as for a package compiler).
 ;
@@ -667,6 +676,7 @@ data_tcod_software_library_compiler_options
     _name '_tcod_software_library_compiler_options'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; Library compiler options that were used (same syntax as for a
 package compiler).
@@ -676,6 +686,7 @@ data_tcod_software_library_path
     _name '_tcod_software_library_path'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; A file sytem path of the library file (especially the shared
 library, *.so or *.dll) linked with the code for this computation.
@@ -685,6 +696,7 @@ data_tcod_software_library_binary_uri
     _name '_tcod_software_library_binary_uri'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; An URI (Web reference) where the binary software library used for
 this computation can be fetched.
@@ -694,6 +706,7 @@ data_tcod_software_library_source_uri
     _name '_tcod_software_library_source_uri'
     _type char
     _category tcod_software_library
+    _list yes
     _definition
 ; An URI (Web reference) where the source code software library used for
 this computation can be fetched.
