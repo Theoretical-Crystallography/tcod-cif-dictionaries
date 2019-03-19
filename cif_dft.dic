@@ -12,10 +12,14 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.029
-    _dictionary_update          2019-03-18
+    _dictionary_version         0.030
+    _dictionary_update          2019-03-19
     _dictionary_history
 ;
+2019-03-19 Setting _list_reference of
+           '_dft_BZ_integration_grid_IBZ_point_weight' to
+           '_dft_BZ_integration_grid_IBZ_point_id' instead of itself. A.M.
+
 2019-03-18 Declaring all data items of category 'dft_pseudopotential' as
            looped. Adding '_units_detail' for all data items with units.
            A.M.
@@ -629,7 +633,7 @@ data_dft_BZ_integration_grid_IBZ_point_weight
     _category dft_BZ_integration_grid_IBZ_point
     _type numb
     _list yes
-    _list_reference '_dft_BZ_integration_grid_IBZ_point_weight'
+    _list_reference '_dft_BZ_integration_grid_IBZ_point_id'
     _enumeration_range 0:1
     _definition
 ; Normalized weights of irreducible BZ points.
