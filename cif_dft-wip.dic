@@ -1,15 +1,15 @@
 #\#CIF_2.0
-data_cif_dft.dic
-_dictionary.title                cif_dft.dic
+data_CIF_DFT
+_dictionary.title                CIF_DFT
 _dictionary.version              0.31.0
-_dictionary.date                 2019-03-19
+_dictionary.date                 2019-03-25
 _dictionary.class                Instance
 _dictionary.ddl_conformance      3.13.1
 loop_
 _dictionary_audit.version
 _dictionary_audit.date
 _dictionary_audit.revision
-0.31.0 2019-03-19 'Automatically converting to DDLm'
+0.31.0 2019-03-25 'Automatically converting to DDLm'
 0.030 2019-03-19
 ;
 2019-03-19 Setting _list_reference of
@@ -106,11 +106,11 @@ _definition.id                   CATEGORY_OVERVIEW
 _definition.class                Head
 _definition.scope                Category
 _name.object_id                  CATEGORY_OVERVIEW
-_name.category_id                cif_dft.dic
+_name.category_id                CIF_DFT
 save_
 save_dft_XC_functional
 _description.text                '. . .'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -123,7 +123,7 @@ _description.text
 ;
   XC functional ID in the XC functional loop (for mixed functionals). S.G.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -144,7 +144,7 @@ _description.text
 
   S.G. 2016-10-28
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -158,7 +158,7 @@ _description.text
  A proportion (weight) of the particular XC exchange functional for
  mixed functionals. S.G.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -168,7 +168,7 @@ _name.object_id                  '_dft_XC_exchange_functional_weight'
 save_
 save_dft_XC_correlation_functional_name
 _description.text                '. . .'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -182,7 +182,7 @@ _description.text
  A proportion (weight) of the particular XC correlation functional for
  mixed functionals. S.G.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -193,7 +193,7 @@ save_
 save_dft_XC_functional_type
 _description.text
 ' Approximation for exchange-correlation functionals.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -221,7 +221,7 @@ _description.text
 ; Custom name of the functional if _dft_XC_functional_type data item value
   is given as 'other'.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -235,7 +235,7 @@ _description.text
 ; A reference to the citation describing the XC functional in the
 _citation_... category loop
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -247,7 +247,7 @@ save_dft_basisset
 _name.category_id                category_overview
 _description.text
 ' Data items to describe the basis set used in the computation.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Set
 _definition.scope                Category
 _definition.id                   DFT_BASISSET
@@ -277,7 +277,7 @@ _description.text
 
    Q: how plane wave basis set is encoded? (S.G.)
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -308,7 +308,7 @@ _description.text
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy measured in eV (electron-volts).
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -322,7 +322,7 @@ _description.text
 ; A reference to the citation describing the basis set in the
 _citation_... category loop
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -335,7 +335,7 @@ _description.text
 ; A name of a database where the basis set comes from, e.g. "EMSL
   Basis Set Exchange"
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -346,7 +346,7 @@ save_dft_basisset_database_abbrev
 _name.category_id                dft_basisset
 _description.text
 ' A name of a database where the basis set comes from, e.g. "BSE"'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -359,7 +359,7 @@ _description.text
 ; A unique stable code (identifier, key) assigned to the basis set by
 a database.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -370,7 +370,7 @@ save_dft_basisset_database_URI
 _name.category_id                dft_basisset
 _description.text
 ' A stable URI of the Basis set database landing page.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -381,7 +381,7 @@ save_dft_basisset_URI
 _name.category_id                dft_basisset
 _description.text
 ' A stable URI at which specific basis set can be retrieved.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -395,7 +395,7 @@ _description.text
 ; A reference to the citation describing the basis set database in the
 _citation_... category loop.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -405,7 +405,7 @@ save_
 save_dft_atom_basisset
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -416,7 +416,7 @@ save_
 save_dft_atom_basisset_type
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -431,7 +431,7 @@ _description.text
 
   In eV.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -445,7 +445,7 @@ _description.text
 ; A reference to the citation describing the atom basis set in the
 _citation_... category loop
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -457,7 +457,7 @@ save_dft_BZ_integration
 _name.category_id                category_overview
 _description.text
 ' Data items to describe the integration of Brillouin zone (BZ).'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Set
 _definition.scope                Category
 _definition.id                   DFT_BZ_INTEGRATION
@@ -467,7 +467,7 @@ save_dft_BZ_integration_method
 _name.category_id                dft_BZ_integration
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -494,7 +494,7 @@ _description.text
 ; Description of used BZ integration method if different from enumeration
 values of _dft_BZ_integration_method.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -508,7 +508,7 @@ _description.text
 ; A reference to the citation describing the BZ integration method in the
 _citation_... category loop
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -519,7 +519,7 @@ save_dft_BZ_integration_grid_type
 _name.category_id                dft_BZ_integration
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -529,7 +529,7 @@ save_
 save_dft_BZ_integration_grid_X
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -540,7 +540,7 @@ save_
 save_dft_BZ_integration_grid_Y
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -551,7 +551,7 @@ save_
 save_dft_BZ_integration_grid_Z
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -565,7 +565,7 @@ _description.text
 ; Number of points in irreducible BZ.
   (Please expand the explanation, especially for non-specialists).
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -576,7 +576,7 @@ save_dft_BZ_integration_grid_dens_X
 _name.category_id                dft_BZ_integration
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -587,7 +587,7 @@ save_dft_BZ_integration_grid_dens_Y
 _name.category_id                dft_BZ_integration
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -598,7 +598,7 @@ save_dft_BZ_integration_grid_dens_Z
 _name.category_id                dft_BZ_integration
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -622,7 +622,7 @@ _description_example.case
 ;
 _description_example.detail
 ' Integration grid is shifted by half of reciprocal cell vectors X and Y.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -646,7 +646,7 @@ _description_example.case
 ;
 _description_example.detail
 ' Integration grid is shifted by half of reciprocal cell vectors X and Y.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -670,7 +670,7 @@ _description_example.case
 ;
 _description_example.detail
 ' Integration grid is shifted by half of reciprocal cell vectors X and Y.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -681,7 +681,7 @@ save_dft_BZ_integration_Froyen_map
 _name.category_id                dft_BZ_integration
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -690,7 +690,7 @@ _name.object_id                  '_dft_BZ_integration_Froyen_map'
 save_
 save_dft_BZ_integration_smearing_method
 _name.category_id                dft_BZ_integration
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -722,7 +722,7 @@ _description.text
 ; Description of used BZ integration smearing method if different from
 enumeration values of _dft_BZ_integration_smearing_method.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -733,7 +733,7 @@ save_dft_BZ_integration_smearing_width
 _name.category_id                dft_BZ_integration
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -748,7 +748,7 @@ _description.text
 http://www.hector.ac.uk/cse/distributedcse/reports/conquest/conquest/node6.html
 for reference.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -759,7 +759,7 @@ save_dft_BZ_integration_energy_conv
 _name.category_id                dft_BZ_integration
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -770,7 +770,7 @@ save_dft_cell_pressure
 _units.code                      kilopascals
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -783,7 +783,7 @@ _description.text
 ; Specifies whether periodic boundary conditions were used along each of
 the unit cell axes.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -807,7 +807,7 @@ _description.text
 ; Specifies whether periodic boundary conditions were used along each of
 the unit cell axes.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -831,7 +831,7 @@ _description.text
 ; Specifies whether periodic boundary conditions were used along each of
 the unit cell axes.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -852,7 +852,7 @@ f 'Same as "false"'
 save_
 save_dft_BZ_integration_grid_IBZ_point
 _name.category_id                category_overview
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Loop
 _definition.scope                Category
 _definition.id                   DFT_BZ_INTEGRATION_GRID_IBZ_POINT
@@ -863,7 +863,7 @@ _name.category_id                dft_BZ_integration_grid_IBZ_point
 _list_mandatory                  yes
 _description.text
 ' A unique identifier (primary key) of an irreducible BZ point in a loop.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -877,7 +877,7 @@ _description.text
 ; Coordinates of irreducible BZ points in relative coordinates of the
 reciprocal lattice vectors.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -892,7 +892,7 @@ _description.text
 ; Coordinates of irreducible BZ points in relative coordinates of the
 reciprocal lattice vectors.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -907,7 +907,7 @@ _description.text
 ; Coordinates of irreducible BZ points in relative coordinates of the
 reciprocal lattice vectors.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -921,7 +921,7 @@ _list_reference                  '_dft_BZ_integration_grid_IBZ_point_id'
 _enumeration.range               0:1
 _description.text
 ' Normalized weights of irreducible BZ points.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -931,7 +931,7 @@ save_
 save_dft_cell_valence_electrons
 _enumeration.range               1:
 _description.text                ' Total number of electrons in calculation.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -943,7 +943,7 @@ save_dft_core_electrons
 _enumeration.range               1:
 _description.text
 ' Total number of core electrons in calculation'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -955,7 +955,7 @@ save_dft_pseudopotential
 _name.category_id                category_overview
 _description.text
 ' Data items to describe used pseudopotentials.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Loop
 _definition.scope                Category
 _definition.id                   DFT_PSEUDOPOTENTIAL
@@ -967,7 +967,7 @@ _list_link_parent                '_atom_site_type_symbol'
 _list_mandatory                  yes
 _description.text
 ' A reference to the atom type, for which the pseudopotential is used.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -984,7 +984,7 @@ _description.text
 ; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
   L.V. Added by L.V.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1008,7 +1008,7 @@ _description.text
 ; Custom name of the pseudopotential if _dft_pseudopotential_type data
   item value is given as 'other'.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1022,7 +1022,7 @@ _description.text
 ; A reference to the citation describing the pseudopotential in the
   _citation_... category loop.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1035,7 +1035,7 @@ _description.text
 ; Data items to describe limits (cutoffs) for kinetic energy that were
 used in the calculations.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Set
 _definition.scope                Category
 _definition.id                   DFT_KINETIC_ENERGY_CUTOFF
@@ -1048,7 +1048,7 @@ _description.text
 ; Limit of the maximum kinetic energy for wavefunctions, used to reduce
 the basis set to a finite size.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1060,7 +1060,7 @@ _units.code                      electron_volts
 _name.category_id                dft_kinetic_energy_cutoff
 _description.text
 ' Limit of the maximum kinetic energy for charge density.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1074,7 +1074,7 @@ _description.text
 ; Limit of the maximum kinetic energy for exact exchange (EEX) operator,
 used in EEX-type calculations.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1092,7 +1092,7 @@ _description.text
   "total energy" (ID: totalEnergy) term? If so, maybe we rename this
   data item to _dft_total_energy?
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1110,7 +1110,7 @@ _cell_length_* and _cell_angle_* parameters.
 Q: should the nuclei kin. energy be included? Is it ever appreciable?
 What about vibrational lattice modes (phonons)? (S.G.)
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1124,7 +1124,7 @@ _description.text
 ; Should be the same as the CML (ID: coulombEnergy) term,
 http://www.xml-cml.org/dictionary/compchem/#coulombEnergy.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1138,7 +1138,7 @@ _description.text
 ; http://www.xml-cml.org/dictionary/compchem/#correlationEnergy (ID:
   correlationEnergy)
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1152,7 +1152,7 @@ _description.text
 ; http://www.xml-cml.org/dictionary/compchem/#e1Energy
   (ID: e1Energy)
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1166,7 +1166,7 @@ _description.text
 ; http://www.xml-cml.org/dictionary/compchem/#e2Energy
   (ID: e2Energy)
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1182,7 +1182,7 @@ _description.text
 
   Q: is it not included into Coulomb energy? S.G.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1194,7 +1194,7 @@ save_dft_ewald_energy
 _units.code                      electron_volts
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1206,7 +1206,7 @@ save_dft_fermi_energy
 _units.code                      electron_volts
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1218,7 +1218,7 @@ save_dft_hartree_energy
 _units.code                      electron_volts
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1230,7 +1230,7 @@ save_dft_cell_magn_moment
 _units.code                      bohr_magnetons
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1241,7 +1241,7 @@ save_
 save_dft_cell_magn_spin_moment
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1252,7 +1252,7 @@ save_
 save_dft_cell_magn_orbital_moment
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1266,7 +1266,7 @@ _description.text
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
   Energy given in eV.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1277,7 +1277,7 @@ save_
 save_dft_cell_density_conv
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1288,7 +1288,7 @@ save_
 save_dft_cell_potential_conv
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1300,7 +1300,7 @@ save_dft_atom_type
 _name.category_id                category_overview
 _description.text
 ' Data items to describe per-atom-type properties of DFT calculations.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Set
 _definition.scope                Category
 _definition.id                   DFT_ATOM_TYPE
@@ -1312,7 +1312,7 @@ _description.text
 ; Number of electrons contributed from an atomic type.
   (Should this be in the _atom_site_... or _atom_type_ linked loop? S.G.)
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1326,7 +1326,7 @@ _description.text
 
   For example, '2s2p' for B-F or '6s6p7s5f' for actinides.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1346,7 +1346,7 @@ _description.text
   This would be 76 for Os but 26.3 for a VCA calculation for the
   Slater-Pauling-curve maximum (70/30 Fe/Co).
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1360,7 +1360,7 @@ _description.text
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Magnetic moment given in μ_B.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1374,7 +1374,7 @@ _description.text
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Magnetic moment given in μ_B.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1388,7 +1388,7 @@ _description.text
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Magnetic moment given in μ_B.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1399,7 +1399,7 @@ save_dft_atom_type_occupation
 _name.category_id                dft_atom_type
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1414,7 +1414,7 @@ _description.text
 
   Radius given in Ångstrøms (Å).
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1428,7 +1428,7 @@ _description.text
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy given in eV.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1442,7 +1442,7 @@ _description.text
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy given in eV.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1457,7 +1457,7 @@ _description.text
 
   In eV/Å.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1472,7 +1472,7 @@ _description.text
 
   In eV.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1483,7 +1483,7 @@ save_dft_atom_type_double_count
 _name.category_id                dft_atom_type
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1494,7 +1494,7 @@ save_dft_atom_type_DMFT_solver
 _name.category_id                dft_atom_type
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1505,7 +1505,7 @@ save_dft_alloy
 _name.category_id                category_overview
 _description.text
 ' Data items to describe modelling of metal alloys.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Set
 _definition.scope                Category
 _definition.id                   DFT_ALLOY
@@ -1515,7 +1515,7 @@ save_dft_alloy_method
 _name.category_id                dft_alloy
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1537,7 +1537,7 @@ _description.text
 ; Custom name of the alloy method if _dft_alloy_method data item value
   is given as 'other'.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1551,7 +1551,7 @@ _description.text
 
   For such alloy methods that require supercells.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
@@ -1564,7 +1564,7 @@ _description.text
 ; Energy of formation of the crystal from infinitely-separated ions,
   molecules, or atoms.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1578,7 +1578,7 @@ _description.text
 ; Ratio of the infinitesimal pressure increase to the resulting relative
   decrease of the volume.
 ;
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1590,7 +1590,7 @@ save_dft_stiffness_tensor_11
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1602,7 +1602,7 @@ save_dft_stiffness_tensor_12
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1614,7 +1614,7 @@ save_dft_stiffness_tensor_13
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1626,7 +1626,7 @@ save_dft_stiffness_tensor_14
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1638,7 +1638,7 @@ save_dft_stiffness_tensor_15
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1650,7 +1650,7 @@ save_dft_stiffness_tensor_16
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1662,7 +1662,7 @@ save_dft_stiffness_tensor_22
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1674,7 +1674,7 @@ save_dft_stiffness_tensor_23
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1686,7 +1686,7 @@ save_dft_stiffness_tensor_24
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1698,7 +1698,7 @@ save_dft_stiffness_tensor_25
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1710,7 +1710,7 @@ save_dft_stiffness_tensor_26
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1722,7 +1722,7 @@ save_dft_stiffness_tensor_33
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1734,7 +1734,7 @@ save_dft_stiffness_tensor_34
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1746,7 +1746,7 @@ save_dft_stiffness_tensor_35
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1758,7 +1758,7 @@ save_dft_stiffness_tensor_36
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1770,7 +1770,7 @@ save_dft_stiffness_tensor_44
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1782,7 +1782,7 @@ save_dft_stiffness_tensor_45
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1794,7 +1794,7 @@ save_dft_stiffness_tensor_46
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1806,7 +1806,7 @@ save_dft_stiffness_tensor_55
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1818,7 +1818,7 @@ save_dft_stiffness_tensor_56
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1830,7 +1830,7 @@ save_dft_stiffness_tensor_66
 _units.code                      gigapascals
 _enumeration.default             0
 _description.text                ' Stiffness tensor matrix.'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1842,7 +1842,7 @@ save_dft_band_gap
 _units.code                      electron_volts
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
@@ -1853,7 +1853,7 @@ save_
 save_dft_dielectric_constant
 _description.text
 ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
-_definition.update               2019-03-19
+_definition.update               2019-03-25
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
