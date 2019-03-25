@@ -39,10 +39,14 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.017
-    _dictionary_update          2019-03-19
+    _dictionary_version         0.018
+    _dictionary_update          2019-03-25
     _dictionary_history        
 ;
+2019-03-25 Putting '_tcod_atom_site_residual_force*' data items to
+           'atom_site' category as they have to appear in the same loop
+           with the rest of '_atom_site_*' data items. A.M.
+
 2019-03-19 Defining items '_tcod_software_library_*' as looped. A.M.
 
 2019-03-18 Adding missing type for '_tcod_citation_linkage'. A.M.
@@ -1539,11 +1543,6 @@ computation -- its physical meaning and usability.
 # Residual forces
 ###############################################################################
 
-data_tcod_atom_site_residual_force_[]
-    _name '_tcod_atom_site_residual_force_[]'
-    _type null
-    _category category_overview
-
 data_tcod_atom_site_residual_force
 loop_ _name
 '_tcod_atom_site_resid_force_Cartn_x'
@@ -1556,7 +1555,7 @@ loop_ _name
 '_tcod_atom_site_resid_force_dir_cos_y'
 '_tcod_atom_site_resid_force_dir_cos_z'
 _type numb
-_category tcod_atom_site_residual_force
+_category atom_site
 _units eV/\%A
 _units_detail 'electronvolts per Angstroem'
 _list                      yes
@@ -1594,7 +1593,7 @@ computed (the \d is the partial derivative sign).
 data_tcod_atom_site_residual_force_magnitude
 _name '_tcod_atom_site_resid_force_magnitude'
 _type numb
-_category tcod_atom_site_residual_force
+_category atom_site
 _units eV/\%A
 _units_detail 'electronvolts per Angstroem'
 _enumeration_range 1:
