@@ -13,9 +13,11 @@
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
     _dictionary_version         0.030
-    _dictionary_update          2019-03-19
+    _dictionary_update          2019-05-14
     _dictionary_history
 ;
+2019-05-14 Specifying categories for data items lacking them. A.M.
+
 2019-03-19 Setting _list_reference of
            '_dft_BZ_integration_grid_IBZ_point_weight' to
            '_dft_BZ_integration_grid_IBZ_point_id' instead of itself. A.M.
@@ -439,6 +441,7 @@ data_dft_BZ_integration_grid_[]
                 '_dft_BZ_integration_grid_Y'
                 '_dft_BZ_integration_grid_Z'
     _type char
+    _category dft_BZ_integration
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
@@ -796,8 +799,14 @@ data_dft_cell_energy
 # Q: is it true that the total energy will be the sum of all
 # "Separate energy terms"? (S.G.)
 
+data_dft_energy_[]
+_name '_dft_energy_[]'
+_category category_overview
+_type null
+
 data_dft_kinetic_energy
 _name '_dft_kinetic_energy'
+_category dft_energy
 _type numb
 _units eV
 _units_detail 'electron-Volts'
@@ -823,6 +832,7 @@ What about vibrational lattice modes (phonons)? (S.G.)
 
 data_dft_Coulomb_energy
 _name '_dft_Coulomb_energy'
+_category dft_energy
 _type numb
 _units eV
 _units_detail 'electron-Volts'
@@ -833,6 +843,7 @@ http://www.xml-cml.org/dictionary/compchem/#coulombEnergy.
 
 data_dft_correlation_energy
 _name '_dft_correlation_energy'
+_category dft_energy
 _type numb
 _units eV
 _units_detail 'electron-Volts'
@@ -843,6 +854,7 @@ _definition
 
 data_dft_1e_energy
 _name '_dft_1e_energy'
+_category dft_energy
 _type numb
 _units eV
 _units_detail 'electron-Volts'
@@ -853,6 +865,7 @@ _definition
 
 data_dft_2e_energy
 _name '_dft_2e_energy'
+_category dft_energy
 _type numb
 _units eV
 _units_detail 'electron-Volts'
@@ -863,6 +876,7 @@ _definition
 
 data_dft_nuclear_repulsion_energy
 _name '_dft_nuclear_repulsion_energy'
+_category dft_energy
 _type numb
 _units eV
 _units_detail 'electron-Volts'
@@ -875,6 +889,7 @@ _definition
 
 data_dft_ewald_energy
 _name '_dft_ewald_energy'
+_category dft_energy
 _type numb
 _units eV
 _units_detail 'electron-Volts'
@@ -884,6 +899,7 @@ _definition
 
 data_dft_fermi_energy
 _name '_dft_fermi_energy'
+_category dft_energy
 _type numb
 _units eV
 _units_detail 'electron-Volts'
@@ -893,6 +909,7 @@ _definition
 
 data_dft_hartree_energy
 _name '_dft_hartree_energy'
+_category dft_energy
 _type numb
 _units eV
 _units_detail 'electron-Volts'
@@ -904,8 +921,14 @@ _definition
 # Magnetic moment
 ###############################################################################
 
+data_dft_cell_magn_[]
+    _name '_dft_cell_magn_[]'
+    _category category_overview
+    _type null
+
 data_dft_cell_magn_moment
     _name '_dft_cell_magn_moment'
+    _category dft_cell_magn
     _type numb
     _units \m_B
     _units_detail 'Bohr magnetons'
@@ -915,6 +938,7 @@ data_dft_cell_magn_moment
 
 data_dft_cell_magn_spin_moment
     _name '_dft_cell_magn_spin_moment'
+    _category dft_cell_magn
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -922,6 +946,7 @@ data_dft_cell_magn_spin_moment
 
 data_dft_cell_magn_orbital_moment
     _name '_dft_cell_magn_orbital_moment'
+    _category dft_cell_magn
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -1168,8 +1193,14 @@ data_dft_alloy_supercell
 # Other calculated material properties.
 ###############################################################################
 
+data_dft_calc_property_[]
+    _name '_dft_calc_property_[]'
+    _category category_overview
+    _type null
+
 data_dft_lattice_energy
     _name '_dft_lattice_energy'
+    _category dft_calc_property
     _type numb
     _units kJ/mol
     _units_detail 'kilojoules per mole'
@@ -1180,6 +1211,7 @@ data_dft_lattice_energy
 
 data_dft_bulk_modulus
     _name '_dft_bulk_modulus'
+    _category dft_calc_property
     _type numb
     _units GPa
     _units_detail gigapascals
@@ -1211,6 +1243,7 @@ data_dft_stiffness_tensor_
         '_dft_stiffness_tensor_55'
         '_dft_stiffness_tensor_56'
         '_dft_stiffness_tensor_66'
+    _category dft_calc_property
     _type numb
     _units GPa
     _units_detail gigapascals
@@ -1221,6 +1254,7 @@ data_dft_stiffness_tensor_
 
 data_dft_band_gap
     _name '_dft_band_gap'
+    _category dft_calc_property
     _type numb
     _units eV
     _units_detail electronvolts
@@ -1230,6 +1264,7 @@ data_dft_band_gap
 
 data_dft_dielectric_constant
     _name '_dft_dielectric_constant'
+    _category dft_calc_property
     _type numb
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
