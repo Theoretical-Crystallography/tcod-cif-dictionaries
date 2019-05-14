@@ -110,8 +110,14 @@ data_on_this_dictionary
 # Overal method description:
 ###############################################################################
 
+data_tcod_method_[]
+    _name '_tcod_method_[]'
+    _category category_overview
+    _type null
+
 data_tcod_structure_type
     _name '_tcod_structure_type'
+    _category tcod_method
     _type char
     loop_ _enumeration
           _enumeration_detail
@@ -163,6 +169,7 @@ data_tcod_structure_type
 
 data_tcod_model
     _name '_tcod_model'
+    _category tcod_method
     _type char
     loop_ _enumeration
           _enumeration_detail
