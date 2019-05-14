@@ -346,8 +346,14 @@ _citation_... category loop.
 # Atom Basis set.
 ###############################################################################
 
+data_dft_atom_basisset_[]
+    _name '_dft_atom_basisset_[]'
+    _category category_overview
+    _type null
+
 data_dft_atom_basisset
     _name '_dft_atom_basisset'
+    _category dft_atom_basisset
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -355,6 +361,7 @@ data_dft_atom_basisset
 
 data_dft_atom_basisset_type
     _name '_dft_atom_basisset_type'
+    _category dft_atom_basisset
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -362,6 +369,7 @@ data_dft_atom_basisset_type
 
 data_dft_atom_basisset_energy_conv
     _name '_dft_atom_basisset_energy_conv'
+    _category dft_atom_basisset
     _type char
     _units eV
     _units_detail 'electron-Volts'
@@ -373,6 +381,7 @@ data_dft_atom_basisset_energy_conv
 
 data_dft_atom_basisset_citation_id
     _name '_dft_atom_basisset_citation_id'
+    _category dft_atom_basisset
     _type char
     _list_link_parent '_citation_id'
     _definition
