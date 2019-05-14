@@ -43,7 +43,8 @@ data_on_this_dictionary
     _dictionary_update          2019-05-14
     _dictionary_history        
 ;
-2019-05-14 Fixing incorrectly specified parent-child relationships. A.M.
+2019-05-14 Fixing incorrectly specified parent-child relationships.
+           Specifying categories for data items lacking them. A.M.
 
 2019-03-25 Putting '_tcod_atom_site_residual_force*' data items to
            'atom_site' category as they have to appear in the same loop
