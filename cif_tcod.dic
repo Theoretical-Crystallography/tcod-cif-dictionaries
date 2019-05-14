@@ -350,8 +350,14 @@ data_tcod_source_structure_database_version
 # Identification of the source database
 ###############################################################################
 
+data_tcod_source_database_[]
+    _name                      '_tcod_source_database_[]'
+    _category                    category_overview
+    _type                        null
+
 data_tcod_source_database_name
     _name                      '_tcod_source_database_name'
+    _category                    tcod_source_database
     _type                        char
     _definition
 ; A name of a database that was used to produce (to compute) this
@@ -364,6 +370,7 @@ _tcod_source_database_name AiiDA
 
 data_tcod_source_database_URI
     _name                      '_tcod_source_database_URI'
+    _category                    tcod_source_database
     _type                        char
     _definition
 ; A (stable) URI (or URL) of the database Web site describing the
@@ -376,6 +383,7 @@ _tcod_source_database_URI http://www.aiida.net/
 
 data_tcod_source_database_version
     _name                      '_tcod_source_database_version'
+    _category                    tcod_source_database
     _type                        char
     _definition
 ; A version of the database that produced a structure under consideration.
@@ -858,6 +866,7 @@ loop_ _name
 '_tcod_atom_site_initial_fract_x' 
 '_tcod_atom_site_initial_fract_y' 
 '_tcod_atom_site_initial_fract_z'
+_category atom_site
 _type numb
 _type_conditions           esd
 loop_
@@ -877,6 +886,7 @@ loop_ _name
 '_tcod_atom_site_initial_Cartn_x'
 '_tcod_atom_site_initial_Cartn_y'
 '_tcod_atom_site_initial_Cartn_z'
+_category atom_site
 _type numb
 _units                     A
 _units_detail              'Angstroems'
