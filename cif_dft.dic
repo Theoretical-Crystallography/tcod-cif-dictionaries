@@ -12,7 +12,7 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.030
+    _dictionary_version         0.031
     _dictionary_update          2019-05-14
     _dictionary_history
 ;
