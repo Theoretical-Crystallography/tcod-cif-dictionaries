@@ -1043,6 +1043,7 @@ data_tcod_computation_input_file
 _name '_tcod_computation_input_file'
 _category tcod_computation
 _type char
+_list yes
 _list_link_parent '_tcod_file_id'
 _definition
 ; Link to '_tcod_file_id' of a file with STDIN contents for a
@@ -1053,6 +1054,7 @@ data_tcod_computation_log_file
 _name '_tcod_computation_log_file'
 _category tcod_computation
 _type char
+_list yes
 _list_link_parent '_tcod_file_id'
 _definition
 ; Link to '_tcod_file_id' of a file with a log file for a
@@ -1063,6 +1065,7 @@ data_tcod_computation_stdout
 _name '_tcod_computation_stdout'
 _category tcod_computation
 _type char
+_list yes
 _list_link_parent '_tcod_file_id'
 _definition
 ; Link to '_tcod_file_id' of a file with STDOUT contents for a
@@ -1073,6 +1076,7 @@ data_tcod_computation_stderr
 _name '_tcod_computation_stderr'
 _category tcod_computation
 _type char
+_list yes
 _list_link_parent '_tcod_file_id'
 _definition
 ; Link to '_tcod_file_id' of a file with STDERR contents for a
@@ -1087,6 +1091,7 @@ data_tcod_computation_CPU_time
 _name '_tcod_computation_CPU_time'
 _category tcod_computation
 _type numb
+_list yes
 _units s
 _units_detail 'seconds'
 _definition
@@ -1097,6 +1102,7 @@ data_tcod_computation_wallclock_time
 _name '_tcod_computation_wallclock_time'
 _category tcod_computation
 _type numb
+_list yes
 _units s
 _units_detail 'seconds'
 _definition
