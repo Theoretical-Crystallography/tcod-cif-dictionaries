@@ -450,8 +450,14 @@ data_tcod_atom_sites_sim_cell_tran_vector_
 # Software and computational facility description
 ###############################################################################
 
+data_tcod_software_[]
+    _name                      '_tcod_software_[]'
+    _category                    category_overview
+    _type                        null
+
 data_tcod_software_package
     _name '_tcod_software_package'
+    _category tcod_software
     _type char
     _definition
 ; Software package used to compute and produce the DFT-computed structure file.
@@ -460,6 +466,7 @@ data_tcod_software_package
 
 data_tcod_software_package_version
     _name '_tcod_software_package_version'
+    _category tcod_software
     _type char
     _definition
 ; Software package version used to compute and produce the computed
@@ -471,6 +478,7 @@ data_tcod_software_package_version
 
 data_tcod_software_package_compilation_timestamp
     _name '_tcod_software_package_compilation_date'
+    _category tcod_software
     _type char
     _example     2014-11-04T13:49:49.290475Z
     _definition
@@ -484,6 +492,7 @@ data_tcod_software_package_compilation_timestamp
 
 data_tcod_software_package_compilation_environment
     _name '_tcod_software_package_compilation_environment'
+    _category tcod_software
     _type char
     _definition
 ; A set of environment variable definitions, in /bin/sh syntax
@@ -494,6 +503,7 @@ list in this syntax from the Unix/Linux 'printenv' command.
 
 data_tcod_software_package_binary_uri
     _name '_tcod_software_package_binary_uri'
+    _category tcod_software
     _type char
     _definition
 ; An URI (Web reference) where the binary package of the software used
@@ -502,6 +512,7 @@ for this computation can be fetched.
 
 data_tcod_software_package_source_uri
     _name '_tcod_software_package_source_uri'
+    _category tcod_software
     _type char
     _definition
 ; An URI (Web reference) where the source code package of the software
@@ -510,6 +521,7 @@ used for this computation can be fetched.
 
 data_tcod_software_executable_path
     _name '_tcod_software_executable_path'
+    _category tcod_software
     _type char
     _definition
 ; The file-system path to the executable that was run for this
@@ -518,6 +530,7 @@ computation.
 
 data_tcod_software_runtime_OS
     _name '_tcod_software_runtime_OS'
+    _category tcod_software
     _type char
     _definition
 ; Operating system used to compute and produce the DFT-computed structure file.
@@ -527,6 +540,7 @@ data_tcod_software_runtime_OS
 
 data_tcod_software_runtime_OS_version
     _name '_tcod_software_OS_version'
+    _category tcod_software
     _type char
     _definition
 ; Operating system version used to compute and produce the
@@ -539,6 +553,7 @@ data_tcod_software_runtime_OS_version
 
 data_tcod_software_OS_compilation_timestamp
     _name '_tcod_software_OS_compilation_date'
+    _category tcod_software
     _type char
     _example     2014-11-04T13:49:49.290475Z
     _definition
@@ -548,6 +563,7 @@ data_tcod_software_OS_compilation_timestamp
 
 data_tcod_software_runtime_OS_binary_uri
     _name '_tcod_software_runtime_OS_binary_uri'
+    _category tcod_software
     _type char
     _definition
 ; An URI (Web reference) where the binary image (e.g. an ISO file, or
@@ -557,6 +573,7 @@ were peformed can be fetched.
 
 data_tcod_software_runtime_OS_source_uri
     _name '_tcod_software_runtime_OS_source_uri'
+    _category tcod_software
     _type char
     _definition
 ; An URI (Web reference) where the source code of the operating system
@@ -565,6 +582,7 @@ on which computations were peformed can be fetched.
 
 data_tcod_software_runtime_CPU
     _name '_tcod_software_runtime_CPU'
+    _category tcod_software
     _type char
     _definition
 ; Name (type) of the central processing unit (CPU), together with the 
@@ -573,6 +591,7 @@ data_tcod_software_runtime_CPU
 
 data_tcod_software_runtime_CPU_version
     _name '_tcod_software_runtime_CPU_version'
+    _category tcod_software
     _type char
     _definition
 ; Version or release number of the central processing unit (CPU),
@@ -585,6 +604,7 @@ data_tcod_software_runtime_CPU_version
 
 data_tcod_software_compiler
     _name '_tcod_software_compiler'
+    _category tcod_software
     _type char
     _definition
 ; The compiler which compiled the code used for the described
@@ -596,6 +616,7 @@ If more than one compiler was used, these items must be looped.
 
 data_tcod_software_compiler_version
     _name '_tcod_software_compiler_version'
+    _category tcod_software
     _type char
     _definition
 ; A version string (number) of the compiler used to compile the code for this
@@ -604,6 +625,7 @@ computation.
 
 data_tcod_software_compiler_options
     _name '_tcod_software_compiler_options'
+    _category tcod_software
     _type char
     _definition
 ; A string with all options that were used to compile the given package.
