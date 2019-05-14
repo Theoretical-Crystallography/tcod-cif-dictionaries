@@ -17,7 +17,7 @@ data_on_this_dictionary
     _dictionary_history
 ;
 2019-05-14 Making '_dft_XC_functional_[]' a category. Specifying categories
-           for data items lacking them. A.M.
+           for all data items lacking them. A.M.
 
 2019-03-19 Setting _list_reference of
            '_dft_BZ_integration_grid_IBZ_point_weight' to
@@ -582,8 +582,14 @@ data_dft_BZ_integration_energy_conv
 # Miscellaneous settings of the calculation
 ###############################################################################
 
+data_dft_cell_settings_[]
+    _name '_dft_cell_settings_[]'
+    _category category_overview
+    _type null
+
 data_dft_cell_pressure
     _name '_dft_cell_pressure'
+    _category dft_cell_settings
     _type numb
     _units kPa
     _units_detail kilopascals
@@ -596,6 +602,7 @@ data_dft_cell_periodic_BC_[]
         '_dft_cell_periodic_BC_X'
         '_dft_cell_periodic_BC_Y'
         '_dft_cell_periodic_BC_Z'
+    _category dft_cell_settings
     _type char
     loop_
     _enumeration
@@ -663,6 +670,7 @@ data_dft_BZ_integration_grid_IBZ_point_weight
 
 data_dft_cell_valence_electrons
     _name '_dft_cell_valence_electrons'
+    _category dft_cell_settings
     _type numb
     _enumeration_range 1:
     _definition
@@ -671,6 +679,7 @@ data_dft_cell_valence_electrons
 
 data_dft_core_electrons
     _name '_dft_core_electrons'
+    _category dft_cell_settings
     _type numb
     _enumeration_range 1:
     _definition
@@ -792,8 +801,14 @@ used in EEX-type calculations.
 # Energy
 ###############################################################################
 
+data_dft_energy_[]
+_name '_dft_energy_[]'
+_category category_overview
+_type null
+
 data_dft_cell_energy
     _name '_dft_cell_energy'
+    _category dft_energy
     _type char
     _units eV
     _units_detail 'electron-Volts'
@@ -813,11 +828,6 @@ data_dft_cell_energy
 
 # Q: is it true that the total energy will be the sum of all
 # "Separate energy terms"? (S.G.)
-
-data_dft_energy_[]
-_name '_dft_energy_[]'
-_category category_overview
-_type null
 
 data_dft_kinetic_energy
 _name '_dft_kinetic_energy'
@@ -971,8 +981,14 @@ data_dft_cell_magn_orbital_moment
 # Convergence parameters?
 ###############################################################################
 
+data_dft_cell_conv_[]
+    _name '_dft_cell_conv_[]'
+    _category category_overview
+    _type null
+
 data_dft_cell_energy_conv
     _name '_dft_cell_energy_conv'
+    _category dft_cell_conv
     _type char
     _units eV
     _units_detail 'electron-Volts'
@@ -983,6 +999,7 @@ data_dft_cell_energy_conv
 
 data_dft_cell_density_conv
     _name '_dft_cell_density_conv'
+    _category dft_cell_conv
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -990,6 +1007,7 @@ data_dft_cell_density_conv
 
 data_dft_cell_potential_conv
     _name '_dft_cell_potential_conv'
+    _category dft_cell_conv
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
