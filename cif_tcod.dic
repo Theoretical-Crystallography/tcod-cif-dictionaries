@@ -40,9 +40,11 @@
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
     _dictionary_version         0.018
-    _dictionary_update          2019-03-25
+    _dictionary_update          2019-05-14
     _dictionary_history        
 ;
+2019-05-14 Fixing incorrectly specified parent-child relationships. A.M.
+
 2019-03-25 Putting '_tcod_atom_site_residual_force*' data items to
            'atom_site' category as they have to appear in the same loop
            with the rest of '_atom_site_*' data items. A.M.
@@ -1029,7 +1031,7 @@ _definition
 data_tcod_computation_input_file
 _name '_tcod_computation_input_file'
 _type char
-_list_link_child '_tcod_file_id'
+_list_link_parent '_tcod_file_id'
 _definition
 ; Link to '_tcod_file_id' of a file with STDIN contents for a
   computation.
@@ -1038,7 +1040,7 @@ _definition
 data_tcod_computation_log_file
 _name '_tcod_computation_log_file'
 _type char
-_list_link_child '_tcod_file_id'
+_list_link_parent '_tcod_file_id'
 _definition
 ; Link to '_tcod_file_id' of a file with a log file for a
   computation.
@@ -1047,7 +1049,7 @@ _definition
 data_tcod_computation_stdout
 _name '_tcod_computation_stdout'
 _type char
-_list_link_child '_tcod_file_id'
+_list_link_parent '_tcod_file_id'
 _definition
 ; Link to '_tcod_file_id' of a file with STDOUT contents for a
   computation.
@@ -1056,7 +1058,7 @@ _definition
 data_tcod_computation_stderr
 _name '_tcod_computation_stderr'
 _type char
-_list_link_child '_tcod_file_id'
+_list_link_parent '_tcod_file_id'
 _definition
 ; Link to '_tcod_file_id' of a file with STDERR contents for a
   computation.
@@ -1101,7 +1103,7 @@ _type char
 _list yes
 _list_mandatory yes
 loop_
-_list_link_parent
+_list_link_child
     '_tcod_computation_input_file'
     '_tcod_computation_log_file'
     '_tcod_computation_stdout'
@@ -1279,7 +1281,7 @@ _category tcod_file
 _type char
 _list yes
 _list_reference '_tcod_file_id'
-_list_link_child '_tcod_content_encoding_id'
+_list_link_parent '_tcod_content_encoding_id'
 _definition
 ; Must match a single _tcod_content_encoding_id from the same datablock.
 ;
@@ -1324,7 +1326,7 @@ _name '_tcod_content_encoding_id'
 _category tcod_content_encoding
 _type char
 _list yes
-_list_link_parent '_tcod_file_content_encoding'
+_list_link_child '_tcod_file_content_encoding'
 _list_mandatory yes
 
 data_tcod_content_encoding_layer_id
