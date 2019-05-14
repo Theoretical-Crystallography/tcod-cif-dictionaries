@@ -16,7 +16,8 @@ data_on_this_dictionary
     _dictionary_update          2019-05-14
     _dictionary_history
 ;
-2019-05-14 Specifying categories for data items lacking them. A.M.
+2019-05-14 Making '_dft_XC_functional_[]' a category. Specifying categories
+           for data items lacking them. A.M.
 
 2019-03-19 Setting _list_reference of
            '_dft_BZ_integration_grid_IBZ_point_weight' to
@@ -113,15 +114,13 @@ data_on_this_dictionary
 ###############################################################################
 
 data_dft_XC_functional_[]
-    # Should this be a category overview? S.G.
-    _name '_dft_XC_functional'
-    _type char
-    _definition
-;. . .
-;
+    _name '_dft_XC_functional_[]'
+    _category category_overview
+    _type null
 
 data_dft_XC_functional_id
     _name '_dft_XC_functional_id'
+    _category dft_XC_functional
     _type char
     _definition
 ;
@@ -130,6 +129,7 @@ data_dft_XC_functional_id
 
 data_dft_XC_exchange_functional_name
     _name '_dft_XC_exchange_functional_name'
+    _category dft_XC_functional
     _type char
     _definition
 ;
@@ -146,6 +146,7 @@ data_dft_XC_exchange_functional_name
 
 data_dft_XC_exchange_functional_weight
     _name '_dft_XC_exchange_functional_weight'
+    _category dft_XC_functional
     _type numb
     _definition
 ;
@@ -155,6 +156,7 @@ data_dft_XC_exchange_functional_weight
 
 data_dft_XC_correlation_functional_name
     _name '_dft_XC_correlation_functional_name'
+    _category dft_XC_functional
     _type char
     _definition
 ;. . .
@@ -162,6 +164,7 @@ data_dft_XC_correlation_functional_name
 
 data_dft_XC_correlation_functional_weight
     _name '_dft_XC_correlation_functional_weight'
+    _category dft_XC_functional
     _type numb
     _definition
 ;
@@ -171,6 +174,7 @@ data_dft_XC_correlation_functional_weight
 
 data_dft_XC_functional_type
     _name '_dft_XC_functional_type'
+    _category dft_XC_functional
     _type char
     loop_ _enumeration
           _enumeration_detail
@@ -191,6 +195,7 @@ data_dft_XC_functional_type
 
 data_dft_XC_functional_type_other_name
     _name '_dft_XC_functional_type_other_name'
+    _category dft_XC_functional
     _type char
     _definition
 ; Custom name of the functional if _dft_XC_functional_type data item value
@@ -200,6 +205,7 @@ data_dft_XC_functional_type_other_name
 
 data_dft_XC_functional_citation_id
     _name '_dft_XC_functional_citation_id'
+    _category dft_XC_functional
     _type char
     _list_link_parent '_citation_id'
     _definition
