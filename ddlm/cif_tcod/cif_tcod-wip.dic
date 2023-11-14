@@ -1,0 +1,2499 @@
+#\#CIF_2.0
+data_CIF_TCOD
+_dictionary.title                CIF_TCOD
+_dictionary.version              0.20.0
+_dictionary.date                 2019-05-14
+_dictionary.class                Instance
+_dictionary.ddl_conformance      3.13.1
+loop_
+_dictionary_audit.version
+_dictionary_audit.date
+_dictionary_audit.revision
+0.20.0 2019-05-14 'Automatically converting to DDLm'
+0.019 2019-05-14
+;
+2019-05-14 Fixing incorrectly specified parent-child relationships.
+           Specifying categories for data items lacking them. A.M.
+
+2019-03-25 Putting '_tcod_atom_site_residual_force*' data items to
+           'atom_site' category as they have to appear in the same loop
+           with the rest of '_atom_site_*' data items. A.M.
+
+2019-03-19 Defining items '_tcod_software_library_*' as looped. A.M.
+
+2019-03-18 Adding missing type for '_tcod_citation_linkage'. A.M.
+
+2018-02-27 Defining '_tcod_data_source_file' and '_tcod_data_source_block'
+           data items. A.M.
+
+2018-02-06 Putting '_tcod_software_library_*', 
+           '_tcod_initial_coordinate_*', '_tcod_total_energy_*',
+           '_tcod_atom_site_residual_force*' and
+           '_tcod_initial_cell_param_db_*'data items into a separate
+           category. Fixing '_name' parameters for data items
+           '_tcod_software_library_binary_uri' and
+           '_tcod_software_library_source_uri'. A.M.
+
+2017-04-25 Specifying links (parent, child) between
+           '_tcod_computation_input_file',
+           '_tcod_computation_log_file', '_tcod_computation_stdout',
+           '_tcod_computation_stderr' and '_tcod_file_id'. Adding
+           descriptions for aforementioned tags. A.M.
+
+2016-11-02 Adding category '_tcod_computation_[]', with all it's tags
+           defining a loop. Making '_tcod_computation_step' mandatory,
+           putting a strict definition of it's values. A.M.
+
+2015-06-16 Adding '_tcod_database_code'. Fixing typo in enumeration value
+           for tag '_tcod_file_contents_type': 'basissset' -> 'basisset'.
+           Fixing typo in tag name:
+           _tcod_source_structure_uuid -> _tcod_source_structure_database_uuid.
+           Creating categories '_tcod_source_structure_database_[]' and
+           '_tcod_ff_[]'. A.M.
+
+2015-05-21 Creating categories '_tcod_file_[]' and '_tcod_content_encoding_[]',
+           adding links (parent, child) between '_tcod_file_content_encoding'
+           and '_tcod_content_encoding_id'. Marking list tags. Updating version
+           number to 0.005. A.M.
+
+2015-01-05 Adding _tcod_content_encoding_* tags, describing the content
+           encoding stack in a more formal way.
+           Fixing typo in tag name:
+           _tcode_structure_type -> _tcod_structure_type. A.M.
+
+2014-11-04 Moving all software related data items to this dictionary,
+           consolidating all data items that should be relevant to
+           more han one method. Adding data items that should be
+           helpful for quality/convergence checks. S.G.
+
+2014-07-22 Adding a description of the '_tcode_structure_type' data item. S.G.
+
+2014-03-07 Updated version 
+
+2013-07-22 TCOD dictionary initiated by Saulius Grazulis 
+
+2013-08-17 First version by Linas Vilciauskas (NYU) and Saulius Grazulis 
+;
+save_category_overview
+_definition.id                   CATEGORY_OVERVIEW
+_definition.class                Head
+_definition.scope                Category
+_name.object_id                  CATEGORY_OVERVIEW
+_name.category_id                CIF_TCOD
+_import.get
+[ 
+{
+'file': cif_core.dic
+'mode': Full
+'save': CIF_CORE
+} ]
+save_
+save_tcod_method
+_name.category_id                category_overview
+_definition.update               2019-05-14
+_definition.class                Set
+_definition.scope                Category
+_definition.id                   TCOD_METHOD
+_name.object_id                  TCOD_METHOD
+save_
+save_tcod_structure_type
+_name.category_id                tcod_method
+_description.text
+;
+    This data item specifies what kind of computationally optimised
+    structure does the file record. Structures that record stable
+    crystal polymorphs with long time-lifes (i.e. time lifes much
+    longer than duration of a typical diffraction experiment) are
+    'ground-state'; however, short-lived structures that can be
+    refined with the help of DFT or other methods can be included into
+    TCOD, but must be tagged accordingly.
+
+    Possibly, we can classify structures by their half-lifes at
+    certain temperatures.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_type.purpose                    State
+_definition.id                   '_tcod_structure_type'
+_name.object_id                  '_tcod_structure_type'
+loop_
+_enumeration_set.state
+_enumeration_set.detail
+crystal-ground-state 'refined crystal structure at ground state'
+crystal-excited-state
+'refined crystal structure at some excited state, e.g. LUMO'
+crystal-metastable 'metastable structure that is short lived'
+crystal-soft-phonon 'dynamically disorderd, unstable structures'
+crystal-transition-state
+'molecular structure in a sort-lived reaction transition-state'
+vacuum-ground-state 'refined crystal structure at ground state'
+vacuum-excited-state
+'refined crystal structure at some excited state, e.g. LUMO'
+vacuum-metastable 'metastable structure that is short lived'
+vacuum-transition-state
+'molecular structure in a sort-lived reaction transition-state'
+save_
+save_tcod_model
+_name.category_id                tcod_method
+_description.text
+;
+
+  S.G. 2016-10-28: FIXME:
+
+  ‒ merge with the NOMAD 'Electronic structure method';
+
+  ‒ add indication that this data item is related to the NOMAD
+     'Electronic structure method';
+
+  ‒ see also: NOMAD 'calcuation_method'
+
+  This should define the theoretical model used to calculate the
+  structure.
+
+  L.V. The list is by no means exhaustive and should be constantly
+  updated.
+
+  Main classes of models: DFT, ab initio (post-Hartree-Fock:
+  Moeller-Plesset (MPx), Configuration Interaction (CI), coupled
+  cluster (CC), Quantum Monte Carlo (QMC), Symmetry-adapted
+  perturbation theory (SAPT), semi-empirical (OF-DFT, DFTB, NDDO,
+  MINDO etc.), force field (empirical), coarse-grained
+  (non-atomistic).
+  
+  Keywords: DFT (Density model theory), HF (Hartree-Fock), MPn
+  (Moller-Plesset) perturbation theory, e.g. local MP2 by Kresse,
+  Schutz, Scuseria etc.), MI (Method of increments by H. Stoll et
+  al.), CC (Periodic coupled cluster e.g. by Grüneis et al.), QMC
+  (Quantum Monte Carlo by Ceperley, Mitas, Recently FCI-QMC by Alavi
+  et al.), Orbital-free DFT (E. Carter et al.), DFTB (Density model
+  tight binding by Seifert, Frauenheim etc.), Semi-empirical methods,
+  Force field models (fixed charged, polarizable, distributed
+  multipoles etc.), Coarse-grained models (e.g. Martini)
+
+  L.V. Tried to compile a short list of methods used for periodic
+  calculations
+
+  L.V. in principal one should also define a class for hybrid models
+  (QM/MM)
+ 
+  One can add a human-readable description of the mehtod here as well
+  as the reference.
+
+  L.V. Is it possible to add full cif syntax to define the reference?
+  S.G. Yes, done in the ..._citation_id and _tcod_citation_linkage
+  data items.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_type.purpose                    State
+_definition.id                   '_tcod_model'
+_name.object_id                  '_tcod_model'
+loop_
+_enumeration_set.state
+_enumeration_set.detail
+DFT 'describe the corresponding model here'
+HF 'describe the corresponding model here'
+MP2 'describe the corresponding model here'
+CI 'describe the corresponding model here'
+CC 'describe the corresponding model here'
+MI 'describe the corresponding model here'
+SAPT 'describe the corresponding model here'
+QMC 'describe the corresponding model here'
+DFTB 'describe the corresponding model here'
+Semi-empirical 'describe the corresponding model here'
+FF 'describe the corresponding model here'
+CG 'describe the corresponding model here'
+other 'description should be provided in the data CIF'
+save_
+save_tcod_database
+_name.category_id                category_overview
+_description.text
+;              Data items from this category are used for TCOD bookkeeping
+               records, such as assigned TCOD number (aka TCOD database code).
+;
+_definition.update               2019-05-14
+_definition.class                Set
+_definition.scope                Category
+_definition.id                   TCOD_DATABASE
+_name.object_id                  TCOD_DATABASE
+loop_
+_description_example.case
+_description_example.detail
+'   _tcod_database_code 10000001'
+;
+    Example 1 - based on TCOD entry 10000001.cif, revision 267
+                svn://www.crystallography.net/tcod/cif/10/00/00/10000001.cif
+                http://www.crystallography.net/tcod/10000001.cif
+;
+save_
+save_tcod_database_code
+_name.category_id                tcod_database
+_description.text
+;              Specifies TCOD number assigned upon deposition into TCOD to the
+               crystal structure described in the CIF.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_database_code'
+_name.object_id                  '_tcod_database_code'
+save_
+save_tcod_data_source
+_name.category_id                category_overview
+_description.text
+;               Data items from this category are used to
+                record and trace sources of information deposited into TCOD.
+;
+_definition.update               2019-05-14
+_definition.class                Set
+_definition.scope                Category
+_definition.id                   TCOD_DATA_SOURCE
+_name.object_id                  TCOD_DATA_SOURCE
+save_
+save_tcod_data_source_file
+_name.category_id                tcod_data_source
+_description.text
+;         Specifies file name of the file that served as a source of data in
+          this TCOD entry. The file should be recoded without the path or
+          other URL components, since these components usually have no sense
+          on the recipient's system. In Unix parlance, the value recorded
+          should be the basename of the original file. For many data
+          sources, however, the basename contains enough information to
+          locate the original source. For instance, CIFs published in IUCr
+          journals have Coeditor Code as a CIF file name, permitting to
+          identify the original paper where the structure is
+          discussed. Other journals may used original article's DOI as a part
+          of the filename for the supplementary CIF file, which also permits
+          one to trace back the original paper.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_data_source_file'
+_name.object_id                  '_tcod_data_source_file'
+save_
+save_tcod_data_source_block
+_name.category_id                tcod_data_source
+_description.text
+;         Specifies the name of the data block within the file specified in
+          the _tcod_data_source_file tag that served as a source of data in
+          this TCOD entry. Only the data block name following the 'data_'
+          header keyword should be recorded, not the whole data block
+          header; i.e. the value specified here should be 'I', *not*
+          'data_I', for a data block with the header 'data_I'.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_data_source_block'
+_name.object_id                  '_tcod_data_source_block'
+save_
+save_tcod_source_structure_database
+_name.category_id                category_overview
+_definition.update               2019-05-14
+_definition.class                Set
+_definition.scope                Category
+_definition.id                   TCOD_SOURCE_STRUCTURE_DATABASE
+_name.object_id                  TCOD_SOURCE_STRUCTURE_DATABASE
+save_
+save_tcod_source_structure_database_uuid
+_name.category_id                tcod_source_structure_database
+_description.text
+; UUID (Universally Unique Identifier,
+http://en.wikipedia.org/wiki/Universally_unique_identifier) of the
+database output structure (node, record) that was exported to this entry.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_source_structure_database_uuid'
+_name.object_id                  '_tcod_source_structure_database_uuid'
+save_
+save_tcod_source_structure_database_id
+_name.category_id                tcod_source_structure_database
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_source_structure_database_id'
+_name.object_id                  '_tcod_source_structure_database_id'
+save_
+save_tcod_source_structure_database_URI
+_name.category_id                tcod_source_structure_database
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_source_structure_database_URI'
+_name.object_id                  '_tcod_source_structure_database_URI'
+save_
+save_tcod_source_structure_database_version
+_name.category_id                tcod_source_structure_database
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_source_structure_database_version'
+_name.object_id                  '_tcod_source_structure_database_version'
+save_
+save_tcod_source_database
+_name.category_id                category_overview
+_definition.update               2019-05-14
+_definition.class                Set
+_definition.scope                Category
+_definition.id                   TCOD_SOURCE_DATABASE
+_name.object_id                  TCOD_SOURCE_DATABASE
+save_
+save_tcod_source_database_name
+_name.category_id                tcod_source_database
+_description.text
+; A name of a database that was used to produce (to compute) this
+structure.
+
+Example:
+
+_tcod_source_database_name AiiDA
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_source_database_name'
+_name.object_id                  '_tcod_source_database_name'
+save_
+save_tcod_source_database_URI
+_name.category_id                tcod_source_database
+_description.text
+; A (stable) URI (or URL) of the database Web site describing the
+database that produced the structure.
+
+Example:
+
+_tcod_source_database_URI http://www.aiida.net/
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_source_database_URI'
+_name.object_id                  '_tcod_source_database_URI'
+save_
+save_tcod_source_database_version
+_name.category_id                tcod_source_database
+_description.text
+; A version of the database that produced a structure under consideration.
+
+Example:
+
+_tcod_source_database_version 1.0
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_source_database_version'
+_name.object_id                  '_tcod_source_database_version'
+save_
+save_tcod_atom_sites_sim_cell_tran_matrix_11
+_name.category_id                atom_sites
+_description.text
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_matrix_11'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_matrix_11'
+save_
+save_tcod_atom_sites_sim_cell_tran_matrix_12
+_name.category_id                atom_sites
+_description.text
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_matrix_12'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_matrix_12'
+save_
+save_tcod_atom_sites_sim_cell_tran_matrix_13
+_name.category_id                atom_sites
+_description.text
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_matrix_13'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_matrix_13'
+save_
+save_tcod_atom_sites_sim_cell_tran_matrix_21
+_name.category_id                atom_sites
+_description.text
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_matrix_21'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_matrix_21'
+save_
+save_tcod_atom_sites_sim_cell_tran_matrix_22
+_name.category_id                atom_sites
+_description.text
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_matrix_22'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_matrix_22'
+save_
+save_tcod_atom_sites_sim_cell_tran_matrix_23
+_name.category_id                atom_sites
+_description.text
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_matrix_23'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_matrix_23'
+save_
+save_tcod_atom_sites_sim_cell_tran_matrix_31
+_name.category_id                atom_sites
+_description.text
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_matrix_31'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_matrix_31'
+save_
+save_tcod_atom_sites_sim_cell_tran_matrix_32
+_name.category_id                atom_sites
+_description.text
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_matrix_32'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_matrix_32'
+save_
+save_tcod_atom_sites_sim_cell_tran_matrix_33
+_name.category_id                atom_sites
+_description.text
+;
+
+              Matrix elements used to transform fractional coordinates
+               in the ATOM_SITE category to fractional coordinates in
+               the simulation cell. The 3 x 1 translation
+               is defined in _atom_sites_sim_cell_tran_vector_*.
+
+                 x'   fractional      |11 12 13|      x   fractional     | 1 |
+               ( y' ) simulation   =  |21 22 23|    ( y ) conventional + | 2 |
+                 z'   cell coords     |31 32 33|      z   cell coords    | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_matrix_33'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_matrix_33'
+save_
+save_tcod_atom_sites_sim_cell_tran_vector_1
+_name.category_id                atom_sites
+_description.text
+;              Elements of a 3 x 1 translation vector used in the
+               transformation of fractional coordinates in the
+               ATOM_SITE category to simulation cell coordinates.
+
+                 x'                   |11 12 13|      x                  | 1 |
+               ( y' ) simulation  =   |21 22 23|    ( y ) fractional  +  | 2 |
+                 z'                   |31 32 33|      z                  | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_vector_1'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_vector_1'
+save_
+save_tcod_atom_sites_sim_cell_tran_vector_2
+_name.category_id                atom_sites
+_description.text
+;              Elements of a 3 x 1 translation vector used in the
+               transformation of fractional coordinates in the
+               ATOM_SITE category to simulation cell coordinates.
+
+                 x'                   |11 12 13|      x                  | 1 |
+               ( y' ) simulation  =   |21 22 23|    ( y ) fractional  +  | 2 |
+                 z'                   |31 32 33|      z                  | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_vector_2'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_vector_2'
+save_
+save_tcod_atom_sites_sim_cell_tran_vector_3
+_name.category_id                atom_sites
+_description.text
+;              Elements of a 3 x 1 translation vector used in the
+               transformation of fractional coordinates in the
+               ATOM_SITE category to simulation cell coordinates.
+
+                 x'                   |11 12 13|      x                  | 1 |
+               ( y' ) simulation  =   |21 22 23|    ( y ) fractional  +  | 2 |
+                 z'                   |31 32 33|      z                  | 3 |
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_sites_sim_cell_tran_vector_3'
+_name.object_id                  '_tcod_atom_sites_sim_cell_tran_vector_3'
+save_
+save_tcod_software
+_name.category_id                category_overview
+_definition.update               2019-05-14
+_definition.class                Set
+_definition.scope                Category
+_definition.id                   TCOD_SOFTWARE
+_name.object_id                  TCOD_SOFTWARE
+save_
+save_tcod_software_package
+_name.category_id                tcod_software
+_description.text
+; Software package used to compute and produce the DFT-computed structure file.
+  Only package or program name should be used, e.g. 'VASP', 'psi3', 'Abinit', etc.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_package'
+_name.object_id                  '_tcod_software_package'
+save_
+save_tcod_software_package_version
+_name.category_id                tcod_software
+_description.text
+; Software package version used to compute and produce the computed
+  structure file. Only version designator should be used, e.g. '3.4.0',
+  '2.1rc3'. It is desireable that the combination of the _tcod_software_package
+  and _tcod_software_package_version values would uniquely identify the code
+  that was used for computations.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_package_version'
+_name.object_id                  '_tcod_software_package_version'
+save_
+save_tcod_software_package_compilation_date
+_name.category_id                tcod_software
+_description_example.case        2014-11-04T13:49:49.290475Z
+_description.text
+; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
+  the time when the executable was compiled.
+
+  Should correspond to the
+  http://www.xml-cml.org/dictionary/compchem/#compileDate data
+  element, but MUST be expressed in the ISO standard format.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_package_compilation_date'
+_name.object_id                  '_tcod_software_package_compilation_date'
+save_
+save_tcod_software_package_compilation_environment
+_name.category_id                tcod_software
+_description.text
+; A set of environment variable definitions, in /bin/sh syntax
+(i.e. using the "NAME=VALUE" syntax) for all relevant environment
+variables that were active when compiling this package. You can get the
+list in this syntax from the Unix/Linux 'printenv' command.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id
+'_tcod_software_package_compilation_environment'
+_name.object_id
+'_tcod_software_package_compilation_environment'
+save_
+save_tcod_software_package_binary_uri
+_name.category_id                tcod_software
+_description.text
+; An URI (Web reference) where the binary package of the software used
+for this computation can be fetched.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_package_binary_uri'
+_name.object_id                  '_tcod_software_package_binary_uri'
+save_
+save_tcod_software_package_source_uri
+_name.category_id                tcod_software
+_description.text
+; An URI (Web reference) where the source code package of the software
+used for this computation can be fetched.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_package_source_uri'
+_name.object_id                  '_tcod_software_package_source_uri'
+save_
+save_tcod_software_executable_path
+_name.category_id                tcod_software
+_description.text
+; The file-system path to the executable that was run for this
+computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_executable_path'
+_name.object_id                  '_tcod_software_executable_path'
+save_
+save_tcod_software_runtime_OS
+_name.category_id                tcod_software
+_description.text
+; Operating system used to compute and produce the DFT-computed structure file.
+  Only OS name should be used, e.g. 'Irix', 'Windows XP', 'Ubuntu GNU/Linux',
+  etc.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_runtime_OS'
+_name.object_id                  '_tcod_software_runtime_OS'
+save_
+save_tcod_software_OS_version
+_name.category_id                tcod_software
+_description.text
+; Operating system version used to compute and produce the
+  DFT-computed structure file.  Only version designator should be
+  used, e.g. '3.4.0', '2.1rc3'. It is desireable that the combination
+  of the _dft_software_operating_system and
+  _dft_software_package_operating_system_version values would uniquely
+  identify the OS that was used for computations.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_OS_version'
+_name.object_id                  '_tcod_software_OS_version'
+save_
+save_tcod_software_OS_compilation_date
+_name.category_id                tcod_software
+_description_example.case        2014-11-04T13:49:49.290475Z
+_description.text
+; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
+  the time when the operating system image was compiled.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_OS_compilation_date'
+_name.object_id                  '_tcod_software_OS_compilation_date'
+save_
+save_tcod_software_runtime_OS_binary_uri
+_name.category_id                tcod_software
+_description.text
+; An URI (Web reference) where the binary image (e.g. an ISO file, or
+a virtual machine image) of the operating system on which computations
+were peformed can be fetched.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_runtime_OS_binary_uri'
+_name.object_id                  '_tcod_software_runtime_OS_binary_uri'
+save_
+save_tcod_software_runtime_OS_source_uri
+_name.category_id                tcod_software
+_description.text
+; An URI (Web reference) where the source code of the operating system
+on which computations were peformed can be fetched.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_runtime_OS_source_uri'
+_name.object_id                  '_tcod_software_runtime_OS_source_uri'
+save_
+save_tcod_software_runtime_CPU
+_name.category_id                tcod_software
+_description.text
+; Name (type) of the central processing unit (CPU), together with the 
+  floating-point processing unit, that was used to compute the results.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_runtime_CPU'
+_name.object_id                  '_tcod_software_runtime_CPU'
+save_
+save_tcod_software_runtime_CPU_version
+_name.category_id                tcod_software
+_description.text
+; Version or release number of the central processing unit (CPU),
+  together with the floating-point processing unit, that was used to 
+  compute the results.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_runtime_CPU_version'
+_name.object_id                  '_tcod_software_runtime_CPU_version'
+save_
+save_tcod_software_compiler
+_name.category_id                tcod_software
+_description.text
+; The compiler which compiled the code used for the described
+calcualtion. Only the compiler name should be given, e.g. 'gcc',
+'icc', 'gfortran'.
+
+If more than one compiler was used, these items must be looped.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_compiler'
+_name.object_id                  '_tcod_software_compiler'
+save_
+save_tcod_software_compiler_version
+_name.category_id                tcod_software
+_description.text
+; A version string (number) of the compiler used to compile the code for this
+computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_compiler_version'
+_name.object_id                  '_tcod_software_compiler_version'
+save_
+save_tcod_software_compiler_options
+_name.category_id                tcod_software
+_description.text
+' A string with all options that were used to compile the given package.'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_compiler_options'
+_name.object_id                  '_tcod_software_compiler_options'
+save_
+save_tcod_software_library
+_name.category_id                category_overview
+_description.text                ' Describes computational libraries.'
+_definition.update               2019-05-14
+_definition.class                Loop
+_definition.scope                Category
+_definition.id                   TCOD_SOFTWARE_LIBRARY
+_name.object_id                  TCOD_SOFTWARE_LIBRARY
+save_
+save_tcod_software_library_id
+_name.category_id                tcod_software_library
+_description.text                ' Identifies a software library in a loop'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library_id'
+_name.object_id                  '_tcod_software_library_id'
+save_
+save_tcod_software_library
+_name.category_id                tcod_software_library
+_description.text
+; The subroutine library (e.g. linear algebra) that was linked with
+the code used for the described calculation. Only the library name
+should be given, e.g. 'pthreads', 'libc', 'lapack'.
+
+If more than one library was used, these items must be looped.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library'
+_name.object_id                  '_tcod_software_library'
+save_
+save_tcod_software_library_version
+_name.category_id                tcod_software_library
+_description.text
+; A version string (number) of the library linked with the code for this
+computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library_version'
+_name.object_id                  '_tcod_software_library_version'
+save_
+save_tcod_software_library_compilation_date
+_name.category_id                tcod_software_library
+_description_example.case        2014-11-04T13:49:49.290475Z
+_description.text
+; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
+  the time when the subroutine library file was compiled.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library_compilation_date'
+_name.object_id                  '_tcod_software_library_compilation_date'
+save_
+save_tcod_software_library_compilation_environment
+_name.category_id                tcod_software_library
+_description.text
+; A set of environment variable definitions, in /bin/sh syntax
+(i.e. using the "NAME=VALUE" syntax) for all relevant environment
+variables that were active when compiling this library. You can get the
+list in this syntax from the Unix/Linux 'printenv' command.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id
+'_tcod_software_library_compilation_environment'
+_name.object_id
+'_tcod_software_library_compilation_environment'
+save_
+save_tcod_software_library_compiler_name
+_name.category_id                tcod_software_library
+_description.text
+' Library compiler name (same syntax as for a package compiler).'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library_compiler_name'
+_name.object_id                  '_tcod_software_library_compiler_name'
+save_
+save_tcod_software_library_compiler_version
+_name.category_id                tcod_software_library
+_description.text
+' Library compiler version (same syntax as for a package compiler).'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library_compiler_version'
+_name.object_id                  '_tcod_software_library_compiler_version'
+save_
+save_tcod_software_library_compiler_options
+_name.category_id                tcod_software_library
+_description.text
+; Library compiler options that were used (same syntax as for a
+package compiler).
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library_compiler_options'
+_name.object_id                  '_tcod_software_library_compiler_options'
+save_
+save_tcod_software_library_path
+_name.category_id                tcod_software_library
+_description.text
+; A file sytem path of the library file (especially the shared
+library, *.so or *.dll) linked with the code for this computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library_path'
+_name.object_id                  '_tcod_software_library_path'
+save_
+save_tcod_software_library_binary_uri
+_name.category_id                tcod_software_library
+_description.text
+; An URI (Web reference) where the binary software library used for
+this computation can be fetched.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library_binary_uri'
+_name.object_id                  '_tcod_software_library_binary_uri'
+save_
+save_tcod_software_library_source_uri
+_name.category_id                tcod_software_library
+_description.text
+; An URI (Web reference) where the source code software library used for
+this computation can be fetched.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_software_library_source_uri'
+_name.object_id                  '_tcod_software_library_source_uri'
+save_
+save_tcod_initial_coordinate
+_name.category_id                category_overview
+_description.text                ' Initial atomic coordinate source.'
+_definition.update               2019-05-14
+_definition.class                Set
+_definition.scope                Category
+_definition.id                   TCOD_INITIAL_COORDINATE
+_name.object_id                  TCOD_INITIAL_COORDINATE
+save_
+save_tcod_initial_coordinate_db_name
+_name.category_id                tcod_initial_coordinate
+_description.text
+' Coordinate source database name (e.g. "Crystallography Open Database")'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_coordinate_db_name'
+_name.object_id                  '_tcod_initial_coordinate_db_name'
+save_
+save_tcod_initial_coordinate_db_abbrev
+_name.category_id                tcod_initial_coordinate
+_description.text
+' Coordinate source database abbreviated name (e.g. "COD")'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_coordinate_db_abbrev'
+_name.object_id                  '_tcod_initial_coordinate_db_abbrev'
+save_
+save_tcod_initial_coordinate_db_URI
+_name.category_id                tcod_initial_coordinate
+_description.text
+; Coordinate source database stable URI, e.g.
+  http://www.crystallography.net/
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_coordinate_db_URI'
+_name.object_id                  '_tcod_initial_coordinate_db_URI'
+save_
+save_tcod_initial_coordinate_db_code
+_name.category_id                tcod_initial_coordinate
+_description.text
+; Coordinate source database stable stable identifier, e.g.
+  1518187 (for COD entry 1518187).
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_coordinate_db_code'
+_name.object_id                  '_tcod_initial_coordinate_db_code'
+save_
+save_tcod_initial_coordinate_URI
+_name.category_id                tcod_initial_coordinate
+_description.text
+; A stable URI of coordinate file, e.g.
+  http://www.crystallography.net/cod/1518187.cif
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_coordinate_URI'
+_name.object_id                  '_tcod_initial_coordinate_URI'
+save_
+save_tcod_initial_cell_param
+_name.category_id                category_overview
+_description.text
+' Initial crystallographic unit cell parameter source.'
+_definition.update               2019-05-14
+_definition.class                Set
+_definition.scope                Category
+_definition.id                   TCOD_INITIAL_CELL_PARAM
+_name.object_id                  TCOD_INITIAL_CELL_PARAM
+save_
+save_tcod_initial_cell_param_db_name
+_name.category_id                tcod_initial_cell_param
+_description.text
+; Unit cell parameter source database name (e.g. "Crystallography Open
+  Database")
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_cell_param_db_name'
+_name.object_id                  '_tcod_initial_cell_param_db_name'
+save_
+save_tcod_initial_cell_param_db_abbrev
+_name.category_id                tcod_initial_cell_param
+_description.text
+' Unit cell parameter source database abbreviated name (e.g. "COD")'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_cell_param_db_abbrev'
+_name.object_id                  '_tcod_initial_cell_param_db_abbrev'
+save_
+save_tcod_initial_cell_param_db_URI
+_name.category_id                tcod_initial_cell_param
+_description.text
+; Unit cell parameter source database stable URI, e.g.
+  http://www.crystallography.net/
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_cell_param_db_URI'
+_name.object_id                  '_tcod_initial_cell_param_db_URI'
+save_
+save_tcod_initial_cell_param_db_code
+_name.category_id                tcod_initial_cell_param
+_description.text
+; Unit cell parameter source database stable identifier, e.g.
+  1518187 (for COD entry 1518187).
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_cell_param_db_code'
+_name.object_id                  '_tcod_initial_cell_param_db_code'
+save_
+save_tcod_initial_cell_param_URI
+_name.category_id                tcod_initial_cell_param
+_description.text
+; A stable URI of a file with the initial unit cell parameters, e.g.
+  http://www.crystallography.net/cod/1518187.cif
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_initial_cell_param_URI'
+_name.object_id                  '_tcod_initial_cell_param_URI'
+save_
+save_tcod_atom_site_initial_fract_x
+_name.category_id                atom_site
+_list_reference                  '_atom_site_label'
+_description.text
+; Initial atom-site coordinates use to set up the computation as
+  fractions of the _cell_length_* values.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_type.purpose                    Measurand
+_definition.id                   '_tcod_atom_site_initial_fract_x'
+_name.object_id                  '_tcod_atom_site_initial_fract_x'
+loop_
+_related_item
+_related_function
+'_tcod_atom_site_initial_Cartn_' alternate
+save_
+save_tcod_atom_site_initial_fract_y
+_name.category_id                atom_site
+_list_reference                  '_atom_site_label'
+_description.text
+; Initial atom-site coordinates use to set up the computation as
+  fractions of the _cell_length_* values.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_type.purpose                    Measurand
+_definition.id                   '_tcod_atom_site_initial_fract_y'
+_name.object_id                  '_tcod_atom_site_initial_fract_y'
+loop_
+_related_item
+_related_function
+'_tcod_atom_site_initial_Cartn_' alternate
+save_
+save_tcod_atom_site_initial_fract_z
+_name.category_id                atom_site
+_list_reference                  '_atom_site_label'
+_description.text
+; Initial atom-site coordinates use to set up the computation as
+  fractions of the _cell_length_* values.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_type.purpose                    Measurand
+_definition.id                   '_tcod_atom_site_initial_fract_z'
+_name.object_id                  '_tcod_atom_site_initial_fract_z'
+loop_
+_related_item
+_related_function
+'_tcod_atom_site_initial_Cartn_' alternate
+save_
+save_tcod_atom_site_initial_Cartn_x
+_name.category_id                atom_site
+_units.code                      angstroms
+_list_reference                  '_atom_site_label'
+_description.text
+; Initial Cartesian atom-site coordinates use to set up the computation.
+
+A set of orthogonal Cartesian axes related to the cell axes is
+specified by the _atom_sites_Cartn_transform_axes and
+_atom_sites_Cartn_tran_matrix_ descriptions.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_type.purpose                    Measurand
+_definition.id                   '_tcod_atom_site_initial_Cartn_x'
+_name.object_id                  '_tcod_atom_site_initial_Cartn_x'
+loop_
+_related_item
+_related_function
+'_tcod_atom_site_initial_fract_' alternate
+save_
+save_tcod_atom_site_initial_Cartn_y
+_name.category_id                atom_site
+_units.code                      angstroms
+_list_reference                  '_atom_site_label'
+_description.text
+; Initial Cartesian atom-site coordinates use to set up the computation.
+
+A set of orthogonal Cartesian axes related to the cell axes is
+specified by the _atom_sites_Cartn_transform_axes and
+_atom_sites_Cartn_tran_matrix_ descriptions.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_type.purpose                    Measurand
+_definition.id                   '_tcod_atom_site_initial_Cartn_y'
+_name.object_id                  '_tcod_atom_site_initial_Cartn_y'
+loop_
+_related_item
+_related_function
+'_tcod_atom_site_initial_fract_' alternate
+save_
+save_tcod_atom_site_initial_Cartn_z
+_name.category_id                atom_site
+_units.code                      angstroms
+_list_reference                  '_atom_site_label'
+_description.text
+; Initial Cartesian atom-site coordinates use to set up the computation.
+
+A set of orthogonal Cartesian axes related to the cell axes is
+specified by the _atom_sites_Cartn_transform_axes and
+_atom_sites_Cartn_tran_matrix_ descriptions.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_type.purpose                    Measurand
+_definition.id                   '_tcod_atom_site_initial_Cartn_z'
+_name.object_id                  '_tcod_atom_site_initial_Cartn_z'
+loop_
+_related_item
+_related_function
+'_tcod_atom_site_initial_fract_' alternate
+save_
+save_tcod_ff
+_name.category_id                category_overview
+_definition.update               2019-05-14
+_definition.class                Loop
+_definition.scope                Category
+_definition.id                   TCOD_FF
+_name.object_id                  TCOD_FF
+save_
+save_tcod_ff_id
+_name.category_id                tcod_ff
+_list_mandatory                  yes
+_description.text
+; A unique identifier (primary key) of a force field in a loop, in
+case the COD datablock containing it refers to more than one force
+field.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_ff_id'
+_name.object_id                  '_tcod_ff_id'
+save_
+save_tcod_ff_type
+_name.category_id                tcod_ff
+_list_reference                  '_tcod_ff_id'
+_description.text
+; Fixed charge (standard biomolecular and materials: amber, opls, gromos etc.)
+  Polarizable (AMOEBA, iAMOEBA etc.)
+  Distributed multipole based FFs (multipoles instead of fixed point charges
+  S. Price et al.)
+  Hybrid (Different types for interatomic and intraatomic interactions)  
+  Reactive (ReaxFF etc.)
+  L.V. The list is non-exhaustive
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_type.purpose                    State
+_definition.id                   '_tcod_ff_type'
+_name.object_id                  '_tcod_ff_type'
+loop_
+_enumeration_set.state
+_enumeration_set.detail
+Fixed-charge 'describe the corresponding model here'
+Polarizable 'describe the corresponding model here'
+Distributed-multipole 'describe the corresponding model here'
+Hybrid 'describe the corresponding model here'
+Reactive 'describe the corresponding model here'
+other 'model not one of the mentioned above'
+save_
+save_tcod_ff_name
+_name.category_id                tcod_ff
+_list_reference                  '_tcod_ff_id'
+_description.text
+; Standard name for the FF used. If there is no standard name use 'custom'
+  Examples: charmm, opls, amber, gromos etc.
+  L.V. One must add a reference to the original paper here
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_ff_name'
+_name.object_id                  '_tcod_ff_name'
+save_
+save_tcod_ff_version
+_name.category_id                tcod_ff
+_list_reference                  '_tcod_ff_id'
+_description.text
+' Version of a force field. Usually year of the publication.  '
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_ff_version'
+_name.object_id                  '_tcod_ff_version'
+save_
+save_tcod_ff_citation_id
+_name.category_id                tcod_ff
+_list_reference                  '_tcod_ff_id'
+_list_link_parent                '_citation_id'
+_description.text
+; A reference to the citation describing the force field in the
+_citation_... category loop
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_ff_citation_id'
+_name.object_id                  '_tcod_ff_citation_id'
+save_
+save_tcod_citation_linkage
+_name.category_id                citation
+_description.text
+;
+    loop_
+    _citation_id
+    _tcod_citation_linkage
+    _citation_coordinate_linkage
+    _citation_journal_abbrev
+    _citation_journal_volume
+    _citation_journal_issue
+    _citation_year
+    _citation_page_first
+    _citation_page_last
+    1 force-field    'J. Some Name'    10 12 2014 1 12
+    2 software-code  'J. Another Name' 10 12 2014 1 12
+
+  L.V. Correct citation to the publication of the original FF is of extreme
+  importance. 
+
+  S.G. I suggest using 'citation' category data items from the core
+  CIF dictionary, and adding just a few TCOD relevant data items such
+  as _tcod_citation_linkage that would show which part of the
+  computation (force field, software code, etc.) does the paper
+  describe. Other items should point, whenever possible, to
+  machine-readable URLs with the force field or program code
+  definitions (for software, this might be links to a source code for
+  open source packages, links to a compiled binary packages for
+  specific platform, the ones used in the computations, and yet
+  another link would point to a web site describing the software (this
+  is relevant for both open-source and proprietary programs).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_type.purpose                    State
+_definition.id                   '_tcod_citation_linkage'
+_name.object_id                  '_tcod_citation_linkage'
+loop_
+_enumeration_set.state
+_enumeration_set.detail
+force-field 'citation of the paper describing the force field'
+software-code 'citation of the paper describing the program code'
+model 'citation describing the overall method used'
+pseudopotential 'citation describing pseudopotential'
+XC-functional 'citation describing exchange correlation f-nal'
+basis-set 'citation describing the basis set'
+save_
+save_tcod_computation_input_file
+_name.category_id                tcod_computation
+_list_link_parent                '_tcod_file_id'
+_description.text
+; Link to '_tcod_file_id' of a file with STDIN contents for a
+  computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_input_file'
+_name.object_id                  '_tcod_computation_input_file'
+save_
+save_tcod_computation_log_file
+_name.category_id                tcod_computation
+_list_link_parent                '_tcod_file_id'
+_description.text
+; Link to '_tcod_file_id' of a file with a log file for a
+  computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_log_file'
+_name.object_id                  '_tcod_computation_log_file'
+save_
+save_tcod_computation_stdout
+_name.category_id                tcod_computation
+_list_link_parent                '_tcod_file_id'
+_description.text
+; Link to '_tcod_file_id' of a file with STDOUT contents for a
+  computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_stdout'
+_name.object_id                  '_tcod_computation_stdout'
+save_
+save_tcod_computation_stderr
+_name.category_id                tcod_computation
+_list_link_parent                '_tcod_file_id'
+_description.text
+; Link to '_tcod_file_id' of a file with STDERR contents for a
+  computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_stderr'
+_name.object_id                  '_tcod_computation_stderr'
+save_
+save_tcod_computation_CPU_time
+_name.category_id                tcod_computation
+_units.code                      seconds
+_description.text                ' CPU time in seconds (excluding I/O).'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_computation_CPU_time'
+_name.object_id                  '_tcod_computation_CPU_time'
+save_
+save_tcod_computation_wallclock_time
+_name.category_id                tcod_computation
+_units.code                      seconds
+_description.text
+; The elapsed wall-clock time in seconds, from the start to the finish
+of this computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_computation_wallclock_time'
+_name.object_id                  '_tcod_computation_wallclock_time'
+save_
+save_tcod_file
+_name.category_id                category_overview
+_definition.update               2019-05-14
+_definition.class                Loop
+_definition.scope                Category
+_definition.id                   TCOD_FILE
+_name.object_id                  TCOD_FILE
+save_
+save_tcod_file_id
+_name.category_id                tcod_file
+_list_mandatory                  yes
+_description.text                ' Primary key for the _tcod_file_... table.'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_id'
+_name.object_id                  '_tcod_file_id'
+loop_
+_list_link_child
+'_tcod_computation_input_file'
+'_tcod_computation_log_file'
+'_tcod_computation_stdout'
+'_tcod_computation_stderr'
+save_
+save_tcod_file_name
+_name.category_id                tcod_file
+_list_mandatory                  yes
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_name'
+_name.object_id                  '_tcod_file_name'
+save_
+save_tcod_file_source_database_name
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_source_database_name'
+_name.object_id                  '_tcod_file_source_database_name'
+save_
+save_tcod_file_source_database_URI
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_source_database_URI'
+_name.object_id                  '_tcod_file_source_database_URI'
+save_
+save_tcod_file_source_database_version
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_source_database_version'
+_name.object_id                  '_tcod_file_source_database_version'
+save_
+save_tcod_file_source_reference_id
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_source_reference_id'
+_name.object_id                  '_tcod_file_source_reference_id'
+save_
+save_tcod_file_source_reference_version
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_source_reference_version'
+_name.object_id                  '_tcod_file_source_reference_version'
+save_
+save_tcod_file_source_reference_uuid
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_source_reference_uuid'
+_name.object_id                  '_tcod_file_source_reference_uuid'
+save_
+save_tcod_file_md5sum
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text                ' MD5 checksum of the file.'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_md5sum'
+_name.object_id                  '_tcod_file_md5sum'
+save_
+save_tcod_file_sha1sum
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text                ' SHA1 checksum of the file.'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_sha1sum'
+_name.object_id                  '_tcod_file_sha1sum'
+save_
+save_tcod_file_format
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_format'
+_name.object_id                  '_tcod_file_format'
+save_
+save_tcod_file_interpreter
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_interpreter'
+_name.object_id                  '_tcod_file_interpreter'
+save_
+save_tcod_file_role
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_type.purpose                    State
+_definition.id                   '_tcod_file_role'
+_name.object_id                  '_tcod_file_role'
+loop_
+_enumeration_set.state
+_enumeration_set.detail
+input 'input file'
+output
+;
+;
+log
+;
+;
+stdin
+;
+;
+stdout
+;
+;
+stderr
+;
+;
+save_
+save_tcod_file_contents_type
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_type.purpose                    State
+_definition.id                   '_tcod_file_contents_type'
+_name.object_id                  '_tcod_file_contents_type'
+loop_
+_enumeration_set.state
+_enumeration_set.detail
+script 'executable input script'
+control 'computation control file'
+parameters 'computation parameter file'
+coordinates
+;
+;
+structure
+;
+;
+edensity
+;
+;
+wavefunction
+;
+;
+pseudopotential
+;
+;
+basisset
+;
+;
+forcefield
+;
+;
+save_
+save_tcod_file_contents
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_contents'
+_name.object_id                  '_tcod_file_contents'
+save_
+save_tcod_file_content_encoding
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_list_link_parent                '_tcod_content_encoding_id'
+_description.text
+' Must match a single _tcod_content_encoding_id from the same datablock.'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_content_encoding'
+_name.object_id                  '_tcod_file_content_encoding'
+save_
+save_tcod_file_URI
+_name.category_id                tcod_file
+_list_reference                  '_tcod_file_id'
+_description.text
+' A stable URI (Web reference) where the file can be fetched.'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_file_URI'
+_name.object_id                  '_tcod_file_URI'
+save_
+save_tcod_content_encoding
+_name.category_id                category_overview
+_definition.update               2019-05-14
+_definition.class                Loop
+_definition.scope                Category
+_definition.id                   TCOD_CONTENT_ENCODING
+_name.object_id                  TCOD_CONTENT_ENCODING
+loop_
+_description_example.case
+_description_example.detail
+;
+    loop_
+    _tcod_content_encoding_id
+    _tcod_content_encoding_layer_id
+    _tcod_content_encoding_layer_type
+    gzip+base64 1 gzip
+    gzip+base64 2 base64
+;
+;
+    Example 1 - based on TCOD entry 10000001
+                (http://www.crystallography.net/tcod/10000001.cif@267).
+                Presents an encoding stack for gzip+base64, where data is
+                gzipped first and base64-encoded second.
+;
+save_
+save_tcod_content_encoding_id
+_name.category_id                tcod_content_encoding
+_list_link_child                 '_tcod_file_content_encoding'
+_list_mandatory                  yes
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_content_encoding_id'
+_name.object_id                  '_tcod_content_encoding_id'
+save_
+save_tcod_content_encoding_layer_id
+_name.category_id                tcod_content_encoding
+_list_mandatory                  yes
+_list_uniqueness                 '_tcod_content_encoding_id'
+_enumeration.range               1:
+_description.text
+; One-based number of an encoding layer in the encoding stack,
+starting from the innermost layer.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_content_encoding_layer_id'
+_name.object_id                  '_tcod_content_encoding_layer_id'
+save_
+save_tcod_content_encoding_layer_type
+_name.category_id                tcod_content_encoding
+_list_mandatory                  yes
+_list_reference                  '_tcod_content_encoding_id'
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_type.purpose                    State
+_definition.id                   '_tcod_content_encoding_layer_type'
+_name.object_id                  '_tcod_content_encoding_layer_type'
+loop_
+_enumeration_set.state
+_enumeration_set.detail
+ncr 'Numeric Character Reference'
+base64 'Base64 as described in RFC2045'
+quoted-printable 'Quoted-printable as described in RFC2045'
+gzip 'Gzip as described in RFC1952'
+save_
+save_tcod_computation
+_name.category_id                category_overview
+_definition.update               2019-05-14
+_definition.class                Loop
+_definition.scope                Category
+_definition.id                   TCOD_COMPUTATION
+_name.object_id                  TCOD_COMPUTATION
+save_
+save_tcod_computation_command
+_name.category_id                tcod_computation
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_command'
+_name.object_id                  '_tcod_computation_command'
+save_
+save_tcod_computation_step
+_name.category_id                tcod_computation
+_list_mandatory                  yes
+_enumeration.range               1:
+_description.text
+; One-based position of the computation step, designating the order of
+execution of this step. Steps with lesser values are to be executed
+before the steps with greater values of this data item.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_computation_step'
+_name.object_id                  '_tcod_computation_step'
+save_
+save_tcod_computation_environment
+_name.category_id                tcod_computation
+_description.text
+; A set of environment variable definitions, in /bin/sh syntax
+(i.e. using the "NAME=VALUE" syntax) for all relevant environment
+variables that are needed to reproduce this computation. You can get
+the list in this syntax from the Unix/Linux 'printenv' command.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_environment'
+_name.object_id                  '_tcod_computation_environment'
+save_
+save_tcod_computation_reference_uuid
+_name.category_id                tcod_computation
+_description.text
+;
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_reference_uuid'
+_name.object_id                  '_tcod_computation_reference_uuid'
+save_
+save_tcod_computation_reference_id
+_name.category_id                tcod_computation
+_description.text
+; Reference to a computation description (its primary key) in the remote
+database that published and stored this computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_reference_id'
+_name.object_id                  '_tcod_computation_reference_id'
+save_
+save_tcod_computation_reference_URI
+_name.category_id                tcod_computation
+_description.text
+; Reference to a computation description (its stable REST URI) in the remote
+database that published and stored this computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_reference_URI'
+_name.object_id                  '_tcod_computation_reference_URI'
+save_
+save_tcod_computation_database_name
+_name.category_id                tcod_computation
+_description.text
+; A name of the database that was used to publish and document this
+computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_database_name'
+_name.object_id                  '_tcod_computation_database_name'
+save_
+save_tcod_computation_database_version
+_name.category_id                tcod_computation
+_description.text
+; A version of the database that was used to publish and document this
+computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_database_version'
+_name.object_id                  '_tcod_computation_database_version'
+save_
+save_tcod_computation_database_URI
+_name.category_id                tcod_computation
+_description.text
+; A stable URI (of a human-readable description) of the database that
+was used to publish and document this computation.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_computation_database_URI'
+_name.object_id                  '_tcod_computation_database_URI'
+save_
+save_tcod_total_energy
+_name.category_id                category_overview
+_definition.update               2019-05-14
+_definition.class                Set
+_definition.scope                Category
+_definition.id                   TCOD_TOTAL_ENERGY
+_name.object_id                  TCOD_TOTAL_ENERGY
+save_
+save_tcod_total_energy
+_name.category_id                tcod_total_energy
+_units.code                      electron_volts
+_description.text
+; Ideally, should correspond to
+http://www.xml-cml.org/dictionary/compchem/ "total energy" (ID:
+totalEnergy) whenever applicable.
+
+The total energy for a system of electrons and nuclei. The exact
+method of computing this parameter depends on the method. The formula
+used to compute it should be given in the _tcod_total_energy_formula
+data item; in CIF2 this will be a DRel method (i.e. a formal
+computable expression in a strictly specified computer language).
+
+CAUTION: total energies are comparable only between computations made
+by the same method, under the same approximations and with the same or
+similar input parameters. Therefore, the value of this data item
+*SHOULD NOT* be used to rank different TCOD entries without proper
+scaling, analysis and justification.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_total_energy'
+_name.object_id                  '_tcod_total_energy'
+save_
+save_tcod_total_energy_formula
+_name.category_id                tcod_total_energy
+_description.text
+; Formula used to compute the _tcod_total_energy value; the exact
+syntax details are still to be specified.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_total_energy_formula'
+_name.object_id                  '_tcod_total_energy_formula'
+save_
+save_tcod_total_energy_details
+_name.category_id                tcod_total_energy
+_description.text
+; A human-readable description of the _tcod_total_energy computation
+‒ its physical meaning and usability.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_total_energy_details'
+_name.object_id                  '_tcod_total_energy_details'
+save_
+save_tcod_total_energy_gradient
+_name.category_id                tcod_total_energy
+_units.code                      electron_volts_per_angstrom
+_description.text
+; Gives an total energy gradient at the end of the computation
+(e.g. at the last optimisation cycle). Derivatives to be taken by
+nuclei positions and cell parameters.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_total_energy_gradient'
+_name.object_id                  '_tcod_total_energy_gradient'
+save_
+save_tcod_total_energy_gradient_formula
+_name.category_id                tcod_total_energy
+_description.text
+; Formula or computer code used to compute the
+_tcod_total_energy_gradient value; the exact syntax details are still
+to be specified.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_total_energy_gradient_formula'
+_name.object_id                  '_tcod_total_energy_gradient_formula'
+save_
+save_tcod_total_energy_gradient_details
+_name.category_id                tcod_total_energy
+_description.text
+; A human-readable description of the _tcod_total_energy_gradient
+computation ‒ its physical meaning and usability.
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Text
+_definition.id                   '_tcod_total_energy_gradient_details'
+_name.object_id                  '_tcod_total_energy_gradient_details'
+save_
+save_tcod_atom_site_resid_force_Cartn_x
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_list_reference                  '_atom_site_label'
+_description.text
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure these
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items ‒ ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives δ E/δ x,
+δ E/δ y and δ E/δ z, where E is the total energy of the system and
+x, y, and z are coordinates of the atom for which residual force is
+computed (the δ is the partial derivative sign).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_Cartn_x'
+_name.object_id                  '_tcod_atom_site_resid_force_Cartn_x'
+save_
+save_tcod_atom_site_resid_force_Cartn_y
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_list_reference                  '_atom_site_label'
+_description.text
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure these
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items ‒ ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives δ E/δ x,
+δ E/δ y and δ E/δ z, where E is the total energy of the system and
+x, y, and z are coordinates of the atom for which residual force is
+computed (the δ is the partial derivative sign).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_Cartn_y'
+_name.object_id                  '_tcod_atom_site_resid_force_Cartn_y'
+save_
+save_tcod_atom_site_resid_force_Cartn_z
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_list_reference                  '_atom_site_label'
+_description.text
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure these
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items ‒ ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives δ E/δ x,
+δ E/δ y and δ E/δ z, where E is the total energy of the system and
+x, y, and z are coordinates of the atom for which residual force is
+computed (the δ is the partial derivative sign).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_Cartn_z'
+_name.object_id                  '_tcod_atom_site_resid_force_Cartn_z'
+save_
+save_tcod_atom_site_resid_force_fract_x
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_list_reference                  '_atom_site_label'
+_description.text
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure these
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items ‒ ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives δ E/δ x,
+δ E/δ y and δ E/δ z, where E is the total energy of the system and
+x, y, and z are coordinates of the atom for which residual force is
+computed (the δ is the partial derivative sign).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_fract_x'
+_name.object_id                  '_tcod_atom_site_resid_force_fract_x'
+save_
+save_tcod_atom_site_resid_force_fract_y
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_list_reference                  '_atom_site_label'
+_description.text
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure these
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items ‒ ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives δ E/δ x,
+δ E/δ y and δ E/δ z, where E is the total energy of the system and
+x, y, and z are coordinates of the atom for which residual force is
+computed (the δ is the partial derivative sign).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_fract_y'
+_name.object_id                  '_tcod_atom_site_resid_force_fract_y'
+save_
+save_tcod_atom_site_resid_force_fract_z
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_list_reference                  '_atom_site_label'
+_description.text
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure these
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items ‒ ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives δ E/δ x,
+δ E/δ y and δ E/δ z, where E is the total energy of the system and
+x, y, and z are coordinates of the atom for which residual force is
+computed (the δ is the partial derivative sign).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_fract_z'
+_name.object_id                  '_tcod_atom_site_resid_force_fract_z'
+save_
+save_tcod_atom_site_resid_force_dir_cos_x
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_list_reference                  '_atom_site_label'
+_description.text
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure these
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items ‒ ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives δ E/δ x,
+δ E/δ y and δ E/δ z, where E is the total energy of the system and
+x, y, and z are coordinates of the atom for which residual force is
+computed (the δ is the partial derivative sign).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_dir_cos_x'
+_name.object_id                  '_tcod_atom_site_resid_force_dir_cos_x'
+save_
+save_tcod_atom_site_resid_force_dir_cos_y
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_list_reference                  '_atom_site_label'
+_description.text
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure these
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items ‒ ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives δ E/δ x,
+δ E/δ y and δ E/δ z, where E is the total energy of the system and
+x, y, and z are coordinates of the atom for which residual force is
+computed (the δ is the partial derivative sign).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_dir_cos_y'
+_name.object_id                  '_tcod_atom_site_resid_force_dir_cos_y'
+save_
+save_tcod_atom_site_resid_force_dir_cos_z
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_list_reference                  '_atom_site_label'
+_description.text
+;
+
+These data items describe residual forces on atoms in the final
+structure. For a converged computation of a stable structure these
+should be close to 0.
+
+The ..._Cartn_[xyz] referes to the same frame as
+_atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
+projections onto crystal axes. If the
+_tcod_atom_site_resid_force_magnitude is given as a positive number,
+then its directions are given by
+_tcod_atom_site_resid_force_dir_cos_[xy] direction cosini in Cartesian
+axes of _atom_site_Cartn_[xyz].
+
+Only one set of data items ‒ ..._fract_[xyz], ..._Cartn_[xyz],
+..._magnitude + ..._dir_cos_[xy], .._magnitude + ..._dir_cos_[xz] or
+.._magnitude + ..._dir_cos_[yz] need to be given to fully characterise
+residual forces; the rest can be computed from these provided values
+and thus are redundant.
+
+A residual force on a given atom should be computed with all other
+parameters, including all other atom positions, fixed. The force
+components for each atom are given as partial derivatives δ E/δ x,
+δ E/δ y and δ E/δ z, where E is the total energy of the system and
+x, y, and z are coordinates of the atom for which residual force is
+computed (the δ is the partial derivative sign).
+
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_dir_cos_z'
+_name.object_id                  '_tcod_atom_site_resid_force_dir_cos_z'
+save_
+save_tcod_atom_site_resid_force_magnitude
+_name.category_id                atom_site
+_units.code                      electron_volts_per_angstrom
+_enumeration.range               1:
+_list_reference                  '_atom_site_label'
+_description.text
+; The magnitude of the residual force (see
+  data_tcod_atom_site_residual_force description for details).
+;
+_definition.update               2019-05-14
+_definition.class                Datum
+_type.container                  Single
+_type.contents                   Real
+_definition.id                   '_tcod_atom_site_resid_force_magnitude'
+_name.object_id                  '_tcod_atom_site_resid_force_magnitude'
+save_
