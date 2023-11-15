@@ -11,7 +11,7 @@
 #------------------------------------------------------------------------------
 
 # From: Wakelin et al. Molecular Simulation, 2005, 31, 315-322,
-# http://dx.doi.org/10.1080/08927020500065850:
+# https://doi.org/10.1080/08927020500065850:
 #
 # For molecular or condensed matter simulations this would need to cover
 # at least the following information:
@@ -39,10 +39,13 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
-    _dictionary_version         0.019
-    _dictionary_update          2019-05-14
+    _dictionary_version         0.020
+    _dictionary_update          2023-11-15
     _dictionary_history        
 ;
+2023-11-15 Adding descriptions for some of the categories which lacked
+           them. Switching to HTTPS links whenever possible. A.M.
+
 2019-05-14 Fixing incorrectly specified parent-child relationships.
            Specifying categories for data items lacking them. A.M.
 
@@ -251,7 +254,7 @@ data_tcod_database_[]
 ;
     Example 1 - based on TCOD entry 10000001.cif, revision 267
                 svn://www.crystallography.net/tcod/cif/10/00/00/10000001.cif
-                http://www.crystallography.net/tcod/10000001.cif
+                https://www.crystallography.net/tcod/10000001.cif
 ;
 # - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     _definition
@@ -328,6 +331,11 @@ data_tcod_source_structure_database_[]
     _name                      '_tcod_source_structure_database_[]'
     _category                    category_overview
     _type                        null
+    _definition
+;
+  Data items in this category are used to identify the source database
+  record of the structure in question.
+;
 
 data_tcod_source_structure_database_uuid
     _name                      '_tcod_source_structure_database_uuid'
@@ -335,7 +343,7 @@ data_tcod_source_structure_database_uuid
     _type char
     _definition
 ; UUID (Universally Unique Identifier,
-http://en.wikipedia.org/wiki/Universally_unique_identifier) of the
+https://en.wikipedia.org/wiki/Universally_unique_identifier) of the
 database output structure (node, record) that was exported to this entry.
 ;
 
@@ -343,16 +351,25 @@ data_tcod_source_structure_database_id
     _name                      '_tcod_source_structure_database_id'
     _category                    tcod_source_structure_database
     _type                        char
+    _definition
+; Internal database identifier of a structure.
+;
 
 data_tcod_source_structure_database_URI
     _name                      '_tcod_source_structure_database_URI'
     _category                    tcod_source_structure_database
     _type                        char
+    _definition
+; Database URI of a structure.
+;
 
 data_tcod_source_structure_database_version
     _name                      '_tcod_source_structure_database_version'
     _category                    tcod_source_structure_database
     _type                        char
+    _definition
+; Version of a structure.
+;
 
 ###############################################################################
 # Identification of the source database
@@ -362,6 +379,11 @@ data_tcod_source_database_[]
     _name                      '_tcod_source_database_[]'
     _category                    category_overview
     _type                        null
+    _definition
+;
+  Data items in this category are used to identify the source database
+  of the structure in question.
+;
 
 data_tcod_source_database_name
     _name                      '_tcod_source_database_name'
@@ -386,7 +408,7 @@ database that produced the structure.
 
 Example:
 
-_tcod_source_database_URI http://www.aiida.net/
+_tcod_source_database_URI https://www.aiida.net
 ;
 
 data_tcod_source_database_version
@@ -454,6 +476,10 @@ data_tcod_software_[]
     _name                      '_tcod_software_[]'
     _category                    category_overview
     _type                        null
+    _definition
+;
+  Data items in this category are used to describe computation software.
+;
 
 data_tcod_software_package
     _name '_tcod_software_package'
@@ -482,11 +508,11 @@ data_tcod_software_package_compilation_timestamp
     _type char
     _example     2014-11-04T13:49:49.290475Z
     _definition
-; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
+; ISO 8601 (https://en.wikipedia.org/wiki/ISO_8601) format timestamp of
   the time when the executable was compiled.
 
   Should correspond to the
-  http://www.xml-cml.org/dictionary/compchem/#compileDate data
+  https://www.xml-cml.org/dictionary/compchem/#compileDate data
   element, but MUST be expressed in the ISO standard format.
 ;
 
@@ -557,7 +583,7 @@ data_tcod_software_OS_compilation_timestamp
     _type char
     _example     2014-11-04T13:49:49.290475Z
     _definition
-; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
+; ISO 8601 (https://en.wikipedia.org/wiki/ISO_8601) format timestamp of
   the time when the operating system image was compiled.
 ;
 
@@ -682,7 +708,7 @@ data_tcod_software_library_compilation_timestamp
     _list yes
     _example     2014-11-04T13:49:49.290475Z
     _definition
-; ISO 8601 (http://en.wikipedia.org/wiki/ISO_8601) format timestamp of
+; ISO 8601 (https://en.wikipedia.org/wiki/ISO_8601) format timestamp of
   the time when the subroutine library file was compiled.
 ;
 
@@ -810,7 +836,7 @@ _type char
 _category tcod_initial_coordinate
 _definition
 ; Coordinate source database stable URI, e.g.
-  http://www.crystallography.net/
+  https://www.crystallography.net
 ;
 
 data_tcod_initial_coordinate_db_code
@@ -828,7 +854,7 @@ _type char
 _category tcod_initial_coordinate
 _definition
 ; A stable URI of coordinate file, e.g.
-  http://www.crystallography.net/cod/1518187.cif
+  https://www.crystallography.net/cod/1518187.cif
 ;
 
 ###############################################################################
@@ -866,7 +892,7 @@ _type char
 _category tcod_initial_cell_param
 _definition
 ; Unit cell parameter source database stable URI, e.g.
-  http://www.crystallography.net/
+  https://www.crystallography.net
 ;
 
 data_tcod_initial_cell_param_db_code
@@ -884,7 +910,7 @@ _type char
 _category tcod_initial_cell_param
 _definition
 ; A stable URI of a file with the initial unit cell parameters, e.g.
-  http://www.crystallography.net/cod/1518187.cif
+  https://www.crystallography.net/cod/1518187.cif
 ;
 
 ###############################################################################
@@ -944,6 +970,10 @@ data_tcod_ff_[]
     _name                        '_tcod_ff_[]'
     _category                    category_overview
     _type                        null
+    _definition
+;
+  Data items in this category are used to describe force fields.
+;
 
 data_tcod_ff_id
     _name                        '_tcod_ff_id'
@@ -1147,6 +1177,10 @@ data_tcod_file_[]
 _name '_tcod_file_[]'
 _category category_overview
 _type null
+_definition
+;
+  Data items in this category are used to describe input and output files.
+;
 
 data_tcod_file_id
 _name '_tcod_file_id'
@@ -1356,6 +1390,11 @@ data_tcod_content_encoding_[]
 _name '_tcod_content_encoding_[]'
 _category category_overview
 _type null
+_definition
+;
+  Data items in this category are used to describe content encodings used
+  for file contents inserted into CIF files.
+;
 loop_ _example
       _example_detail
 ;
@@ -1368,7 +1407,7 @@ loop_ _example
 ;
 ;
     Example 1 - based on TCOD entry 10000001
-                (http://www.crystallography.net/tcod/10000001.cif@267).
+                (https://www.crystallography.net/tcod/10000001.cif@267).
                 Presents an encoding stack for gzip+base64, where data is
                 gzipped first and base64-encoded second.
 ;
@@ -1417,6 +1456,10 @@ data_tcod_computation_[]
     _name                      '_tcod_computation_[]'
     _category                    category_overview
     _type                        null
+    _definition
+;
+  Data items in this category are used to describe computation steps.
+;
 
 data_tcod_computation_command
 _name '_tcod_computation_command'
@@ -1528,7 +1571,7 @@ _units eV
 _units_detail 'electron-Volts'
 _definition
 ; Ideally, should correspond to
-http://www.xml-cml.org/dictionary/compchem/ "total energy" (ID:
+https://www.xml-cml.org/dictionary/compchem/ "total energy" (ID:
 totalEnergy) whenever applicable.
 
 The total energy for a system of electrons and nuclei. The exact
