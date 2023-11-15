@@ -291,7 +291,7 @@ data_tcod_data_source_file
     _list                        no
     _definition
 ;         Specifies file name of the file that served as a source of data in
-          this TCOD entry. The file should be recoded without the path or
+          this TCOD entry. The file should be recorded without the path or
           other URL components, since these components usually have no sense
           on the recipient's system. In Unix parlance, the value recorded
           should be the basename of the original file. For many data
@@ -471,7 +471,7 @@ data_tcod_software_package_version
     _definition
 ; Software package version used to compute and produce the computed
   structure file. Only version designator should be used, e.g. '3.4.0',
-  '2.1rc3'. It is desireable that the combination of the _tcod_software_package
+  '2.1rc3'. It is desirable that the combination of the _tcod_software_package
   and _tcod_software_package_version values would uniquely identify the code
   that was used for computations.
 ;
@@ -545,7 +545,7 @@ data_tcod_software_runtime_OS_version
     _definition
 ; Operating system version used to compute and produce the
   DFT-computed structure file.  Only version designator should be
-  used, e.g. '3.4.0', '2.1rc3'. It is desireable that the combination
+  used, e.g. '3.4.0', '2.1rc3'. It is desirable that the combination
   of the _dft_software_operating_system and
   _dft_software_package_operating_system_version values would uniquely
   identify the OS that was used for computations.
@@ -577,7 +577,7 @@ data_tcod_software_runtime_OS_source_uri
     _type char
     _definition
 ; An URI (Web reference) where the source code of the operating system
-on which computations were peformed can be fetched.
+on which computations were performed can be fetched.
 ;
 
 data_tcod_software_runtime_CPU
@@ -758,7 +758,7 @@ this computation can be fetched.
 
 #------------------------------------------------------------------------------
 # L.V. I don't think that things like operating system, cpu type, runtime are 
-# relavant for TCOD, as discussed, in that case one should also report: compiler
+# relevant for TCOD, as discussed, in that case one should also report: compiler
 # version, algebra libraries etc.
 # 
 # S.G. I think it would be good to have data items to describe such
@@ -768,7 +768,7 @@ this computation can be fetched.
 # down CPU or computer bugs (recall the infamous Pentium FDIV
 # bug...). The bugs might, in theory, influence computation results
 # and conclusions. The information is easy to gather at the point of
-# computation, so we need to provide means to record it. The relevan
+# computation, so we need to provide means to record it. The relevant
 # data items will be inserter.
 #------------------------------------------------------------------------------
 
