@@ -12,10 +12,12 @@
 
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
-    _dictionary_version         0.031
-    _dictionary_update          2019-05-14
+    _dictionary_version         0.032
+    _dictionary_update          2023-11-15
     _dictionary_history
 ;
+2023-11-15 Adding missing category definitions. A.M.
+
 2019-05-14 Making '_dft_XC_functional_[]' a category. Specifying categories
            for all data items lacking them. A.M.
 
@@ -117,6 +119,10 @@ data_dft_XC_functional_[]
     _name '_dft_XC_functional_[]'
     _category category_overview
     _type null
+    _definition
+;
+  Data items in this category describe the exchange-correlation (XC) functional.
+;
 
 data_dft_XC_functional_id
     _name '_dft_XC_functional_id'
@@ -350,6 +356,9 @@ data_dft_atom_basisset_[]
     _name '_dft_atom_basisset_[]'
     _category category_overview
     _type null
+    _definition
+; Data items to describe per-atom basis sets used in the computation.
+;
 
 data_dft_atom_basisset
     _name '_dft_atom_basisset'
@@ -517,6 +526,9 @@ data_dft_BZ_integration_smearing_method
     _name '_dft_BZ_integration_smearing_method'
     _type char
     _category dft_BZ_integration
+    _definition
+; The used BZ integration smearing method.
+;
     loop_
     _enumeration
     _enumeration_detail
@@ -586,6 +598,10 @@ data_dft_cell_settings_[]
     _name '_dft_cell_settings_[]'
     _category category_overview
     _type null
+    _definition
+;
+  Miscellaneous settings of the calculation.
+;
 
 data_dft_cell_pressure
     _name '_dft_cell_pressure'
@@ -627,6 +643,10 @@ data_dft_BZ_integration_grid_IBZ_point_[]
     _name '_dft_BZ_integration_grid_IBZ_point_[]'
     _category category_overview
     _type null
+    _definition
+;
+  Data items in this category describe the irreducible Brillouin zone (IBZ).
+;
 
 data_dft_BZ_integration_grid_IBZ_point_id
     _name '_dft_BZ_integration_grid_IBZ_point_id'
@@ -802,9 +822,13 @@ used in EEX-type calculations.
 ###############################################################################
 
 data_dft_energy_[]
-_name '_dft_energy_[]'
-_category category_overview
-_type null
+    _name '_dft_energy_[]'
+    _category category_overview
+    _type null
+    _definition
+;
+  Data items in this category describe various energy terms.
+;
 
 data_dft_cell_energy
     _name '_dft_cell_energy'
@@ -950,6 +974,10 @@ data_dft_cell_magn_[]
     _name '_dft_cell_magn_[]'
     _category category_overview
     _type null
+    _definition
+;
+  Data items in this category describe the magnetic moments.
+;
 
 data_dft_cell_magn_moment
     _name '_dft_cell_magn_moment'
@@ -985,6 +1013,10 @@ data_dft_cell_conv_[]
     _name '_dft_cell_conv_[]'
     _category category_overview
     _type null
+    _definition
+;
+  Data items in this category describe convergence criteria.
+;
 
 data_dft_cell_energy_conv
     _name '_dft_cell_energy_conv'
@@ -1230,6 +1262,9 @@ data_dft_calc_property_[]
     _name '_dft_calc_property_[]'
     _category category_overview
     _type null
+    _definition
+; Data items to describe other calculated material properties.
+;
 
 data_dft_lattice_energy
     _name '_dft_lattice_energy'
