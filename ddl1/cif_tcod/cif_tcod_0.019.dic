@@ -1621,7 +1621,7 @@ These data items describe residual forces on atoms in the final
 structure. For a converged computation of a stable structure these
 should be close to 0.
 
-The ..._Cartn_[xyz] referes to the same frame as
+The ..._Cartn_[xyz] refers to the same frame as
 _atom_site_Cartn_[xyz] coordinates; the ..._fract_[xyz] refer to force
 projections onto crystal axes. If the
 _tcod_atom_site_resid_force_magnitude is given as a positive number,
