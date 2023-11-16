@@ -1477,6 +1477,7 @@ _name '_tcod_computation_command'
 _category tcod_computation
 _type char
 _list yes
+_list_reference '_tcod_computation_step'
 _definition
 ;
 ;
@@ -1499,6 +1500,7 @@ _name '_tcod_computation_environment'
 _category tcod_computation
 _type char
 _list yes
+_list_reference '_tcod_computation_step'
 _definition
 ; A set of environment variable definitions, in /bin/sh syntax
 (i.e. using the "NAME=VALUE" syntax) for all relevant environment
@@ -1511,6 +1513,7 @@ _name '_tcod_computation_reference_uuid'
 _category tcod_computation
 _type char
 _list yes
+_list_reference '_tcod_computation_step'
 _definition
 ;
 ;
@@ -1520,6 +1523,7 @@ _name '_tcod_computation_reference_id'
 _category tcod_computation
 _type char
 _list yes
+_list_reference '_tcod_computation_step'
 _definition
 ; Reference to a computation description (its primary key) in the remote
 database that published and stored this computation.
@@ -1530,6 +1534,7 @@ _name '_tcod_computation_reference_URI'
 _category tcod_computation
 _type char
 _list yes
+_list_reference '_tcod_computation_step'
 _definition
 ; Reference to a computation description (its stable REST URI) in the remote
 database that published and stored this computation.
@@ -1540,6 +1545,7 @@ _name '_tcod_computation_database_name'
 _category tcod_computation
 _type char
 _list yes
+_list_reference '_tcod_computation_step'
 _definition
 ; A name of the database that was used to publish and document this
 computation.
@@ -1550,6 +1556,7 @@ _name '_tcod_computation_database_version'
 _category tcod_computation
 _type char
 _list yes
+_list_reference '_tcod_computation_step'
 _definition
 ; A version of the database that was used to publish and document this
 computation.
@@ -1560,6 +1567,7 @@ _name '_tcod_computation_database_URI'
 _category tcod_computation
 _type char
 _list yes
+_list_reference '_tcod_computation_step'
 _definition
 ; A stable URI (of a human-readable description) of the database that
 was used to publish and document this computation.
