@@ -1472,16 +1472,6 @@ data_tcod_computation_[]
   Data items in this category are used to describe computation steps.
 ;
 
-data_tcod_computation_command
-_name '_tcod_computation_command'
-_category tcod_computation
-_type char
-_list yes
-_list_reference '_tcod_computation_step'
-_definition
-;
-;
-
 data_tcod_computation_step
 _name '_tcod_computation_step'
 _category tcod_computation
@@ -1493,6 +1483,16 @@ _definition
 ; One-based position of the computation step, designating the order of
 execution of this step. Steps with lesser values are to be executed
 before the steps with greater values of this data item.
+;
+
+data_tcod_computation_command
+_name '_tcod_computation_command'
+_category tcod_computation
+_type char
+_list yes
+_list_reference '_tcod_computation_step'
+_definition
+;
 ;
 
 data_tcod_computation_environment
