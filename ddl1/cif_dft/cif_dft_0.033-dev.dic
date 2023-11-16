@@ -1,0 +1,1342 @@
+#------------------------------------------------------------------------------
+#$Date$
+#$Revision$
+#$URL$
+#------------------------------------------------------------------------------
+# This file is available in the Theoretical Crystallography Open
+# Database (TCOD), http://www.crystallography.net/tcod/cif/dictionaries/.
+#
+# This file is designated by the authors and the contributors
+# into Public Domain.
+#------------------------------------------------------------------------------
+
+data_on_this_dictionary
+    _dictionary_name            cif_dft.dic
+    _dictionary_version         0.032
+    _dictionary_update          2023-11-15
+    _dictionary_history
+;
+2023-11-15 Adding missing category definitions. A.M.
+
+2019-05-14 Making '_dft_XC_functional_[]' a category. Specifying categories
+           for all data items lacking them. A.M.
+
+2019-03-19 Setting _list_reference of
+           '_dft_BZ_integration_grid_IBZ_point_weight' to
+           '_dft_BZ_integration_grid_IBZ_point_id' instead of itself. A.M.
+
+2019-03-18 Declaring all data items of category 'dft_pseudopotential' as
+           looped. Adding '_units_detail' for all data items with units.
+           A.M.
+
+2018-02-05 Putting '_dft_kinetic_energy_cutoff_*', '_dft_alloy_*' and
+           '_dft_atom_type_*' data items into separate categories.
+           Improving descriptions for the values of
+           '_dft_pseudopotential_type'. Fixing links to categories
+           'dft_basisset' and 'dft_BZ_integration'. A.M.
+
+2018-02-01 Putting Brillouin zone integration-related data items into a
+           separate category. A.M.
+
+2017-01-04 Redefining tag '_dft_cell_pressure' as numeric. Defining units
+           of '_dft_cell_pressure' as kPa. A.M.
+
+2016-11-10 Allowing tags '_dft_pseudopotential_*' in loops, adding tag
+           '_dft_pseudopotential_atom_type' to link to
+           '_atom_site_type_symbol', thus allowing specification of
+           per-atom-type pseudopotentials. A.M.
+
+2016-04-13 Adding enumeration value 'daubechies' for _dft_basisset_type 
+           matching same value in ETSF specification. A.M.
+
+2016-03-14 Adding _dft_dielectric_constant. A.M.
+
+2016-02-19 Redefining tags _dft_BZ_integration_smearing_width and
+           _dft_atom_type_valence_electrons as numeric. A.M.
+
+2016-02-09 Adding _dft_band_gap. Fixing 'ev' -> 'eV' as units of
+           _dft_atom_relax_force_conv (typo). A.M.
+
+2016-01-22 Redefining tag _dft_cell_magn_moment as numeric with units of
+           \m_B. A.M.
+
+2015-10-16 Redefining units of _dft_bulk_modulus as gigapascals. A.M.
+
+2015-10-15 Adding data names _dft_stiffness_tensor_* for stiffness tensor
+           matrix representation. Marking _dft_basisset_[] as category.
+           A.M.
+
+2015-10-02 Adding data names _dft_lattice_energy and _dft_bulk_modulus.
+           Redefining units of _dft_bulk_modulus to kilopascals,
+           _dft_lattice_energy to kilojoules per mole. A.M.
+
+2015-09-14 Fixing data name in data_dft_atom_basisset_citation_id: was
+           _dft_basisset_citation_id (duplicate of one defined in
+           data_dft_basisset_citation_id), should be
+           _dft_atom_basisset_citation_id. A.M.
+
+2015-08-03 Adding data names _dft_kinetic_energy_cutoff_*. A.M.
+
+2015-07-29 Adding descriptions for abbreviated enumeration values for
+           _dft_XC_functional_type, _dft_pseudopotential_type and
+           _dft_alloy_method. A.M.
+
+2015-07-21 Redefining values of _dft_BZ_integration_method as
+           enumeration values. Adding tag
+           _dft_BZ_integration_method_other_name. Redefining tags
+           _dft_BZ_integration_grid_shift_[XYZ] as numbers with values
+           from a range [0:1]. A.M.
+
+2015-07-20 Adding data names for listing points in irreducible Brillouin
+           zone as well as data names to define smearing method for
+           Brillouin zone integration. A.M.
+
+2015-05-07 Redefining values of _dft_BZ_integration_MP_order as numeric
+           with a range [0,+Inf). Adding a description. A.M.
+
+2015-01-09 Adding data names for Ewald, Fermi and Hartree energy terms.
+           A.M.
+
+2014-11-04 Consolidating all DFT related data names into this
+           dictionary, elaborating basis set definition, adding
+           citation ling data items. S.G.
+
+2013-08-17 Adding two additional data names to describe custom names of
+           alloy methods and XC functional types if their enumerator 
+           values are givem as 'other'. S.G.
+
+2013-08-17 Adding all datanames from Bj\"orkman Torbj\"orn's 2013-05-09
+           11:23 e-mail. S.G.
+
+2013-08-17 Adding an empty CIF scaffold for the DFT dictionary. S.G.
+;
+
+###############################################################################
+# XC (exchange-correlation) functional
+###############################################################################
+
+data_dft_XC_functional_[]
+    _name '_dft_XC_functional_[]'
+    _category category_overview
+    _type null
+    _definition
+;
+  Data items in this category describe the exchange-correlation (XC) functional.
+;
+
+data_dft_XC_functional_id
+    _name '_dft_XC_functional_id'
+    _category dft_XC_functional
+    _type char
+    _definition
+;
+  XC functional ID in the XC functional loop (for mixed functionals). S.G.
+;
+
+data_dft_XC_exchange_functional_name
+    _name '_dft_XC_exchange_functional_name'
+    _category dft_XC_functional
+    _type char
+    _definition
+;
+  A very comprehensive XC functional list can be found at the NOMAD site:
+
+  https://gitlab.rzg.mpg.de/nomad-lab/nomad-meta-info/wikis/metainfo/XC-functional
+
+  Our dictionary should be harmonised with this list.
+
+  The corresponding NOMAD metadata entry is 'XC_functional' and 'XC_functional_name'.
+
+  S.G. 2016-10-28
+;
+
+data_dft_XC_exchange_functional_weight
+    _name '_dft_XC_exchange_functional_weight'
+    _category dft_XC_functional
+    _type numb
+    _definition
+;
+ A proportion (weight) of the particular XC exchange functional for
+ mixed functionals. S.G.
+;
+
+data_dft_XC_correlation_functional_name
+    _name '_dft_XC_correlation_functional_name'
+    _category dft_XC_functional
+    _type char
+    _definition
+;. . .
+;
+
+data_dft_XC_correlation_functional_weight
+    _name '_dft_XC_correlation_functional_weight'
+    _category dft_XC_functional
+    _type numb
+    _definition
+;
+ A proportion (weight) of the particular XC correlation functional for
+ mixed functionals. S.G.
+;
+
+data_dft_XC_functional_type
+    _name '_dft_XC_functional_type'
+    _category dft_XC_functional
+    _type char
+    loop_ _enumeration
+          _enumeration_detail
+          LDA                    'local-density approximation'
+          GGA                    'generalized gradient approximation'
+          meta-GGA               'GGA with the second derivative of electron density'
+          Hybrid                 'describe the corresponding functional here'
+          ACFD-RPA               'describe the corresponding functional here'
+          'orbital functionals'  'describe the corresponding functional here'
+          'exact exchange'       'describe the corresponding functional here'
+          vdW-DF                 'as proposed by Dion et al. (2004)'
+          LDA/GGA+U/DMFT         'describe the corresponding functional here'
+          'orbital polarization' 'describe the corresponding functional here'
+          other                  'functional not one of the mentioned above'
+    _definition
+; Approximation for exchange-correlation functionals.
+;
+
+data_dft_XC_functional_type_other_name
+    _name '_dft_XC_functional_type_other_name'
+    _category dft_XC_functional
+    _type char
+    _definition
+; Custom name of the functional if _dft_XC_functional_type data item value
+  is given as 'other'.
+;
+
+
+data_dft_XC_functional_citation_id
+    _name '_dft_XC_functional_citation_id'
+    _category dft_XC_functional
+    _type char
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the XC functional in the
+_citation_... category loop
+;     
+
+###############################################################################
+# Basis set.
+###############################################################################
+
+data_dft_basisset_[]
+    _name '_dft_basisset_[]'
+    _type null
+    _category category_overview
+    _definition
+; Data items to describe the basis set used in the computation.
+;
+
+data_dft_basisset_type
+    _name '_dft_basisset_type'
+    _type char
+    _category dft_basisset
+    loop_
+    _enumeration
+    _enumeration_detail
+            plane-wave 'DFT; covered by the items below? S.G.'
+
+            orbital        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            dftorb         'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            dftxfit        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            dftcfit        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            periodic       'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            ecporb         'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            spinorb        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            polarization   'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            diffuse        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            tight          'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            rydberg        'from http://www.xml-cml.org/dictionary/compchem/#basisSet'
+            daubechies     'from http://www.etsf.eu/system/files/SpecFFETSF_v3.3.pdf'
+    _definition
+; Type of the basis set used in the computation.
+
+  Should be the same data item as in
+  http://www.xml-cml.org/dictionary/compchem/#basisSet. This
+  corresponds to the "basisSetType" in the EMSL schema. Valid values
+  are from the http://www.xml-cml.org/dictionary/compchem/ are:
+        
+            orbital
+            dftorb
+            dftxfit
+            dftcfit
+            periodic
+            ecporb
+            spinorb
+            polarization
+            diffuse
+            tight
+            rydberg
+
+   Q: how plane wave basis set is encoded? (S.G.)
+;
+
+data_dft_basisset_energy_conv 
+    _name '_dft_basisset_energy_conv'
+    _type char
+    _units eV
+    _units_detail 'electron-Volts'
+    _category dft_basisset
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Energy measured in eV (electron-volts).
+;
+
+data_dft_basisset_citation_id
+    _name '_dft_basisset_citation_id'
+    _type char
+    _category dft_basisset
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the basis set in the
+_citation_... category loop
+;     
+
+data_dft_basisset_database_name
+    _name '_dft_basisset_database_name'
+    _type char
+    _category dft_basisset
+    _definition
+; A name of a database where the basis set comes from, e.g. "EMSL
+  Basis Set Exchange"
+;
+
+data_dft_basisset_database_abbrev
+    _name '_dft_basisset_database_abbrev'
+    _type char
+    _category dft_basisset
+    _definition
+; A name of a database where the basis set comes from, e.g. "BSE"
+;
+
+data_dft_basisset_database_code
+    _name '_dft_basisset_database_code'
+    _type char
+    _category dft_basisset
+    _definition
+; A unique stable code (identifier, key) assigned to the basis set by
+a database.
+;
+
+data_dft_basisset_database_URI
+    _name '_dft_basisset_database_URI'
+    _type char
+    _category dft_basisset
+    _definition
+; A stable URI of the Basis set database landing page.
+;
+
+data_dft_basisset_URI
+    _name '_dft_basisset_URI'
+    _type char
+    _category dft_basisset
+    _definition
+; A stable URI at which specific basis set can be retrieved.
+;
+
+data_dft_basisset_database_citation_id
+    _name '_dft_basisset_database_citation_id'
+    _type char
+    _category dft_basisset
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the basis set database in the
+_citation_... category loop.
+;     
+
+###############################################################################
+# Atom Basis set.
+###############################################################################
+
+data_dft_atom_basisset_[]
+    _name '_dft_atom_basisset_[]'
+    _category category_overview
+    _type null
+    _definition
+; Data items to describe per-atom basis sets used in the computation.
+;
+
+data_dft_atom_basisset
+    _name '_dft_atom_basisset'
+    _category dft_atom_basisset
+    _type char
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_basisset_type
+    _name '_dft_atom_basisset_type'
+    _category dft_atom_basisset
+    _type char
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_basisset_energy_conv
+    _name '_dft_atom_basisset_energy_conv'
+    _category dft_atom_basisset
+    _type char
+    _units eV
+    _units_detail 'electron-Volts'
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  In eV.
+;
+
+data_dft_atom_basisset_citation_id
+    _name '_dft_atom_basisset_citation_id'
+    _category dft_atom_basisset
+    _type char
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the atom basis set in the
+_citation_... category loop
+;     
+
+###############################################################################
+# Brillouin zone integration description
+###############################################################################
+
+data_dft_BZ_integration_[]
+    _name '_dft_BZ_integration_[]'
+    _type null
+    _category category_overview
+    _definition
+; Data items to describe the integration of Brillouin zone (BZ).
+;
+
+data_dft_BZ_integration_method
+    _name '_dft_BZ_integration_method'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+    loop_
+    _enumeration
+    _enumeration_detail
+    'simple sampling'      'describe the corresponding method here'
+    'linear tetrahedron'   'describe the corresponding method here'
+    'weighted tetrahedron' 'describe the corresponding method here'
+    'Monkhorst-Pack'
+; As described in:
+Monkhorst, H. J. & Pack, J. D.
+Special points for Brillouin-zone integrations
+Phys. Rev. B, American Physical Society, 1976, 13, 5188-5192
+;
+    'other'
+; Description is provided in _dft_BZ_integration_method_other
+;
+
+data_dft_BZ_integration_method_other
+    _name '_dft_BZ_integration_method_other'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; Description of used BZ integration method if different from enumeration
+values of _dft_BZ_integration_method.
+;
+
+data_dft_BZ_integration_citation_id
+    _name '_dft_BZ_integration_citation_id'
+    _type char
+    _category dft_BZ_integration
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the BZ integration method in the
+_citation_... category loop
+;
+
+data_dft_BZ_integration_grid_type
+    _name '_dft_BZ_integration_grid_type'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_grid_[]
+    loop_ _name '_dft_BZ_integration_grid_X'
+                '_dft_BZ_integration_grid_Y'
+                '_dft_BZ_integration_grid_Z'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_grid_IBZ_points
+    _name '_dft_BZ_integration_grid_IBZ_points'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; Number of points in irreducible BZ.
+  (Please expand the explanation, especially for non-specialists).
+;
+
+data_dft_BZ_integration_grid_dens_[]
+    loop_ _name
+        '_dft_BZ_integration_grid_dens_X'
+        '_dft_BZ_integration_grid_dens_Y'
+        '_dft_BZ_integration_grid_dens_Z'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_grid_shift_[]
+    loop_ _name
+        '_dft_BZ_integration_grid_shift_X'
+        '_dft_BZ_integration_grid_shift_Y'
+        '_dft_BZ_integration_grid_shift_Z'
+    _type numb
+    _category dft_BZ_integration
+    _enumeration_range 0:1
+    _definition
+; Shift of the integration grid to the given direction. Value is
+given as a fraction of reciprocal lattice vector.
+;
+    _example
+;
+    loop_
+    _dft_BZ_integration_grid_shift_X
+    _dft_BZ_integration_grid_shift_Y
+    _dft_BZ_integration_grid_shift_Z
+    0.5 0.5 0
+;
+    _example_detail
+; Integration grid is shifted by half of reciprocal cell vectors X and Y.
+;
+
+data_dft_BZ_integration_Froyen_map
+    _name '_dft_BZ_integration_Froyen_map'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_smearing_method
+    _name '_dft_BZ_integration_smearing_method'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; The used BZ integration smearing method.
+;
+    loop_
+    _enumeration
+    _enumeration_detail
+    Gaussian
+; Approximation with Gaussian distribution.
+;
+    Fermi-Dirac
+; Approximation with Fermi-Dirac function.
+;
+    Methfessel-Paxton
+; As described in:
+Methfessel, M. & Paxton, A. T.
+High-precision sampling for Brillouin-zone integration in metals
+Phys. Rev. B, American Physical Society, 1989, 40, 3616-3621
+;
+    Marzari-Vanderbilt
+; As described in:
+Marzari, N.; Vanderbilt, D.; De Vita, A. & Payne, M. C.
+Thermal Contraction and Disordering of the Al(110)
+Surface Phys. Rev. Lett., American Physical Society, 1999, 82, 3296-3299
+;
+    other
+; Description is provided in _dft_BZ_integration_smearing_method_other.
+;
+
+data_dft_BZ_integration_smearing_method_other
+    _name '_dft_BZ_integration_smearing_method_other'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; Description of used BZ integration smearing method if different from
+enumeration values of _dft_BZ_integration_smearing_method.
+;
+
+data_dft_BZ_integration_smearing_width
+    _name '_dft_BZ_integration_smearing_width'
+    _type numb
+    _category dft_BZ_integration
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_BZ_integration_MP_order
+    _name '_dft_BZ_integration_MP_order'
+    _type numb
+    _category dft_BZ_integration
+    _enumeration_range 0:
+    _definition
+; Order of Methfessel-Paxton approximation, see PRB 40, 3616 (1989) and
+http://www.hector.ac.uk/cse/distributedcse/reports/conquest/conquest/node6.html
+for reference.
+;
+
+data_dft_BZ_integration_energy_conv
+    _name '_dft_BZ_integration_energy_conv'
+    _type char
+    _category dft_BZ_integration
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+###############################################################################
+# Miscellaneous settings of the calculation
+###############################################################################
+
+data_dft_cell_settings_[]
+    _name '_dft_cell_settings_[]'
+    _category category_overview
+    _type null
+    _definition
+;
+  Miscellaneous settings of the calculation.
+;
+
+data_dft_cell_pressure
+    _name '_dft_cell_pressure'
+    _category dft_cell_settings
+    _type numb
+    _units kPa
+    _units_detail kilopascals
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_periodic_BC_[]
+    loop_ _name
+        '_dft_cell_periodic_BC_X'
+        '_dft_cell_periodic_BC_Y'
+        '_dft_cell_periodic_BC_Z'
+    _category dft_cell_settings
+    _type char
+    loop_
+    _enumeration
+    _enumeration_detail
+    true  'Boundary condition is periodic in the given direction.'
+    t     'Same as "true"'
+    false
+; Boundary condition is NOT periodic in the given direction (i.e. the
+structure is finite in this direction).
+;
+    f     'Same as "false"'
+    _definition
+; Specifies whether periodic boundary conditions were used along each of
+the unit cell axes.
+;
+
+###############################################################################
+# Points in irreducible BZ
+###############################################################################
+
+data_dft_BZ_integration_grid_IBZ_point_[]
+    _name '_dft_BZ_integration_grid_IBZ_point_[]'
+    _category category_overview
+    _type null
+    _definition
+;
+  Data items in this category describe the irreducible Brillouin zone (IBZ).
+;
+
+data_dft_BZ_integration_grid_IBZ_point_id
+    _name '_dft_BZ_integration_grid_IBZ_point_id'
+    _category dft_BZ_integration_grid_IBZ_point
+    _type char
+    _list yes
+    _list_mandatory yes
+    _definition
+; A unique identifier (primary key) of an irreducible BZ point in a loop.
+;
+
+data_dft_BZ_integration_grid_IBZ_point_
+    loop_ _name
+        '_dft_BZ_integration_grid_IBZ_point_X'
+        '_dft_BZ_integration_grid_IBZ_point_Y'
+        '_dft_BZ_integration_grid_IBZ_point_Z'
+    _category dft_BZ_integration_grid_IBZ_point
+    _type numb
+    _type_conditions esd
+    _list yes
+    _list_reference '_dft_BZ_integration_grid_IBZ_point_id'
+    _definition
+; Coordinates of irreducible BZ points in relative coordinates of the
+reciprocal lattice vectors.
+;
+
+data_dft_BZ_integration_grid_IBZ_point_weight
+    _name '_dft_BZ_integration_grid_IBZ_point_weight'
+    _category dft_BZ_integration_grid_IBZ_point
+    _type numb
+    _list yes
+    _list_reference '_dft_BZ_integration_grid_IBZ_point_id'
+    _enumeration_range 0:1
+    _definition
+; Normalized weights of irreducible BZ points.
+;
+
+###############################################################################
+# Electron counts
+###############################################################################
+
+data_dft_cell_valence_electrons
+    _name '_dft_cell_valence_electrons'
+    _category dft_cell_settings
+    _type numb
+    _enumeration_range 1:
+    _definition
+; Total number of electrons in calculation.
+;
+
+data_dft_core_electrons
+    _name '_dft_core_electrons'
+    _category dft_cell_settings
+    _type numb
+    _enumeration_range 1:
+    _definition
+; Total number of core electrons in calculation
+;
+
+###############################################################################
+# Pseudopotentials
+###############################################################################
+
+data_dft_pseudopotential_[]
+    _name '_dft_pseudopotential_[]'
+    _type null
+    _category category_overview
+    _definition
+; Data items to describe used pseudopotentials.
+;
+
+data_dft_pseudopotential_atom_type
+    _name '_dft_pseudopotential_atom_type'
+    _type char
+    _category dft_pseudopotential
+    _list yes
+    _list_link_parent '_atom_site_type_symbol'
+    _list_mandatory yes
+    _definition
+; A reference to the atom type, for which the pseudopotential is used.
+;
+    loop_ _example
+          'H'
+          'Cu'
+
+data_dft_pseudopotential_type
+    _name '_dft_pseudopotential_type'
+    _type char
+    _category dft_pseudopotential
+    _list yes
+    _list_reference '_dft_pseudopotential_atom_type'
+    loop_ _enumeration
+          _enumeration_detail
+          NCPP      'norm-conserving pseudopotential'
+          USPP      'ultrasoft pseudopotential'
+          PAW       'projector augmented waves pseudopotential'
+          other
+; description should be given in the CIF data item
+  _dft_pseudopotential_type_other_name
+;
+    _definition
+; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
+  L.V. Added by L.V.
+;
+
+data_dft_pseudopotential_type_other_name
+    _name '_dft_pseudopotential_type_other_name'
+    _type char
+    _category dft_pseudopotential
+    _list yes
+    _list_reference '_dft_pseudopotential_atom_type'
+    _definition
+; Custom name of the pseudopotential if _dft_pseudopotential_type data
+  item value is given as 'other'.
+;
+
+data_dft_pseudopotential_citation_id
+    _name '_dft_pseudopotential_citation_id'
+    _type char
+    _category dft_pseudopotential
+    _list yes
+    _list_reference '_dft_pseudopotential_atom_type'
+    _list_link_parent '_citation_id'
+    _definition
+; A reference to the citation describing the pseudopotential in the
+  _citation_... category loop.
+;
+
+###############################################################################
+# Kinetic energy cut-offs
+###############################################################################
+
+data_dft_kinetic_energy_cutoff_[]
+    _name '_dft_kinetic_energy_cutoff_[]'
+    _type null
+    _category category_overview
+    _definition
+; Data items to describe limits (cutoffs) for kinetic energy that were
+used in the calculations.
+;
+
+data_dft_kinetic_energy_cutoff_wavefunctions
+    _name '_dft_kinetic_energy_cutoff_wavefunctions'
+    _type numb
+    _units eV
+    _units_detail 'electron-Volts'
+    _category dft_kinetic_energy_cutoff
+    _definition
+; Limit of the maximum kinetic energy for wavefunctions, used to reduce
+the basis set to a finite size.
+;
+
+data_dft_kinetic_energy_cutoff_charge_density
+    _name '_dft_kinetic_energy_cutoff_charge_density'
+    _type numb
+    _units eV
+    _units_detail 'electron-Volts'
+    _category dft_kinetic_energy_cutoff
+    _definition
+; Limit of the maximum kinetic energy for charge density.
+;
+
+data_dft_kinetic_energy_cutoff_EEX
+    _name '_dft_kinetic_energy_cutoff_EEX'
+    _type numb
+    _units eV
+    _units_detail 'electron-Volts'
+    _category dft_kinetic_energy_cutoff
+    _definition
+; Limit of the maximum kinetic energy for exact exchange (EEX) operator,
+used in EEX-type calculations.
+;
+
+###############################################################################
+# Energy
+###############################################################################
+
+data_dft_energy_[]
+    _name '_dft_energy_[]'
+    _category category_overview
+    _type null
+    _definition
+;
+  Data items in this category describe various energy terms.
+;
+
+data_dft_cell_energy
+    _name '_dft_cell_energy'
+    _category dft_energy
+    _type numb
+    _units eV
+    _units_detail 'electron-Volts'
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
+  Energy given in eV.
+
+  S.G.: Is this supposed to be the same as 'total energy'? Will it be
+  compatible with the http://www.xml-cml.org/dictionary/compchem/
+  "total energy" (ID: totalEnergy) term? If so, maybe we rename this
+  data item to _dft_total_energy?
+;
+
+###############################################################################
+# Separate energy terms
+###############################################################################
+
+# Q: is it true that the total energy will be the sum of all
+# "Separate energy terms"? (S.G.)
+
+data_dft_kinetic_energy
+_name '_dft_kinetic_energy'
+_category dft_energy
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+
+; The kinetic energy part of the Hamiltonian; if periodic boundary
+conditions are used, should be given for one unit cell as specified by
+_cell_length_* and _cell_angle_* parameters.
+
+Q: should the nuclei kin. energy be included? Is it ever appreciable?
+What about vibrational lattice modes (phonons)? (S.G.)
+;
+
+# Q: how should the following Abinit energies be represented? Vis.:
+#
+#     Hartree energy  =  2.27637094216573E+01
+#     XC energy       = -1.81223641765291E+01 << is this the same as "correlation energy" in NWChem? S.G.
+#     Ewald energy    = -3.71921214233243E+01
+#     PspCore energy  =  3.22969039024445E-01
+#     Loc. psp. energy= -8.28746948571284E+01
+#     NL   psp  energy=  1.01185403081610E+01
+# (S.G.)
+
+data_dft_Coulomb_energy
+_name '_dft_Coulomb_energy'
+_category dft_energy
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+; Should be the same as the CML (ID: coulombEnergy) term,
+http://www.xml-cml.org/dictionary/compchem/#coulombEnergy.
+;
+
+data_dft_correlation_energy
+_name '_dft_correlation_energy'
+_category dft_energy
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+; http://www.xml-cml.org/dictionary/compchem/#correlationEnergy (ID:
+  correlationEnergy)
+;
+
+data_dft_1e_energy
+_name '_dft_1e_energy'
+_category dft_energy
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+; http://www.xml-cml.org/dictionary/compchem/#e1Energy
+  (ID: e1Energy)
+;
+
+data_dft_2e_energy
+_name '_dft_2e_energy'
+_category dft_energy
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+; http://www.xml-cml.org/dictionary/compchem/#e2Energy
+  (ID: e2Energy)
+;
+
+data_dft_nuclear_repulsion_energy
+_name '_dft_nuclear_repulsion_energy'
+_category dft_energy
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+; http://www.xml-cml.org/dictionary/compchem/#nuclearRepulsionEnergy
+  (ID: nuclearRepulsionEnergy)
+
+  Q: is it not included into Coulomb energy? S.G.
+;
+
+data_dft_ewald_energy
+_name '_dft_ewald_energy'
+_category dft_energy
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
+;
+
+data_dft_fermi_energy
+_name '_dft_fermi_energy'
+_category dft_energy
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
+;
+
+data_dft_hartree_energy
+_name '_dft_hartree_energy'
+_category dft_energy
+_type numb
+_units eV
+_units_detail 'electron-Volts'
+_definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
+;
+
+###############################################################################
+# Magnetic moment
+###############################################################################
+
+data_dft_cell_magn_[]
+    _name '_dft_cell_magn_[]'
+    _category category_overview
+    _type null
+    _definition
+;
+  Data items in this category describe the magnetic moments.
+;
+
+data_dft_cell_magn_moment
+    _name '_dft_cell_magn_moment'
+    _category dft_cell_magn
+    _type numb
+    _units \m_B
+    _units_detail 'Bohr magnetons'
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_magn_spin_moment
+    _name '_dft_cell_magn_spin_moment'
+    _category dft_cell_magn
+    _type char
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_magn_orbital_moment
+    _name '_dft_cell_magn_orbital_moment'
+    _category dft_cell_magn
+    _type char
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+###############################################################################
+# Convergence parameters?
+###############################################################################
+
+data_dft_cell_conv_[]
+    _name '_dft_cell_conv_[]'
+    _category category_overview
+    _type null
+    _definition
+;
+  Data items in this category describe convergence criteria.
+;
+
+data_dft_cell_energy_conv
+    _name '_dft_cell_energy_conv'
+    _category dft_cell_conv
+    _type char
+    _units eV
+    _units_detail 'electron-Volts'
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
+  Energy given in eV.
+;
+
+data_dft_cell_density_conv
+    _name '_dft_cell_density_conv'
+    _category dft_cell_conv
+    _type char
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_cell_potential_conv
+    _name '_dft_cell_potential_conv'
+    _category dft_cell_conv
+    _type char
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+###############################################################################
+# Atom parameters: electron configurations, nuclear charges, etc.
+###############################################################################
+
+data_dft_atom_type_[]
+    _name '_dft_atom_type_[]'
+    _type null
+    _category category_overview
+    _definition
+; Data items to describe per-atom-type properties of DFT calculations.
+;
+
+data_dft_atom_type_valence_electrons
+    _name '_dft_atom_type_valence_electrons'
+    _type numb
+    _category dft_atom_type
+    _definition
+; Number of electrons contributed from an atomic type.
+  (Should this be in the _atom_site_... or _atom_type_ linked loop? S.G.)
+;
+
+data_dft_atom_type_valence_configuration
+    _name '_dft_atom_type_valence_configuration'
+    _type char
+    _category dft_atom_type
+    _definition
+; PLEASE GIVE A SEMI-FORMAL HUMAN-READABLE DESCRIPTION HERE.
+
+  For example, '2s2p' for B-F or '6s6p7s5f' for actinides.
+;
+    loop_ _example
+          _example_detail
+          2s2p      'for B-F'
+          6s6p7s5f  'for actinides'
+
+data_dft_atom_type_nuclear_charge
+    _name '_dft_atom_type_nuclear_charge'
+    _type numb
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE SEMI-FORMAL DESCRIPTION HERE.
+
+  This would be 76 for Os but 26.3 for a VCA calculation for the
+  Slater-Pauling-curve maximum (70/30 Fe/Co).
+;
+
+data_dft_atom_type_magn_moment
+    _name '_dft_atom_type_magn_moment'
+    _type numb
+    _units \m_B
+    _units_detail 'Bohr magnetons'
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Magnetic moment given in \m_B.
+;
+
+data_dft_atom_type_magn_spin_moment
+    _name '_dft_atom_type_magn_spin_moment'
+    _type numb
+    _units \m_B
+    _units_detail 'Bohr magnetons'
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Magnetic moment given in \m_B.
+;
+
+data_dft_atom_type_magn_orbital_moment
+    _name '_dft_atom_type_magn_orbital_moment'
+    _type numb
+    _units \m_B
+    _units_detail 'Bohr magnetons'
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Magnetic moment given in \m_B.
+;
+
+data_dft_atom_type_occupation
+    # Maybe 'occupancy'? S.G.
+    _name '_dft_atom_type_occupation'
+    _type numb
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_type_radius
+    _name '_dft_atom_type_radius'
+    _type numb
+    _units \%A
+    _units_detail Angstroems
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  Radius given in \%Angstr\/oms (\%A).
+;
+
+data_dft_atom_type_coulomb_U
+    _name '_dft_atom_type_coulomb_U'
+    _type numb
+    _units eV
+    _units_detail 'electron-Volts'
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Energy given in eV.
+;
+
+data_dft_atom_type_coulomb_J
+    _name '_dft_atom_type_coulomb_J'
+    _type numb
+    _units eV
+    _units_detail 'electron-Volts'
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+  Energy given in eV.
+;
+
+data_dft_atom_relax_force_conv
+    _name '_dft_atom_relax_force_conv'
+    _type char
+    _units eV/\%A
+    _units_detail 'electron-Volts per Angstroem'
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  In eV/\%A.
+;
+
+data_dft_atom_relax_energy_conv
+    _name '_dft_atom_relax_energy_conv'
+    _type char
+    _units eV
+    _units_detail 'electron-Volts'
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  In eV.
+;
+
+data_dft_atom_type_double_count
+    # Qu'est-ce que c'est? Why 'double count'?
+    _name '_dft_atom_type_double_count'
+    _type numb
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_atom_type_DMFT_solver
+    _name '_dft_atom_type_DMFT_solver'
+    _type char
+    _category dft_atom_type
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+###############################################################################
+# Data items required to model metal alloys:
+###############################################################################
+
+data_dft_alloy_[]
+    _name '_dft_alloy_[]'
+    _type null
+    _category category_overview
+    _definition
+; Data items to describe modelling of metal alloys.
+;
+
+data_dft_alloy_method
+    _name '_dft_alloy_method'
+    _type char
+    _category dft_alloy
+    loop_ _enumeration
+          _enumeration_detail
+        VCA                    'virtual crystal approximation'
+        CPA                    'coherent potential approximation'
+        SQS                    'special quasirandom structures'
+        'real space recursion' 'describe the corresponding method here'
+        other                  'alloy method not one of the mentioned above'
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_alloy_method_other_name
+    _name '_dft_alloy_method_other_name'
+    _type char
+    _category dft_alloy
+    _definition
+; Custom name of the alloy method if _dft_alloy_method data item value
+  is given as 'other'.
+;
+
+data_dft_alloy_supercell
+    _name '_dft_alloy_supercell'
+    _type char
+    _category dft_alloy
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+
+  For such alloy methods that require supercells.
+;
+
+###############################################################################
+# Other calculated material properties.
+###############################################################################
+
+data_dft_calc_property_[]
+    _name '_dft_calc_property_[]'
+    _category category_overview
+    _type null
+    _definition
+; Data items to describe other calculated material properties.
+;
+
+data_dft_lattice_energy
+    _name '_dft_lattice_energy'
+    _category dft_calc_property
+    _type numb
+    _units kJ/mol
+    _units_detail 'kilojoules per mole'
+    _definition
+; Energy of formation of the crystal from infinitely-separated ions,
+  molecules, or atoms.
+;
+
+data_dft_bulk_modulus
+    _name '_dft_bulk_modulus'
+    _category dft_calc_property
+    _type numb
+    _units GPa
+    _units_detail gigapascals
+    _definition
+; Ratio of the infinitesimal pressure increase to the resulting relative
+  decrease of the volume.
+;
+
+data_dft_stiffness_tensor_
+    loop_ _name
+        '_dft_stiffness_tensor_11'
+        '_dft_stiffness_tensor_12'
+        '_dft_stiffness_tensor_13'
+        '_dft_stiffness_tensor_14'
+        '_dft_stiffness_tensor_15'
+        '_dft_stiffness_tensor_16'
+        '_dft_stiffness_tensor_22'
+        '_dft_stiffness_tensor_23'
+        '_dft_stiffness_tensor_24'
+        '_dft_stiffness_tensor_25'
+        '_dft_stiffness_tensor_26'
+        '_dft_stiffness_tensor_33'
+        '_dft_stiffness_tensor_34'
+        '_dft_stiffness_tensor_35'
+        '_dft_stiffness_tensor_36'
+        '_dft_stiffness_tensor_44'
+        '_dft_stiffness_tensor_45'
+        '_dft_stiffness_tensor_46'
+        '_dft_stiffness_tensor_55'
+        '_dft_stiffness_tensor_56'
+        '_dft_stiffness_tensor_66'
+    _category dft_calc_property
+    _type numb
+    _units GPa
+    _units_detail gigapascals
+    _enumeration_default 0
+    _definition
+; Stiffness tensor matrix.
+;
+
+data_dft_band_gap
+    _name '_dft_band_gap'
+    _category dft_calc_property
+    _type numb
+    _units eV
+    _units_detail electronvolts
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
+
+data_dft_dielectric_constant
+    _name '_dft_dielectric_constant'
+    _category dft_calc_property
+    _type numb
+    _definition
+; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
+;
