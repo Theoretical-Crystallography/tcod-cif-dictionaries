@@ -833,7 +833,7 @@ data_dft_energy_[]
 data_dft_cell_energy
     _name '_dft_cell_energy'
     _category dft_energy
-    _type char
+    _type numb
     _units eV
     _units_detail 'electron-Volts'
     _definition
