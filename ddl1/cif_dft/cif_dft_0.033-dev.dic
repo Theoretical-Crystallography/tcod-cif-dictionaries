@@ -16,6 +16,8 @@ data_on_this_dictionary
     _dictionary_update          2023-11-15
     _dictionary_history
 ;
+2023-11-22 Fixed multiple typos. A.V.
+
 2023-11-15 Adding missing category definitions. A.M.
 
 2019-05-14 Making '_dft_XC_functional_[]' a category. Specifying categories
@@ -1140,12 +1142,12 @@ data_dft_atom_type_radius
     _name '_dft_atom_type_radius'
     _type numb
     _units \%A
-    _units_detail Angstroems
+    _units_detail angstroms
     _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
-  Radius given in \%Angstr\/oms (\%A).
+  Radius given in \%angstr\/oms (\%A).
 ;
 
 data_dft_atom_type_coulomb_U
@@ -1174,7 +1176,7 @@ data_dft_atom_relax_force_conv
     _name '_dft_atom_relax_force_conv'
     _type char
     _units eV/\%A
-    _units_detail 'electron-Volts per Angstroem'
+    _units_detail 'electron-Volts per angstrom'
     _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
