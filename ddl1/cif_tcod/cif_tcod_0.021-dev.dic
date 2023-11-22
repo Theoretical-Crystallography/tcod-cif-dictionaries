@@ -43,6 +43,8 @@ data_on_this_dictionary
     _dictionary_update          2023-11-15
     _dictionary_history
 ;
+2023-11-22 Fixed multiple typos. A.V.
+
 2023-11-15 Adding descriptions for some of the categories which lacked
            them. Switching to HTTPS links whenever possible. A.M.
 
@@ -74,9 +76,9 @@ data_on_this_dictionary
            '_tcod_computation_stderr' and '_tcod_file_id'. Adding
            descriptions for aforementioned tags. A.M.
 
-2016-11-02 Adding category '_tcod_computation_[]', with all it's tags
+2016-11-02 Adding category '_tcod_computation_[]', with all its tags
            defining a loop. Making '_tcod_computation_step' mandatory,
-           putting a strict definition of it's values. A.M.
+           putting a strict definition of its values. A.M.
 
 2015-06-16 Adding '_tcod_database_code'. Fixing typo in enumeration value
            for tag '_tcod_file_contents_type': 'basissset' -> 'basisset'.
@@ -97,7 +99,7 @@ data_on_this_dictionary
 
 2014-11-04 Moving all software related data items to this dictionary,
            consolidating all data items that should be relevant to
-           more han one method. Adding data items that should be
+           more than one method. Adding data items that should be
            helpful for quality/convergence checks. S.G.
 
 2014-07-22 Adding a description of the '_tcode_structure_type' data item. S.G.
@@ -110,7 +112,7 @@ data_on_this_dictionary
 ;
 
 ###############################################################################
-# Overal method description:
+# Overall method description:
 ###############################################################################
 
 data_tcod_method_[]
@@ -199,7 +201,7 @@ data_tcod_model
   -- add indication that this data item is related to the NOMAD
      'Electronic structure method';
 
-  -- see also: NOMAD 'calcuation_method'
+  -- see also: NOMAD 'calculation_method'
 
   This should define the theoretical model used to calculate the
   structure.
@@ -230,7 +232,7 @@ data_tcod_model
   L.V. in principal one should also define a class for hybrid models
   (QM/MM)
 
-  One can add a human-readable description of the mehtod here as well
+  One can add a human-readable description of the method here as well
   as the reference.
 
   L.V. Is it possible to add full cif syntax to define the reference?
@@ -634,7 +636,7 @@ data_tcod_software_compiler
     _type char
     _definition
 ; The compiler which compiled the code used for the described
-calcualtion. Only the compiler name should be given, e.g. 'gcc',
+calculation. Only the compiler name should be given, e.g. 'gcc',
 'icc', 'gfortran'.
 
 If more than one compiler was used, these items must be looped.
@@ -855,7 +857,7 @@ _name '_tcod_initial_coordinate_db_code'
 _type char
 _category tcod_initial_coordinate
 _definition
-; Coordinate source database stable stable identifier, e.g.
+; Coordinate source database stable identifier, e.g.
   1518187 (for COD entry 1518187).
 ;
 
@@ -944,7 +946,7 @@ _related_function
 _list                      yes
 _list_reference            '_atom_site_label'
 _definition
-; Initial atom-site coordinates use to set up the computation as
+; Initial atom-site coordinates used to set up the computation as
   fractions of the _cell_length_* values.
 ;
 
@@ -956,7 +958,7 @@ loop_ _name
 _category atom_site
 _type numb
 _units                     A
-_units_detail              'Angstroems'
+_units_detail              angstroms
 _type_conditions           esd
 loop_
 _related_item
@@ -966,7 +968,7 @@ _related_function
 _list                      yes
 _list_reference            '_atom_site_label'
 _definition
-; Initial Cartesian atom-site coordinates use to set up the computation.
+; Initial Cartesian atom-site coordinates used to set up the computation.
 
 A set of orthogonal Cartesian axes related to the cell axes is
 specified by the _atom_sites_Cartn_transform_axes and
@@ -994,7 +996,7 @@ data_tcod_ff_id
     _list_mandatory              yes
     _definition
 ; A unique identifier (primary key) of a force field in a loop, in
-case the COD datablock containing it refers to more than one force
+case the COD data block containing it refers to more than one force
 field.
 ;
 
@@ -1631,9 +1633,9 @@ _name '_tcod_total_energy_gradient'
 _type numb
 _category tcod_total_energy
 _units eV/\%A
-_units_detail 'electron-Volts per Angstroem'
+_units_detail 'electron-Volts per angstrom'
 _definition
-; Gives an total energy gradient at the end of the computation
+; Gives a total energy gradient at the end of the computation
 (e.g. at the last optimisation cycle). Derivatives to be taken by
 nuclei positions and cell parameters.
 ;
@@ -1675,7 +1677,7 @@ loop_ _name
 _type numb
 _category atom_site
 _units eV/\%A
-_units_detail 'electronvolts per Angstroem'
+_units_detail 'electronvolts per angstrom'
 _list                      yes
 _list_reference            '_atom_site_label'
 _definition
@@ -1713,7 +1715,7 @@ _name '_tcod_atom_site_resid_force_magnitude'
 _type numb
 _category atom_site
 _units eV/\%A
-_units_detail 'electronvolts per Angstroem'
+_units_detail 'electronvolts per angstrom'
 _enumeration_range 1:
 _list                      yes
 _list_reference            '_atom_site_label'
