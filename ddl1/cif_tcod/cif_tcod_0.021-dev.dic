@@ -15,25 +15,25 @@
 #
 # For molecular or condensed matter simulations this would need to cover
 # at least the following information:
-# 
+#
 #   - Atomic coordinates;
-#     _atom_site_fract_[xyz], _atom_site_Cartn_[xyz] (core dic) 
+#     _atom_site_fract_[xyz], _atom_site_Cartn_[xyz] (core dic)
 #
 #   - Lattice vectors;
 #     _cell_length_[abc], _cell_angle_[alpha,beta,gamma] (core dic)
-# 
+#
 #   - Forcefields, interatomic potentials;
 #     This dictionary
-# 
+#
 #   - Basis sets;
 #     DFT dictionary
-# 
+#
 #   - Methodology (type of calculation, algorithms, etc.);
 #     This dictionary
-# 
+#
 #   - Control parameters (precision, number of iterations, etc.);
 #     This dictionary
-# 
+#
 #   - Job parameters (time, memory, number of processors, etc.)
 #     This dictionary, still incomplete.
 
@@ -41,7 +41,7 @@ data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
     _dictionary_version         0.020
     _dictionary_update          2023-11-15
-    _dictionary_history        
+    _dictionary_history
 ;
 2023-11-15 Adding descriptions for some of the categories which lacked
            them. Switching to HTTPS links whenever possible. A.M.
@@ -60,7 +60,7 @@ data_on_this_dictionary
 2018-02-27 Defining '_tcod_data_source_file' and '_tcod_data_source_block'
            data items. A.M.
 
-2018-02-06 Putting '_tcod_software_library_*', 
+2018-02-06 Putting '_tcod_software_library_*',
            '_tcod_initial_coordinate_*', '_tcod_total_energy_*',
            '_tcod_atom_site_residual_force*' and
            '_tcod_initial_cell_param_db_*'data items into a separate
@@ -102,11 +102,11 @@ data_on_this_dictionary
 
 2014-07-22 Adding a description of the '_tcode_structure_type' data item. S.G.
 
-2014-03-07 Updated version 
+2014-03-07 Updated version
 
-2013-07-22 TCOD dictionary initiated by Saulius Grazulis 
+2013-07-22 TCOD dictionary initiated by Saulius Grazulis
 
-2013-08-17 First version by Linas Vilciauskas (NYU) and Saulius Grazulis 
+2013-08-17 First version by Linas Vilciauskas (NYU) and Saulius Grazulis
 ;
 
 ###############################################################################
@@ -128,7 +128,7 @@ data_tcod_structure_type
           crystal-ground-state
               'refined crystal structure at ground state'
 
-          crystal-excited-state 
+          crystal-excited-state
               'refined crystal structure at some excited state, e.g. LUMO'
 
           crystal-metastable
@@ -143,7 +143,7 @@ data_tcod_structure_type
           vacuum-ground-state
               'refined crystal structure at ground state'
 
-          vacuum-excited-state 
+          vacuum-excited-state
               'refined crystal structure at some excited state, e.g. LUMO'
 
           vacuum-metastable
@@ -213,7 +213,7 @@ data_tcod_model
   perturbation theory (SAPT), semi-empirical (OF-DFT, DFTB, NDDO,
   MINDO etc.), force field (empirical), coarse-grained
   (non-atomistic).
-  
+
   Keywords: DFT (Density model theory), HF (Hartree-Fock), MPn
   (Moller-Plesset) perturbation theory, e.g. local MP2 by Kresse,
   Schutz, Scuseria etc.), MI (Method of increments by H. Stoll et
@@ -229,7 +229,7 @@ data_tcod_model
 
   L.V. in principal one should also define a class for hybrid models
   (QM/MM)
- 
+
   One can add a human-readable description of the mehtod here as well
   as the reference.
 
@@ -611,7 +611,7 @@ data_tcod_software_runtime_CPU
     _category tcod_software
     _type char
     _definition
-; Name (type) of the central processing unit (CPU), together with the 
+; Name (type) of the central processing unit (CPU), together with the
   floating-point processing unit, that was used to compute the results.
 ;
 
@@ -621,7 +621,7 @@ data_tcod_software_runtime_CPU_version
     _type char
     _definition
 ; Version or release number of the central processing unit (CPU),
-  together with the floating-point processing unit, that was used to 
+  together with the floating-point processing unit, that was used to
   compute the results.
 ;
 
@@ -794,10 +794,10 @@ this computation can be fetched.
 ;
 
 #------------------------------------------------------------------------------
-# L.V. I don't think that things like operating system, cpu type, runtime are 
+# L.V. I don't think that things like operating system, cpu type, runtime are
 # relevant for TCOD, as discussed, in that case one should also report: compiler
 # version, algebra libraries etc.
-# 
+#
 # S.G. I think it would be good to have data items to describe such
 # metadata; on one hand, a user might be interested in the computation
 # facilities used for the calculations, if only to plan his/her own
@@ -930,8 +930,8 @@ _definition
 
 data_tcod_atom_site_initial_fract_
 loop_ _name
-'_tcod_atom_site_initial_fract_x' 
-'_tcod_atom_site_initial_fract_y' 
+'_tcod_atom_site_initial_fract_x'
+'_tcod_atom_site_initial_fract_y'
 '_tcod_atom_site_initial_fract_z'
 _category atom_site
 _type numb
@@ -996,7 +996,7 @@ data_tcod_ff_id
 ; A unique identifier (primary key) of a force field in a loop, in
 case the COD datablock containing it refers to more than one force
 field.
-;     
+;
 
 data_tcod_ff_type
     _name                        '_tcod_ff_type'
@@ -1017,7 +1017,7 @@ data_tcod_ff_type
   Polarizable (AMOEBA, iAMOEBA etc.)
   Distributed multipole based FFs (multipoles instead of fixed point charges
   S. Price et al.)
-  Hybrid (Different types for interatomic and intraatomic interactions)  
+  Hybrid (Different types for interatomic and intraatomic interactions)
   Reactive (ReaxFF etc.)
   L.V. The list is non-exhaustive
 ;
@@ -1041,8 +1041,8 @@ data_tcod_ff_version
     _list yes
     _list_reference '_tcod_ff_id'
     _definition
-; Version of a force field. Usually year of the publication.  
-;     
+; Version of a force field. Usually year of the publication.
+;
 
 data_tcod_ff_citation_id
     _name '_tcod_ff_citation_id'
@@ -1054,7 +1054,7 @@ data_tcod_ff_citation_id
     _definition
 ; A reference to the citation describing the force field in the
 _citation_... category loop
-;     
+;
 
 ###############################################################################
 # Citation management:
@@ -1089,7 +1089,7 @@ _definition
     2 software-code  'J. Another Name' 10 12 2014 1 12
 
   L.V. Correct citation to the publication of the original FF is of extreme
-  importance. 
+  importance.
 
   S.G. I suggest using 'citation' category data items from the core
   CIF dictionary, and adding just a few TCOD relevant data items such
