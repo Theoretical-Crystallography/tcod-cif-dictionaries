@@ -46,7 +46,7 @@ data_on_this_dictionary
            '_atom_site_type_symbol', thus allowing specification of
            per-atom-type pseudopotentials. A.M.
 
-2016-04-13 Adding enumeration value 'daubechies' for _dft_basisset_type 
+2016-04-13 Adding enumeration value 'daubechies' for _dft_basisset_type
            matching same value in ETSF specification. A.M.
 
 2016-03-14 Adding _dft_dielectric_constant. A.M.
@@ -102,7 +102,7 @@ data_on_this_dictionary
            citation ling data items. S.G.
 
 2013-08-17 Adding two additional data names to describe custom names of
-           alloy methods and XC functional types if their enumerator 
+           alloy methods and XC functional types if their enumerator
            values are givem as 'other'. S.G.
 
 2013-08-17 Adding all datanames from Bj\"orkman Torbj\"orn's 2013-05-09
@@ -217,7 +217,7 @@ data_dft_XC_functional_citation_id
     _definition
 ; A reference to the citation describing the XC functional in the
 _citation_... category loop
-;     
+;
 
 ###############################################################################
 # Basis set.
@@ -259,7 +259,7 @@ data_dft_basisset_type
   http://www.xml-cml.org/dictionary/compchem/#basisSet. This
   corresponds to the "basisSetType" in the EMSL schema. Valid values
   are from the http://www.xml-cml.org/dictionary/compchem/ are:
-        
+
             orbital
             dftorb
             dftxfit
@@ -275,7 +275,7 @@ data_dft_basisset_type
    Q: how plane wave basis set is encoded? (S.G.)
 ;
 
-data_dft_basisset_energy_conv 
+data_dft_basisset_energy_conv
     _name '_dft_basisset_energy_conv'
     _type char
     _units eV
@@ -294,7 +294,7 @@ data_dft_basisset_citation_id
     _definition
 ; A reference to the citation describing the basis set in the
 _citation_... category loop
-;     
+;
 
 data_dft_basisset_database_name
     _name '_dft_basisset_database_name'
@@ -346,7 +346,7 @@ data_dft_basisset_database_citation_id
     _definition
 ; A reference to the citation describing the basis set database in the
 _citation_... category loop.
-;     
+;
 
 ###############################################################################
 # Atom Basis set.
@@ -396,7 +396,7 @@ data_dft_atom_basisset_citation_id
     _definition
 ; A reference to the citation describing the atom basis set in the
 _citation_... category loop
-;     
+;
 
 ###############################################################################
 # Brillouin zone integration description
