@@ -1441,7 +1441,6 @@ _category tcod_content_encoding
 _type numb
 _list yes
 _list_mandatory yes
-_list_uniqueness '_tcod_content_encoding_id'
 _enumeration_range 1:
 _definition
 ; One-based number of an encoding layer in the encoding stack,
@@ -1454,7 +1453,10 @@ _category tcod_content_encoding
 _type char
 _list yes
 _list_mandatory yes
-_list_reference '_tcod_content_encoding_id'
+loop_
+_list_reference
+'_tcod_content_encoding_id'
+'_tcod_content_encoding_layer_id'
 loop_
 _enumeration
 _enumeration_detail
