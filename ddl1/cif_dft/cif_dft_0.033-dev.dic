@@ -284,7 +284,7 @@ data_dft_basisset_energy_conv
     _name '_dft_basisset_energy_conv'
     _type char
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _category dft_basis_set
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -386,7 +386,7 @@ data_dft_atom_basisset_energy_conv
     _category dft_atom_basis_set
     _type char
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 
@@ -797,7 +797,7 @@ data_dft_kinetic_energy_cutoff_wavefunctions
     _name '_dft_kinetic_energy_cutoff_wavefunctions'
     _type numb
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _category dft_kinetic_energy_cutoff
     _definition
 ; Limit of the maximum kinetic energy for wavefunctions, used to reduce
@@ -808,7 +808,7 @@ data_dft_kinetic_energy_cutoff_charge_density
     _name '_dft_kinetic_energy_cutoff_charge_density'
     _type numb
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _category dft_kinetic_energy_cutoff
     _definition
 ; Limit of the maximum kinetic energy for charge density.
@@ -818,7 +818,7 @@ data_dft_kinetic_energy_cutoff_EEX
     _name '_dft_kinetic_energy_cutoff_EEX'
     _type numb
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _category dft_kinetic_energy_cutoff
     _definition
 ; Limit of the maximum kinetic energy for exact exchange (EEX) operator,
@@ -843,7 +843,7 @@ data_dft_cell_energy
     _category dft_energy
     _type numb
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
   Energy given in eV.
@@ -866,7 +866,7 @@ _name '_dft_kinetic_energy'
 _category dft_energy
 _type numb
 _units eV
-_units_detail 'electron-Volts'
+_units_detail 'electron-volts'
 _definition
 
 ; The kinetic energy part of the Hamiltonian; if periodic boundary
@@ -892,7 +892,7 @@ _name '_dft_Coulomb_energy'
 _category dft_energy
 _type numb
 _units eV
-_units_detail 'electron-Volts'
+_units_detail 'electron-volts'
 _definition
 ; Should be the same as the CML (ID: coulombEnergy) term,
 http://www.xml-cml.org/dictionary/compchem/#coulombEnergy.
@@ -903,7 +903,7 @@ _name '_dft_correlation_energy'
 _category dft_energy
 _type numb
 _units eV
-_units_detail 'electron-Volts'
+_units_detail 'electron-volts'
 _definition
 ; http://www.xml-cml.org/dictionary/compchem/#correlationEnergy (ID:
   correlationEnergy)
@@ -914,7 +914,7 @@ _name '_dft_1e_energy'
 _category dft_energy
 _type numb
 _units eV
-_units_detail 'electron-Volts'
+_units_detail 'electron-volts'
 _definition
 ; http://www.xml-cml.org/dictionary/compchem/#e1Energy
   (ID: e1Energy)
@@ -925,7 +925,7 @@ _name '_dft_2e_energy'
 _category dft_energy
 _type numb
 _units eV
-_units_detail 'electron-Volts'
+_units_detail 'electron-volts'
 _definition
 ; http://www.xml-cml.org/dictionary/compchem/#e2Energy
   (ID: e2Energy)
@@ -936,7 +936,7 @@ _name '_dft_nuclear_repulsion_energy'
 _category dft_energy
 _type numb
 _units eV
-_units_detail 'electron-Volts'
+_units_detail 'electron-volts'
 _definition
 ; http://www.xml-cml.org/dictionary/compchem/#nuclearRepulsionEnergy
   (ID: nuclearRepulsionEnergy)
@@ -949,7 +949,7 @@ _name '_dft_ewald_energy'
 _category dft_energy
 _type numb
 _units eV
-_units_detail 'electron-Volts'
+_units_detail 'electron-volts'
 _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
 ;
@@ -959,7 +959,7 @@ _name '_dft_fermi_energy'
 _category dft_energy
 _type numb
 _units eV
-_units_detail 'electron-Volts'
+_units_detail 'electron-volts'
 _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
 ;
@@ -969,7 +969,7 @@ _name '_dft_hartree_energy'
 _category dft_energy
 _type numb
 _units eV
-_units_detail 'electron-Volts'
+_units_detail 'electron-volts'
 _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
 ;
@@ -1031,7 +1031,7 @@ data_dft_cell_energy_conv
     _category dft_cell_conv
     _type char
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE.
   Energy given in eV.
@@ -1157,7 +1157,7 @@ data_dft_atom_type_coulomb_U
     _name '_dft_atom_type_coulomb_U'
     _type numb
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -1168,7 +1168,7 @@ data_dft_atom_type_coulomb_J
     _name '_dft_atom_type_coulomb_J'
     _type numb
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -1179,7 +1179,7 @@ data_dft_atom_relax_force_conv
     _name '_dft_atom_relax_force_conv'
     _type char
     _units eV/\%A
-    _units_detail 'electron-Volts per angstrom'
+    _units_detail 'electron-volts per angstrom'
     _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -1191,7 +1191,7 @@ data_dft_atom_relax_energy_conv
     _name '_dft_atom_relax_energy_conv'
     _type char
     _units eV
-    _units_detail 'electron-Volts'
+    _units_detail 'electron-volts'
     _category dft_atom_type
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -1333,7 +1333,7 @@ data_dft_band_gap
     _category dft_calc_property
     _type numb
     _units eV
-    _units_detail electronvolts
+    _units_detail electron-volts
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
