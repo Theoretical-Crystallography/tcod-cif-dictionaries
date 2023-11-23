@@ -17,7 +17,7 @@ data_on_this_dictionary
     _dictionary_history
 ;
 2023-11-23 Renamed category 'DFT_BASISSET' to 'DFT_BASIS_SET'.
-           Renamed category 'DFT_ATOM_BASISSET' to 'DFT_ATOM_BASIS_SET'.
+           Renamed category 'DFT_ATOM_BASISSET' to 'DFT_ATOM_BASIS_SET'. A.V.
 
 2023-11-22 Fixed multiple typos. A.V.
 
