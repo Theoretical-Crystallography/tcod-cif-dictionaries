@@ -13,9 +13,12 @@
 data_on_this_dictionary
     _dictionary_name            cif_dft.dic
     _dictionary_version         0.032
-    _dictionary_update          2023-11-15
+    _dictionary_update          2023-11-23
     _dictionary_history
 ;
+2023-11-23 Renamed category 'DFT_BASISSET' to 'DFT_BASIS_SET'.
+           Renamed category 'DFT_ATOM_BASISSET' to 'DFT_ATOM_BASIS_SET'.
+
 2023-11-22 Fixed multiple typos. A.V.
 
 2023-11-15 Adding missing category definitions. A.M.
@@ -225,8 +228,8 @@ _citation_... category loop
 # Basis set.
 ###############################################################################
 
-data_dft_basisset_[]
-    _name '_dft_basisset_[]'
+data_dft_basis_set_[]
+    _name '_dft_basis_set_[]'
     _type null
     _category category_overview
     _definition
@@ -236,7 +239,7 @@ data_dft_basisset_[]
 data_dft_basisset_type
     _name '_dft_basisset_type'
     _type char
-    _category dft_basisset
+    _category dft_basis_set
     loop_
     _enumeration
     _enumeration_detail
@@ -282,7 +285,7 @@ data_dft_basisset_energy_conv
     _type char
     _units eV
     _units_detail 'electron-Volts'
-    _category dft_basisset
+    _category dft_basis_set
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
   Energy measured in eV (electron-volts).
@@ -291,7 +294,7 @@ data_dft_basisset_energy_conv
 data_dft_basisset_citation_id
     _name '_dft_basisset_citation_id'
     _type char
-    _category dft_basisset
+    _category dft_basis_set
     _list_link_parent '_citation_id'
     _definition
 ; A reference to the citation describing the basis set in the
@@ -301,7 +304,7 @@ _citation_... category loop
 data_dft_basisset_database_name
     _name '_dft_basisset_database_name'
     _type char
-    _category dft_basisset
+    _category dft_basis_set
     _definition
 ; A name of a database where the basis set comes from, e.g. "EMSL
   Basis Set Exchange"
@@ -310,7 +313,7 @@ data_dft_basisset_database_name
 data_dft_basisset_database_abbrev
     _name '_dft_basisset_database_abbrev'
     _type char
-    _category dft_basisset
+    _category dft_basis_set
     _definition
 ; A name of a database where the basis set comes from, e.g. "BSE"
 ;
@@ -318,7 +321,7 @@ data_dft_basisset_database_abbrev
 data_dft_basisset_database_code
     _name '_dft_basisset_database_code'
     _type char
-    _category dft_basisset
+    _category dft_basis_set
     _definition
 ; A unique stable code (identifier, key) assigned to the basis set by
 a database.
@@ -327,7 +330,7 @@ a database.
 data_dft_basisset_database_URI
     _name '_dft_basisset_database_URI'
     _type char
-    _category dft_basisset
+    _category dft_basis_set
     _definition
 ; A stable URI of the Basis set database landing page.
 ;
@@ -335,7 +338,7 @@ data_dft_basisset_database_URI
 data_dft_basisset_URI
     _name '_dft_basisset_URI'
     _type char
-    _category dft_basisset
+    _category dft_basis_set
     _definition
 ; A stable URI at which specific basis set can be retrieved.
 ;
@@ -343,7 +346,7 @@ data_dft_basisset_URI
 data_dft_basisset_database_citation_id
     _name '_dft_basisset_database_citation_id'
     _type char
-    _category dft_basisset
+    _category dft_basis_set
     _list_link_parent '_citation_id'
     _definition
 ; A reference to the citation describing the basis set database in the
@@ -354,8 +357,8 @@ _citation_... category loop.
 # Atom Basis set.
 ###############################################################################
 
-data_dft_atom_basisset_[]
-    _name '_dft_atom_basisset_[]'
+data_dft_atom_basis_set_[]
+    _name '_dft_atom_basis_set_[]'
     _category category_overview
     _type null
     _definition
@@ -364,7 +367,7 @@ data_dft_atom_basisset_[]
 
 data_dft_atom_basisset
     _name '_dft_atom_basisset'
-    _category dft_atom_basisset
+    _category dft_atom_basis_set
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -372,7 +375,7 @@ data_dft_atom_basisset
 
 data_dft_atom_basisset_type
     _name '_dft_atom_basisset_type'
-    _category dft_atom_basisset
+    _category dft_atom_basis_set
     _type char
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -380,7 +383,7 @@ data_dft_atom_basisset_type
 
 data_dft_atom_basisset_energy_conv
     _name '_dft_atom_basisset_energy_conv'
-    _category dft_atom_basisset
+    _category dft_atom_basis_set
     _type char
     _units eV
     _units_detail 'electron-Volts'
@@ -392,7 +395,7 @@ data_dft_atom_basisset_energy_conv
 
 data_dft_atom_basisset_citation_id
     _name '_dft_atom_basisset_citation_id'
-    _category dft_atom_basisset
+    _category dft_atom_basis_set
     _type char
     _list_link_parent '_citation_id'
     _definition
