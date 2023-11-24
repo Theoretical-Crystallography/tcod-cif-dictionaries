@@ -1333,13 +1333,13 @@ _list_reference '_tcod_file_id'
 loop_
 _enumeration
 _enumeration_detail
-    input     'input file'
-    output    ''
-    log       ''
+    input     'input file for a computation'
+    output    'output file of a computation'
+    log       'log file written by computation software'
     script    'executable script written in an interpreted programming language'
-    stdin     ''
-    stdout    ''
-    stderr    ''
+    stdin     'standard input contents for called program'
+    stdout    'standard output contents of called program'
+    stderr    'standard error contents of called program'
 _definition
 ;
 ;
