@@ -1336,6 +1336,7 @@ _enumeration_detail
     input     'input file'
     output    ''
     log       ''
+    script    'executable script written in an interpreted programming language'
     stdin     ''
     stdout    ''
     stderr    ''
