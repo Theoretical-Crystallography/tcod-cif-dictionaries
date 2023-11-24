@@ -1571,6 +1571,9 @@ _type char
 _list yes
 _list_link_child '_tcod_file_content_encoding'
 _list_mandatory yes
+_definition
+; A unique identifier used to identify a content encoding stack.
+;
 
 data_tcod_content_encoding_layer_id
 _name '_tcod_content_encoding_layer_id'
@@ -1590,6 +1593,10 @@ _category tcod_content_encoding
 _type char
 _list yes
 _list_mandatory yes
+_definition
+; Type of encoding used for an encoding layer in the content encoding stack.
+Must take a value from the enumerated set of well-defined algorithms.
+;
 loop_
 _list_reference
 '_tcod_content_encoding_id'
