@@ -325,6 +325,39 @@ data_tcod_data_source_block
           'data_I', for a data block with the header 'data_I'.
 ;
 
+data_tcod_depositor_[]
+_name                            '_tcod_depositor_[]'
+_category                        category_overview
+_type                            null
+_definition
+;
+ The CATEGORY of data items used to store the information related
+ to the depositor of the data.
+;
+loop_
+_example
+_example_detail
+;
+  _tcod_depositor_requested_release_date      2020-12-20
+;
+;
+ The depositor has requested that the entry would not be released into
+ the public domain until 2020-12-20.
+;
+
+data_tcod_depositor_requested_release_date
+_name                            '_tcod_depositor_requested_release_date'
+_category                        tcod_depositor
+_type                            char
+_list                            no
+_definition
+;
+ Specifies the date after which the data can be released into the public
+ domain. Prior to the public release the given data is treated as confidential
+ prepublication material.
+;
+_example                         2020-12-20
+
 ###############################################################################
 # Identification of the source database record for the structure
 ###############################################################################
