@@ -325,6 +325,99 @@ data_tcod_data_source_block
           'data_I', for a data block with the header 'data_I'.
 ;
 
+#------------------------------------------------------------------------------
+
+data_tcod_changelog_entry_[]
+_name                            '_tcod_changelog_entry_[]'
+_category                        category_overview
+_type                            null
+_definition
+;
+ Data items from the TCOD_CHANGELOG_ENTRY are used to document changes made
+ to the Theoretical Crystallography Open Database entry.
+;
+_example
+;
+  loop_
+  _tcod_changelog_entry_id
+  _tcod_changelog_entry_author
+  _tcod_changelog_entry_date
+  _tcod_changelog_entry_text
+  1 'Doe, John' 2010-07-15T12:20:13+02:00
+  ; The x coordinate of the 'Cu' atom was changed from '0.8' to '0.7' after
+    consulting the original publication.
+  ;
+  2 'cif_fix_values 1646 2011-03-28 12:23:43Z adriana' 2011-12-04T12:12:05+02:00
+  ; '_cell_measurement_temperature' value '300K' was changed to '300' -
+    the value should be numeric and without a unit designator.
+  ;
+;
+
+data_tcod_changelog_entry_id
+_name                            '_tcod_changelog_entry_id'
+_category                        tcod_changelog_entry
+_type                            numb
+_list                            yes
+_enumeration_range               1:
+_definition
+;
+ Value is a unique key to a set of TCOD_CHANGELOG_ENTRY items in a looped list.
+;
+loop_
+_example
+1
+2
+3
+
+data_tcod_changelog_entry_author
+_name                            '_tcod_changelog_entry_author'
+_category                        tcod_changelog_entry
+_type                            char
+_list                            yes
+_list_reference                  '_tcod_changelog_entry_id'
+_definition
+;
+ A string that identifies the person or software that changed the entry.
+;
+loop_
+_example
+'Doe, John'
+'cif_fix_values 4268 2015-11-12 08:31:59Z jane_doe'
+
+data_tcod_changelog_entry_date
+_name                            '_tcod_changelog_entry_date'
+_category                        tcod_changelog_entry
+_type                            char
+_list                            yes
+_list_reference                  '_tcod_changelog_entry_id'
+_definition
+;
+ The changelog entry creation timestamp expressed as a date-time or a
+ full-date production of RFC3339 ABNF. Date-time production is preferred.
+;
+loop_
+_example
+2010-07-15T12:20:13+02:00
+1999-12-31
+
+data_tcod_changelog_entry_text
+_name                            '_tcod_changelog_entry_text'
+_category                        tcod_changelog_entry
+_type                            char
+_list                            yes
+_list_reference                  '_tcod_changelog_entry_id'
+_definition
+;
+ A human-readable description of the change that was made.
+;
+_example
+;
+ Carbon atoms were marked as having attached hydrogen atoms after consulting
+ the original publication.
+;
+
+#------------------------------------------------------------------------------
+
 data_tcod_depositor_[]
 _name                            '_tcod_depositor_[]'
 _category                        category_overview
@@ -344,6 +437,8 @@ _example_detail
  The depositor has requested that the entry would not be released into
  the public domain until 2020-12-20.
 ;
+
+#------------------------------------------------------------------------------
 
 data_tcod_depositor_requested_release_date
 _name                            '_tcod_depositor_requested_release_date'
