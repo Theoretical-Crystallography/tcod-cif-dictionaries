@@ -40,9 +40,16 @@
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
     _dictionary_version         0.020
-    _dictionary_update          2023-11-15
+    _dictionary_update          2025-05-06
     _dictionary_history
 ;
+2025-05-06 Added '_tcod_total_energy_value' and '_tcod_software_library_name'
+           as the preferred alternative names of the '_tcod_total_energy' and
+           '_tcod_software_library' respectively.
+
+           Changed several instances of '_type_conditions' from 'esd' to 'su'.
+           A.V.
+
 2023-11-22 Fixed multiple typos. A.V.
 
 2023-11-15 Adding descriptions for some of the categories which lacked
@@ -817,10 +824,36 @@ data_tcod_software_library_id
 ; Identifies a software library in a loop
 ;
 
+data_tcod_software_library_name
+    _name '_tcod_software_library_name'
+    _type char
+    _category tcod_software_library
+
+    loop_
+    _related_item
+    _related_function
+    '_tcod_software_library' alternate
+
+    _list yes
+    _list_reference '_tcod_software_library_id'
+    _definition
+; The subroutine library (e.g. linear algebra) that was linked with
+the code used for the described calculation. Only the library name
+should be given, e.g. 'pthreads', 'libc', 'lapack'.
+
+If more than one library was used, these items must be looped.
+;
+
 data_tcod_software_library
     _name '_tcod_software_library'
     _type char
     _category tcod_software_library
+
+    loop_
+    _related_item
+    _related_function
+    '_tcod_software_library_name' replace
+
     _list yes
     _list_reference '_tcod_software_library_id'
     _definition
@@ -1073,7 +1106,7 @@ loop_ _name
 '_tcod_atom_site_initial_fract_z'
 _category atom_site
 _type numb
-_type_conditions           esd
+_type_conditions           su
 loop_
 _related_item
 _related_function
@@ -1095,7 +1128,7 @@ _category atom_site
 _type numb
 _units                     A
 _units_detail              angstroms
-_type_conditions           esd
+_type_conditions           su
 loop_
 _related_item
 _related_function
@@ -1732,12 +1765,48 @@ data_tcod_total_energy_[]
     _type null
     _category category_overview
 
+data_tcod_total_energy_value
+_name '_tcod_total_energy_value'
+_type numb
+_category tcod_total_energy
+_units eV
+_units_detail 'electron-Volts'
+
+    loop_
+    _related_item
+    _related_function
+    '_tcod_total_energy' alternate
+
+_definition
+; Ideally, should correspond to
+https://www.xml-cml.org/dictionary/compchem/ "total energy" (ID:
+totalEnergy) whenever applicable.
+
+The total energy for a system of electrons and nuclei. The exact
+method of computing this parameter depends on the method. The formula
+used to compute it should be given in the _tcod_total_energy_formula
+data item; in CIF2 this will be a DRel method (i.e. a formal
+computable expression in a strictly specified computer language).
+
+CAUTION: total energies are comparable only between computations made
+by the same method, under the same approximations and with the same or
+similar input parameters. Therefore, the value of this data item
+*SHOULD NOT* be used to rank different TCOD entries without proper
+scaling, analysis and justification.
+;
+
 data_tcod_total_energy
 _name '_tcod_total_energy'
 _type numb
 _category tcod_total_energy
 _units eV
 _units_detail 'electron-Volts'
+
+    loop_
+    _related_item
+    _related_function
+    '_tcod_total_energy_value' replace
+
 _definition
 ; Ideally, should correspond to
 https://www.xml-cml.org/dictionary/compchem/ "total energy" (ID:
