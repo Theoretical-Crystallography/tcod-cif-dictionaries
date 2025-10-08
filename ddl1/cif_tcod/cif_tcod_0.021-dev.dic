@@ -43,8 +43,8 @@ data_on_this_dictionary
     _dictionary_update          2025-10-08
     _dictionary_history
 ;
-2025-10-08 Added '_tcod_software_runtime_GPU' and
-           '_tcod_software_runtime_GPU_version' data names. A.M.
+2025-10-08 Added '_tcod_computation_GPU_time', '_tcod_software_runtime_GPU'
+           and '_tcod_software_runtime_GPU_version' data names. A.M.
 
 2025-05-06 Added '_tcod_total_energy_value' and '_tcod_software_library_name'
            as the preferred alternative names of the '_tcod_total_energy' and
@@ -1359,6 +1359,18 @@ _units s
 _units_detail 'seconds'
 _definition
 ; CPU time in seconds (excluding I/O).
+;
+
+data_tcod_computation_GPU_time
+_name '_tcod_computation_GPU_time'
+_category tcod_computation
+_type numb
+_list yes
+_list_reference '_tcod_computation_step'
+_units s
+_units_detail 'seconds'
+_definition
+; GPU time in seconds.
 ;
 
 data_tcod_computation_wallclock_time
