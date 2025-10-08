@@ -40,9 +40,12 @@
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
     _dictionary_version         0.020
-    _dictionary_update          2025-05-06
+    _dictionary_update          2025-10-08
     _dictionary_history
 ;
+2025-10-08 Added '_tcod_software_runtime_GPU' and
+           '_tcod_software_runtime_GPU_version' data names. A.M.
+
 2025-05-06 Added '_tcod_total_energy_value' and '_tcod_software_library_name'
            as the preferred alternative names of the '_tcod_total_energy' and
            '_tcod_software_library' respectively.
@@ -772,6 +775,24 @@ data_tcod_software_runtime_CPU_version
 
 # S.G. If needed, a compile time, CPU, CPU version and OS data items
 # will be defined -- in case we will have cross-compiled packages.
+
+data_tcod_software_runtime_GPU
+    _name '_tcod_software_runtime_GPU'
+    _category tcod_software
+    _type char
+    _definition
+; Name (type) of the graphics processing unit (GPU) that was used to
+  compute the results.
+;
+
+data_tcod_software_runtime_GPU_version
+    _name '_tcod_software_runtime_GPU_version'
+    _category tcod_software
+    _type char
+    _definition
+; Version or release number of the graphics processing unit (GPU) that
+  was used to compute the results.
+;
 
 data_tcod_software_compiler
     _name '_tcod_software_compiler'
