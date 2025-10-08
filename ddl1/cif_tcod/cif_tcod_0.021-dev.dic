@@ -44,7 +44,9 @@ data_on_this_dictionary
     _dictionary_history
 ;
 2025-10-08 Added '_tcod_computation_GPU_time', '_tcod_software_runtime_GPU'
-           and '_tcod_software_runtime_GPU_version' data names. A.M.
+           '_tcod_software_runtime_GPU_version',
+           '_tcod_initial_coordinate_db_version' and
+           '_tcod_initial_cell_param_db_version' data names. A.M.
 
 2025-05-06 Added '_tcod_total_energy_value' and '_tcod_software_library_name'
            as the preferred alternative names of the '_tcod_total_energy' and
@@ -1051,6 +1053,14 @@ _definition
   1518187 (for COD entry 1518187).
 ;
 
+data_tcod_initial_coordinate_db_version
+_name '_tcod_initial_coordinate_db_version'
+_type char
+_category tcod_initial_coordinate
+_definition
+; Version of the file from which the coordinates were taken.
+;
+
 data_tcod_initial_coordinate_URI
 _name '_tcod_initial_coordinate_URI'
 _type char
@@ -1105,6 +1115,14 @@ _category tcod_initial_cell_param
 _definition
 ; Unit cell parameter source database stable identifier, e.g.
   1518187 (for COD entry 1518187).
+;
+
+data_tcod_initial_cell_param_db_version
+_name '_tcod_initial_cell_param_db_version'
+_type char
+_category tcod_initial_cell_param
+_definition
+; Version of the file from which the unit cell parameters were taken.
 ;
 
 data_tcod_initial_cell_param_URI
