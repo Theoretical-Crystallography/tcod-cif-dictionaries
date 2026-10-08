@@ -40,9 +40,11 @@
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
     _dictionary_version         0.020
-    _dictionary_update          2025-10-08
+    _dictionary_update          2026-10-08
     _dictionary_history
 ;
+2026-10-08 Added '_tcod_entry_issue_[]' category. A.M.
+
 2025-10-08 Added '_tcod_computation_GPU_time', '_tcod_software_runtime_GPU'
            '_tcod_software_runtime_GPU_version',
            '_tcod_initial_coordinate_db_version' and
@@ -435,6 +437,180 @@ _example
  Carbon atoms were marked as having attached hydrogen atoms after consulting
  the original publication.
 ;
+
+#------------------------------------------------------------------------------
+
+data_tcod_entry_issue_[]
+_name                            '_tcod_entry_issue_[]'
+_category                        category_overview
+_type                            null
+_definition
+;
+ Data items from the TCOD_ENTRY_ISSUE category record issues pertaining
+ to a specific TCOD entry. A proper issue record should include a
+ human-readable description and assigned an appropriate severity level.
+;
+loop_
+_example
+_example_detail
+;
+  loop_
+  _tcod_entry_issue_id
+  _tcod_entry_issue_origin
+  _tcod_entry_issue_severity
+  _tcod_entry_issue_description
+  _tcod_entry_issue_author
+  _tcod_entry_issue_date
+  1 original note
+  ;
+    Anisotropic parameter values were not provided in the
+    original publication.
+  ;
+  'John Doe' 2010-07-15
+  2 upstream warning
+  ;
+    The declared distance between atoms 'C1' and 'O2' does not match
+    the one calculated from the atomic coordinates.
+  ;
+;
+;
+ An example of the TCOD_ENTRY_ISSUE loop that showcases all of
+ the data items from the category.
+;
+
+#------------------------------------------------------------------------------
+
+data_tcod_entry_issue_id
+_name                            '_tcod_entry_issue_id'
+_category                        tcod_entry_issue
+_type                            numb
+_list                            yes
+_enumeration_range               1:
+_definition
+;
+ Value is a unique key to a set of TCOD_ENTRY_ISSUE items in a looped list.
+;
+loop_
+_example
+1
+2
+3
+
+#------------------------------------------------------------------------------
+
+data_tcod_entry_issue_origin
+_name                            '_tcod_entry_issue_origin'
+_category                        tcod_entry_issue
+_type                            char
+_list                            yes
+_list_reference                  '_tcod_entry_issue_id'
+_definition
+;
+ The most original source that is known to be affected by the described issue.
+;
+loop_
+_enumeration
+_enumeration_detail
+deposition
+;
+ Issue was introduced at the stage of structure deposition to the TCOD.
+;
+upstream
+;
+ Issue can be traced back to an intermediate source such as a website,
+ review publication, scientific database, etc. from which data in the
+ TCOD was obtained.
+;
+original
+;
+ Issue can be traced back to the original publication and there is no
+ clear indication that the calculation itself was performed incorrectly.
+;
+
+#------------------------------------------------------------------------------
+
+data_tcod_entry_issue_severity
+_name                            '_tcod_entry_issue_severity'
+_category                        tcod_entry_issue
+_type                            char
+_list                            yes
+_list_reference                  '_tcod_entry_issue_id'
+_definition
+;
+ The severity level of the detected issue.
+;
+loop_
+_enumeration
+_enumeration_detail
+note
+;
+ Issue provides additional commentary on the data. The comments may describe
+ interesting features that resulted from the original experiment as well as
+ justify some of the straightforward changes applied during the data curation
+ process. Issues of this severity level can generally be safely ignored.
+;
+warning
+;
+ Issue describes unusual data features that were not properly addressed by
+ the original publication. The description may refer to the unresolved data
+ inconsistencies as well as the best-effort solutions applied by the data
+ maintainers. Issues of this severity level should be taken into account when
+ using the data.
+;
+error
+;
+ Issue describes serious data defects. Issues of this severity level usually
+ signal that the affected dataset is not suitable for most applications.
+;
+retraction
+;
+ Issue provides clarification on why the structure was retracted from the TCOD.
+;
+
+#------------------------------------------------------------------------------
+
+data_tcod_entry_issue_description
+_name                            '_tcod_entry_issue_description'
+_category                        tcod_entry_issue
+_type                            char
+_list                            yes
+_list_reference                  '_tcod_entry_issue_id'
+_definition
+;
+ A human-readable description of the issue.
+;
+
+#------------------------------------------------------------------------------
+
+data_tcod_entry_issue_author
+_name                            '_tcod_entry_issue_author'
+_category                        tcod_entry_issue
+_type                            char
+_list                            yes
+_list_reference                  '_tcod_entry_issue_id'
+_definition
+;
+ A string that identifies the person who described the issue.
+;
+_example                         'Doe, Jane'
+
+#------------------------------------------------------------------------------
+
+data_tcod_entry_issue_date
+_name                            '_tcod_entry_issue_date'
+_category                        tcod_entry_issue
+_type                            char
+_list                            yes
+_list_reference                  '_tcod_entry_issue_id'
+_definition
+;
+ The issue description creation timestamp expressed as a date-time or
+ a full-date production of RFC3339 ABNF. Date-time production is preferred.
+;
+loop_
+_example
+2010-07-15T12:20:13+02:00
+1999-12-31
 
 #------------------------------------------------------------------------------
 
