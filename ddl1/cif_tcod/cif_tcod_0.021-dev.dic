@@ -40,9 +40,13 @@
 data_on_this_dictionary
     _dictionary_name            cif_tcod.dic
     _dictionary_version         0.020
-    _dictionary_update          2026-10-08
+    _dictionary_update          2026-10-14
     _dictionary_history
 ;
+2026-10-14 Added '_tcod_software_repository_browser_url',
+           '_tcod_software_repository_url' and
+           '_tcod_software_repository_system' data names. A.M.
+
 2026-10-08 Added '_tcod_entry_issue_[]' category. A.M.
 
 2025-10-08 Added '_tcod_computation_GPU_time', '_tcod_software_runtime_GPU'
@@ -1000,6 +1004,42 @@ data_tcod_software_compiler_options
     _definition
 ; A string with all options that were used to compile the given package.
 ;
+
+data_tcod_software_repository_browser_url
+    _name '_tcod_software_repository_browser_url'
+    _category tcod_software
+    _type char
+    _example https://github.com/advancesoftcorp/lammps
+    _definition
+; A URL pointing to code's version control repository's webpage, viewable
+ in a Web browser.
+;
+
+data_tcod_software_repository_url
+    _name '_tcod_software_repository_url'
+    _category tcod_software
+    _type char
+    _example https://github.com/advancesoftcorp/lammps.git
+    _definition
+; A URL pointing to code's repository, to be accessed with version control
+  system-specific tools.
+;
+
+data_tcod_software_repository_system
+    _name '_tcod_software_repository_system'
+    _category tcod_software
+    _type char
+    _definition
+; Version control system used in the repository specified via
+  _tcod_software_repository_url data item.
+;
+    loop_ _enumeration
+          _enumeration_detail
+    bzr   'GNU Bazaar version control system'
+    cvs   'Concurrent Versions System'
+    git   'Git version control system'
+    rcs   'Revision Control System'
+    svn   'Subversion version control system'
 
 ###############################################################################
 # Description of software libraries
