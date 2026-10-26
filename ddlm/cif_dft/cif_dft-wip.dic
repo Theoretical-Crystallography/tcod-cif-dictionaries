@@ -492,7 +492,7 @@ _definition.scope                Category
 _definition.id                   DFT_BZ_INTEGRATION
 _name.object_id                  DFT_BZ_INTEGRATION
 save_
-save_dft_BZ_integration_method
+save_dft_BZ_integration.method
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
@@ -500,8 +500,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_dft_BZ_integration_method'
-_name.object_id                  '_dft_BZ_integration_method'
+_definition.id                   '_dft_BZ_integration.method'
+_name.object_id                  '_dft_BZ_integration.method'
+_alias.definition_id             '_dft_BZ_integration_method'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -516,7 +517,7 @@ Phys. Rev. B, American Physical Society, 1976, 13, 5188-5192
 ;
 other ' Description is provided in _dft_BZ_integration_method_other'
 save_
-save_dft_BZ_integration_method_other
+save_dft_BZ_integration.method_other
 _name.category_id                dft_BZ_integration
 _description.text
 ; Description of used BZ integration method if different from enumeration
@@ -526,10 +527,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_method_other'
-_name.object_id                  '_dft_BZ_integration_method_other'
+_definition.id                   '_dft_BZ_integration.method_other'
+_name.object_id                  '_dft_BZ_integration.method_other'
+_alias.definition_id             '_dft_BZ_integration_method_other'
 save_
-save_dft_BZ_integration_citation_id
+save_dft_BZ_integration.citation_id
 _name.category_id                dft_BZ_integration
 _name.linked_item_id             '_citation_id'
 _description.text
@@ -541,50 +543,55 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    Link
-_definition.id                   '_dft_BZ_integration_citation_id'
-_name.object_id                  '_dft_BZ_integration_citation_id'
+_definition.id                   '_dft_BZ_integration.citation_id'
+_name.object_id                  '_dft_BZ_integration.citation_id'
+_alias.definition_id             '_dft_BZ_integration_citation_id'
 save_
-save_dft_BZ_integration_grid_type
+save_dft_BZ_integration.grid_type
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_grid_type'
-_name.object_id                  '_dft_BZ_integration_grid_type'
+_definition.id                   '_dft_BZ_integration.grid_type'
+_name.object_id                  '_dft_BZ_integration.grid_type'
+_alias.definition_id             '_dft_BZ_integration_grid_type'
 save_
-save_dft_BZ_integration_grid_X
+save_dft_BZ_integration.grid_X
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_grid_X'
-_name.object_id                  '_dft_BZ_integration_grid_X'
+_definition.id                   '_dft_BZ_integration.grid_X'
+_name.object_id                  '_dft_BZ_integration.grid_X'
+_alias.definition_id             '_dft_BZ_integration_grid_X'
 save_
-save_dft_BZ_integration_grid_Y
+save_dft_BZ_integration.grid_Y
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_grid_Y'
-_name.object_id                  '_dft_BZ_integration_grid_Y'
+_definition.id                   '_dft_BZ_integration.grid_Y'
+_name.object_id                  '_dft_BZ_integration.grid_Y'
+_alias.definition_id             '_dft_BZ_integration_grid_Y'
 save_
-save_dft_BZ_integration_grid_Z
+save_dft_BZ_integration.grid_Z
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_grid_Z'
-_name.object_id                  '_dft_BZ_integration_grid_Z'
+_definition.id                   '_dft_BZ_integration.grid_Z'
+_name.object_id                  '_dft_BZ_integration.grid_Z'
+_alias.definition_id             '_dft_BZ_integration_grid_Z'
 save_
-save_dft_BZ_integration_grid_IBZ_points
+save_dft_BZ_integration.grid_IBZ_points
 _name.category_id                dft_BZ_integration
 _description.text
 ; Number of points in irreducible BZ.
@@ -594,40 +601,44 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_grid_IBZ_points'
-_name.object_id                  '_dft_BZ_integration_grid_IBZ_points'
+_definition.id                   '_dft_BZ_integration.grid_IBZ_points'
+_name.object_id                  '_dft_BZ_integration.grid_IBZ_points'
+_alias.definition_id             '_dft_BZ_integration_grid_IBZ_points'
 save_
-save_dft_BZ_integration_grid_dens_X
+save_dft_BZ_integration.grid_dens_X
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_grid_dens_X'
-_name.object_id                  '_dft_BZ_integration_grid_dens_X'
+_definition.id                   '_dft_BZ_integration.grid_dens_X'
+_name.object_id                  '_dft_BZ_integration.grid_dens_X'
+_alias.definition_id             '_dft_BZ_integration_grid_dens_X'
 save_
-save_dft_BZ_integration_grid_dens_Y
+save_dft_BZ_integration.grid_dens_Y
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_grid_dens_Y'
-_name.object_id                  '_dft_BZ_integration_grid_dens_Y'
+_definition.id                   '_dft_BZ_integration.grid_dens_Y'
+_name.object_id                  '_dft_BZ_integration.grid_dens_Y'
+_alias.definition_id             '_dft_BZ_integration_grid_dens_Y'
 save_
-save_dft_BZ_integration_grid_dens_Z
+save_dft_BZ_integration.grid_dens_Z
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_grid_dens_Z'
-_name.object_id                  '_dft_BZ_integration_grid_dens_Z'
+_definition.id                   '_dft_BZ_integration.grid_dens_Z'
+_name.object_id                  '_dft_BZ_integration.grid_dens_Z'
+_alias.definition_id             '_dft_BZ_integration_grid_dens_Z'
 save_
-save_dft_BZ_integration_grid_shift_X
+save_dft_BZ_integration.grid_shift_X
 _name.category_id                dft_BZ_integration
 _enumeration.range               0:1
 _description.text
@@ -649,10 +660,11 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_dft_BZ_integration_grid_shift_X'
-_name.object_id                  '_dft_BZ_integration_grid_shift_X'
+_definition.id                   '_dft_BZ_integration.grid_shift_X'
+_name.object_id                  '_dft_BZ_integration.grid_shift_X'
+_alias.definition_id             '_dft_BZ_integration_grid_shift_X'
 save_
-save_dft_BZ_integration_grid_shift_Y
+save_dft_BZ_integration.grid_shift_Y
 _name.category_id                dft_BZ_integration
 _enumeration.range               0:1
 _description.text
@@ -674,10 +686,11 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_dft_BZ_integration_grid_shift_Y'
-_name.object_id                  '_dft_BZ_integration_grid_shift_Y'
+_definition.id                   '_dft_BZ_integration.grid_shift_Y'
+_name.object_id                  '_dft_BZ_integration.grid_shift_Y'
+_alias.definition_id             '_dft_BZ_integration_grid_shift_Y'
 save_
-save_dft_BZ_integration_grid_shift_Z
+save_dft_BZ_integration.grid_shift_Z
 _name.category_id                dft_BZ_integration
 _enumeration.range               0:1
 _description.text
@@ -699,20 +712,22 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_dft_BZ_integration_grid_shift_Z'
-_name.object_id                  '_dft_BZ_integration_grid_shift_Z'
+_definition.id                   '_dft_BZ_integration.grid_shift_Z'
+_name.object_id                  '_dft_BZ_integration.grid_shift_Z'
+_alias.definition_id             '_dft_BZ_integration_grid_shift_Z'
 save_
-save_dft_BZ_integration_Froyen_map
+save_dft_BZ_integration.Froyen_map
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_Froyen_map'
-_name.object_id                  '_dft_BZ_integration_Froyen_map'
+_definition.id                   '_dft_BZ_integration.Froyen_map'
+_name.object_id                  '_dft_BZ_integration.Froyen_map'
+_alias.definition_id             '_dft_BZ_integration_Froyen_map'
 save_
-save_dft_BZ_integration_smearing_method
+save_dft_BZ_integration.smearing_method
 _name.category_id                dft_BZ_integration
 _description.text                ' The used BZ integration smearing method.'
 _definition.update               2026-10-26
@@ -720,8 +735,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_dft_BZ_integration_smearing_method'
-_name.object_id                  '_dft_BZ_integration_smearing_method'
+_definition.id                   '_dft_BZ_integration.smearing_method'
+_name.object_id                  '_dft_BZ_integration.smearing_method'
+_alias.definition_id             '_dft_BZ_integration_smearing_method'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -741,7 +757,7 @@ Surface Phys. Rev. Lett., American Physical Society, 1999, 82, 3296-3299
 ;
 other ' Description is provided in _dft_BZ_integration_smearing_method_other.'
 save_
-save_dft_BZ_integration_smearing_method_other
+save_dft_BZ_integration.smearing_method_other
 _name.category_id                dft_BZ_integration
 _description.text
 ; Description of used BZ integration smearing method if different from
@@ -751,10 +767,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_smearing_method_other'
-_name.object_id                  '_dft_BZ_integration_smearing_method_other'
+_definition.id                   '_dft_BZ_integration.smearing_method_other'
+_name.object_id                  '_dft_BZ_integration.smearing_method_other'
+_alias.definition_id             '_dft_BZ_integration_smearing_method_other'
 save_
-save_dft_BZ_integration_smearing_width
+save_dft_BZ_integration.smearing_width
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
@@ -762,10 +779,11 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_dft_BZ_integration_smearing_width'
-_name.object_id                  '_dft_BZ_integration_smearing_width'
+_definition.id                   '_dft_BZ_integration.smearing_width'
+_name.object_id                  '_dft_BZ_integration.smearing_width'
+_alias.definition_id             '_dft_BZ_integration_smearing_width'
 save_
-save_dft_BZ_integration_MP_order
+save_dft_BZ_integration.MP_order
 _name.category_id                dft_BZ_integration
 _enumeration.range               0:
 _description.text
@@ -778,18 +796,20 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_dft_BZ_integration_MP_order'
-_name.object_id                  '_dft_BZ_integration_MP_order'
+_definition.id                   '_dft_BZ_integration.MP_order'
+_name.object_id                  '_dft_BZ_integration.MP_order'
+_alias.definition_id             '_dft_BZ_integration_MP_order'
 save_
-save_dft_BZ_integration_energy_conv
+save_dft_BZ_integration.energy_conv
 _name.category_id                dft_BZ_integration
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_energy_conv'
-_name.object_id                  '_dft_BZ_integration_energy_conv'
+_definition.id                   '_dft_BZ_integration.energy_conv'
+_name.object_id                  '_dft_BZ_integration.energy_conv'
+_alias.definition_id             '_dft_BZ_integration_energy_conv'
 save_
 save_dft_cell_settings
 _name.category_id                CATEGORY_OVERVIEW
@@ -897,9 +917,9 @@ _definition.class                Loop
 _definition.scope                Category
 _definition.id                   DFT_BZ_INTEGRATION_GRID_IBZ_POINT
 _name.object_id                  DFT_BZ_INTEGRATION_GRID_IBZ_POINT
-_category_key.name               '_dft_BZ_integration_grid_IBZ_point_id'
+_category_key.name               '_dft_BZ_integration_grid_IBZ_point.id'
 save_
-save_dft_BZ_integration_grid_IBZ_point_id
+save_dft_BZ_integration_grid_IBZ_point.id
 _name.category_id                dft_BZ_integration_grid_IBZ_point
 _description.text
 ' A unique identifier (primary key) of an irreducible BZ point in a loop.'
@@ -907,10 +927,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_BZ_integration_grid_IBZ_point_id'
-_name.object_id                  '_dft_BZ_integration_grid_IBZ_point_id'
+_definition.id                   '_dft_BZ_integration_grid_IBZ_point.id'
+_name.object_id                  '_dft_BZ_integration_grid_IBZ_point.id'
+_alias.definition_id             '_dft_BZ_integration_grid_IBZ_point_id'
 save_
-save_dft_BZ_integration_grid_IBZ_point_X
+save_dft_BZ_integration_grid_IBZ_point.X
 _name.category_id                dft_BZ_integration_grid_IBZ_point
 _description.text
 ; Coordinates of irreducible BZ points in relative coordinates of the
@@ -922,12 +943,13 @@ _type.container                  Single
 _type.contents                   Real
 _units.code                      none
 _type.purpose                    Measurand
-_definition.id                   '_dft_BZ_integration_grid_IBZ_point_X'
-_name.object_id                  '_dft_BZ_integration_grid_IBZ_point_X'
+_definition.id                   '_dft_BZ_integration_grid_IBZ_point.X'
+_name.object_id                  '_dft_BZ_integration_grid_IBZ_point.X'
+_alias.definition_id             '_dft_BZ_integration_grid_IBZ_point_X'
 save_
-save_dft_BZ_integration_grid_IBZ_point_X_su
-_definition.id                   '_dft_BZ_integration_grid_IBZ_point_X_su'
-_name.linked_item_id             '_dft_BZ_integration_grid_IBZ_point_X'
+save_dft_BZ_integration_grid_IBZ_point.X_su
+_definition.id                   '_dft_BZ_integration_grid_IBZ_point.X_su'
+_name.linked_item_id             '_dft_BZ_integration_grid_IBZ_point.X'
 _type.purpose                    SU
 _type.source                     Related
 _definition.update               2026-10-26
@@ -935,13 +957,14 @@ _name.category_id                dft_BZ_integration_grid_IBZ_point
 _type.contents                   Real
 _type.container                  Single
 _units.code                      none
-_name.object_id                  '_dft_BZ_integration_grid_IBZ_point_X_su'
+_name.object_id                  '_dft_BZ_integration_grid_IBZ_point.X_su'
 _description.text
 ;
  Standard uncertainty of _dft_BZ_integration_grid_IBZ_point_X.
 ;
+_alias.definition_id             '_dft_BZ_integration_grid_IBZ_point_X_su'
 save_
-save_dft_BZ_integration_grid_IBZ_point_Y
+save_dft_BZ_integration_grid_IBZ_point.Y
 _name.category_id                dft_BZ_integration_grid_IBZ_point
 _description.text
 ; Coordinates of irreducible BZ points in relative coordinates of the
@@ -953,12 +976,13 @@ _type.container                  Single
 _type.contents                   Real
 _units.code                      none
 _type.purpose                    Measurand
-_definition.id                   '_dft_BZ_integration_grid_IBZ_point_Y'
-_name.object_id                  '_dft_BZ_integration_grid_IBZ_point_Y'
+_definition.id                   '_dft_BZ_integration_grid_IBZ_point.Y'
+_name.object_id                  '_dft_BZ_integration_grid_IBZ_point.Y'
+_alias.definition_id             '_dft_BZ_integration_grid_IBZ_point_Y'
 save_
-save_dft_BZ_integration_grid_IBZ_point_Y_su
-_definition.id                   '_dft_BZ_integration_grid_IBZ_point_Y_su'
-_name.linked_item_id             '_dft_BZ_integration_grid_IBZ_point_Y'
+save_dft_BZ_integration_grid_IBZ_point.Y_su
+_definition.id                   '_dft_BZ_integration_grid_IBZ_point.Y_su'
+_name.linked_item_id             '_dft_BZ_integration_grid_IBZ_point.Y'
 _type.purpose                    SU
 _type.source                     Related
 _definition.update               2026-10-26
@@ -966,13 +990,14 @@ _name.category_id                dft_BZ_integration_grid_IBZ_point
 _type.contents                   Real
 _type.container                  Single
 _units.code                      none
-_name.object_id                  '_dft_BZ_integration_grid_IBZ_point_Y_su'
+_name.object_id                  '_dft_BZ_integration_grid_IBZ_point.Y_su'
 _description.text
 ;
  Standard uncertainty of _dft_BZ_integration_grid_IBZ_point_Y.
 ;
+_alias.definition_id             '_dft_BZ_integration_grid_IBZ_point_Y_su'
 save_
-save_dft_BZ_integration_grid_IBZ_point_Z
+save_dft_BZ_integration_grid_IBZ_point.Z
 _name.category_id                dft_BZ_integration_grid_IBZ_point
 _description.text
 ; Coordinates of irreducible BZ points in relative coordinates of the
@@ -984,12 +1009,13 @@ _type.container                  Single
 _type.contents                   Real
 _units.code                      none
 _type.purpose                    Measurand
-_definition.id                   '_dft_BZ_integration_grid_IBZ_point_Z'
-_name.object_id                  '_dft_BZ_integration_grid_IBZ_point_Z'
+_definition.id                   '_dft_BZ_integration_grid_IBZ_point.Z'
+_name.object_id                  '_dft_BZ_integration_grid_IBZ_point.Z'
+_alias.definition_id             '_dft_BZ_integration_grid_IBZ_point_Z'
 save_
-save_dft_BZ_integration_grid_IBZ_point_Z_su
-_definition.id                   '_dft_BZ_integration_grid_IBZ_point_Z_su'
-_name.linked_item_id             '_dft_BZ_integration_grid_IBZ_point_Z'
+save_dft_BZ_integration_grid_IBZ_point.Z_su
+_definition.id                   '_dft_BZ_integration_grid_IBZ_point.Z_su'
+_name.linked_item_id             '_dft_BZ_integration_grid_IBZ_point.Z'
 _type.purpose                    SU
 _type.source                     Related
 _definition.update               2026-10-26
@@ -997,13 +1023,14 @@ _name.category_id                dft_BZ_integration_grid_IBZ_point
 _type.contents                   Real
 _type.container                  Single
 _units.code                      none
-_name.object_id                  '_dft_BZ_integration_grid_IBZ_point_Z_su'
+_name.object_id                  '_dft_BZ_integration_grid_IBZ_point.Z_su'
 _description.text
 ;
  Standard uncertainty of _dft_BZ_integration_grid_IBZ_point_Z.
 ;
+_alias.definition_id             '_dft_BZ_integration_grid_IBZ_point_Z_su'
 save_
-save_dft_BZ_integration_grid_IBZ_point_weight
+save_dft_BZ_integration_grid_IBZ_point.weight
 _name.category_id                dft_BZ_integration_grid_IBZ_point
 _enumeration.range               0:1
 _description.text                ' Normalized weights of irreducible BZ points.'
@@ -1012,8 +1039,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_dft_BZ_integration_grid_IBZ_point_weight'
-_name.object_id                  '_dft_BZ_integration_grid_IBZ_point_weight'
+_definition.id                   '_dft_BZ_integration_grid_IBZ_point.weight'
+_name.object_id                  '_dft_BZ_integration_grid_IBZ_point.weight'
+_alias.definition_id             '_dft_BZ_integration_grid_IBZ_point_weight'
 save_
 save_dft_cell_valence_electrons
 _name.category_id                dft_cell_settings
@@ -1049,9 +1077,9 @@ _definition.class                Loop
 _definition.scope                Category
 _definition.id                   DFT_PSEUDOPOTENTIAL
 _name.object_id                  DFT_PSEUDOPOTENTIAL
-_category_key.name               '_dft_pseudopotential_atom_type'
+_category_key.name               '_dft_pseudopotential.atom_type'
 save_
-save_dft_pseudopotential_atom_type
+save_dft_pseudopotential.atom_type
 _name.category_id                dft_pseudopotential
 _name.linked_item_id             '_atom_site_type_symbol'
 _description.text
@@ -1061,14 +1089,15 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    Link
-_definition.id                   '_dft_pseudopotential_atom_type'
-_name.object_id                  '_dft_pseudopotential_atom_type'
+_definition.id                   '_dft_pseudopotential.atom_type'
+_name.object_id                  '_dft_pseudopotential.atom_type'
+_alias.definition_id             '_dft_pseudopotential_atom_type'
 loop_
 _description_example.case
 H
 Cu
 save_
-save_dft_pseudopotential_type
+save_dft_pseudopotential.type
 _name.category_id                dft_pseudopotential
 _description.text
 ; PLEASE ADD HUMAN-READABLE DESCRIPTION HERE
@@ -1079,8 +1108,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_dft_pseudopotential_type'
-_name.object_id                  '_dft_pseudopotential_type'
+_definition.id                   '_dft_pseudopotential.type'
+_name.object_id                  '_dft_pseudopotential.type'
+_alias.definition_id             '_dft_pseudopotential_type'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -1092,7 +1122,7 @@ other
   _dft_pseudopotential_type_other_name
 ;
 save_
-save_dft_pseudopotential_type_other_name
+save_dft_pseudopotential.type_other_name
 _name.category_id                dft_pseudopotential
 _description.text
 ; Custom name of the pseudopotential if _dft_pseudopotential_type data
@@ -1102,10 +1132,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_pseudopotential_type_other_name'
-_name.object_id                  '_dft_pseudopotential_type_other_name'
+_definition.id                   '_dft_pseudopotential.type_other_name'
+_name.object_id                  '_dft_pseudopotential.type_other_name'
+_alias.definition_id             '_dft_pseudopotential_type_other_name'
 save_
-save_dft_pseudopotential_citation_id
+save_dft_pseudopotential.citation_id
 _name.category_id                dft_pseudopotential
 _name.linked_item_id             '_citation_id'
 _description.text
@@ -1117,8 +1148,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    Link
-_definition.id                   '_dft_pseudopotential_citation_id'
-_name.object_id                  '_dft_pseudopotential_citation_id'
+_definition.id                   '_dft_pseudopotential.citation_id'
+_name.object_id                  '_dft_pseudopotential.citation_id'
+_alias.definition_id             '_dft_pseudopotential_citation_id'
 save_
 save_dft_kinetic_energy_cutoff
 _name.category_id                CATEGORY_OVERVIEW
@@ -1132,7 +1164,7 @@ _definition.scope                Category
 _definition.id                   DFT_KINETIC_ENERGY_CUTOFF
 _name.object_id                  DFT_KINETIC_ENERGY_CUTOFF
 save_
-save_dft_kinetic_energy_cutoff_wavefunctions
+save_dft_kinetic_energy_cutoff.wavefunctions
 _units.code                      electron_volts
 _name.category_id                dft_kinetic_energy_cutoff
 _description.text
@@ -1143,10 +1175,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
-_definition.id                   '_dft_kinetic_energy_cutoff_wavefunctions'
-_name.object_id                  '_dft_kinetic_energy_cutoff_wavefunctions'
+_definition.id                   '_dft_kinetic_energy_cutoff.wavefunctions'
+_name.object_id                  '_dft_kinetic_energy_cutoff.wavefunctions'
+_alias.definition_id             '_dft_kinetic_energy_cutoff_wavefunctions'
 save_
-save_dft_kinetic_energy_cutoff_charge_density
+save_dft_kinetic_energy_cutoff.charge_density
 _units.code                      electron_volts
 _name.category_id                dft_kinetic_energy_cutoff
 _description.text
@@ -1155,10 +1188,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
-_definition.id                   '_dft_kinetic_energy_cutoff_charge_density'
-_name.object_id                  '_dft_kinetic_energy_cutoff_charge_density'
+_definition.id                   '_dft_kinetic_energy_cutoff.charge_density'
+_name.object_id                  '_dft_kinetic_energy_cutoff.charge_density'
+_alias.definition_id             '_dft_kinetic_energy_cutoff_charge_density'
 save_
-save_dft_kinetic_energy_cutoff_EEX
+save_dft_kinetic_energy_cutoff.EEX
 _units.code                      electron_volts
 _name.category_id                dft_kinetic_energy_cutoff
 _description.text
@@ -1169,8 +1203,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
-_definition.id                   '_dft_kinetic_energy_cutoff_EEX'
-_name.object_id                  '_dft_kinetic_energy_cutoff_EEX'
+_definition.id                   '_dft_kinetic_energy_cutoff.EEX'
+_name.object_id                  '_dft_kinetic_energy_cutoff.EEX'
+_alias.definition_id             '_dft_kinetic_energy_cutoff_EEX'
 save_
 save_dft_energy
 _name.category_id                CATEGORY_OVERVIEW
@@ -1341,7 +1376,7 @@ _definition.scope                Category
 _definition.id                   DFT_CELL_MAGN
 _name.object_id                  DFT_CELL_MAGN
 save_
-save_dft_cell_magn_moment
+save_dft_cell_magn.moment
 _name.category_id                dft_cell_magn
 _units.code                      bohr_magnetons
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
@@ -1349,28 +1384,31 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
-_definition.id                   '_dft_cell_magn_moment'
-_name.object_id                  '_dft_cell_magn_moment'
+_definition.id                   '_dft_cell_magn.moment'
+_name.object_id                  '_dft_cell_magn.moment'
+_alias.definition_id             '_dft_cell_magn_moment'
 save_
-save_dft_cell_magn_spin_moment
+save_dft_cell_magn.spin_moment
 _name.category_id                dft_cell_magn
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_cell_magn_spin_moment'
-_name.object_id                  '_dft_cell_magn_spin_moment'
+_definition.id                   '_dft_cell_magn.spin_moment'
+_name.object_id                  '_dft_cell_magn.spin_moment'
+_alias.definition_id             '_dft_cell_magn_spin_moment'
 save_
-save_dft_cell_magn_orbital_moment
+save_dft_cell_magn.orbital_moment
 _name.category_id                dft_cell_magn
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_cell_magn_orbital_moment'
-_name.object_id                  '_dft_cell_magn_orbital_moment'
+_definition.id                   '_dft_cell_magn.orbital_moment'
+_name.object_id                  '_dft_cell_magn.orbital_moment'
+_alias.definition_id             '_dft_cell_magn_orbital_moment'
 save_
 save_dft_cell_conv
 _name.category_id                CATEGORY_OVERVIEW
@@ -1634,7 +1672,7 @@ _definition.scope                Category
 _definition.id                   DFT_ALLOY
 _name.object_id                  DFT_ALLOY
 save_
-save_dft_alloy_method
+save_dft_alloy.method
 _name.category_id                dft_alloy
 _description.text                ' PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE'
 _definition.update               2026-10-26
@@ -1642,8 +1680,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_dft_alloy_method'
-_name.object_id                  '_dft_alloy_method'
+_definition.id                   '_dft_alloy.method'
+_name.object_id                  '_dft_alloy.method'
+_alias.definition_id             '_dft_alloy_method'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -1653,7 +1692,7 @@ SQS 'special quasirandom structures'
 'real space recursion' 'describe the corresponding method here'
 other 'alloy method not one of the mentioned above'
 save_
-save_dft_alloy_method_other_name
+save_dft_alloy.method_other_name
 _name.category_id                dft_alloy
 _description.text
 ; Custom name of the alloy method if _dft_alloy_method data item value
@@ -1663,10 +1702,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_alloy_method_other_name'
-_name.object_id                  '_dft_alloy_method_other_name'
+_definition.id                   '_dft_alloy.method_other_name'
+_name.object_id                  '_dft_alloy.method_other_name'
+_alias.definition_id             '_dft_alloy_method_other_name'
 save_
-save_dft_alloy_supercell
+save_dft_alloy.supercell
 _name.category_id                dft_alloy
 _description.text
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
@@ -1677,8 +1717,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_dft_alloy_supercell'
-_name.object_id                  '_dft_alloy_supercell'
+_definition.id                   '_dft_alloy.supercell'
+_name.object_id                  '_dft_alloy.supercell'
+_alias.definition_id             '_dft_alloy_supercell'
 save_
 save_dft_calc_property
 _name.category_id                CATEGORY_OVERVIEW

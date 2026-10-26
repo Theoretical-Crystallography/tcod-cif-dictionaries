@@ -249,7 +249,7 @@ _description_example.detail
                 https://www.crystallography.net/tcod/10000001.cif
 ;
 save_
-save_tcod_database_code
+save_tcod_database.code
 _name.category_id                tcod_database
 _description.text
 ;              Specifies TCOD number assigned upon deposition into TCOD to the
@@ -260,8 +260,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_tcod_database_code'
-_name.object_id                  '_tcod_database_code'
+_definition.id                   '_tcod_database.code'
+_name.object_id                  '_tcod_database.code'
+_alias.definition_id             '_tcod_database_code'
 save_
 save_tcod_data_source
 _name.category_id                CATEGORY_OVERVIEW
@@ -275,7 +276,7 @@ _definition.scope                Category
 _definition.id                   TCOD_DATA_SOURCE
 _name.object_id                  TCOD_DATA_SOURCE
 save_
-save_tcod_data_source_file
+save_tcod_data_source.file
 _name.category_id                tcod_data_source
 _description.text
 ;         Specifies file name of the file that served as a source of data in
@@ -295,10 +296,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_data_source_file'
-_name.object_id                  '_tcod_data_source_file'
+_definition.id                   '_tcod_data_source.file'
+_name.object_id                  '_tcod_data_source.file'
+_alias.definition_id             '_tcod_data_source_file'
 save_
-save_tcod_data_source_block
+save_tcod_data_source.block
 _name.category_id                tcod_data_source
 _description.text
 ;         Specifies the name of the data block within the file specified in
@@ -312,8 +314,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_data_source_block'
-_name.object_id                  '_tcod_data_source_block'
+_definition.id                   '_tcod_data_source.block'
+_name.object_id                  '_tcod_data_source.block'
+_alias.definition_id             '_tcod_data_source_block'
 save_
 save_tcod_changelog_entry
 _name.category_id                CATEGORY_OVERVIEW
@@ -343,9 +346,9 @@ _definition.class                Loop
 _definition.scope                Category
 _definition.id                   TCOD_CHANGELOG_ENTRY
 _name.object_id                  TCOD_CHANGELOG_ENTRY
-_category_key.name               '_tcod_changelog_entry_id'
+_category_key.name               '_tcod_changelog_entry.id'
 save_
-save_tcod_changelog_entry_id
+save_tcod_changelog_entry.id
 _name.category_id                tcod_changelog_entry
 _enumeration.range               1:
 _description.text
@@ -357,15 +360,16 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_tcod_changelog_entry_id'
-_name.object_id                  '_tcod_changelog_entry_id'
+_definition.id                   '_tcod_changelog_entry.id'
+_name.object_id                  '_tcod_changelog_entry.id'
+_alias.definition_id             '_tcod_changelog_entry_id'
 loop_
 _description_example.case
 1
 2
 3
 save_
-save_tcod_changelog_entry_author
+save_tcod_changelog_entry.author
 _name.category_id                tcod_changelog_entry
 _description.text
 ;
@@ -375,14 +379,15 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_changelog_entry_author'
-_name.object_id                  '_tcod_changelog_entry_author'
+_definition.id                   '_tcod_changelog_entry.author'
+_name.object_id                  '_tcod_changelog_entry.author'
+_alias.definition_id             '_tcod_changelog_entry_author'
 loop_
 _description_example.case
 'Doe, John'
 'cif_fix_values 4268 2015-11-12 08:31:59Z jane_doe'
 save_
-save_tcod_changelog_entry_date
+save_tcod_changelog_entry.date
 _name.category_id                tcod_changelog_entry
 _description.text
 ;
@@ -393,14 +398,15 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_changelog_entry_date'
-_name.object_id                  '_tcod_changelog_entry_date'
+_definition.id                   '_tcod_changelog_entry.date'
+_name.object_id                  '_tcod_changelog_entry.date'
+_alias.definition_id             '_tcod_changelog_entry_date'
 loop_
 _description_example.case
 2010-07-15T12:20:13+02:00
 1999-12-31
 save_
-save_tcod_changelog_entry_text
+save_tcod_changelog_entry.text
 _name.category_id                tcod_changelog_entry
 _description.text
 ;
@@ -415,8 +421,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_changelog_entry_text'
-_name.object_id                  '_tcod_changelog_entry_text'
+_definition.id                   '_tcod_changelog_entry.text'
+_name.object_id                  '_tcod_changelog_entry.text'
+_alias.definition_id             '_tcod_changelog_entry_text'
 save_
 save_tcod_entry_issue
 _name.category_id                CATEGORY_OVERVIEW
@@ -431,7 +438,7 @@ _definition.class                Loop
 _definition.scope                Category
 _definition.id                   TCOD_ENTRY_ISSUE
 _name.object_id                  TCOD_ENTRY_ISSUE
-_category_key.name               '_tcod_entry_issue_id'
+_category_key.name               '_tcod_entry_issue.id'
 loop_
 _description_example.case
 _description_example.detail
@@ -460,7 +467,7 @@ _description_example.detail
  the data items from the category.
 ;
 save_
-save_tcod_entry_issue_id
+save_tcod_entry_issue.id
 _name.category_id                tcod_entry_issue
 _enumeration.range               1:
 _description.text
@@ -472,15 +479,16 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_tcod_entry_issue_id'
-_name.object_id                  '_tcod_entry_issue_id'
+_definition.id                   '_tcod_entry_issue.id'
+_name.object_id                  '_tcod_entry_issue.id'
+_alias.definition_id             '_tcod_entry_issue_id'
 loop_
 _description_example.case
 1
 2
 3
 save_
-save_tcod_entry_issue_origin
+save_tcod_entry_issue.origin
 _name.category_id                tcod_entry_issue
 _description.text
 ;
@@ -491,8 +499,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_tcod_entry_issue_origin'
-_name.object_id                  '_tcod_entry_issue_origin'
+_definition.id                   '_tcod_entry_issue.origin'
+_name.object_id                  '_tcod_entry_issue.origin'
+_alias.definition_id             '_tcod_entry_issue_origin'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -512,7 +521,7 @@ original
  clear indication that the calculation itself was performed incorrectly.
 ;
 save_
-save_tcod_entry_issue_severity
+save_tcod_entry_issue.severity
 _name.category_id                tcod_entry_issue
 _description.text
 ;
@@ -523,8 +532,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_tcod_entry_issue_severity'
-_name.object_id                  '_tcod_entry_issue_severity'
+_definition.id                   '_tcod_entry_issue.severity'
+_name.object_id                  '_tcod_entry_issue.severity'
+_alias.definition_id             '_tcod_entry_issue_severity'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -553,7 +563,7 @@ retraction
  Issue provides clarification on why the structure was retracted from the TCOD.
 ;
 save_
-save_tcod_entry_issue_description
+save_tcod_entry_issue.description
 _name.category_id                tcod_entry_issue
 _description.text
 ;
@@ -563,10 +573,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_entry_issue_description'
-_name.object_id                  '_tcod_entry_issue_description'
+_definition.id                   '_tcod_entry_issue.description'
+_name.object_id                  '_tcod_entry_issue.description'
+_alias.definition_id             '_tcod_entry_issue_description'
 save_
-save_tcod_entry_issue_author
+save_tcod_entry_issue.author
 _name.category_id                tcod_entry_issue
 _description.text
 ;
@@ -577,10 +588,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_entry_issue_author'
-_name.object_id                  '_tcod_entry_issue_author'
+_definition.id                   '_tcod_entry_issue.author'
+_name.object_id                  '_tcod_entry_issue.author'
+_alias.definition_id             '_tcod_entry_issue_author'
 save_
-save_tcod_entry_issue_date
+save_tcod_entry_issue.date
 _name.category_id                tcod_entry_issue
 _description.text
 ;
@@ -591,8 +603,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_entry_issue_date'
-_name.object_id                  '_tcod_entry_issue_date'
+_definition.id                   '_tcod_entry_issue.date'
+_name.object_id                  '_tcod_entry_issue.date'
+_alias.definition_id             '_tcod_entry_issue_date'
 loop_
 _description_example.case
 2010-07-15T12:20:13+02:00
@@ -621,7 +634,7 @@ _description_example.detail
  the public domain until 2020-12-20.
 ;
 save_
-save_tcod_depositor_requested_release_date
+save_tcod_depositor.requested_release_date
 _name.category_id                tcod_depositor
 _description.text
 ;
@@ -634,8 +647,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_depositor_requested_release_date'
-_name.object_id                  '_tcod_depositor_requested_release_date'
+_definition.id                   '_tcod_depositor.requested_release_date'
+_name.object_id                  '_tcod_depositor.requested_release_date'
+_alias.definition_id             '_tcod_depositor_requested_release_date'
 save_
 save_tcod_source_structure_database
 _name.category_id                CATEGORY_OVERVIEW
@@ -650,7 +664,7 @@ _definition.scope                Category
 _definition.id                   TCOD_SOURCE_STRUCTURE_DATABASE
 _name.object_id                  TCOD_SOURCE_STRUCTURE_DATABASE
 save_
-save_tcod_source_structure_database_uuid
+save_tcod_source_structure_database.uuid
 _name.category_id                tcod_source_structure_database
 _description.text
 ; UUID (Universally Unique Identifier,
@@ -661,38 +675,42 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_source_structure_database_uuid'
-_name.object_id                  '_tcod_source_structure_database_uuid'
+_definition.id                   '_tcod_source_structure_database.uuid'
+_name.object_id                  '_tcod_source_structure_database.uuid'
+_alias.definition_id             '_tcod_source_structure_database_uuid'
 save_
-save_tcod_source_structure_database_id
+save_tcod_source_structure_database.id
 _name.category_id                tcod_source_structure_database
 _description.text                ' Internal database identifier of a structure.'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_source_structure_database_id'
-_name.object_id                  '_tcod_source_structure_database_id'
+_definition.id                   '_tcod_source_structure_database.id'
+_name.object_id                  '_tcod_source_structure_database.id'
+_alias.definition_id             '_tcod_source_structure_database_id'
 save_
-save_tcod_source_structure_database_URI
+save_tcod_source_structure_database.URI
 _name.category_id                tcod_source_structure_database
 _description.text                ' Database URI of a structure.'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_source_structure_database_URI'
-_name.object_id                  '_tcod_source_structure_database_URI'
+_definition.id                   '_tcod_source_structure_database.URI'
+_name.object_id                  '_tcod_source_structure_database.URI'
+_alias.definition_id             '_tcod_source_structure_database_URI'
 save_
-save_tcod_source_structure_database_version
+save_tcod_source_structure_database.version
 _name.category_id                tcod_source_structure_database
 _description.text                ' Version of a structure.'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_source_structure_database_version'
-_name.object_id                  '_tcod_source_structure_database_version'
+_definition.id                   '_tcod_source_structure_database.version'
+_name.object_id                  '_tcod_source_structure_database.version'
+_alias.definition_id             '_tcod_source_structure_database_version'
 save_
 save_tcod_source_database
 _name.category_id                CATEGORY_OVERVIEW
@@ -707,7 +725,7 @@ _definition.scope                Category
 _definition.id                   TCOD_SOURCE_DATABASE
 _name.object_id                  TCOD_SOURCE_DATABASE
 save_
-save_tcod_source_database_name
+save_tcod_source_database.name
 _name.category_id                tcod_source_database
 _description.text
 ; A name of a database that was used to produce (to compute) this
@@ -721,10 +739,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_source_database_name'
-_name.object_id                  '_tcod_source_database_name'
+_definition.id                   '_tcod_source_database.name'
+_name.object_id                  '_tcod_source_database.name'
+_alias.definition_id             '_tcod_source_database_name'
 save_
-save_tcod_source_database_URI
+save_tcod_source_database.URI
 _name.category_id                tcod_source_database
 _description.text
 ; A (stable) URI (or URL) of the database Web site describing the
@@ -738,10 +757,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_source_database_URI'
-_name.object_id                  '_tcod_source_database_URI'
+_definition.id                   '_tcod_source_database.URI'
+_name.object_id                  '_tcod_source_database.URI'
+_alias.definition_id             '_tcod_source_database_URI'
 save_
-save_tcod_source_database_version
+save_tcod_source_database.version
 _name.category_id                tcod_source_database
 _description.text
 ; A version of the database that produced a structure under consideration.
@@ -754,8 +774,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_source_database_version'
-_name.object_id                  '_tcod_source_database_version'
+_definition.id                   '_tcod_source_database.version'
+_name.object_id                  '_tcod_source_database.version'
+_alias.definition_id             '_tcod_source_database_version'
 save_
 save_tcod_atom_sites_sim_cell_tran_matrix_11
 _name.category_id                atom_sites
@@ -1024,7 +1045,7 @@ _definition.scope                Category
 _definition.id                   TCOD_SOFTWARE
 _name.object_id                  TCOD_SOFTWARE
 save_
-save_tcod_software_package
+save_tcod_software.package
 _name.category_id                tcod_software
 _description.text
 ; Software package used to compute and produce the DFT-computed structure file.
@@ -1034,10 +1055,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_package'
-_name.object_id                  '_tcod_software_package'
+_definition.id                   '_tcod_software.package'
+_name.object_id                  '_tcod_software.package'
+_alias.definition_id             '_tcod_software_package'
 save_
-save_tcod_software_package_version
+save_tcod_software.package_version
 _name.category_id                tcod_software
 _description.text
 ; Software package version used to compute and produce the computed
@@ -1050,10 +1072,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_package_version'
-_name.object_id                  '_tcod_software_package_version'
+_definition.id                   '_tcod_software.package_version'
+_name.object_id                  '_tcod_software.package_version'
+_alias.definition_id             '_tcod_software_package_version'
 save_
-save_tcod_software_package_compilation_date
+save_tcod_software.package_compilation_date
 _name.category_id                tcod_software
 _description_example.case        2014-11-04T13:49:49.290475Z
 _description.text
@@ -1068,10 +1091,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_package_compilation_date'
-_name.object_id                  '_tcod_software_package_compilation_date'
+_definition.id                   '_tcod_software.package_compilation_date'
+_name.object_id                  '_tcod_software.package_compilation_date'
+_alias.definition_id             '_tcod_software_package_compilation_date'
 save_
-save_tcod_software_package_compilation_environment
+save_tcod_software.package_compilation_environment
 _name.category_id                tcod_software
 _description.text
 ; A set of environment variable definitions, in /bin/sh syntax
@@ -1084,11 +1108,13 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _definition.id
-'_tcod_software_package_compilation_environment'
+'_tcod_software.package_compilation_environment'
 _name.object_id
+'_tcod_software.package_compilation_environment'
+_alias.definition_id
 '_tcod_software_package_compilation_environment'
 save_
-save_tcod_software_package_binary_uri
+save_tcod_software.package_binary_uri
 _name.category_id                tcod_software
 _description.text
 ; An URI (Web reference) where the binary package of the software used
@@ -1098,10 +1124,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_package_binary_uri'
-_name.object_id                  '_tcod_software_package_binary_uri'
+_definition.id                   '_tcod_software.package_binary_uri'
+_name.object_id                  '_tcod_software.package_binary_uri'
+_alias.definition_id             '_tcod_software_package_binary_uri'
 save_
-save_tcod_software_package_source_uri
+save_tcod_software.package_source_uri
 _name.category_id                tcod_software
 _description.text
 ; An URI (Web reference) where the source code package of the software
@@ -1111,10 +1138,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_package_source_uri'
-_name.object_id                  '_tcod_software_package_source_uri'
+_definition.id                   '_tcod_software.package_source_uri'
+_name.object_id                  '_tcod_software.package_source_uri'
+_alias.definition_id             '_tcod_software_package_source_uri'
 save_
-save_tcod_software_executable_path
+save_tcod_software.executable_path
 _name.category_id                tcod_software
 _description.text
 ; The file-system path to the executable that was run for this
@@ -1124,10 +1152,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_executable_path'
-_name.object_id                  '_tcod_software_executable_path'
+_definition.id                   '_tcod_software.executable_path'
+_name.object_id                  '_tcod_software.executable_path'
+_alias.definition_id             '_tcod_software_executable_path'
 save_
-save_tcod_software_runtime_OS
+save_tcod_software.runtime_OS
 _name.category_id                tcod_software
 _description.text
 ; Operating system used to compute and produce the DFT-computed structure file.
@@ -1138,10 +1167,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_runtime_OS'
-_name.object_id                  '_tcod_software_runtime_OS'
+_definition.id                   '_tcod_software.runtime_OS'
+_name.object_id                  '_tcod_software.runtime_OS'
+_alias.definition_id             '_tcod_software_runtime_OS'
 save_
-save_tcod_software_OS_version
+save_tcod_software.OS_version
 _name.category_id                tcod_software
 _description.text
 ; Operating system version used to compute and produce the
@@ -1155,10 +1185,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_OS_version'
-_name.object_id                  '_tcod_software_OS_version'
+_definition.id                   '_tcod_software.OS_version'
+_name.object_id                  '_tcod_software.OS_version'
+_alias.definition_id             '_tcod_software_OS_version'
 save_
-save_tcod_software_OS_compilation_date
+save_tcod_software.OS_compilation_date
 _name.category_id                tcod_software
 _description_example.case        2014-11-04T13:49:49.290475Z
 _description.text
@@ -1169,10 +1200,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_OS_compilation_date'
-_name.object_id                  '_tcod_software_OS_compilation_date'
+_definition.id                   '_tcod_software.OS_compilation_date'
+_name.object_id                  '_tcod_software.OS_compilation_date'
+_alias.definition_id             '_tcod_software_OS_compilation_date'
 save_
-save_tcod_software_runtime_OS_binary_uri
+save_tcod_software.runtime_OS_binary_uri
 _name.category_id                tcod_software
 _description.text
 ; An URI (Web reference) where the binary image (e.g. an ISO file, or
@@ -1183,10 +1215,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_runtime_OS_binary_uri'
-_name.object_id                  '_tcod_software_runtime_OS_binary_uri'
+_definition.id                   '_tcod_software.runtime_OS_binary_uri'
+_name.object_id                  '_tcod_software.runtime_OS_binary_uri'
+_alias.definition_id             '_tcod_software_runtime_OS_binary_uri'
 save_
-save_tcod_software_runtime_OS_source_uri
+save_tcod_software.runtime_OS_source_uri
 _name.category_id                tcod_software
 _description.text
 ; An URI (Web reference) where the source code of the operating system
@@ -1196,10 +1229,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_runtime_OS_source_uri'
-_name.object_id                  '_tcod_software_runtime_OS_source_uri'
+_definition.id                   '_tcod_software.runtime_OS_source_uri'
+_name.object_id                  '_tcod_software.runtime_OS_source_uri'
+_alias.definition_id             '_tcod_software_runtime_OS_source_uri'
 save_
-save_tcod_software_runtime_CPU
+save_tcod_software.runtime_CPU
 _name.category_id                tcod_software
 _description.text
 ; Name (type) of the central processing unit (CPU), together with the
@@ -1209,10 +1243,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_runtime_CPU'
-_name.object_id                  '_tcod_software_runtime_CPU'
+_definition.id                   '_tcod_software.runtime_CPU'
+_name.object_id                  '_tcod_software.runtime_CPU'
+_alias.definition_id             '_tcod_software_runtime_CPU'
 save_
-save_tcod_software_runtime_CPU_version
+save_tcod_software.runtime_CPU_version
 _name.category_id                tcod_software
 _description.text
 ; Version or release number of the central processing unit (CPU),
@@ -1223,10 +1258,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_runtime_CPU_version'
-_name.object_id                  '_tcod_software_runtime_CPU_version'
+_definition.id                   '_tcod_software.runtime_CPU_version'
+_name.object_id                  '_tcod_software.runtime_CPU_version'
+_alias.definition_id             '_tcod_software_runtime_CPU_version'
 save_
-save_tcod_software_runtime_GPU
+save_tcod_software.runtime_GPU
 _name.category_id                tcod_software
 _description.text
 ; Name (type) of the graphics processing unit (GPU) that was used to
@@ -1236,10 +1272,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_runtime_GPU'
-_name.object_id                  '_tcod_software_runtime_GPU'
+_definition.id                   '_tcod_software.runtime_GPU'
+_name.object_id                  '_tcod_software.runtime_GPU'
+_alias.definition_id             '_tcod_software_runtime_GPU'
 save_
-save_tcod_software_runtime_GPU_version
+save_tcod_software.runtime_GPU_version
 _name.category_id                tcod_software
 _description.text
 ; Version or release number of the graphics processing unit (GPU) that
@@ -1249,10 +1286,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_runtime_GPU_version'
-_name.object_id                  '_tcod_software_runtime_GPU_version'
+_definition.id                   '_tcod_software.runtime_GPU_version'
+_name.object_id                  '_tcod_software.runtime_GPU_version'
+_alias.definition_id             '_tcod_software_runtime_GPU_version'
 save_
-save_tcod_software_compiler
+save_tcod_software.compiler
 _name.category_id                tcod_software
 _description.text
 ; The compiler which compiled the code used for the described
@@ -1265,10 +1303,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_compiler'
-_name.object_id                  '_tcod_software_compiler'
+_definition.id                   '_tcod_software.compiler'
+_name.object_id                  '_tcod_software.compiler'
+_alias.definition_id             '_tcod_software_compiler'
 save_
-save_tcod_software_compiler_version
+save_tcod_software.compiler_version
 _name.category_id                tcod_software
 _description.text
 ; A version string (number) of the compiler used to compile the code for this
@@ -1278,10 +1317,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_compiler_version'
-_name.object_id                  '_tcod_software_compiler_version'
+_definition.id                   '_tcod_software.compiler_version'
+_name.object_id                  '_tcod_software.compiler_version'
+_alias.definition_id             '_tcod_software_compiler_version'
 save_
-save_tcod_software_compiler_options
+save_tcod_software.compiler_options
 _name.category_id                tcod_software
 _description.text
 ' A string with all options that were used to compile the given package.'
@@ -1289,10 +1329,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_compiler_options'
-_name.object_id                  '_tcod_software_compiler_options'
+_definition.id                   '_tcod_software.compiler_options'
+_name.object_id                  '_tcod_software.compiler_options'
+_alias.definition_id             '_tcod_software_compiler_options'
 save_
-save_tcod_software_repository_browser_url
+save_tcod_software.repository_browser_url
 _name.category_id                tcod_software
 _description_example.case        https://github.com/advancesoftcorp/lammps
 _description.text
@@ -1303,10 +1344,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_repository_browser_url'
-_name.object_id                  '_tcod_software_repository_browser_url'
+_definition.id                   '_tcod_software.repository_browser_url'
+_name.object_id                  '_tcod_software.repository_browser_url'
+_alias.definition_id             '_tcod_software_repository_browser_url'
 save_
-save_tcod_software_repository_url
+save_tcod_software.repository_url
 _name.category_id                tcod_software
 _description_example.case        https://github.com/advancesoftcorp/lammps.git
 _description.text
@@ -1317,10 +1359,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_repository_url'
-_name.object_id                  '_tcod_software_repository_url'
+_definition.id                   '_tcod_software.repository_url'
+_name.object_id                  '_tcod_software.repository_url'
+_alias.definition_id             '_tcod_software_repository_url'
 save_
-save_tcod_software_repository_system
+save_tcod_software.repository_system
 _name.category_id                tcod_software
 _description.text
 ; Version control system used in the repository specified via
@@ -1331,8 +1374,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_tcod_software_repository_system'
-_name.object_id                  '_tcod_software_repository_system'
+_definition.id                   '_tcod_software.repository_system'
+_name.object_id                  '_tcod_software.repository_system'
+_alias.definition_id             '_tcod_software_repository_system'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -1350,19 +1394,20 @@ _definition.class                Loop
 _definition.scope                Category
 _definition.id                   TCOD_SOFTWARE_LIBRARY
 _name.object_id                  TCOD_SOFTWARE_LIBRARY
-_category_key.name               '_tcod_software_library_id'
+_category_key.name               '_tcod_software_library.id'
 save_
-save_tcod_software_library_id
+save_tcod_software_library.id
 _name.category_id                tcod_software_library
 _description.text                ' Identifies a software library in a loop'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_id'
-_name.object_id                  '_tcod_software_library_id'
+_definition.id                   '_tcod_software_library.id'
+_name.object_id                  '_tcod_software_library.id'
+_alias.definition_id             '_tcod_software_library_id'
 save_
-save_tcod_software_library_name
+save_tcod_software_library.name
 _name.category_id                tcod_software_library
 _description.text
 ; The subroutine library (e.g. linear algebra) that was linked with
@@ -1375,14 +1420,14 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_name'
-_name.object_id                  '_tcod_software_library_name'
+_definition.id                   '_tcod_software_library.name'
+_name.object_id                  '_tcod_software_library.name'
 loop_
 _alias.definition_id
 _alias.deprecation_date
 '_tcod_software_library' 2026-10-26
 save_
-save_tcod_software_library_version
+save_tcod_software_library.version
 _name.category_id                tcod_software_library
 _description.text
 ; A version string (number) of the library linked with the code for this
@@ -1392,10 +1437,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_version'
-_name.object_id                  '_tcod_software_library_version'
+_definition.id                   '_tcod_software_library.version'
+_name.object_id                  '_tcod_software_library.version'
+_alias.definition_id             '_tcod_software_library_version'
 save_
-save_tcod_software_library_compilation_date
+save_tcod_software_library.compilation_date
 _name.category_id                tcod_software_library
 _description_example.case        2014-11-04T13:49:49.290475Z
 _description.text
@@ -1406,10 +1452,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_compilation_date'
-_name.object_id                  '_tcod_software_library_compilation_date'
+_definition.id                   '_tcod_software_library.compilation_date'
+_name.object_id                  '_tcod_software_library.compilation_date'
+_alias.definition_id             '_tcod_software_library_compilation_date'
 save_
-save_tcod_software_library_compilation_environment
+save_tcod_software_library.compilation_environment
 _name.category_id                tcod_software_library
 _description.text
 ; A set of environment variable definitions, in /bin/sh syntax
@@ -1422,11 +1469,13 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _definition.id
-'_tcod_software_library_compilation_environment'
+'_tcod_software_library.compilation_environment'
 _name.object_id
+'_tcod_software_library.compilation_environment'
+_alias.definition_id
 '_tcod_software_library_compilation_environment'
 save_
-save_tcod_software_library_compiler_name
+save_tcod_software_library.compiler_name
 _name.category_id                tcod_software_library
 _description.text
 ' Library compiler name (same syntax as for a package compiler).'
@@ -1434,10 +1483,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_compiler_name'
-_name.object_id                  '_tcod_software_library_compiler_name'
+_definition.id                   '_tcod_software_library.compiler_name'
+_name.object_id                  '_tcod_software_library.compiler_name'
+_alias.definition_id             '_tcod_software_library_compiler_name'
 save_
-save_tcod_software_library_compiler_version
+save_tcod_software_library.compiler_version
 _name.category_id                tcod_software_library
 _description.text
 ' Library compiler version (same syntax as for a package compiler).'
@@ -1445,10 +1495,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_compiler_version'
-_name.object_id                  '_tcod_software_library_compiler_version'
+_definition.id                   '_tcod_software_library.compiler_version'
+_name.object_id                  '_tcod_software_library.compiler_version'
+_alias.definition_id             '_tcod_software_library_compiler_version'
 save_
-save_tcod_software_library_compiler_options
+save_tcod_software_library.compiler_options
 _name.category_id                tcod_software_library
 _description.text
 ; Library compiler options that were used (same syntax as for a
@@ -1458,10 +1509,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_compiler_options'
-_name.object_id                  '_tcod_software_library_compiler_options'
+_definition.id                   '_tcod_software_library.compiler_options'
+_name.object_id                  '_tcod_software_library.compiler_options'
+_alias.definition_id             '_tcod_software_library_compiler_options'
 save_
-save_tcod_software_library_path
+save_tcod_software_library.path
 _name.category_id                tcod_software_library
 _description.text
 ; A file sytem path of the library file (especially the shared
@@ -1471,10 +1523,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_path'
-_name.object_id                  '_tcod_software_library_path'
+_definition.id                   '_tcod_software_library.path'
+_name.object_id                  '_tcod_software_library.path'
+_alias.definition_id             '_tcod_software_library_path'
 save_
-save_tcod_software_library_binary_uri
+save_tcod_software_library.binary_uri
 _name.category_id                tcod_software_library
 _description.text
 ; An URI (Web reference) where the binary software library used for
@@ -1484,10 +1537,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_binary_uri'
-_name.object_id                  '_tcod_software_library_binary_uri'
+_definition.id                   '_tcod_software_library.binary_uri'
+_name.object_id                  '_tcod_software_library.binary_uri'
+_alias.definition_id             '_tcod_software_library_binary_uri'
 save_
-save_tcod_software_library_source_uri
+save_tcod_software_library.source_uri
 _name.category_id                tcod_software_library
 _description.text
 ; An URI (Web reference) where the source code software library used for
@@ -1497,8 +1551,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_software_library_source_uri'
-_name.object_id                  '_tcod_software_library_source_uri'
+_definition.id                   '_tcod_software_library.source_uri'
+_name.object_id                  '_tcod_software_library.source_uri'
+_alias.definition_id             '_tcod_software_library_source_uri'
 save_
 save_tcod_initial_coordinate
 _name.category_id                CATEGORY_OVERVIEW
@@ -1509,7 +1564,7 @@ _definition.scope                Category
 _definition.id                   TCOD_INITIAL_COORDINATE
 _name.object_id                  TCOD_INITIAL_COORDINATE
 save_
-save_tcod_initial_coordinate_db_name
+save_tcod_initial_coordinate.db_name
 _name.category_id                tcod_initial_coordinate
 _description.text
 ' Coordinate source database name (e.g. "Crystallography Open Database")'
@@ -1517,10 +1572,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_coordinate_db_name'
-_name.object_id                  '_tcod_initial_coordinate_db_name'
+_definition.id                   '_tcod_initial_coordinate.db_name'
+_name.object_id                  '_tcod_initial_coordinate.db_name'
+_alias.definition_id             '_tcod_initial_coordinate_db_name'
 save_
-save_tcod_initial_coordinate_db_abbrev
+save_tcod_initial_coordinate.db_abbrev
 _name.category_id                tcod_initial_coordinate
 _description.text
 ' Coordinate source database abbreviated name (e.g. "COD")'
@@ -1528,10 +1584,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_coordinate_db_abbrev'
-_name.object_id                  '_tcod_initial_coordinate_db_abbrev'
+_definition.id                   '_tcod_initial_coordinate.db_abbrev'
+_name.object_id                  '_tcod_initial_coordinate.db_abbrev'
+_alias.definition_id             '_tcod_initial_coordinate_db_abbrev'
 save_
-save_tcod_initial_coordinate_db_URI
+save_tcod_initial_coordinate.db_URI
 _name.category_id                tcod_initial_coordinate
 _description.text
 ; Coordinate source database stable URI, e.g.
@@ -1541,10 +1598,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_coordinate_db_URI'
-_name.object_id                  '_tcod_initial_coordinate_db_URI'
+_definition.id                   '_tcod_initial_coordinate.db_URI'
+_name.object_id                  '_tcod_initial_coordinate.db_URI'
+_alias.definition_id             '_tcod_initial_coordinate_db_URI'
 save_
-save_tcod_initial_coordinate_db_code
+save_tcod_initial_coordinate.db_code
 _name.category_id                tcod_initial_coordinate
 _description.text
 ; Coordinate source database stable identifier, e.g.
@@ -1554,10 +1612,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_coordinate_db_code'
-_name.object_id                  '_tcod_initial_coordinate_db_code'
+_definition.id                   '_tcod_initial_coordinate.db_code'
+_name.object_id                  '_tcod_initial_coordinate.db_code'
+_alias.definition_id             '_tcod_initial_coordinate_db_code'
 save_
-save_tcod_initial_coordinate_db_version
+save_tcod_initial_coordinate.db_version
 _name.category_id                tcod_initial_coordinate
 _description.text
 ' Version of the file from which the coordinates were taken.'
@@ -1565,10 +1624,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_coordinate_db_version'
-_name.object_id                  '_tcod_initial_coordinate_db_version'
+_definition.id                   '_tcod_initial_coordinate.db_version'
+_name.object_id                  '_tcod_initial_coordinate.db_version'
+_alias.definition_id             '_tcod_initial_coordinate_db_version'
 save_
-save_tcod_initial_coordinate_URI
+save_tcod_initial_coordinate.URI
 _name.category_id                tcod_initial_coordinate
 _description.text
 ; A stable URI of coordinate file, e.g.
@@ -1578,8 +1638,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_coordinate_URI'
-_name.object_id                  '_tcod_initial_coordinate_URI'
+_definition.id                   '_tcod_initial_coordinate.URI'
+_name.object_id                  '_tcod_initial_coordinate.URI'
+_alias.definition_id             '_tcod_initial_coordinate_URI'
 save_
 save_tcod_initial_cell_param
 _name.category_id                CATEGORY_OVERVIEW
@@ -1591,7 +1652,7 @@ _definition.scope                Category
 _definition.id                   TCOD_INITIAL_CELL_PARAM
 _name.object_id                  TCOD_INITIAL_CELL_PARAM
 save_
-save_tcod_initial_cell_param_db_name
+save_tcod_initial_cell_param.db_name
 _name.category_id                tcod_initial_cell_param
 _description.text
 ; Unit cell parameter source database name (e.g. "Crystallography Open
@@ -1601,10 +1662,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_cell_param_db_name'
-_name.object_id                  '_tcod_initial_cell_param_db_name'
+_definition.id                   '_tcod_initial_cell_param.db_name'
+_name.object_id                  '_tcod_initial_cell_param.db_name'
+_alias.definition_id             '_tcod_initial_cell_param_db_name'
 save_
-save_tcod_initial_cell_param_db_abbrev
+save_tcod_initial_cell_param.db_abbrev
 _name.category_id                tcod_initial_cell_param
 _description.text
 ' Unit cell parameter source database abbreviated name (e.g. "COD")'
@@ -1612,10 +1674,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_cell_param_db_abbrev'
-_name.object_id                  '_tcod_initial_cell_param_db_abbrev'
+_definition.id                   '_tcod_initial_cell_param.db_abbrev'
+_name.object_id                  '_tcod_initial_cell_param.db_abbrev'
+_alias.definition_id             '_tcod_initial_cell_param_db_abbrev'
 save_
-save_tcod_initial_cell_param_db_URI
+save_tcod_initial_cell_param.db_URI
 _name.category_id                tcod_initial_cell_param
 _description.text
 ; Unit cell parameter source database stable URI, e.g.
@@ -1625,10 +1688,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_cell_param_db_URI'
-_name.object_id                  '_tcod_initial_cell_param_db_URI'
+_definition.id                   '_tcod_initial_cell_param.db_URI'
+_name.object_id                  '_tcod_initial_cell_param.db_URI'
+_alias.definition_id             '_tcod_initial_cell_param_db_URI'
 save_
-save_tcod_initial_cell_param_db_code
+save_tcod_initial_cell_param.db_code
 _name.category_id                tcod_initial_cell_param
 _description.text
 ; Unit cell parameter source database stable identifier, e.g.
@@ -1638,10 +1702,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_cell_param_db_code'
-_name.object_id                  '_tcod_initial_cell_param_db_code'
+_definition.id                   '_tcod_initial_cell_param.db_code'
+_name.object_id                  '_tcod_initial_cell_param.db_code'
+_alias.definition_id             '_tcod_initial_cell_param_db_code'
 save_
-save_tcod_initial_cell_param_db_version
+save_tcod_initial_cell_param.db_version
 _name.category_id                tcod_initial_cell_param
 _description.text
 ' Version of the file from which the unit cell parameters were taken.'
@@ -1649,10 +1714,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_cell_param_db_version'
-_name.object_id                  '_tcod_initial_cell_param_db_version'
+_definition.id                   '_tcod_initial_cell_param.db_version'
+_name.object_id                  '_tcod_initial_cell_param.db_version'
+_alias.definition_id             '_tcod_initial_cell_param_db_version'
 save_
-save_tcod_initial_cell_param_URI
+save_tcod_initial_cell_param.URI
 _name.category_id                tcod_initial_cell_param
 _description.text
 ; A stable URI of a file with the initial unit cell parameters, e.g.
@@ -1662,8 +1728,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_initial_cell_param_URI'
-_name.object_id                  '_tcod_initial_cell_param_URI'
+_definition.id                   '_tcod_initial_cell_param.URI'
+_name.object_id                  '_tcod_initial_cell_param.URI'
+_alias.definition_id             '_tcod_initial_cell_param_URI'
 save_
 save_tcod_atom_site_initial_fract_x
 _name.category_id                atom_site
@@ -1871,9 +1938,9 @@ _definition.class                Loop
 _definition.scope                Category
 _definition.id                   TCOD_FF
 _name.object_id                  TCOD_FF
-_category_key.name               '_tcod_ff_id'
+_category_key.name               '_tcod_ff.id'
 save_
-save_tcod_ff_id
+save_tcod_ff.id
 _name.category_id                tcod_ff
 _description.text
 ; A unique identifier (primary key) of a force field in a loop, in
@@ -1884,10 +1951,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_ff_id'
-_name.object_id                  '_tcod_ff_id'
+_definition.id                   '_tcod_ff.id'
+_name.object_id                  '_tcod_ff.id'
+_alias.definition_id             '_tcod_ff_id'
 save_
-save_tcod_ff_type
+save_tcod_ff.type
 _name.category_id                tcod_ff
 _description.text
 ; Fixed charge (standard biomolecular and materials: amber, opls, gromos etc.)
@@ -1903,8 +1971,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_tcod_ff_type'
-_name.object_id                  '_tcod_ff_type'
+_definition.id                   '_tcod_ff.type'
+_name.object_id                  '_tcod_ff.type'
+_alias.definition_id             '_tcod_ff_type'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -1915,7 +1984,7 @@ Hybrid 'describe the corresponding model here'
 Reactive 'describe the corresponding model here'
 other 'model not one of the mentioned above'
 save_
-save_tcod_ff_name
+save_tcod_ff.name
 _name.category_id                tcod_ff
 _description.text
 ; Standard name for the FF used. If there is no standard name use 'custom'
@@ -1926,10 +1995,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_ff_name'
-_name.object_id                  '_tcod_ff_name'
+_definition.id                   '_tcod_ff.name'
+_name.object_id                  '_tcod_ff.name'
+_alias.definition_id             '_tcod_ff_name'
 save_
-save_tcod_ff_version
+save_tcod_ff.version
 _name.category_id                tcod_ff
 _description.text
 ' Version of a force field. Usually year of the publication.'
@@ -1937,10 +2007,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_ff_version'
-_name.object_id                  '_tcod_ff_version'
+_definition.id                   '_tcod_ff.version'
+_name.object_id                  '_tcod_ff.version'
+_alias.definition_id             '_tcod_ff_version'
 save_
-save_tcod_ff_citation_id
+save_tcod_ff.citation_id
 _name.category_id                tcod_ff
 _name.linked_item_id             '_citation_id'
 _description.text
@@ -1952,8 +2023,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    Link
-_definition.id                   '_tcod_ff_citation_id'
-_name.object_id                  '_tcod_ff_citation_id'
+_definition.id                   '_tcod_ff.citation_id'
+_name.object_id                  '_tcod_ff.citation_id'
+_alias.definition_id             '_tcod_ff_citation_id'
 save_
 save_tcod_citation_linkage
 _name.category_id                citation
@@ -2005,9 +2077,9 @@ pseudopotential 'citation describing pseudopotential'
 XC-functional 'citation describing exchange correlation f-nal'
 basis-set 'citation describing the basis set'
 save_
-save_tcod_computation_input_file
+save_tcod_computation.input_file
 _name.category_id                tcod_computation
-_name.linked_item_id             '_tcod_file_id'
+_name.linked_item_id             '_tcod_file.id'
 _description.text
 ; Link to '_tcod_file_id' of a file with STDIN contents for a
   computation.
@@ -2017,12 +2089,13 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    Link
-_definition.id                   '_tcod_computation_input_file'
-_name.object_id                  '_tcod_computation_input_file'
+_definition.id                   '_tcod_computation.input_file'
+_name.object_id                  '_tcod_computation.input_file'
+_alias.definition_id             '_tcod_computation_input_file'
 save_
-save_tcod_computation_log_file
+save_tcod_computation.log_file
 _name.category_id                tcod_computation
-_name.linked_item_id             '_tcod_file_id'
+_name.linked_item_id             '_tcod_file.id'
 _description.text
 ; Link to '_tcod_file_id' of a file with a log file for a
   computation.
@@ -2032,12 +2105,13 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    Link
-_definition.id                   '_tcod_computation_log_file'
-_name.object_id                  '_tcod_computation_log_file'
+_definition.id                   '_tcod_computation.log_file'
+_name.object_id                  '_tcod_computation.log_file'
+_alias.definition_id             '_tcod_computation_log_file'
 save_
-save_tcod_computation_stdout
+save_tcod_computation.stdout
 _name.category_id                tcod_computation
-_name.linked_item_id             '_tcod_file_id'
+_name.linked_item_id             '_tcod_file.id'
 _description.text
 ; Link to '_tcod_file_id' of a file with STDOUT contents for a
   computation.
@@ -2047,12 +2121,13 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    Link
-_definition.id                   '_tcod_computation_stdout'
-_name.object_id                  '_tcod_computation_stdout'
+_definition.id                   '_tcod_computation.stdout'
+_name.object_id                  '_tcod_computation.stdout'
+_alias.definition_id             '_tcod_computation_stdout'
 save_
-save_tcod_computation_stderr
+save_tcod_computation.stderr
 _name.category_id                tcod_computation
-_name.linked_item_id             '_tcod_file_id'
+_name.linked_item_id             '_tcod_file.id'
 _description.text
 ; Link to '_tcod_file_id' of a file with STDERR contents for a
   computation.
@@ -2062,10 +2137,11 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    Link
-_definition.id                   '_tcod_computation_stderr'
-_name.object_id                  '_tcod_computation_stderr'
+_definition.id                   '_tcod_computation.stderr'
+_name.object_id                  '_tcod_computation.stderr'
+_alias.definition_id             '_tcod_computation_stderr'
 save_
-save_tcod_computation_CPU_time
+save_tcod_computation.CPU_time
 _name.category_id                tcod_computation
 _units.code                      seconds
 _description.text                ' CPU time in seconds (excluding I/O).'
@@ -2073,10 +2149,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
-_definition.id                   '_tcod_computation_CPU_time'
-_name.object_id                  '_tcod_computation_CPU_time'
+_definition.id                   '_tcod_computation.CPU_time'
+_name.object_id                  '_tcod_computation.CPU_time'
+_alias.definition_id             '_tcod_computation_CPU_time'
 save_
-save_tcod_computation_GPU_time
+save_tcod_computation.GPU_time
 _name.category_id                tcod_computation
 _units.code                      seconds
 _description.text                ' GPU time in seconds.'
@@ -2084,10 +2161,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
-_definition.id                   '_tcod_computation_GPU_time'
-_name.object_id                  '_tcod_computation_GPU_time'
+_definition.id                   '_tcod_computation.GPU_time'
+_name.object_id                  '_tcod_computation.GPU_time'
+_alias.definition_id             '_tcod_computation_GPU_time'
 save_
-save_tcod_computation_wallclock_time
+save_tcod_computation.wallclock_time
 _name.category_id                tcod_computation
 _units.code                      seconds
 _description.text
@@ -2098,8 +2176,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
-_definition.id                   '_tcod_computation_wallclock_time'
-_name.object_id                  '_tcod_computation_wallclock_time'
+_definition.id                   '_tcod_computation.wallclock_time'
+_name.object_id                  '_tcod_computation.wallclock_time'
+_alias.definition_id             '_tcod_computation_wallclock_time'
 save_
 save_tcod_file
 _name.category_id                CATEGORY_OVERVIEW
@@ -2112,19 +2191,20 @@ _definition.class                Loop
 _definition.scope                Category
 _definition.id                   TCOD_FILE
 _name.object_id                  TCOD_FILE
-_category_key.name               '_tcod_file_id'
+_category_key.name               '_tcod_file.id'
 save_
-save_tcod_file_id
+save_tcod_file.id
 _name.category_id                tcod_file
 _description.text                ' Primary key for the _tcod_file_... table.'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_id'
-_name.object_id                  '_tcod_file_id'
+_definition.id                   '_tcod_file.id'
+_name.object_id                  '_tcod_file.id'
+_alias.definition_id             '_tcod_file_id'
 save_
-save_tcod_file_name
+save_tcod_file.name
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2133,10 +2213,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_name'
-_name.object_id                  '_tcod_file_name'
+_definition.id                   '_tcod_file.name'
+_name.object_id                  '_tcod_file.name'
+_alias.definition_id             '_tcod_file_name'
 save_
-save_tcod_file_source_database_name
+save_tcod_file.source_database_name
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2145,10 +2226,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_source_database_name'
-_name.object_id                  '_tcod_file_source_database_name'
+_definition.id                   '_tcod_file.source_database_name'
+_name.object_id                  '_tcod_file.source_database_name'
+_alias.definition_id             '_tcod_file_source_database_name'
 save_
-save_tcod_file_source_database_URI
+save_tcod_file.source_database_URI
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2157,10 +2239,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_source_database_URI'
-_name.object_id                  '_tcod_file_source_database_URI'
+_definition.id                   '_tcod_file.source_database_URI'
+_name.object_id                  '_tcod_file.source_database_URI'
+_alias.definition_id             '_tcod_file_source_database_URI'
 save_
-save_tcod_file_source_database_version
+save_tcod_file.source_database_version
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2169,10 +2252,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_source_database_version'
-_name.object_id                  '_tcod_file_source_database_version'
+_definition.id                   '_tcod_file.source_database_version'
+_name.object_id                  '_tcod_file.source_database_version'
+_alias.definition_id             '_tcod_file_source_database_version'
 save_
-save_tcod_file_source_reference_id
+save_tcod_file.source_reference_id
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2181,10 +2265,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_source_reference_id'
-_name.object_id                  '_tcod_file_source_reference_id'
+_definition.id                   '_tcod_file.source_reference_id'
+_name.object_id                  '_tcod_file.source_reference_id'
+_alias.definition_id             '_tcod_file_source_reference_id'
 save_
-save_tcod_file_source_reference_version
+save_tcod_file.source_reference_version
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2193,10 +2278,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_source_reference_version'
-_name.object_id                  '_tcod_file_source_reference_version'
+_definition.id                   '_tcod_file.source_reference_version'
+_name.object_id                  '_tcod_file.source_reference_version'
+_alias.definition_id             '_tcod_file_source_reference_version'
 save_
-save_tcod_file_source_reference_uuid
+save_tcod_file.source_reference_uuid
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2205,30 +2291,33 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_source_reference_uuid'
-_name.object_id                  '_tcod_file_source_reference_uuid'
+_definition.id                   '_tcod_file.source_reference_uuid'
+_name.object_id                  '_tcod_file.source_reference_uuid'
+_alias.definition_id             '_tcod_file_source_reference_uuid'
 save_
-save_tcod_file_md5sum
+save_tcod_file.md5sum
 _name.category_id                tcod_file
 _description.text                ' MD5 checksum of the file.'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_md5sum'
-_name.object_id                  '_tcod_file_md5sum'
+_definition.id                   '_tcod_file.md5sum'
+_name.object_id                  '_tcod_file.md5sum'
+_alias.definition_id             '_tcod_file_md5sum'
 save_
-save_tcod_file_sha1sum
+save_tcod_file.sha1sum
 _name.category_id                tcod_file
 _description.text                ' SHA1 checksum of the file.'
 _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_sha1sum'
-_name.object_id                  '_tcod_file_sha1sum'
+_definition.id                   '_tcod_file.sha1sum'
+_name.object_id                  '_tcod_file.sha1sum'
+_alias.definition_id             '_tcod_file_sha1sum'
 save_
-save_tcod_file_format
+save_tcod_file.format
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2237,10 +2326,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_format'
-_name.object_id                  '_tcod_file_format'
+_definition.id                   '_tcod_file.format'
+_name.object_id                  '_tcod_file.format'
+_alias.definition_id             '_tcod_file_format'
 save_
-save_tcod_file_interpreter
+save_tcod_file.interpreter
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2249,10 +2339,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_interpreter'
-_name.object_id                  '_tcod_file_interpreter'
+_definition.id                   '_tcod_file.interpreter'
+_name.object_id                  '_tcod_file.interpreter'
+_alias.definition_id             '_tcod_file_interpreter'
 save_
-save_tcod_file_role
+save_tcod_file.role
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2262,8 +2353,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_tcod_file_role'
-_name.object_id                  '_tcod_file_role'
+_definition.id                   '_tcod_file.role'
+_name.object_id                  '_tcod_file.role'
+_alias.definition_id             '_tcod_file_role'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -2275,7 +2367,7 @@ stdin 'standard input contents for called program'
 stdout 'standard output contents of called program'
 stderr 'standard error contents of called program'
 save_
-save_tcod_file_contents_type
+save_tcod_file.contents_type
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2285,8 +2377,9 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_tcod_file_contents_type'
-_name.object_id                  '_tcod_file_contents_type'
+_definition.id                   '_tcod_file.contents_type'
+_name.object_id                  '_tcod_file.contents_type'
+_alias.definition_id             '_tcod_file_contents_type'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -2315,7 +2408,7 @@ forcefield
 ;
 ;
 save_
-save_tcod_file_contents
+save_tcod_file.contents
 _name.category_id                tcod_file
 _description.text
 ;
@@ -2324,12 +2417,13 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_contents'
-_name.object_id                  '_tcod_file_contents'
+_definition.id                   '_tcod_file.contents'
+_name.object_id                  '_tcod_file.contents'
+_alias.definition_id             '_tcod_file_contents'
 save_
-save_tcod_file_content_encoding
+save_tcod_file.content_encoding
 _name.category_id                tcod_file
-_name.linked_item_id             '_tcod_content_encoding_id'
+_name.linked_item_id             '_tcod_content_encoding.id'
 _description.text
 ' Must match a single _tcod_content_encoding_id from the same datablock.'
 _definition.update               2026-10-26
@@ -2337,10 +2431,11 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    Link
-_definition.id                   '_tcod_file_content_encoding'
-_name.object_id                  '_tcod_file_content_encoding'
+_definition.id                   '_tcod_file.content_encoding'
+_name.object_id                  '_tcod_file.content_encoding'
+_alias.definition_id             '_tcod_file_content_encoding'
 save_
-save_tcod_file_URI
+save_tcod_file.URI
 _name.category_id                tcod_file
 _description.text
 ' A stable URI (Web reference) where the file can be fetched.'
@@ -2348,8 +2443,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_file_URI'
-_name.object_id                  '_tcod_file_URI'
+_definition.id                   '_tcod_file.URI'
+_name.object_id                  '_tcod_file.URI'
+_alias.definition_id             '_tcod_file_URI'
 save_
 save_tcod_content_encoding
 _name.category_id                CATEGORY_OVERVIEW
@@ -2381,7 +2477,7 @@ _description_example.detail
                 gzipped first and base64-encoded second.
 ;
 save_
-save_tcod_content_encoding_id
+save_tcod_content_encoding.id
 _name.category_id                tcod_content_encoding
 _description.text
 ' A unique identifier used to identify a content encoding stack.'
@@ -2389,10 +2485,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_content_encoding_id'
-_name.object_id                  '_tcod_content_encoding_id'
+_definition.id                   '_tcod_content_encoding.id'
+_name.object_id                  '_tcod_content_encoding.id'
+_alias.definition_id             '_tcod_content_encoding_id'
 save_
-save_tcod_content_encoding_layer_id
+save_tcod_content_encoding.layer_id
 _name.category_id                tcod_content_encoding
 _enumeration.range               1:
 _description.text
@@ -2404,10 +2501,11 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_tcod_content_encoding_layer_id'
-_name.object_id                  '_tcod_content_encoding_layer_id'
+_definition.id                   '_tcod_content_encoding.layer_id'
+_name.object_id                  '_tcod_content_encoding.layer_id'
+_alias.definition_id             '_tcod_content_encoding_layer_id'
 save_
-save_tcod_content_encoding_layer_type
+save_tcod_content_encoding.layer_type
 _name.category_id                tcod_content_encoding
 _description.text
 ; Type of encoding used for an encoding layer in the content encoding stack.
@@ -2418,12 +2516,13 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
 _type.purpose                    State
-_definition.id                   '_tcod_content_encoding_layer_type'
-_name.object_id                  '_tcod_content_encoding_layer_type'
+_definition.id                   '_tcod_content_encoding.layer_type'
+_name.object_id                  '_tcod_content_encoding.layer_type'
+_alias.definition_id             '_tcod_content_encoding_layer_type'
 loop_
 _category_key.name
-'_tcod_content_encoding_id'
-'_tcod_content_encoding_layer_id'
+'_tcod_content_encoding.id'
+'_tcod_content_encoding.layer_id'
 loop_
 _enumeration_set.state
 _enumeration_set.detail
@@ -2443,9 +2542,9 @@ _definition.class                Loop
 _definition.scope                Category
 _definition.id                   TCOD_COMPUTATION
 _name.object_id                  TCOD_COMPUTATION
-_category_key.name               '_tcod_computation_step'
+_category_key.name               '_tcod_computation.step'
 save_
-save_tcod_computation_step
+save_tcod_computation.step
 _name.category_id                tcod_computation
 _enumeration.range               1:
 _description.text
@@ -2458,10 +2557,11 @@ _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
 _units.code                      none
-_definition.id                   '_tcod_computation_step'
-_name.object_id                  '_tcod_computation_step'
+_definition.id                   '_tcod_computation.step'
+_name.object_id                  '_tcod_computation.step'
+_alias.definition_id             '_tcod_computation_step'
 save_
-save_tcod_computation_command
+save_tcod_computation.command
 _name.category_id                tcod_computation
 _description.text
 ;
@@ -2470,10 +2570,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_computation_command'
-_name.object_id                  '_tcod_computation_command'
+_definition.id                   '_tcod_computation.command'
+_name.object_id                  '_tcod_computation.command'
+_alias.definition_id             '_tcod_computation_command'
 save_
-save_tcod_computation_environment
+save_tcod_computation.environment
 _name.category_id                tcod_computation
 _description.text
 ; A set of environment variable definitions, in /bin/sh syntax
@@ -2485,10 +2586,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_computation_environment'
-_name.object_id                  '_tcod_computation_environment'
+_definition.id                   '_tcod_computation.environment'
+_name.object_id                  '_tcod_computation.environment'
+_alias.definition_id             '_tcod_computation_environment'
 save_
-save_tcod_computation_reference_uuid
+save_tcod_computation.reference_uuid
 _name.category_id                tcod_computation
 _description.text
 ;
@@ -2497,10 +2599,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_computation_reference_uuid'
-_name.object_id                  '_tcod_computation_reference_uuid'
+_definition.id                   '_tcod_computation.reference_uuid'
+_name.object_id                  '_tcod_computation.reference_uuid'
+_alias.definition_id             '_tcod_computation_reference_uuid'
 save_
-save_tcod_computation_reference_id
+save_tcod_computation.reference_id
 _name.category_id                tcod_computation
 _description.text
 ; Reference to a computation description (its primary key) in the remote
@@ -2510,10 +2613,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_computation_reference_id'
-_name.object_id                  '_tcod_computation_reference_id'
+_definition.id                   '_tcod_computation.reference_id'
+_name.object_id                  '_tcod_computation.reference_id'
+_alias.definition_id             '_tcod_computation_reference_id'
 save_
-save_tcod_computation_reference_URI
+save_tcod_computation.reference_URI
 _name.category_id                tcod_computation
 _description.text
 ; Reference to a computation description (its stable REST URI) in the remote
@@ -2523,10 +2627,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_computation_reference_URI'
-_name.object_id                  '_tcod_computation_reference_URI'
+_definition.id                   '_tcod_computation.reference_URI'
+_name.object_id                  '_tcod_computation.reference_URI'
+_alias.definition_id             '_tcod_computation_reference_URI'
 save_
-save_tcod_computation_database_name
+save_tcod_computation.database_name
 _name.category_id                tcod_computation
 _description.text
 ; A name of the database that was used to publish and document this
@@ -2536,10 +2641,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_computation_database_name'
-_name.object_id                  '_tcod_computation_database_name'
+_definition.id                   '_tcod_computation.database_name'
+_name.object_id                  '_tcod_computation.database_name'
+_alias.definition_id             '_tcod_computation_database_name'
 save_
-save_tcod_computation_database_version
+save_tcod_computation.database_version
 _name.category_id                tcod_computation
 _description.text
 ; A version of the database that was used to publish and document this
@@ -2549,10 +2655,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_computation_database_version'
-_name.object_id                  '_tcod_computation_database_version'
+_definition.id                   '_tcod_computation.database_version'
+_name.object_id                  '_tcod_computation.database_version'
+_alias.definition_id             '_tcod_computation_database_version'
 save_
-save_tcod_computation_database_URI
+save_tcod_computation.database_URI
 _name.category_id                tcod_computation
 _description.text
 ; A stable URI (of a human-readable description) of the database that
@@ -2562,8 +2669,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_computation_database_URI'
-_name.object_id                  '_tcod_computation_database_URI'
+_definition.id                   '_tcod_computation.database_URI'
+_name.object_id                  '_tcod_computation.database_URI'
+_alias.definition_id             '_tcod_computation_database_URI'
 save_
 save_tcod_total_energy
 _name.category_id                CATEGORY_OVERVIEW
@@ -2573,7 +2681,7 @@ _definition.scope                Category
 _definition.id                   TCOD_TOTAL_ENERGY
 _name.object_id                  TCOD_TOTAL_ENERGY
 save_
-save_tcod_total_energy_value
+save_tcod_total_energy.value
 _name.category_id                tcod_total_energy
 _units.code                      electron_volts
 _description.text
@@ -2597,14 +2705,14 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
-_definition.id                   '_tcod_total_energy_value'
-_name.object_id                  '_tcod_total_energy_value'
+_definition.id                   '_tcod_total_energy.value'
+_name.object_id                  '_tcod_total_energy.value'
 loop_
 _alias.definition_id
 _alias.deprecation_date
 '_tcod_total_energy' 2026-10-26
 save_
-save_tcod_total_energy_formula
+save_tcod_total_energy.formula
 _name.category_id                tcod_total_energy
 _description.text
 ; Formula used to compute the _tcod_total_energy value; the exact
@@ -2614,10 +2722,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_total_energy_formula'
-_name.object_id                  '_tcod_total_energy_formula'
+_definition.id                   '_tcod_total_energy.formula'
+_name.object_id                  '_tcod_total_energy.formula'
+_alias.definition_id             '_tcod_total_energy_formula'
 save_
-save_tcod_total_energy_details
+save_tcod_total_energy.details
 _name.category_id                tcod_total_energy
 _description.text
 ; A human-readable description of the _tcod_total_energy computation
@@ -2627,10 +2736,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_total_energy_details'
-_name.object_id                  '_tcod_total_energy_details'
+_definition.id                   '_tcod_total_energy.details'
+_name.object_id                  '_tcod_total_energy.details'
+_alias.definition_id             '_tcod_total_energy_details'
 save_
-save_tcod_total_energy_gradient
+save_tcod_total_energy.gradient
 _name.category_id                tcod_total_energy
 _units.code                      electron_volts_per_angstrom
 _description.text
@@ -2642,10 +2752,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Real
-_definition.id                   '_tcod_total_energy_gradient'
-_name.object_id                  '_tcod_total_energy_gradient'
+_definition.id                   '_tcod_total_energy.gradient'
+_name.object_id                  '_tcod_total_energy.gradient'
+_alias.definition_id             '_tcod_total_energy_gradient'
 save_
-save_tcod_total_energy_gradient_formula
+save_tcod_total_energy.gradient_formula
 _name.category_id                tcod_total_energy
 _description.text
 ; Formula or computer code used to compute the
@@ -2656,10 +2767,11 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_total_energy_gradient_formula'
-_name.object_id                  '_tcod_total_energy_gradient_formula'
+_definition.id                   '_tcod_total_energy.gradient_formula'
+_name.object_id                  '_tcod_total_energy.gradient_formula'
+_alias.definition_id             '_tcod_total_energy_gradient_formula'
 save_
-save_tcod_total_energy_gradient_details
+save_tcod_total_energy.gradient_details
 _name.category_id                tcod_total_energy
 _description.text
 ; A human-readable description of the _tcod_total_energy_gradient
@@ -2669,8 +2781,9 @@ _definition.update               2026-10-26
 _definition.class                Datum
 _type.container                  Single
 _type.contents                   Text
-_definition.id                   '_tcod_total_energy_gradient_details'
-_name.object_id                  '_tcod_total_energy_gradient_details'
+_definition.id                   '_tcod_total_energy.gradient_details'
+_name.object_id                  '_tcod_total_energy.gradient_details'
+_alias.definition_id             '_tcod_total_energy_gradient_details'
 save_
 save_tcod_atom_site_resid_force_Cartn_x
 _name.category_id                atom_site
