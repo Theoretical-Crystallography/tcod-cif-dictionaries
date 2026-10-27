@@ -16,6 +16,9 @@ data_on_this_dictionary
     _dictionary_update          2023-11-23
     _dictionary_history
 ;
+2026-10-27 Added enumerator value 'plane-waves' to '_dft_pseudopotential_type'.
+           A.M.
+
 2023-11-23 Renamed category 'DFT_BASISSET' to 'DFT_BASIS_SET'.
            Renamed category 'DFT_ATOM_BASISSET' to 'DFT_ATOM_BASIS_SET'. A.V.
 
@@ -745,9 +748,10 @@ data_dft_pseudopotential_type
     _list_reference '_dft_pseudopotential_atom_type'
     loop_ _enumeration
           _enumeration_detail
-          NCPP      'norm-conserving pseudopotential'
-          USPP      'ultrasoft pseudopotential'
-          PAW       'projector augmented waves pseudopotential'
+          NCPP        'norm-conserving pseudopotential'
+          USPP        'ultrasoft pseudopotential'
+          PAW         'projector augmented waves pseudopotential'
+          plane-waves 'plane-waves'
           other
 ; description should be given in the CIF data item
   _dft_pseudopotential_type_other_name
