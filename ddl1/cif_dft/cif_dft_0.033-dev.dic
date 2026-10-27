@@ -17,7 +17,8 @@ data_on_this_dictionary
     _dictionary_history
 ;
 2026-10-27 Added enumerator value 'plane-waves' to '_dft_pseudopotential_type'.
-           Added '_dft_dispersion_correction' data name.
+           Added '_dft_dispersion_correction' and '_dft_zero_point_energy'
+           data names.
            Added '_dft_monomer_correction_[]' category.
            A.M.
 
@@ -874,6 +875,21 @@ data_dft_cell_energy
   compatible with the http://www.xml-cml.org/dictionary/compchem/
   "total energy" (ID: totalEnergy) term? If so, maybe we rename this
   data item to _dft_total_energy?
+;
+
+data_dft_zero_point_energy
+    _name '_dft_zero_point_energy'
+    _category dft_energy
+    _type char
+    loop_
+    _enumeration
+    _enumeration_detail
+    true  'Total energy includes the zero point energy (ZPE) correction.'
+    t     'Same as "true"'
+    false 'Total energy does not include the zero point energy (ZPE) correction.'
+    f     'Same as "false"'
+    _definition
+; Defines if the total energy includes the zero point energy (ZPE) correction.
 ;
 
 ###############################################################################
