@@ -16,6 +16,11 @@ data_on_this_dictionary
     _dictionary_update          2023-11-23
     _dictionary_history
 ;
+2026-10-27 Added '_dft_dispersion_correction' and '_dft_zero_point_energy'
+           data names.
+           Added '_dft_monomer_correction_[]' category.
+           A.M.
+
 2023-11-23 Renamed category 'DFT_BASISSET' to 'DFT_BASIS_SET'.
            Renamed category 'DFT_ATOM_BASISSET' to 'DFT_ATOM_BASIS_SET'. A.V.
 
@@ -640,6 +645,22 @@ structure is finite in this direction).
 the unit cell axes.
 ;
 
+data_dft_dispersion_correction
+    _name '_dft_dispersion_correction'
+    _category dft_cell_settings
+    _type char
+    _definition
+; The van der Waals correction used.
+;
+    loop_ _example
+          Grimme-D2
+          Grimme-D3
+          Tkatchenko-Scheffler
+          'many-body dispersion'
+          'non-local many-body dispersion'
+          'Neumann-Perrin'
+          XDM
+
 ###############################################################################
 # Points in irreducible BZ
 ###############################################################################
@@ -852,6 +873,21 @@ data_dft_cell_energy
   compatible with the http://www.xml-cml.org/dictionary/compchem/
   "total energy" (ID: totalEnergy) term? If so, maybe we rename this
   data item to _dft_total_energy?
+;
+
+data_dft_zero_point_energy
+    _name '_dft_zero_point_energy'
+    _category dft_energy
+    _type char
+    loop_
+    _enumeration
+    _enumeration_detail
+    true  'Total energy includes the zero point energy (ZPE) correction.'
+    t     'Same as "true"'
+    false 'Total energy does not include the zero point energy (ZPE) correction.'
+    f     'Same as "false"'
+    _definition
+; Defines if the total energy includes the zero point energy (ZPE) correction.
 ;
 
 ###############################################################################
@@ -1345,3 +1381,46 @@ data_dft_dielectric_constant
     _definition
 ; PLEASE ADD A HUMAN-READABLE DESCRIPTION HERE
 ;
+
+###############################################################################
+# Corrections to the intramolecular conformational energy
+###############################################################################
+
+data_dft_monomer_correction_[]
+    _name '_dft_monomer_correction_[]'
+    _category category_overview
+    _type null
+    _definition
+; Data items to describe corrections to the intramolecular conformational
+  energy.
+;
+
+data_dft_monomer_correction_functional
+    _name '_dft_monomer_correction_functional'
+    _category dft_monomer_correction
+    _type char
+    _definition
+; Functional used for the correction to the intramolecular conformational energy.
+;
+    loop_ _example
+          MP2
+
+data_dft_monomer_correction_basis_set
+    _name '_dft_monomer_correction_basis_set'
+    _category dft_monomer_correction
+    _type char
+    _definition
+; Basis set used for the correction to the intramolecular conformational energy.
+;
+    loop_ _example
+          cc-pvdz
+
+data_dft_monomer_correction_dispersion
+    _name '_dft_monomer_correction_dispersion'
+    _category dft_monomer_correction
+    _type char
+    _definition
+; Dispersion correction used for the correction to the intramolecular conformational energy.
+;
+    loop_ _example
+          D3
