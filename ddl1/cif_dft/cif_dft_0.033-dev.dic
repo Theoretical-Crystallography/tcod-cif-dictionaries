@@ -16,8 +16,7 @@ data_on_this_dictionary
     _dictionary_update          2023-11-23
     _dictionary_history
 ;
-2026-10-27 Added enumerator value 'plane-waves' to '_dft_pseudopotential_type'.
-           Added '_dft_dispersion_correction' and '_dft_zero_point_energy'
+2026-10-27 Added '_dft_dispersion_correction' and '_dft_zero_point_energy'
            data names.
            Added '_dft_monomer_correction_[]' category.
            A.M.
@@ -767,10 +766,9 @@ data_dft_pseudopotential_type
     _list_reference '_dft_pseudopotential_atom_type'
     loop_ _enumeration
           _enumeration_detail
-          NCPP        'norm-conserving pseudopotential'
-          USPP        'ultrasoft pseudopotential'
-          PAW         'projector augmented waves pseudopotential'
-          plane-waves 'plane-waves'
+          NCPP      'norm-conserving pseudopotential'
+          USPP      'ultrasoft pseudopotential'
+          PAW       'projector augmented waves pseudopotential'
           other
 ; description should be given in the CIF data item
   _dft_pseudopotential_type_other_name
